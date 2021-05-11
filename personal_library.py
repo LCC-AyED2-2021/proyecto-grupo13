@@ -48,6 +48,7 @@ def main() -> None:
 def create(arg : list[str]) -> None:
     """ Handles the creation of a document """
 
+    # Check further arguments
     if len(arg) < 1:
         print('Please use: --create <library_path>')
         return
@@ -63,6 +64,7 @@ def create(arg : list[str]) -> None:
     file_path = os.path.join(root_folder, file_name)
 
 
+    # Keep asking until there are no colisions
     while os.path.exists(file_path):
         print("Error: file already exists: ", file_path)
         print("Please change the title")

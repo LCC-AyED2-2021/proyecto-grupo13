@@ -79,8 +79,10 @@ def create(arg : list[str]) -> None:
 
     print("Please, Enter the docment's content. Ctrl-D when Done.")
     with open(file_path, 'x') as file_handle:
+        file_handle.write(doc_title + '\n')
         for line in sys.stdin.readlines():
             file_handle.write(line)
+
 
 def title_normalize(title : str) -> str:
     """ Normalizes the file name:

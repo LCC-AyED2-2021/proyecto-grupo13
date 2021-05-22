@@ -3,10 +3,12 @@ A virtual library of documents with querying capabilities.
 """
 #pylint: disable=too-few-public-methods,no-else-return
 
+from typing import TypeVar, Generic, Callable, Optional, Tuple
+
 # Capture command line arguments
 import sys
 # Parse command line arguments
-import getopt
+import argparse
 # Letter definitions
 import string
 # Path manipulation
@@ -23,23 +25,17 @@ class Document:
 def main() -> None:
     """ The entry point """
 
-    # Declare commands
-    commands = ['create', 'search']
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument("lib", help = "Where to store/search for files")
+    arg_parser.add_argument("--create", help = "Create a document", action="store_true")
+    arg_parser.add_argument("--search", help = "Search a term")
 
-    # Parse commands
-    opt_list, args = getopt.getopt(sys.argv[1:], '', commands)
+    args = arg_parser.parse_args()
 
-    # Act on commands
-    for opt, _ in opt_list:
-        if opt == "--create":
-            return create(args)
-        elif opt == "--search":
-            return search(args)
-        else:
-            print("Unknown command:", opt)
-
-    # TODO: Write a more detailed usage message.
-    print("Valid commands are:\n", '\n'.join(commands))
+    if args.create:
+        return create(args.lib)
+    elif args.search:
+        return search(args.lib, args.search)
 
     return None
 
@@ -47,15 +43,8 @@ def main() -> None:
 ## Create specific code
 ###############################################################################
 
-def create(arg : list[str]) -> None:
+def create(_lib_folder : str) -> None:
     """ Handles the creation of a document """
-
-    # Check further arguments
-    if len(arg) < 1:
-        print('Please use: --create <library_path>')
-        return
-
-    root_folder = arg[0]
 
     heading(1)
 
@@ -63,7 +52,7 @@ def create(arg : list[str]) -> None:
 
     doc_title = input("What's the docment's title?\n")
     file_name = title_normalize(doc_title) + ".txt"
-    file_path = os.path.join(root_folder, file_name)
+    file_path = os.path.join(_lib_folder, file_name)
 
 
     # Keep asking until there are no colisions
@@ -75,7 +64,7 @@ def create(arg : list[str]) -> None:
 
         doc_title = input("What's the docment's title?\n")
         file_name = title_normalize(doc_title) + ".txt"
-        file_path = os.path.join(root_folder, file_name)
+        file_path = os.path.join(_lib_folder, file_name)
 
     # At this point we know the document is not present
 
@@ -101,10 +90,12 @@ def title_normalize(title : str) -> str:
 ## Search specific code
 ###############################################################################
 
-def search(arg : list[str]) -> None:
+def search(_lib_folder : str, _args : list[str]) -> None:
     """ Handles the search of documents """
+
     print("Searching")
-    print(arg)
+    print(_lib_folder)
+    print(_args)
 
 ###############################################################################
 ## General purpose functions

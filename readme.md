@@ -1,6 +1,22 @@
 A virtual library of documents with querying capabilities.
 
-# Loading
+# Documentation
+
+```
+usage: personal_library.py [-h] [--create] [--search SEARCH] lib
+
+positional arguments:
+  lib              Where to store/search for files
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --create         Create a document
+  --search SEARCH  Search a term
+```
+
+# Details
+
+## Loading
 
 ```
 python personal_library.py -create <local_path>
@@ -16,7 +32,7 @@ Content: ?
 Example content.
 ```
 
-## Details
+### Details
 
 The destination folder is flat. I.e. it has no sub-folders.
 
@@ -24,13 +40,13 @@ It has to persist the document in the file system.
 
 * Avoid overwrite. At least ask.
 
-## Default Library
+### Default Library
 
 Load some documents and save them to the repo.
 
-# Querying
+## Querying
 
-## Research
+### Research
 
 [Tfidf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
 
@@ -49,7 +65,7 @@ python personal_library.py --search word
 	Show.
 ```
 
-# Future
+## Future
 
 ```
 python personal_library.py -search <query> --sort

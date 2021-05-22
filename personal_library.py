@@ -12,6 +12,8 @@ import string
 # Path manipulation
 import os.path
 
+import hashlib
+
 class Document:
     """ The document representation """
     def __init__(self,

@@ -1,5 +1,32 @@
 """
 A virtual library of documents with querying capabilities.
+
+ ________________________________________
+/ This is NOT how you write python. This
+| is PSEUDO python                       /
+|
+  #not-my-python
+ ----------------------------------------
+   *         __------~~-,
+    *      ,'            ,
+          /               *
+         /                :
+        |                  '
+        |                  |
+        |                  |
+         |   _--           |
+         _| =-.     .-.   ||
+         o|/o/       _.   |
+         /  ~          * |
+       (____@)  ___~    |
+          |_===~~~.`    |
+       _______.--~     |
+       *________       |
+                *      |
+              __/-___-- -__
+             /            _ *
+
+I denounce and renounce all the code in this repository.
 """
 #pylint: disable=too-few-public-methods,no-else-return
 
@@ -14,13 +41,22 @@ import string
 # Path manipulation
 import os.path
 
-import hashlib
+import libdic
+from libdic import Dic
+
+import linkedlist
+from linkedlist import LinkedList
 
 class Document:
+    uuid : int = 0
     """ The document representation """
     def __init__(self,
-            _title : str):
+            _title : str,
+            _content : LinkedList[str]):
         self.title = _title
+        self.content = _content
+        self.uuid = Document.uuid
+        Document.uuid = Document.uuid + 1
 
 def main() -> None:
     """ The entry point """
@@ -97,6 +133,68 @@ def search(_lib_folder : str, _args : list[str]) -> None:
     print(_lib_folder)
     print(_args)
 
+
+def empty_doc_dic() -> Dic[str, int]:
+    """ A Standard dictionary for the document's word count"""
+    return Dic(200, hash_str)
+
+def doc_count_words(_doc : Document) -> Dic[str, int]:
+    """ Count the words in a document """
+
+    def folder(__acc : Dic[str, int], __word : str) -> Dic[str, int]:
+        """ Folds a new word into __acc """
+        return libdic.update_with_default(__acc,
+                lambda x : x + 1,
+                __word,
+                1)
+
+    return linkedlist.foldl(folder, empty_doc_dic(), _doc.content)
+
+class TfidfRow:
+    """ An alias for the rows of the matrix.
+
+    Elements are the doc.hash and the tfidf value.
+
+    This could be upgraded to a priority queue.
+    """
+    def __init__(self,
+            _row : LinkedList[Tuple[int, float]]):
+        self.row = _row
+
+def doc_tfidf(_docs : LinkedList[Document]) -> Dic[str, TfidfRow]:
+    """ Coumpute the tfidf of a set of documents """
+
+
+    def folder(__dic : Dic[str, TfidfRow], __doc : Document) -> Dic[str, TfidfRow]:
+        """ Fold a new document into the matrix """
+
+        counts : Dic[str, int] = doc_count_words(__doc)
+
+        total_words : int = linkedlist.foldl(lambda x, y: x + y,
+                0,
+                libdic.to_list(counts))
+
+        def folder_(__dic : Dic[str, TfidfRow], __elem : Tuple[str, int]) -> Dic[str, TfidfRow]:
+            """ Fold a count entry into the matrix """
+            (word, freq) = __elem
+
+            return libdic.update_with_default(__dic,
+                    lambda x : TfidfRow(linkedlist.insert(x.row , __doc.uuid, freq)),
+                    word,
+                    TfidfRow(linkedlist.singleton((__doc.uuid, freq / total_words))))
+
+
+        return linkedlist.foldl(folder_,
+                __dic,
+                libdic.assocs(counts))
+
+    tfidf : Dic[str, TfidfRow] = Dic(500, hash_str)
+
+    return linkedlist.foldl(folder, tfidf, _docs)
+
+def load_documents(_lib_folder : str) -> LinkedList[Document]:
+    """ Load all the documents in the library """
+
 ###############################################################################
 ## General purpose functions
 ###############################################################################
@@ -104,6 +202,14 @@ def search(_lib_folder : str, _args : list[str]) -> None:
 def heading(level : int, sep : str = ' ') -> None:
     """ Prints a heading """
     print('#' * level + sep, end='')
+
+def hash_str(_s : str) -> int:
+    """ Hash a string """
+    # TODO: Improve
+    if len(_s) > 0:
+        return 42 + ord(_s[0])
+    else:
+        return 69
 
 if __name__ == '__main__':
     main()

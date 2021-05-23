@@ -1,4 +1,31 @@
-""" The linkedlist module """
+""" The linkedlist module
+ ________________________________________
+/ This is NOT how you write python. This
+| is PSEUDO python                       /
+|
+  #not-my-python
+ ----------------------------------------
+   *         __------~~-,
+    *      ,'            ,
+          /               *
+         /                :
+        |                  '
+        |                  |
+        |                  |
+         |   _--           |
+         _| =-.     .-.   ||
+         o|/o/       _.   |
+         /  ~          * |
+       (____@)  ___~    |
+          |_===~~~.`    |
+       _______.--~     |
+       *________       |
+                *      |
+              __/-___-- -__
+             /            _ *
+
+I denounce and renounce all the code in this repository.
+"""
 #pylint: disable=too-few-public-methods,no-else-return,invalid-name
 from typing import Generic, TypeVar, Callable, Optional, Tuple
 

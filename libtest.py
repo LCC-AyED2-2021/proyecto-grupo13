@@ -1,4 +1,31 @@
-""" Test some functions """
+""" Test some functions
+ ________________________________________
+/ This is NOT how you write python. This
+| is PSEUDO python                       /
+|
+  #not-my-python
+ ----------------------------------------
+   *         __------~~-,
+    *      ,'            ,
+          /               *
+         /                :
+        |                  '
+        |                  |
+        |                  |
+         |   _--           |
+         _| =-.     .-.   ||
+         o|/o/       _.   |
+         /  ~          * |
+       (____@)  ___~    |
+          |_===~~~.`    |
+       _______.--~     |
+       *________       |
+                *      |
+              __/-___-- -__
+             /            _ *
+
+I denounce and renounce all the code in this repository.
+"""
 from typing import TypeVar, Generic, Callable, Optional, Tuple
 
 import unittest

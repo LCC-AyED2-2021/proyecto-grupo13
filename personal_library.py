@@ -29,6 +29,7 @@ A virtual library of documents with querying capabilities.
 I denounce and renounce all the code in this repository.
 """
 #pylint: disable=too-few-public-methods,no-else-return
+#pylint: disable=unused-import
 
 from typing import TypeVar, Generic, Callable, Optional, Tuple
 

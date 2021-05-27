@@ -42,8 +42,6 @@ import string
 # Path manipulation
 import os.path
 
-import algo1
-
 import libdic
 from libdic import Dic
 
@@ -206,29 +204,13 @@ def heading(level : int, sep : str = ' ') -> None:
     """ Prints a heading """
     print('#' * level + sep, end='')
 
-
-#def hash_str(_s : str) -> int:
-#    """ Hash a string """
-#    # TODO: Improve
-#    if len(_s) > 0:
-#        return 42 + ord(_s[0])
-#    else:
-#        return 69
-
-def string_hash_function(_size : int, _s : str) -> Callable [[int], int]:
-    """ Returns a string hash function """
-
-    _s=algo1.String(_s)
-    accum : int = 0
-
-    def hash_func(_key : str) -> int:
-        """ Polynomial rolling hash function """
-
-        p : int = 53
-        for _ in range(len(_s)): accum += _s[_]*p^_
-        return accum % _size
-
-    return hash_func
+def hash_str(_s : str) -> int:
+    """ Hash a string """
+    # TODO: Improve
+    if len(_s) > 0:
+        return 42 + ord(_s[0])
+    else:
+        return 69
 
 if __name__ == '__main__':
     main()

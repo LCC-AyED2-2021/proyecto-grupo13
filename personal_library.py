@@ -42,6 +42,11 @@ import string
 # Path manipulation
 import os.path
 
+# Entries in the directory
+import os #os.listdir()
+
+import algo1
+
 import libdic
 from libdic import Dic
 
@@ -137,7 +142,13 @@ def search(_lib_folder : str, _args : list[str]) -> None:
 
 def empty_doc_dic() -> Dic[str, int]:
     """ A Standard dictionary for the document's word count"""
+
+    """ hash_str is string_hash_function now
+     Is the replacement correct?
+    """
+
     return Dic(200, hash_str)
+    #return Dic(200, string_hash_function)
 
 def doc_count_words(_doc : Document) -> Dic[str, int]:
     """ Count the words in a document """
@@ -189,12 +200,38 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[str, TfidfRow]:
                 __dic,
                 libdic.assocs(counts))
 
+    """ hash_str is string_hash_function now
+    Is the replacement correct?
+    """
+
     tfidf : Dic[str, TfidfRow] = Dic(500, hash_str)
+    #tfidf : Dic[str, TfidfRow] = Dic(500, string_hash_function)
 
     return linkedlist.foldl(folder, tfidf, _docs)
 
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
+
+    """
+    We assume that _lib_folder ends with "/". Eg: "/home/user/"
+    """
+
+    entries = os.listdir(_lib_folder)
+    library : LinkedList[Document] = LinkedList()
+    is_title : bool = True
+
+    for doc in entries:
+        body : LinkedList[str] = LinkedList()
+        with open(_lib_folder + doc, 'r') as file_readable:
+            for line in file_readable:
+                for word in line.split():
+                    if is_title:
+                        title : str = word
+                        is_title = False
+                    else: linkedlist.insert(body, None, word)
+        new_doc : Document[str, LinkedList] = Document(title, body)
+        linkedlist.insert(library, None, new_doc)
+    return library
 
 ###############################################################################
 ## General purpose functions
@@ -211,6 +248,21 @@ def hash_str(_s : str) -> int:
         return 42 + ord(_s[0])
     else:
         return 69
+
+def string_hash_function(_size : int, _s : str) -> Callable[[str], int]:
+    """ Returns a string hash function """
+
+    string=algo1.String(_s)
+    hash_value : int = 0
+
+    def hash_func(_key : str) -> int:
+        """ Polynomial rolling hash function Horner's method"""
+
+        p : int = 53
+        for _ in range(len(string)): hash_value = (hash_value * ord(string[_]) + p) % _size
+        return hash_value
+
+    return hash_func
 
 if __name__ == '__main__':
     main()

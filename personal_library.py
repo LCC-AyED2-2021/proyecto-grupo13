@@ -118,16 +118,41 @@ def create(_lib_folder : str) -> None:
             file_handle.write(line)
 
 
-def title_normalize(title : str) -> str:
+def title_normalize(_title : String) -> String:
     """ Normalizes the file name:
 
     eg. "this is a test?_  " -> "this_is_a_test"
 
     """
-    parts = title.strip().lower().split()
-    words = [ ''.join( c for c in p if c in string.ascii_lowercase) for p in parts ]
-    return '_'.join(words)
+    """
+        Not tested with modified characters (á,ì,ŷ) and ñ
+    """
 
+    new_title : String = String('')
+    code : int
+    new_code : int
+    long : int = algo1.strlen(_title)
+
+    for _ in range(long):
+
+        change = True
+        code = ord(_title[_])
+
+        if code >= 65 and code <= 90:    # Uppercase letters
+            new_code = code + 32         # Changes to lowercase
+        elif code >=97 and code <= 122:  # Lowercase letters
+            new_code = code
+        elif code == 32:                 # ' ' character
+            if _ == 0 or _ == long-1:
+                change = False
+            new_code = 95                # _ character
+        else:                            # Other characters
+            change = False               # Ignored
+
+        if change:
+            new_title = algo1.concat(new_title, chr(new_code))
+
+    return new_title
 
 ###############################################################################
 ## Search specific code

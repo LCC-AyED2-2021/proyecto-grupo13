@@ -103,6 +103,14 @@ class TestFunctions(unittest.TestCase):
 
         # TODO: test the word "this"
 
+    def test_title_normalize(self):
+        """ Test title_normalize """
+
+        """ This dont works """
+        self.assertEqual(String("nice"),String("nice"))
+        self.assertEqual(String("The Jerusalem's Bible"),String("the_jerusalems_bible"))
+        self.assertEqual(String(" /home! {house_ARG"),String("home_house_arg"))
+        self.assertEqual(String("_AreA 61: _Ad "),String("area_ad"))
 
 if __name__ == '__main__':
     unittest.main()

@@ -212,26 +212,48 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[str, TfidfRow]:
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
 
-    """
-    We assume that _lib_folder ends with "/". Eg: "/home/user/"
-    """
+    def read_doc(_doc : String) -> Document: #qué devuelve?
+        """ Capture words in a document """
 
-    entries = os.listdir(_lib_folder)
-    library : LinkedList[Document] = LinkedList()
-    is_title : bool = True
+        title : String = algo1.String('')
+        word : String = algo1.String('')
+        body : LinkedList[String] = linkedlist.empty()
+        is_title : bool = True
 
-    for doc in entries:
-        body : LinkedList[str] = LinkedList()
-        with open(_lib_folder + doc, 'r') as file_readable:
-            for line in file_readable:
-                for word in line.split():
-                    if is_title:
-                        title : str = word
-                        is_title = False
-                    else: linkedlist.insert(body, None, word)
-        new_doc : Document[str, LinkedList] = Document(title, body)
-        linkedlist.insert(library, None, new_doc)
-    return library
+        for _ in range(len(_doc)):
+            if _doc[_] != ' ' and _doc[_:_+1] != '\n':
+                word=algo1.concat(word, _doc[_])
+            elif len(word) != 0:
+                if is_title:
+                    title = word
+                    is_title = False
+                else: body = linkedlist.cons(word, body)
+                word = algo1.String('')
+
+        new_doc : Document = Document(title, body)
+
+        return new_doc
+
+    # _lib_folder ends with "/"? Eg: "/home/user/"
+    # assert _s[-1] == '/' # Fijate >>> help("assert")
+    if _lib_folder[-1] != '/': _lib_folder = _lib_folder + '/'
+
+    # Existing path check
+    if os.path.exists(_lib_folder):
+
+        entries = os.listdir(_lib_folder)
+        library : LinkedList[Document] = linkedlist.empty()
+
+        # Access to documents
+        for doc in entries:
+
+            with open(_lib_folder + doc, 'r') as file_readable:
+                text : str = file_readable.read()
+            new_doc : Document = read_doc(algo1.String(text))
+            library = linkedlist.cons(library, new_doc)
+
+        return library
+    else: print("Invalid path")
 
 ###############################################################################
 ## General purpose functions
@@ -249,19 +271,17 @@ def hash_str(_s : str) -> int:
     else:
         return 69
 
-def string_hash_function(_size : int, _s : str) -> Callable[[str], int]:
+def string_hash_function(_size : int) -> Callable[[String], int]:
     """ Returns a string hash function """
-
-    string=algo1.String(_s)
-    hash_value : int = 0
-
-    def hash_func(_key : str) -> int:
-        """ Polynomial rolling hash function Horner's method"""
-
+​
+    def hash_func(_key : String) -> int:
+        """ Polynomial rolling hash function Horner's method O(|_key|)"""
+​
+        hash_value : int = 0
         p : int = 53
-        for _ in range(len(string)): hash_value = (hash_value * ord(string[_]) + p) % _size
+        for _ in range(len(_key)): hash_value = (hash_value * p + ord(_key[_])) % _size
         return hash_value
-
+​
     return hash_func
 
 if __name__ == '__main__':

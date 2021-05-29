@@ -78,6 +78,10 @@ class String:
 
         def __len__(self):
             return len(self.arr)
+
+def strlen(_s : String) -> int:
+    """ The length """
+    return len(_s)
  
 def substr(t,start,end):
        return String(''.join([t[i] for i in range(start,end)] ))

@@ -55,8 +55,8 @@ import linkedlist
 from linkedlist import LinkedList
 
 class Document:
-    uuid : int = 0
     """ The document representation """
+    uuid : int = 0
     def __init__(self,
             _title : String,
             _content : LinkedList[String]):
@@ -182,7 +182,8 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
                 0,
                 libdic.to_list(counts))
 
-        def folder_(__dic : Dic[String, TfidfRow], __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
+        def folder_(__dic : Dic[String,
+            TfidfRow], __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
             """ Fold a count entry into the matrix """
             (word, freq) = __elem
 
@@ -212,7 +213,7 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
         body : LinkedList[String] = linkedlist.empty()
         is_title : bool = True
 
-        for _ in range(len(_doc)):
+        for _ in range(algo1.strlen(_doc)):
             if _doc[_] != ' ' and _doc[_:_+1] != '\n':
                 word=algo1.concat(word, _doc[_])
             elif len(word) != 0:
@@ -226,9 +227,9 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
 
         return new_doc
 
-    # _lib_folder ends with "/"? Eg: "/home/user/"
-    # assert _s[-1] == '/' # Fijate >>> help("assert")
-    if _lib_folder[-1] != '/': _lib_folder = _lib_folder + '/'
+    # Add tailing / if missing
+    if _lib_folder[-1] != '/':
+        _lib_folder = _lib_folder + '/'
 
     # Existing path check
     if os.path.exists(_lib_folder):
@@ -265,8 +266,9 @@ def string_hash_function(_size : int) -> Callable[[String], int]:
         """ Polynomial rolling hash function Horner's method O(|_key|)"""
 
         hash_value : int = 0
-        p : int = 53
-        for _ in range(len(_key)): hash_value = (hash_value * p + ord(_key[_])) % _size
+        seed_value : int = 53
+        for _ in range(algo1.strlen(_key)):
+            hash_value = (hash_value * seed_value + ord(_key[_])) % _size
         return hash_value
 
     return hash_func

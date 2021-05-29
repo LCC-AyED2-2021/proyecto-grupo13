@@ -70,3 +70,29 @@ python personal_library.py --search word
 ```
 python personal_library.py -search <query> --sort
 ```
+
+# Acknowledgments
+
+```
+The Project Gutenberg EBook of Aesop’s Fables, by Aesop
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Aesop’s Fables
+
+Author: Aesop
+
+Translator: George Fyler Townsend
+
+Posting Date: June 25, 2008 [EBook #21]
+Release Date: September 30, 1991
+Last Updated: October 28, 2016
+
+Language: English
+
+Character set encoding: UTF-8
+```

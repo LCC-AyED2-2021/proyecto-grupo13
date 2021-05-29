@@ -41,6 +41,7 @@ from libdic import Dic
 
 class TestFunctions(unittest.TestCase):
     """ Tests for the personal library functions """
+
     def test_doc_count_words(self):
         """ Test doc_count_words """
         test_contents : LinkedList[str] = linkedlist.empty()

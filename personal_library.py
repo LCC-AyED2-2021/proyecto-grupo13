@@ -141,6 +141,11 @@ def search(_lib_folder : str, _args : list[str]) -> None:
     print(_args)
 
 
+def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
+    """Return the relevant row """
+
+    return libdic.search(_tfidf, _word)
+
 def empty_doc_dic() -> Dic[String, int]:
     """ A Standard dictionary for the document's word count"""
 
@@ -205,7 +210,7 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
 
-    def read_doc(_doc : String) -> Document: #qué devuelve?
+    def read_doc(_doc : String) -> Document:
         """ Capture words in a document """
 
         title : String = algo1.String('')

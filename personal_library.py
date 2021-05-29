@@ -45,6 +45,7 @@ import os.path
 # Entries in the directory
 import os #os.listdir()
 
+from algo1 import String
 import algo1
 
 import libdic
@@ -57,8 +58,8 @@ class Document:
     uuid : int = 0
     """ The document representation """
     def __init__(self,
-            _title : str,
-            _content : LinkedList[str]):
+            _title : String,
+            _content : LinkedList[String]):
         self.title = _title
         self.content = _content
         self.uuid = Document.uuid
@@ -140,20 +141,15 @@ def search(_lib_folder : str, _args : list[str]) -> None:
     print(_args)
 
 
-def empty_doc_dic() -> Dic[str, int]:
+def empty_doc_dic() -> Dic[String, int]:
     """ A Standard dictionary for the document's word count"""
 
-    """ hash_str is string_hash_function now
-     Is the replacement correct?
-    """
+    return Dic(200, string_hash_function(200))
 
-    return Dic(200, hash_str)
-    #return Dic(200, string_hash_function)
-
-def doc_count_words(_doc : Document) -> Dic[str, int]:
+def doc_count_words(_doc : Document) -> Dic[String, int]:
     """ Count the words in a document """
 
-    def folder(__acc : Dic[str, int], __word : str) -> Dic[str, int]:
+    def folder(__acc : Dic[String, int], __word : String) -> Dic[String, int]:
         """ Folds a new word into __acc """
         return libdic.update_with_default(__acc,
                 lambda x : x + 1,
@@ -173,20 +169,20 @@ class TfidfRow:
             _row : LinkedList[Tuple[int, float]]):
         self.row = _row
 
-def doc_tfidf(_docs : LinkedList[Document]) -> Dic[str, TfidfRow]:
+def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     """ Coumpute the tfidf of a set of documents """
 
 
-    def folder(__dic : Dic[str, TfidfRow], __doc : Document) -> Dic[str, TfidfRow]:
+    def folder(__dic : Dic[String, TfidfRow], __doc : Document) -> Dic[String, TfidfRow]:
         """ Fold a new document into the matrix """
 
-        counts : Dic[str, int] = doc_count_words(__doc)
+        counts : Dic[String, int] = doc_count_words(__doc)
 
         total_words : int = linkedlist.foldl(lambda x, y: x + y,
                 0,
                 libdic.to_list(counts))
 
-        def folder_(__dic : Dic[str, TfidfRow], __elem : Tuple[str, int]) -> Dic[str, TfidfRow]:
+        def folder_(__dic : Dic[String, TfidfRow], __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
             """ Fold a count entry into the matrix """
             (word, freq) = __elem
 
@@ -200,12 +196,8 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[str, TfidfRow]:
                 __dic,
                 libdic.assocs(counts))
 
-    """ hash_str is string_hash_function now
-    Is the replacement correct?
-    """
 
-    tfidf : Dic[str, TfidfRow] = Dic(500, hash_str)
-    #tfidf : Dic[str, TfidfRow] = Dic(500, string_hash_function)
+    tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
 
     return linkedlist.foldl(folder, tfidf, _docs)
 
@@ -250,10 +242,13 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
             with open(_lib_folder + doc, 'r') as file_readable:
                 text : str = file_readable.read()
             new_doc : Document = read_doc(algo1.String(text))
-            library = linkedlist.cons(library, new_doc)
+            library = linkedlist.cons(new_doc, library)
 
         return library
+
     else: print("Invalid path")
+
+    return linkedlist.empty()
 
 ###############################################################################
 ## General purpose functions
@@ -263,25 +258,17 @@ def heading(level : int, sep : str = ' ') -> None:
     """ Prints a heading """
     print('#' * level + sep, end='')
 
-def hash_str(_s : str) -> int:
-    """ Hash a string """
-    # TODO: Improve
-    if len(_s) > 0:
-        return 42 + ord(_s[0])
-    else:
-        return 69
-
 def string_hash_function(_size : int) -> Callable[[String], int]:
     """ Returns a string hash function """
-​
+
     def hash_func(_key : String) -> int:
         """ Polynomial rolling hash function Horner's method O(|_key|)"""
-​
+
         hash_value : int = 0
         p : int = 53
         for _ in range(len(_key)): hash_value = (hash_value * p + ord(_key[_])) % _size
         return hash_value
-​
+
     return hash_func
 
 if __name__ == '__main__':

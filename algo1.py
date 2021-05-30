@@ -95,3 +95,6 @@ def strcmp(t,p):
 
 def concat(s,c):
     return String(s.arr.data+c)
+
+def concat_string(s,c):
+    return String(s.arr.data+c.arr.data)

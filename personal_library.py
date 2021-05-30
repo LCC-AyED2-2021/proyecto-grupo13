@@ -124,6 +124,7 @@ def title_normalize(_title : String) -> String:
     eg. "this is a test?_  " -> "this_is_a_test"
 
     """
+    # O(|_title|)
     """
         Not tested with modified characters (á,ì,ŷ) and ñ
     """
@@ -166,10 +167,10 @@ def search(_lib_folder : str, _args : list[str]) -> None:
     print(_args)
 
 
-def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
+#def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
     """Return the relevant row """
 
-    return libdic.search(_tfidf, _word)
+#    return libdic.search(_tfidf, _word)
 
 def empty_doc_dic() -> Dic[String, int]:
     """ A Standard dictionary for the document's word count"""
@@ -235,31 +236,78 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
 
-    def read_doc(_doc : String) -> Document:
+    def read_doc(_doc : list) -> Document:
         """ Capture words in a document """
 
-        title : String = algo1.String('')
-        word : String = algo1.String('')
+        def read_line(_line : String, _list : LinkedList[String]) -> LinkedList[String]:
+            """ Capture words by line. Adds to _list """
+
+            word : String = String('')
+
+            # Explore characters in String
+            for _ in range(algo1.strlen(_line)):
+
+                if _line[_] != ' ' and _line[_] != '\n':
+                    # Save character
+                    word=algo1.concat(word, _line[_])
+
+                elif algo1.strlen(word) != 0:
+                    # Save word
+                    _list= linkedlist.cons(word, _list)
+                    word = algo1.String('')
+
+            return _list
+
+
+        def linkedlist_to_string(_list : LinkedList[String]) -> String:
+            # Concatenate linkedlist elements
+
+            return linkedlist.foldl(algo1.concat, String(''), _list)
+
+        """
+        def linkedlist_to_string(_list : LinkedList[String]) -> String:
+            # Concatenate linkedlist elements
+
+            text : String = String('')
+
+            for _ in range(linkedlist.length(_list)):
+                assert not _list.content is None
+                head = _list.content[0]
+                tail = _list.content[1]
+
+                text = algo1.concat_string(text, head)
+
+                _list = tail
+
+            return text
+        """
+
+        # LinkedLists for Document
+        title : LinkedList[String] = linkedlist.empty()
         body : LinkedList[String] = linkedlist.empty()
         is_title : bool = True
 
-        for _ in range(algo1.strlen(_doc)):
-            if _doc[_] != ' ' and _doc[_:_+1] != '\n':
-                word=algo1.concat(word, _doc[_])
-            elif len(word) != 0:
-                if is_title:
-                    title = word
-                    is_title = False
-                else: body = linkedlist.cons(word, body)
-                word = algo1.String('')
+        # Explore lists in _doc
+        for _ in range(len(_doc)):
+            if is_title:
+                title = read_line(String(_doc[_]), title)
+                is_title = False
+            else:
+                body = read_line(String(_doc[_]), body)
 
-        new_doc : Document = Document(title, body)
+        new_doc : Document = Document(linkedlist_to_string(title), body)
 
         return new_doc
 
     # Add tailing / if missing
     if _lib_folder[-1] != '/':
         _lib_folder = _lib_folder + '/'
+
+    # Add directory
+    if _lib_folder[0] != '/':
+        _lib_folder = os.getcwd() + '/' + _lib_folder
+    else:
+        _lib_folder = os.getcwd() + _lib_folder
 
     # Existing path check
     if os.path.exists(_lib_folder):
@@ -271,8 +319,8 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
         for doc in entries:
 
             with open(_lib_folder + doc, 'r') as file_readable:
-                text : str = file_readable.read()
-            new_doc : Document = read_doc(algo1.String(text))
+                text : list = file_readable.readlines()
+            new_doc : Document = read_doc(text)
             library = linkedlist.cons(new_doc, library)
 
         return library

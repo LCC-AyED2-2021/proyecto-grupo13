@@ -132,17 +132,26 @@ def title_normalize(_title : String) -> String:
     def delete_symbols(_name: String) -> String:
         """ Delete symbols (except '_' and ' ') """
 
+        def is_letter(_code : int) -> bool:
+            """ Detect letter """
+            lower : bool = code >= 65 and code <= 90
+            upper : bool = code >= 97 and code <= 122
+            space_lowdash : bool = code == 95 or code == 32
+            if lower or upper or space_lowdash:
+                return True
+            return False
+
         new_name : String = String('')
         code : int
 
         for _ in range(algo1.strlen(_name)):
             code = ord(_name[_])
-            if (code >= 65 and code <= 90) or (code >= 97 and code <= 122) or code == 95 or code == 32:
+            if is_letter(code):
                 new_name = algo1.concat(new_name, _name[_])
         return new_name
 
     def strip(_name: String) -> String:
-        """ Delete first and last ' ' """
+        """ Delete first and last ' '. Clean multiple ' ' """
 
         code : int
         spaces : int = 0
@@ -301,24 +310,6 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
             # Concatenate linkedlist elements
 
             return linkedlist.foldl(algo1.concat_string, String(''), _list)
-
-        """
-        def linkedlist_to_string(_list : LinkedList[String]) -> String:
-            # Concatenate linkedlist elements
-
-            text : String = String('')
-
-            for _ in range(linkedlist.length(_list)):
-                assert not _list.content is None
-                head = _list.content[0]
-                tail = _list.content[1]
-
-                text = algo1.concat_string(text, head)
-
-                _list = tail
-
-            return text
-        """
 
         # LinkedLists for Document
         title : LinkedList[String] = linkedlist.empty()

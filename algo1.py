@@ -6,6 +6,8 @@
 #pylint: disable=too-few-public-methods, invalid-name
 
 from typing import TypeVar, Generic, Callable, List
+from linkedlist import LinkedList
+import linkedlist
 
 import copy
 def input_int( str ):
@@ -96,5 +98,107 @@ def strcmp(t,p):
 def concat(s,c):
     return String(s.arr.data+c)
 
-def concat_string(s,c):
-    return String(s.arr.data+c.arr.data)
+def concat_string(_s: String, _c : String) -> String:
+    return String(_s.arr.data+_c.arr.data)
+
+def is_letter(_code : int) -> bool:
+    """ Detect letter """
+    lower : bool = _code >= 65 and _code <= 90
+    upper : bool = _code >= 97 and _code <= 122
+    space_lowdash : bool = _code == 95 or _code == 32
+    if lower or upper or space_lowdash:
+        return True
+    return False
+
+def delete_symbols(_name: String) -> String:
+    """ Delete symbols (except '_' and ' ') """
+
+    new_name : String = String('')
+    code : int
+
+    for _ in range(strlen(_name)):
+        code = ord(_name[_])
+        if is_letter(code):
+            new_name = concat(new_name, _name[_])
+    return new_name
+
+def strip(_name: String) -> String:
+    """ Delete first and last ' '. Clean multiple ' ' """
+
+    code : int
+    spaces : int = 0
+    status : bool = True
+    new_name : String = String('')
+
+    for _ in range(strlen(_name)):
+        if status:
+            if _name[_] != ' ':
+                new_name = concat(new_name, _name[_])
+                status = False
+        else:
+            if _name[_] != ' ':
+                if spaces != 0:
+                    new_name = concat(new_name, ' ')
+                    spaces = 0
+                new_name = concat(new_name, _name[_])
+            else:
+                spaces += 1
+    return new_name
+
+def split(_text: String, _limit : str) -> LinkedList[String]:
+    """ Return words in LinkedList. """
+
+    words : LinkedList = linkedlist.empty()
+    init : int = 0
+    end : int = 0
+
+    for _ in range(strlen(_text)):
+        if _text[_] == _limit:
+            if init != end:
+                words = linkedlist.cons(substr(_text, init, end), words)
+            init = end + 1
+        end += 1
+    if init != end:
+        words = linkedlist.cons(substr(_text, init, end), words)
+    return words
+
+def join(_words : LinkedList[String], _union : str) -> String:
+    """ Joins words with _union character """
+
+    text : String = String('')
+
+    for _ in range(linkedlist.length(_words)):
+        assert not _words.content is None
+        head = _words.content[0]
+        tail = _words.content[1]
+        #head tiene el primer elemento
+        text = concat_string(text, head)
+        text = concat(text, _union)
+        # tail tiene el resto de la lista
+        _words = tail
+    return substr(text, 0, strlen(text)-1)
+
+def join_space(_name: String, _union: str) -> String:
+    # Join character in ' '
+
+    new_name : String = String('')
+
+    for _ in range(strlen(_name)):
+        if _name[_] == ' ':
+            new_name = concat(new_name, _union)
+        else:
+            new_name = concat(new_name, _name[_])
+    return new_name
+
+def lower(_name: String) -> String:
+    """ Convert to lowercase """
+
+    code : int
+    new_name : String = String('')
+
+    for _ in range(strlen(_name)):
+        code = ord(_name[_])
+        if code >= 65 and code <= 90:
+            code += 32
+        new_name = concat(new_name, chr(code))
+    return new_name

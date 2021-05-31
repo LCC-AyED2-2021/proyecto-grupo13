@@ -129,78 +129,7 @@ def title_normalize(_title : String) -> String:
         Not tested with modified characters (á,ì,ŷ) and ñ
     """
 
-    def delete_symbols(_name: String) -> String:
-        """ Delete symbols (except '_' and ' ') """
-
-        def is_letter(_code : int) -> bool:
-            """ Detect letter """
-            lower : bool = code >= 65 and code <= 90
-            upper : bool = code >= 97 and code <= 122
-            space_lowdash : bool = code == 95 or code == 32
-            if lower or upper or space_lowdash:
-                return True
-            return False
-
-        new_name : String = String('')
-        code : int
-
-        for _ in range(algo1.strlen(_name)):
-            code = ord(_name[_])
-            if is_letter(code):
-                new_name = algo1.concat(new_name, _name[_])
-        return new_name
-
-    def strip(_name: String) -> String:
-        """ Delete first and last ' '. Clean multiple ' ' """
-
-        code : int
-        spaces : int = 0
-        status : bool = True
-        new_name : String = String('')
-
-        for _ in range(algo1.strlen(_name)):
-            if status:
-                if _name[_] != ' ':
-                    new_name = algo1.concat(new_name, _name[_])
-                    status = False
-            else:
-                if _name[_] != ' ':
-                    if spaces != 0:
-                        new_name = algo1.concat(new_name, ' ')
-                        spaces = 0
-                    new_name = algo1.concat(new_name, _name[_])
-                else:
-                    spaces += 1
-        return new_name
-
-    #def split(_name: String) -> String:
-
-    def join(_name: String, _union: str) -> String:
-        """ Join character in ' ' """
-
-        new_name : String = String('')
-
-        for _ in range(algo1.strlen(_name)):
-            if _name[_] == ' ':
-                new_name = algo1.concat(new_name, _union)
-            else:
-                new_name = algo1.concat(new_name, _name[_])
-        return new_name
-
-    def lower(_name: String) -> String:
-        """ Convert to lowercase """
-
-        code : int
-        new_name : String = String('')
-
-        for _ in range(algo1.strlen(_name)):
-            code = ord(_name[_])
-            if code >= 65 and code <= 90:
-                code += 32
-            new_name = algo1.concat(new_name, chr(code))
-        return new_name
-
-    return lower(join(strip(delete_symbols(_title)), '_'))
+    return algo1.lower(algo1.join(algo1.split(algo1.delete_symbols(_title), ' '), '_'))
 
 ###############################################################################
 ## Search specific code
@@ -296,11 +225,11 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
 
                 if _line[_] != ' ' and _line[_] != '\n':
                     # Save character
-                    word=algo1.concat(word, _line[_])
+                    word = algo1.concat(word, _line[_])
 
                 elif algo1.strlen(word) != 0:
                     # Save word
-                    _list= linkedlist.cons(word, _list)
+                    _list = linkedlist.cons(word, _list)
                     word = algo1.String('')
 
             return _list

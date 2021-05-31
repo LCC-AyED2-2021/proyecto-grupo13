@@ -129,31 +129,69 @@ def title_normalize(_title : String) -> String:
         Not tested with modified characters (á,ì,ŷ) and ñ
     """
 
-    new_title : String = String('')
-    code : int
-    new_code : int
-    long : int = algo1.strlen(_title)
+    def delete_symbols(_name: String) -> String:
+        """ Delete symbols (except '_' and ' ') """
 
-    for _ in range(long):
+        new_name : String = String('')
+        code : int
 
-        change = True
-        code = ord(_title[_])
+        for _ in range(algo1.strlen(_name)):
+            code = ord(_name[_])
+            if (code >= 65 and code <= 90) or (code >= 97 and code <= 122) or code == 95 or code == 32:
+                new_name = algo1.concat(new_name, _name[_])
+        return new_name
 
-        if code >= 65 and code <= 90:    # Uppercase letters
-            new_code = code + 32         # Changes to lowercase
-        elif code >=97 and code <= 122:  # Lowercase letters
-            new_code = code
-        elif code == 32:                 # ' ' character
-            if _ == 0 or _ == long-1:
-                change = False
-            new_code = 95                # _ character
-        else:                            # Other characters
-            change = False               # Ignored
+    def strip(_name: String) -> String:
+        """ Delete first and last ' ' """
 
-        if change:
-            new_title = algo1.concat(new_title, chr(new_code))
+        code : int
+        spaces : int = 0
+        status : bool = True
+        new_name : String = String('')
 
-    return new_title
+        for _ in range(algo1.strlen(_name)):
+            if status:
+                if _name[_] != ' ':
+                    new_name = algo1.concat(new_name, _name[_])
+                    status = False
+            else:
+                if _name[_] != ' ':
+                    if spaces != 0:
+                        new_name = algo1.concat(new_name, ' ')
+                        spaces = 0
+                    new_name = algo1.concat(new_name, _name[_])
+                else:
+                    spaces += 1
+        return new_name
+
+    #def split(_name: String) -> String:
+
+    def join(_name: String, _union: str) -> String:
+        """ Join character in ' ' """
+
+        new_name : String = String('')
+
+        for _ in range(algo1.strlen(_name)):
+            if _name[_] == ' ':
+                new_name = algo1.concat(new_name, _union)
+            else:
+                new_name = algo1.concat(new_name, _name[_])
+        return new_name
+
+    def lower(_name: String) -> String:
+        """ Convert to lowercase """
+
+        code : int
+        new_name : String = String('')
+
+        for _ in range(algo1.strlen(_name)):
+            code = ord(_name[_])
+            if code >= 65 and code <= 90:
+                code += 32
+            new_name = algo1.concat(new_name, chr(code))
+        return new_name
+
+    return lower(join(strip(delete_symbols(_title)), '_'))
 
 ###############################################################################
 ## Search specific code
@@ -167,10 +205,10 @@ def search(_lib_folder : str, _args : list[str]) -> None:
     print(_args)
 
 
-#def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
+def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
     """Return the relevant row """
 
-#    return libdic.search(_tfidf, _word)
+    return libdic.search(_tfidf, _word)
 
 def empty_doc_dic() -> Dic[String, int]:
     """ A Standard dictionary for the document's word count"""
@@ -262,7 +300,7 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
         def linkedlist_to_string(_list : LinkedList[String]) -> String:
             # Concatenate linkedlist elements
 
-            return linkedlist.foldl(algo1.concat, String(''), _list)
+            return linkedlist.foldl(algo1.concat_string, String(''), _list)
 
         """
         def linkedlist_to_string(_list : LinkedList[String]) -> String:
@@ -309,6 +347,7 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
     else:
         _lib_folder = os.getcwd() + _lib_folder
 
+    print(_lib_folder)
     # Existing path check
     if os.path.exists(_lib_folder):
 

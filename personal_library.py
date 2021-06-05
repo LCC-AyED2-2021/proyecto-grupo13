@@ -300,7 +300,8 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
             else:
                 body = read_line(String(_doc[_]), body)
 
-        new_doc : Document = Document(linkedlist_to_string(title), body)
+        new_doc : Document = Document(
+                algo1.join(linkedlist.reverse(title), ' '), body)
 
         return new_doc
 

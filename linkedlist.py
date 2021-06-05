@@ -50,7 +50,10 @@ class LinkedList(Generic[A]):
         if self.content is None:
             return ""
         else:
-            return str(self.content[0]) + "," + str(self.content[1])
+            try:
+                return str(self.content[0]) + "," + str(self.content[1])
+            except RecursionError:
+                return str(self.content[0]) + ", ..."
 
 def empty() -> LinkedList[A]:
     """ Empty """
@@ -96,7 +99,18 @@ def lmap(mapper: Callable[[A], B], linked_list: LinkedList[A]) -> LinkedList[B]:
         head = linked_list.content[0]
         tail = linked_list.content[1]
 
-        return cons(mapper(head), lmap(mapper, tail))
+        try:
+            return cons(mapper(head), lmap(mapper, tail))
+        except RecursionError:
+            rest = tail
+            finish = empty()
+
+            while not rest.content is None:
+                rhead = rest.content[0]
+                rest = rest.content[1]
+                finish = cons(mapper(rhead), finish)
+
+            return cons(mapper(head), finish)
 
 def land(linked_list: LinkedList[bool]) -> bool:
     """ all true """

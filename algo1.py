@@ -8,6 +8,7 @@
 from typing import TypeVar, Generic, Callable, List
 from linkedlist import LinkedList
 import linkedlist
+import functools
 
 import copy
 def input_int( str ):
@@ -66,6 +67,7 @@ class Array(Generic[V]):
     def __len__(self):
         return self.size
 
+@functools.total_ordering
 class String:
     """Hell on Earth"""
     def __init__(self,string):
@@ -83,6 +85,12 @@ class String:
 
     def __len__(self):
         return len(self.arr)
+
+    def __lt__(self, other):
+        return self.arr.data < other.arr.data
+
+    def __eq__(self, other):
+        return self.arr.data == other.arr.data
 
 def strlen(_s : String) -> int:
     """ The length """

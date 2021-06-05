@@ -65,6 +65,20 @@ class Document:
         self.uuid = Document.uuid
         Document.uuid = Document.uuid + 1
 
+    def __str__(self):
+        return str(self.uuid) + str(self.title) + "\n" + str(self.content)
+
+class TfidfRow:
+    """ An alias for the rows of the matrix.
+
+    Elements are the doc.hash and the tfidf value.
+
+    This could be upgraded to a priority queue.
+    """
+    def __init__(self,
+            _row : LinkedList[Tuple[int, float]]):
+        self.row = _row
+
 def main() -> None:
     """ The entry point """
 
@@ -94,8 +108,10 @@ def create(_lib_folder : str) -> None:
     print("Creating a document\n")
 
     doc_title = input("What's the docment's title?\n")
-    file_name = title_normalize(doc_title) + ".txt"
-    file_path = os.path.join(_lib_folder, file_name)
+    file_name = algo1.concat_string(
+            title_normalize(String(doc_title)),
+            String(".txt"))
+    file_path = os.path.join(_lib_folder, file_name.arr.data)
 
 
     # Keep asking until there are no colisions
@@ -106,8 +122,9 @@ def create(_lib_folder : str) -> None:
         print("Creating a document\n")
 
         doc_title = input("What's the docment's title?\n")
-        file_name = title_normalize(doc_title) + ".txt"
-        file_path = os.path.join(_lib_folder, file_name)
+        file_name = algo1.concat_string(
+                title_normalize(String(doc_title)), String(".txt"))
+        file_path = os.path.join(_lib_folder, file_name.arr.data)
 
     # At this point we know the document is not present
 
@@ -165,16 +182,6 @@ def doc_count_words(_doc : Document) -> Dic[String, int]:
 
     return linkedlist.foldl(folder, empty_doc_dic(), _doc.content)
 
-class TfidfRow:
-    """ An alias for the rows of the matrix.
-
-    Elements are the doc.hash and the tfidf value.
-
-    This could be upgraded to a priority queue.
-    """
-    def __init__(self,
-            _row : LinkedList[Tuple[int, float]]):
-        self.row = _row
 
 def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     """ Coumpute the tfidf of a set of documents """

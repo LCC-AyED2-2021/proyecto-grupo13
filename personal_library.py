@@ -177,6 +177,7 @@ def search(_lib_folder : str, _args : str) -> None:
 
         result_row = results.row
 
+        print("Relevance", "id", "title", sep="\t")
         while not result_row.content is None:
 
             (doc_id, relevance) =  result_row.content[0]
@@ -184,7 +185,7 @@ def search(_lib_folder : str, _args : str) -> None:
 
             title = libdic.search(Document.directory, doc_id)
 
-            print(relevance, doc_id, title)
+            print(relevance, doc_id, title, sep="\t")
 
 
 

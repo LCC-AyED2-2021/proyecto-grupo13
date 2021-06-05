@@ -35,22 +35,24 @@ V = TypeVar('V')
 
 # Clase arreglos
 class Array(Generic[V]):
+    """ Hell on Mars """
     data : List[V] =[]
     def __init__(self,size=None,init_value=0):
-        if size == None:
+        if size is None:
             self.size=0
         else:
             self.size=size
-            if type(init_value)!=Array:
+            if isinstance(init_value, Array):
                 self.data= [copy.deepcopy(None) for i in range(0,size)]
             else:
                 self.data= [copy.deepcopy(init_value) for i in range(0,size)]
             self.type = type(init_value)
+
     def __getitem__(self,index):
         if index > self.size:
-            print ("IndexError: index Out of bounds")
-        else:
-            return self.data[index]
+            raise Exception("IndexError: index Out of bounds")
+
+        return self.data[index]
     def __setitem__(self,index,value):
         if index > self.size:
             print ("IndexError: index Out of bounds")
@@ -62,43 +64,52 @@ class Array(Generic[V]):
         return str([self.data[i] for i in range(0,len(self.data))])
 
     def __len__(self):
-        return(self.size)
+        return self.size
 
 class String:
-        def __init__(self,string):
-            self.arr=Array(len(string),'c')
-            self.arr.data=string
+    """Hell on Earth"""
+    def __init__(self,string):
+        self.arr=Array(len(string),'c')
+        self.arr.data=string
 
-        def __getitem__(self,index):
-            return self.arr[index]
+    def __getitem__(self,index):
+        return self.arr[index]
 
-        def __setitem__(self,index,value):
-            self.arr[index]=value
+    def __setitem__(self,index,value):
+        self.arr[index]=value
 
-        def __str__(self):
-            return str(self.arr.data)
+    def __str__(self):
+        return str(self.arr.data)
 
-        def __len__(self):
-            return len(self.arr)
+    def __len__(self):
+        return len(self.arr)
 
 def strlen(_s : String) -> int:
     """ The length """
     return len(_s)
- 
-def substr(t,start,end):
-       return String(''.join([t[i] for i in range(start,end)] ))
+
+def substr(t : String ,start : int,end : int):
+    """ A substring """
+    assert start >= 0
+    assert end >= 0
+    return String(''.join([t[i] for i in range(start,end)] ))
 
 # O(t+1). Donde t es la cantidad de caracteres que matchearon y 1 es para el caso de t=0
-def strcmp(t,p):
-    for i in range(0,len(p)):
-         if t[i] != p[i]:
+def strcmp(t : String ,p : String):
+    """ Compare strings """
+    for i in range(strlen(p)):
+        if t[i] != p[i]:
             return False
     return True
 
+# O(|s|)
 def concat(s,c):
+    """ Concatenate """
     return String(s.arr.data+c)
 
+# O(|s|)
 def concat_string(_s: String, _c : String) -> String:
+    """ Concatenate """
     return String(_s.arr.data+_c.arr.data)
 
 def is_letter(_code : int) -> bool:
@@ -125,7 +136,6 @@ def delete_symbols(_name: String) -> String:
 def strip(_name: String) -> String:
     """ Delete first and last ' '. Clean multiple ' ' """
 
-    code : int
     spaces : int = 0
     status : bool = True
     new_name : String = String('')
@@ -179,7 +189,7 @@ def join(_words : LinkedList[String], _union : str) -> String:
     return substr(text, 0, strlen(text)-1)
 
 def join_space(_name: String, _union: str) -> String:
-    # Join character in ' '
+    """ Join character in ' ' """
 
     new_name : String = String('')
 
@@ -198,7 +208,7 @@ def lower(_name: String) -> String:
 
     for _ in range(strlen(_name)):
         code = ord(_name[_])
-        if code >= 65 and code <= 90:
+        if 65 <= code <= 90:
             code += 32
         new_name = concat(new_name, chr(code))
     return new_name

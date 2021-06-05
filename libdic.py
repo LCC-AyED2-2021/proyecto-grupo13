@@ -37,6 +37,7 @@ import linkedlist
 
 K = TypeVar('K')
 V = TypeVar('V')
+W = TypeVar('W')
 
 class Dic(Generic[K, V]):
     """ The dictionary class """
@@ -52,6 +53,7 @@ class Dic(Generic[K, V]):
             self.table[idx] = linkedlist.empty()
 
         self.hash_function = _hash_function
+        self.size = _size
 
 
 def multiplicative_hash_function(_size: int, _spread: float) -> Callable[[int], int]:
@@ -138,3 +140,14 @@ def includes(_a : Dic[K, V], _b : Dic[K, V]) -> bool:
     keys_b = keys(_b)
 
     return linkedlist.lall(lambda x : not search(_a, x) is None, keys_b)
+
+def dmap(_mapper : Callable[[V], W], _dic : Dic[K, V]) -> Dic[K, W]:
+    """ Maps the values """
+
+    retDic : Dic[K, W] = Dic(_dic.size, _dic.hash_function)
+
+    for idx in range(_dic.size):
+        retDic.table[idx] = linkedlist.lmap(lambda p: (p[0], _mapper(p[1])),
+            _dic.table[idx])
+
+    return retDic

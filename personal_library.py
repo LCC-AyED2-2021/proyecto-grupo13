@@ -57,6 +57,10 @@ from linkedlist import LinkedList
 class Document:
     """ The document representation """
     uuid : int = 0
+
+    directory : Dic[int, String] = Dic(1000,
+            libdic.multiplicative_hash_function(1000, libdic.golden_ratio()))
+
     def __init__(self,
             _title : String,
             _content : LinkedList[String]):
@@ -64,6 +68,9 @@ class Document:
         self.content = _content
         self.uuid = Document.uuid
         Document.uuid = Document.uuid + 1
+
+        Document.directory = libdic.insert(Document.directory, self.uuid,
+                self.title)
 
     def __str__(self):
         return str(self.uuid) + str(self.title) + "\n" + str(self.content)
@@ -152,12 +159,33 @@ def title_normalize(_title : String) -> String:
 ## Search specific code
 ###############################################################################
 
-def search(_lib_folder : str, _args : list[str]) -> None:
+def search(_lib_folder : str, _args : str) -> None:
     """ Handles the search of documents """
 
-    print("Searching")
-    print(_lib_folder)
-    print(_args)
+    print("Searching: " + _args)
+
+    documetnts = load_documents(_lib_folder)
+
+    tfidf = doc_tfidf(documetnts)
+
+    results = query(String(_args), tfidf)
+
+
+    if results is None:
+        print("No results")
+    else:
+
+        result_row = results.row
+
+        while not result_row.content is None:
+
+            (doc_id, relevance) =  result_row.content[0]
+            result_row = result_row.content[1]
+
+            title = libdic.search(Document.directory, doc_id)
+
+            print(relevance, doc_id, title)
+
 
 
 def query(_word : String, _tfidf : Dic[String, TfidfRow]) -> Optional[TfidfRow]:
@@ -196,13 +224,15 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
                 0,
                 libdic.to_list(counts))
 
+
         def folder_(__dic : Dic[String,
             TfidfRow], __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
             """ Fold a count entry into the matrix """
             (word, freq) = __elem
 
             return libdic.update_with_default(__dic,
-                    lambda x : TfidfRow(linkedlist.insert(x.row , __doc.uuid, freq)),
+                    lambda x : TfidfRow(linkedlist.insert(x.row , __doc.uuid,
+                        freq / total_words)),
                     word,
                     TfidfRow(linkedlist.singleton((__doc.uuid, freq / total_words))))
 
@@ -214,7 +244,16 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 
     tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
 
-    return linkedlist.foldl(folder, tfidf, _docs)
+    def lte(__a : Tuple[int, float], __b : Tuple[int, float]) -> bool:
+        return __a[1] > __b[1]
+
+    tfidf = linkedlist.foldl(folder, tfidf, _docs)
+
+    tfidf = libdic.dmap(lambda r:
+            # TfidfRow(linkedlist.quick_sort_by(lte, r.row)), tfidf)
+            TfidfRow(linkedlist.quick_sort_by(lte, r.row)), tfidf)
+
+    return tfidf
 
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
@@ -274,7 +313,6 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
     else:
         _lib_folder = os.getcwd() + _lib_folder
 
-    print(_lib_folder)
     # Existing path check
     if os.path.exists(_lib_folder):
 

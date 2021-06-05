@@ -103,7 +103,7 @@ def lmap(mapper: Callable[[A], B], linked_list: LinkedList[A]) -> LinkedList[B]:
             return cons(mapper(head), lmap(mapper, tail))
         except RecursionError:
             rest = tail
-            finish = empty()
+            finish : LinkedList[B] = empty()
 
             while not rest.content is None:
                 rhead = rest.content[0]
@@ -355,6 +355,111 @@ def group_count(_linked_list : LinkedList[A]) -> LinkedList[Tuple[A, int]]:
 def lsum(_linked_list : LinkedList[int]) -> int:
     """ Sums ints """
     return foldl(lambda x, y : x + y, 0, _linked_list)
+
+def partition(_predicate : Callable[[A], bool]
+        , _linked_list : LinkedList[A]) -> Tuple[LinkedList[A], LinkedList[A]]:
+    """ partitions by the predicate """
+
+
+    if _linked_list.content is None:
+        return (empty(), empty())
+
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    # rest = _linked_list.content[1]
+
+    #t = empty()
+    #f = empty()
+
+    #if _predicate(head):
+    #    t = cons(head, t)
+    #else:
+    #    f = cons(head, f)
+
+    #while not rest.content is None:
+    #    head = rest.content[0]
+    #    rest = rest.content[1]
+
+    #    if _predicate(head):
+    #        t = cons(head, t)
+    #    else:
+    #        f = cons(head, f)
+
+    #return (t, f)
+
+    (t, f) = partition(_predicate, tail)
+
+    if _predicate(head):
+        return (cons(head, t), f)
+
+    return (t, cons(head, f))
+
+
+def quick_sort_by(_lte : Callable[[A, A], bool],
+        _linked_list : LinkedList[A]) -> LinkedList[A]:
+    """Sorts a list using quick sort algorithm"""
+    # It uses the median pivot technique to have better chances of picking a pivot
+    # that is near the median of the list.
+    # Eg. The pivot is guaranteed to be the median on a three element list.
+    #
+    # Having the pivot near the median means the list splist nearly in half.
+    # This comes with a slight complexity cost.
+
+    if _linked_list.content is None:
+        return empty()
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    if tail.content is None:
+        # A snigleton list
+        return singleton(head)
+
+    tail_head = tail.content[0]
+    tail_tail = tail.content[1]
+
+    if tail_tail.content is None:
+        # Sort a two element list
+        if _lte(head, tail_head):
+            return cons(head, cons(tail_head, empty()))
+        else:
+            return cons(tail_head, cons(head, empty()))
+
+    # selects three list positions and search for their values
+    # `pivot` has the a value that is in the middle of the three
+    # randomly selected. E.g: 1,5,2 -> 2 is the pivot
+    # tail_tail has length of at least 1
+
+    # including the two extracted heads
+    sample1 = head
+    sample2 = tail_head
+    sample3 = tail_tail.content[0]
+
+    min_sample : A = sample1 if _lte(sample1, sample2) else sample2
+    min_sample = sample3 if _lte(sample3, min_sample) else min_sample
+
+    max_sample : A = sample1 if not _lte(sample1, sample2) else sample2
+    max_sample = sample3 if not _lte(sample3, max_sample) else max_sample
+
+    #if (sample1 != min_value) and (sample1 != max_value):
+    if sample1 not in (min_sample, max_sample):
+        pivot = sample1
+    elif sample2 not in (min_sample, max_sample):
+        pivot = sample2
+    else:
+        pivot = sample3
+
+    assert not pivot is None
+
+    (pivots, non_pivots) = partition(lambda x: x == pivot, _linked_list)
+
+    (left, right) = partition(lambda x: _lte(x, pivot), non_pivots)
+
+    return concatenate(
+        quick_sort_by(_lte, left),
+        concatenate(pivots, quick_sort_by(_lte, right)))
 
 def main() -> None:
     """ main """

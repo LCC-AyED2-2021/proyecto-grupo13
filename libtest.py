@@ -109,7 +109,7 @@ class TestFunctions(unittest.TestCase):
     def test_delete_symbols(self):
         """ Test the delete_symbols function """
 
-        self.assertEqual(algo1.delete_symbols(String("?")).arr.data, String("").arr.data)
+        self.assertEqual(algo1.delete_symbols(String("?")), String(""))
 
     def test_title_normalize(self):
         """ Test title_normalize """

@@ -17,35 +17,36 @@ optional arguments:
 ## Example run
 
 ```
-python personal_library.py books --search Fox
+$ python personal_library.py books --search Fox
 
 Searching: Fox
 Relevance	id	title
-0.028985507246376812	216	ApetheandFox,theWolf,The
-0.026041666666666668	251	FoxtheandEagleThe
-0.02564102564102564	52	FoxtheandFarmerThe
-0.022099447513812154	44	WoodcuttertheandFoxThe
-0.02040816326530612	271	FoxtheandLionThe
-0.0189873417721519	69	AsstheandFox,theLion,The
-0.017543859649122806	311	CranetheandFoxThe
-0.016129032258064516	122	FoxtheandBearThe
-0.015873015873015872	234	FrogQuackThe
-0.015789473684210527	235	FoxtheandWolf,theLion,The
-0.015625	39	FoxtheandBoarWildThe
-0.014925373134328358	243	SkinLion’stheinAssThe
-0.014285714285714285	256	FoxtheandJackdawThe
-0.013513513513513514	77	FoxtheandCrabThe
-0.013333333333333334	212	FoxtheandCock,theDog,The
-0.013215859030837005	131	GoattheandFoxThe
-0.012048192771084338	106	MonkeytheandFoxThe
-0.011627906976744186	155	FoxtheandMouse,theLion,The
-0.00980392156862745	43	FoxSwollenThe
-0.009259259259259259	125	LiontheandFox,theAss,The
-0.00819672131147541	194	CrowtheandFoxThe
-0.008064516129032258	167	MonkeytheandFoxThe
-0.007575757575757576	83	LionandBowmanThe
-0.007462686567164179	117	TortoisetheandHareThe
-0.006493506493506494	138	LionSickThe
+0.028985507246376812	216	The Wolf, the Fox, and the Ape
+0.026041666666666668	251	The Eagle and the Fox
+0.02564102564102564	52	The Farmer and the Fox
+0.022099447513812154	44	The Fox and the Woodcutter
+0.02040816326530612	271	The Lion and the Fox
+0.0189873417721519	69	The Lion, the Fox, and the Ass
+0.017543859649122806	311	The Fox and the Crane
+0.016129032258064516	122	The Bear and the Fox
+0.015873015873015872	234	The Quack Frog
+0.015789473684210527	235	The Lion, the Wolf, and the Fox
+0.015625	39	The Wild Boar and the Fox
+0.014925373134328358	243	The Ass in the Lion’s Skin
+0.014285714285714285	256	The Jackdaw and the Fox
+0.013513513513513514	77	The Crab and the Fox
+0.013333333333333334	212	The Dog, the Cock, and the Fox
+0.013215859030837005	131	The Fox and the Goat
+0.012048192771084338	106	The Fox and the Monkey
+0.011627906976744186	155	The Lion, the Mouse, and the Fox
+0.00980392156862745	43	The Swollen Fox
+0.009259259259259259	125	The Ass, the Fox, and the Lion
+0.00819672131147541	194	The Fox and the Crow
+0.008064516129032258	167	The Fox and the Monkey
+0.007575757575757576	83	The Bowman and Lion
+0.007462686567164179	117	The Hare and the Tortoise
+0.006493506493506494	138	The Sick Lion
+
 ```
 
 # Details

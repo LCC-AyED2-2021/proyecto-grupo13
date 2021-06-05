@@ -105,8 +105,9 @@ def is_letter(_code : int) -> bool:
     """ Detect letter """
     lower : bool = _code >= 65 and _code <= 90
     upper : bool = _code >= 97 and _code <= 122
-    space_lowdash : bool = _code == 95 or _code == 32
-    if lower or upper or space_lowdash:
+    #space_lowdash : bool = _code == 95 or _code == 32
+    space : bool = _code == 32
+    if lower or upper or space:
         return True
     return False
 
@@ -172,11 +173,12 @@ def join(_words : LinkedList[String], _union : str) -> String:
         head = _words.content[0]
         tail = _words.content[1]
         #head tiene el primer elemento
-        text = concat_string(text, head)
-        text = concat(text, _union)
+
+        text = concat_string(head, text)
+        text = concat_string(String(_union), text)
         # tail tiene el resto de la lista
         _words = tail
-    return substr(text, 0, strlen(text)-1)
+    return substr(text, 1, strlen(text))
 
 def join_space(_name: String, _union: str) -> String:
     # Join character in ' '

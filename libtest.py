@@ -115,10 +115,10 @@ class TestFunctions(unittest.TestCase):
         """ Test title_normalize """
 
         """ This dont works """
-        self.assertEqual(String("nice"),String("nice"))
-        self.assertEqual(String("The Jerusalem's Bible"),String("the_jerusalems_bible"))
-        self.assertEqual(String(" /home! {house_ARG"),String("home_house_arg"))
-        self.assertEqual(String("_AreA 61: _Ad "),String("area_ad"))
+        self.assertEqual(personal_library.title_normalize(String("nice")).arr.data, String("nice").arr.data)
+        self.assertEqual(personal_library.title_normalize(String("The Jerusalem's Bible")).arr.data, String("the_jerusalems_bible").arr.data)
+        self.assertEqual(personal_library.title_normalize(String(" /home! {house_ARG")).arr.data, String("home_housearg").arr.data)
+        self.assertEqual(personal_library.title_normalize(String("_AreA 61: _Ad ")).arr.data, String("area_ad").arr.data)
 
 
 

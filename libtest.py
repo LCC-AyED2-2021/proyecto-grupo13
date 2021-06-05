@@ -39,6 +39,9 @@ from linkedlist import LinkedList
 import libdic
 from libdic import Dic
 
+from algo1 import String
+import algo1
+
 class TestFunctions(unittest.TestCase):
     """ Tests for the personal library functions """
 
@@ -103,6 +106,11 @@ class TestFunctions(unittest.TestCase):
 
         # TODO: test the word "this"
 
+    def test_delete_symbols(self):
+        """ Test the delete_symbols function """
+
+        self.assertEqual(algo1.delete_symbols(String("?")).arr.data, String("").arr.data)
+
     def test_title_normalize(self):
         """ Test title_normalize """
 
@@ -111,6 +119,9 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(String("The Jerusalem's Bible"),String("the_jerusalems_bible"))
         self.assertEqual(String(" /home! {house_ARG"),String("home_house_arg"))
         self.assertEqual(String("_AreA 61: _Ad "),String("area_ad"))
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -33,6 +33,7 @@ I denounce and renounce all the code in this repository.
 
 from typing import TypeVar, Generic, Callable, Optional, Tuple
 
+import math
 # Capture command line arguments
 import sys
 # Parse command line arguments
@@ -215,9 +216,39 @@ def doc_count_words(_doc : Document) -> Dic[String, int]:
 def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     """ Coumpute the tfidf of a set of documents """
 
+    n_docs : int = linkedlist.length(_docs)
 
-    def folder(__dic : Dic[String, TfidfRow], __doc : Document) -> Dic[String, TfidfRow]:
+    assert n_docs > 0
+
+    def idf_folder(__idf : Dic[String, float],
+            __doc : Document) -> Dic[String, float]:
         """ Fold a new document into the matrix """
+
+        word_set : Dic[String, int] = doc_count_words(__doc)
+
+        def folder_(___idf : Dic[String, float],
+                ___word : String) -> Dic[String, float]:
+            """ Fold a new word into the matrix """
+
+            return libdic.update_with_default(___idf,
+                    lambda x: x + 1,
+                    ___word, 1)
+
+        return linkedlist.foldl(folder_, __idf, libdic.keys(word_set))
+
+    # idf["word"] = log (n_docs / <number of docs that contain "word" )
+
+    idf : Dic[String, float] = Dic(500, string_hash_function(500))
+
+    idf = linkedlist.foldl(idf_folder, idf, _docs)
+
+    idf = libdic.dmap(lambda x : math.log(n_docs / x), idf)
+
+    def tfidf_folder(__tf : Dic[String, TfidfRow],
+            __doc : Document) -> Dic[String, TfidfRow]:
+        """ Fold a new document into the matrix """
+
+        nonlocal idf
 
         counts : Dic[String, int] = doc_count_words(__doc)
 
@@ -225,36 +256,49 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
                 0,
                 libdic.to_list(counts))
 
-
-        def folder_(__dic : Dic[String,
-            TfidfRow], __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
+        def folder_(__tf : Dic[String, TfidfRow],
+                __elem : Tuple[String, int]) -> Dic[String, TfidfRow]:
             """ Fold a count entry into the matrix """
+            nonlocal idf
+
             (word, freq) = __elem
 
-            return libdic.update_with_default(__dic,
+            word_idf_result = libdic.search(idf, word)
+
+            assert not word_idf_result is None
+
+            word_idf : float = word_idf_result
+
+
+            return libdic.update_with_default(__tf,
                     lambda x : TfidfRow(linkedlist.insert(x.row , __doc.uuid,
-                        freq / total_words)),
+                        freq / total_words * word_idf)),
                     word,
-                    TfidfRow(linkedlist.singleton((__doc.uuid, freq / total_words))))
+                    TfidfRow(linkedlist.singleton((__doc.uuid, freq / total_words * word_idf))))
 
 
         return linkedlist.foldl(folder_,
-                __dic,
+                __tf,
                 libdic.assocs(counts))
 
+    #                      <number of times "word" appears in doc>
+    # tfidf["word", doc] = --------------------------------------- * idf["word"]
+    #                      <total words in doc>
 
     tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
 
+    tfidf = linkedlist.foldl(tfidf_folder, tfidf, _docs)
+
+    # Sort in decreasing order
     def lte(__a : Tuple[int, float], __b : Tuple[int, float]) -> bool:
         return __a[1] > __b[1]
 
-    tfidf = linkedlist.foldl(folder, tfidf, _docs)
 
     tfidf = libdic.dmap(lambda r:
-            # TfidfRow(linkedlist.quick_sort_by(lte, r.row)), tfidf)
             TfidfRow(linkedlist.quick_sort_by(lte, r.row)), tfidf)
 
     return tfidf
+
 
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """

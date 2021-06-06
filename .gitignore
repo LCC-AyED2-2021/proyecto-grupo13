@@ -7,3 +7,7 @@ __pycache__/
 ### Kate ###
 .*.kate-swp
 .swp.*
+
+### Persist ###
+
+*.def

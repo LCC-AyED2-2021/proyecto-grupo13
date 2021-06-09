@@ -1,4 +1,5 @@
 import def_persist
+from algo import Array #para matriz
 import algo1
 import random
 from linkedlist import LinkedList
@@ -7,8 +8,8 @@ import linkedlist
 def main():
 
     ################################## Print Array
-    arr = algo1.Array(10, 0)
-    for _ in range(10):
+    arr = algo1.Array(3, 0)
+    for _ in range(3):
         arr[_] = random.randint(10,60)
     print("Array type")
     print(arr)
@@ -23,6 +24,25 @@ def main():
     print("Reading")
     print(arr)
     print(type(arr))
+
+    ################################## Print Matrix
+    matrix = Array(2, Array(3,0))
+    for _ in range(2):
+        for __ in range (3):
+            matrix[_][__] = random.randint(10,60)
+    print("Array type")
+    print(matrix)
+    print(type(matrix))
+    # Saving
+    with open('data_matrix.def', 'w') as file:
+        def_persist.save(matrix, file)
+
+    # Opening
+    with open('data_matrix.def', 'r') as file:
+        matrix = def_persist.load(file)
+    print("Reading")
+    print(matrix)
+    print(type(matrix))
 
     ################################## Print String
     st = algo1.String("This a test of DEFs module")
@@ -41,11 +61,11 @@ def main():
     print(st)
     print(type(st))
 
-    ################################# Print LinkedList
+    ################################# Print LinkedList[Array]
     print("\nLinkedList type")
     linked : LinkedList = linkedlist.empty()
-    for _ in range(10):
-        linked = linkedlist.cons(random.randint(10,60), linked)
+    for _ in range(5):
+        linked = linkedlist.cons(arr, linked)
 
     print_linkedlist(linked)
     print(type(linked))

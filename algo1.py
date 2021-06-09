@@ -120,6 +120,20 @@ def concat_string(_s: String, _c : String) -> String:
     """ Concatenate """
     return String(_s.arr.data+_c.arr.data)
 
+def create_array(_length : int, _type : str) -> Array:
+    """ Return new Array """
+
+    if _type == 'int':
+        return Array(_length, 0)
+    if _type == 'LinkedList':
+        return Array(_length, LinkedList())
+    if _type == 'float':
+        return Array(_length, 0.0)
+    if _type == 'Array':
+        return Array(_length, Array())
+    if _type == 'str':
+        return Array(_length, 'c')
+
 def is_letter(_code : int) -> bool:
     """ Detect letter """
     lower : bool = _code >= 65 and _code <= 90

@@ -100,6 +100,98 @@ python personal_library.py --search word
 	Show.
 ```
 
+## Persistence
+
+We write a module that persists the structures used. It supports:
+
+* Array
+* String
+* LinkedList
+* Dic
+* Document
+
+The module saves a file in a plain text format, *.def
+
+Determines the class of the object and creates the dump file.
+
+The header contains two subsections:
+
+* !!python/object: beginning of a structure.
+* <_class_>: type of structure.
+
+And two optional subsections:
+
+* {_subclass_}: indicates the type contained in the structure
+* {_int_}: length of the structure.
+
+The footer contains only two subsections:
+
+* !!python/object: ending of a structure.
+* <_class_>: type of structure.
+
+### Examples
+
+Matrix 2x3 in dump file.
+
+```
+M =
+[49, 18, 44]
+[15, 58, 51]
+
+output.def:
+
+!!python/object<Array>{Array}{2}
+- !!python/object<Array>{int}{3}
+  - 49
+  - 18
+  - 44
+- !!python/end<Array>
+- !!python/object<Array>{int}{3}
+  - 15
+  - 58
+  - 51
+- !!python/end<Array>
+!!python/end<Array>
+```
+
+LinkedList[Array].
+LinkedList: 5 elements.
+Array: 3 elements.
+
+```
+L = [[30, 25, 40],[30, 25, 40],[30, 25, 40],[30, 25, 40],[30, 25, 40],]
+
+output.def
+
+!!python/object<LinkedList>{Array}{5}
+- !!python/object<Array>{int}{3}
+  - 30
+  - 25
+  - 40
+- !!python/end<Array>
+- !!python/object<Array>{int}{3}
+  - 30
+  - 25
+  - 40
+- !!python/end<Array>
+- !!python/object<Array>{int}{3}
+  - 30
+  - 25
+  - 40
+- !!python/end<Array>
+- !!python/object<Array>{int}{3}
+  - 30
+  - 25
+  - 40
+- !!python/end<Array>
+- !!python/object<Array>{int}{3}
+  - 30
+  - 25
+  - 40
+- !!python/end<Array>
+!!python/end<LinkedList>
+```
+
 ## Future
 
 ```

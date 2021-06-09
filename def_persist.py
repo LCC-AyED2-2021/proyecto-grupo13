@@ -11,122 +11,255 @@ Class:
 
 # Import Class
 from algo1 import Array, String
+import algo1
 from linkedlist import LinkedList
 import linkedlist
 import typing
 
 # TextIOWrapper
+class Extractor:
+    def __init__(self,
+            _class : str = '',
+            _subclass : str = None,
+            _length : int = None,
+            _value : str = None):
 
-def save(_object, _file): #_file is a pointer? or open here?
+        self.mclass = _class
+        self.subclass = _subclass
+        self.length = _length
+        self.value = _value
+
+###############################################################################
+## Dump objects
+###############################################################################
+
+def save(_object, _file, _hierarchy : str = '') -> None:
     """ Dump in file """
 
     typ = object_type(_object)
     if typ == 'Array':
-        save_array(_object, _file)
+        save_array(_object, _file, _hierarchy)
     elif typ == 'String':
-        save_string(_object, _file)
+        save_string(_object, _file, _hierarchy)
     elif typ == 'LinkedList':
-        save_linkedlist(_object, _file)
+        save_linkedlist(_object, _file, _hierarchy)
 
-def object_type(_object):
+def object_type(_object) -> str:
     """ Return object type of _object """
 
-    def extract(_class : str) -> str:
+    def extract_type(_class : str) -> str:
         """ Return class """
 
-        __ = 0
-        for _ in range(len(_class)):
-            if _class[_] == ".":
-                __ = _ + 1
-            elif __ > 0 and _class[_] == "'":
-                return _class[__:_]
+        length : int = (len(_class))
+        for _ in range(length-3, -1, -1):
+            if _class[_] == "." or _class[_] == "'":
+                return _class[_+1:length-2]
 
-    return extract(str(type(_object)))
+    return extract_type(str(type(_object)))
 
-def header(_type : str) -> str:
-    """ Write header class """
-    return '!!python/object<'+_type+'>\n'
+def header(_type : str, _subtype : str, _hierarchy : str = '', _length : int = None) -> str:
+    """ Construct class head """
 
-def save_array(_object : Array, _file):
+    temp_title : str = '!!python/object<'+_type+'>{'+_subtype+'}'
+    if len(_hierarchy) == 0:
+        if _length != None:
+            return temp_title+'{'+str(_length)+'}\n'
+        return temp_title+'\n'
+
+    spaces : str = ''
+    for _ in range(len(_hierarchy)-2):
+        spaces += ' '
+    if _length != None:
+        return spaces+'- '+temp_title+'{'+str(_length)+'}\n'
+    return spaces+'- '+temp_title+'\n'
+
+
+def footer(_type : str, _hierarchy : str = '') -> str:
+    """ Construct class foot """
+
+    spaces : str = ''
+    if len(_hierarchy) == 0:
+        return '!!python/end<'+_type+'>\n'
+    for _ in range(len(_hierarchy)-2):
+        spaces += ' '
+    return spaces+'- '+'!!python/end<'+_type+'>\n'
+
+def is_recursive_type(_type : str) -> bool:
+    """ Return False if type is int, str, float """
+
+    if _type == 'int' or _type == 'float' or _type == 'str':
+        return False
+    return True
+
+def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
 
-    _file.write(header('Array'))
-    for _ in range(len(_object)):
-        _file.write(' - '+str(_object[_])+'\n')
+    subtype = object_type(_object[0])
+    _file.write(header('Array', subtype, _hierarchy, len(_object)))
 
-def save_string(_object : String, _file):
+    if is_recursive_type(subtype):
+        for _ in range(len(_object)):
+            save(_object[_], _file, _hierarchy+'  ')
+    else:
+        for _ in range(len(_object)):
+            _file.write(_hierarchy+'- '+str(_object[_])+'\n')
+    _file.write(footer('Array', _hierarchy))
+
+def save_string(_object : String, _file, _hierarchy : str) -> None:
     """ Serialization for String """
 
     #Only saves one line string
-    _file.write(header('String'))
+    _file.write(header('String', 'str', _hierarchy))
+    _file.write(_hierarchy+'- ')
     for _ in range(len(_object)):
         _file.write(str(_object[_]))
+    _file.write('\n')
+    _file.write(footer('String', _hierarchy))
 
-def save_linkedlist(_object, _file):
+def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
     """ Serialization for LinkedList """
 
-    _file.write(header('LinkedList'))
-    #while _object.content != None:
-    for _ in range(linkedlist.length(_object)):
-        assert not _object.content is None
-        head = _object.content[0]
-        tail = _object.content[1]
-        _file.write(' - '+str(head)+'\n')
-        _object = tail
+    length = linkedlist.length(_object)
+    _file.write(header('LinkedList', object_type(_object.content[0]), _hierarchy, length))
+    subtype = object_type(_object.content[0])
+
+    if is_recursive_type(subtype):
+        for _ in range(length):
+            assert not _object.content is None
+            head = _object.content[0]
+            tail = _object.content[1]
+            save(_object.content[0], _file, _hierarchy+'  ')
+            _object = tail
+    else:
+        for _ in range(length):
+            assert not _object.content is None
+            head = _object.content[0]
+            tail = _object.content[1]
+            _file.write(_hierarchy+'  '+'- '+str(head)+'\n')
+            _object = tail
+
+    _file.write(footer('LinkedList', _hierarchy))
+
+###############################################################################
+## Load objects
+###############################################################################
 
 def load(_file):
+    """ Wrapper for rec_load """
+    return rec_load(_file, data_extractor(_file.readline()))
+
+def rec_load(_file, _data : Extractor):
     """ Load and return object """
 
-    typ = read_object_type(_file.readline())
-    if typ == 'Array':
-        return load_array(_file)
-    elif typ == 'String':
-        return load_string(_file)
-    elif typ == 'LinkedList':
-        return load_linkedlist(_file)
+    if _data.mclass == 'Array':
+        return load_array(_file, _data)
+    elif _data.mclass == 'String':
+        return load_string(_file, _data)
+    elif _data.mclass == 'LinkedList':
+        return load_linkedlist(_file, _data)
 
-def read_object_type(_header : str) -> str:
-    """ Read object type in first line of file """
+def data_extractor(_line : str) -> Extractor:
+    """ Extracts data from line of the file"""
 
-    __ = 0
-    for _ in range(len(_header)):
-        if _header[_] == '<':
-            __ = _ + 1
-        elif __ > 0 and _header[_] == '>':
-            return _header[__:_]
+    def extract_class(_line : str, _ : int):
+        """ Extract class """
 
-def read_values(_file):
-    # We consider that a file only contains one datatype
+        data : Extractor = Extractor()
+        init : int = _
+        for _ in range(init, len(_line)):
+            if _line[_] == '<':
+                __ = _ + 1
+            elif _line[_] == '>':
+                data.mclass = _line[__:_]
+            elif _line[_] == '{':
+                __ = _ + 1
+            elif _line[_] == '}':
+                if data.subclass == None:
+                    data.subclass = _line[__:_]
+                else:
+                    data.length = int(_line[__:_])
+        return data
 
-    def clean(_line : str) -> int:
-        return int(_line[2:len(_line)]) # Shouldn't it always return an int!
+    def extract_value(_line : str, _ : int):
+        """ Extract value or class """
 
-    values : list = []
-    line = _file.readline()
-    while line: # if not(line) --> End of file?
-        values.append(clean(line))
-        line = _file.readline()
-    return values
+        if _line[_] == '!':
+            return extract_class(_line, _)
+        return Extractor(_value = _line[_:len(_line)])
 
-def load_array(_file):
+    length = len(_line)
+    for _ in range(length):
+        if _line[_] == '!':
+            return extract_class(_line, _)
+        elif _line[_] == '-':
+            return extract_value(_line, _+2)
+
+def native_type(_string : str, _type : str):
+    """ Convert string in _type """
+
+    if _type == 'int':
+        return int(_string)
+    if _type == 'float':
+        return float(_string)
+    if _type == 'str':
+        return _string
+
+def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """
 
-    values = read_values(_file)
-    array : Array = Array (len(values), 0)
-    for _ in range(len(values)):
-        array[_] = values[_]
-    return array
+    def load_native_types(_file, _data : Extractor):
+        """ Create Array of _type and loads values """
 
-def load_string(_file):
+        array : Array = algo1.create_array(_data.length, _data.subclass)
+        for _ in range (_data.length):
+            line = data_extractor(_file.readline())
+            array[_] = native_type(line.value, _data.subclass)
+        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        return array
+
+
+    if is_recursive_type(_data.subclass):
+        array : Array = algo1.create_array(_data.length, _data.subclass)
+        for _ in range(_data.length):
+            array[_] = rec_load(_file, data_extractor(_file.readline()))
+        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        return array
+
+    else:
+        return load_native_types(_file, _data)
+
+def load_string(_file, _data : Extractor) -> String:
     """ Return String object """
 
-    return String(_file.readline())
+    line : Extractor = data_extractor(_file.readline())
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return String(line.value[0:len(line.value)-1]) # Delete '\n'
 
-def load_linkedlist(_file):
+def load_linkedlist(_file, _data : Extractor) -> LinkedList:
     """ Return LinkedList object """
 
-    values = read_values(_file)
-    lkdlist : LinkedList = linkedlist.empty()
-    for _ in range(len(values)-1, -1, -1):
-        lkdlist = linkedlist.cons(values[_], lkdlist)
-    return lkdlist
+    def load_native_types(_file, _data : Extractor, _deep : int = 0) -> LinkedList:
+        """ Recursive function for loading a linkedlist with native types """
+        if _deep < _data.length-1:
+            value = native_type(data_extractor(_file.readline()).value, _data.subclass)
+            return linkedlist.cons(value, load_native_types(_file, _data, _deep+1))
+        else:
+            value = native_type(data_extractor(_file.readline()).value, _data.subclass)
+            return linkedlist.cons(value, linkedlist.empty())
+
+    def load_no_native_types(_file, _data : Extractor, _deep : int = 0) -> LinkedList:
+        """ Recursive function that calls rec_load """
+        if _deep < _data.length-1:
+            value = rec_load(_file, data_extractor(_file.readline()))
+            return linkedlist.cons(value, load_no_native_types(_file, _data, _deep+1))
+        else:
+            value = rec_load(_file, data_extractor(_file.readline()))
+            return linkedlist.cons(value, linkedlist.empty())
+
+    if is_recursive_type(_data.subclass):
+        llist : LinkedList = load_no_native_types(_file, _data)
+    else:
+        llist : LinkedList = load_native_types(_file, _data)
+
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return llist

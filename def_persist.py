@@ -5,15 +5,21 @@ Class:
     Array
     String
     LinkedList
-    Dictionary
-    Tfidf
+    Document
+    Dic
+    TfidfRow
 """
 
 # Import Class
-from algo1 import Array, String
 import algo1
-from linkedlist import LinkedList
+from algo1 import Array, String
+
 import linkedlist
+from linkedlist import LinkedList
+
+from personal_library import Document, TfidfRow
+from libdic import Dic
+
 import typing
 
 # TextIOWrapper
@@ -43,6 +49,20 @@ def save(_object, _file, _hierarchy : str = '') -> None:
         save_string(_object, _file, _hierarchy)
     elif typ == 'LinkedList':
         save_linkedlist(_object, _file, _hierarchy)
+    elif typ == 'Document':
+        save_document(_object, _file, _hierarchy)
+    elif typ == 'Dic':
+        save_dic(_object, _file, _hierarchy)
+    elif typ == 'TfidfRow':
+        save_tfidfrow(_object, _file, _hierarchy)
+
+    # Only used when an _object contains multiple types
+    elif typ == 'int':
+        save_int(_object, _file, _hierarchy)
+    elif typ == 'str':
+        save_str(_object, _file, _hierarchy)
+    elif typ == 'float':
+        save_str(_object, _file, _hierarchy)
 
 def object_type(_object) -> str:
     """ Return object type of _object """
@@ -57,10 +77,10 @@ def object_type(_object) -> str:
 
     return extract_type(str(type(_object)))
 
-def header(_type : str, _subtype : str, _hierarchy : str = '', _length : int = None) -> str:
+def header(_type : str, _subtype : str = '', _hierarchy : str = '', _length : int = None) -> str:
     """ Construct class head """
 
-    temp_title : str = '!!python/object<'+_type+'>{'+_subtype+'}'
+    temp_title : str = '!pyObj<'+_type+'>{'+_subtype+'}'
     if len(_hierarchy) == 0:
         if _length != None:
             return temp_title+'{'+str(_length)+'}\n'
@@ -79,10 +99,10 @@ def footer(_type : str, _hierarchy : str = '') -> str:
 
     spaces : str = ''
     if len(_hierarchy) == 0:
-        return '!!python/end<'+_type+'>\n'
+        return '!pyEnd<'+_type+'>\n'
     for _ in range(len(_hierarchy)-2):
         spaces += ' '
-    return spaces+'- '+'!!python/end<'+_type+'>\n'
+    return spaces+'- '+'!pyEnd<'+_type+'>\n'
 
 def is_recursive_type(_type : str) -> bool:
     """ Return False if type is int, str, float """
@@ -90,6 +110,27 @@ def is_recursive_type(_type : str) -> bool:
     if _type == 'int' or _type == 'float' or _type == 'str':
         return False
     return True
+
+def save_int(_object : int, _file, _hierarchy : str) -> None:
+    """ Serialization for int """
+
+    _file.write(header('int', _hierarchy = _hierarchy))
+    _file.write(_hierarchy+'- '+str(_object)+'\n')
+    _file.write(footer('int', _hierarchy))
+
+def save_float(_object : float, _file, _hierarchy : str) -> None:
+    """ Serialization for float """
+
+    _file.write(header('float', _hierarchy = _hierarchy))
+    _file.write(_hierarchy+'- '+str(_object)+'\n')
+    _file.write(footer('float', _hierarchy))
+
+def save_str(_object : str, _file, _hierarchy : str) -> None:
+    """ Serialization for str """
+
+    _file.write(header('str', _hierarchy = _hierarchy))
+    _file.write(_hierarchy+'- '+_object+'\n')
+    _file.write(footer('str', _hierarchy))
 
 def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
@@ -120,8 +161,8 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
     """ Serialization for LinkedList """
 
     length = linkedlist.length(_object)
-    _file.write(header('LinkedList', object_type(_object.content[0]), _hierarchy, length))
     subtype = object_type(_object.content[0])
+    _file.write(header('LinkedList', subtype, _hierarchy, length))
 
     if is_recursive_type(subtype):
         for _ in range(length):
@@ -140,6 +181,25 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
 
     _file.write(footer('LinkedList', _hierarchy))
 
+def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
+    """ Serialization for Dic """
+
+    subtype = object_type(_object.table)
+    _file.write(header('Dic', subtype, _hierarchy))
+
+    save(_object.table, _file, _hierarchy+'  ')
+    save(_object.head, _file, _hierarchy+'  ')
+    save(_object.size, _file, _hierarchy+'  ')
+
+
+
+def save_document(_object : Document, _file, _hierarchy : str) -> None:
+    """ Serialization for Document """
+
+
+def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
+    """ Serialization for TfidfRow """
+
 ###############################################################################
 ## Load objects
 ###############################################################################
@@ -157,6 +217,20 @@ def rec_load(_file, _data : Extractor):
         return load_string(_file, _data)
     elif _data.mclass == 'LinkedList':
         return load_linkedlist(_file, _data)
+    elif _data.mclass == 'Document':
+        return load_document(_file, _data)
+    elif _data.mclass == 'Dic':
+        return load_dic(_file, _data)
+    elif _data.mclass == 'TfidfRow':
+        return load_tfidfrow(_file, _data)
+
+    #Only used when an _object contains multiple types
+    elif _data.mclass == 'int':
+        return load_int(_file, _data)
+    elif _data.mclass == 'float':
+        return load_float(_file, _data)
+    elif _data.mclass == 'str':
+        return load_str(_file, _data)
 
 def data_extractor(_line : str) -> Extractor:
     """ Extracts data from line of the file"""
@@ -203,6 +277,27 @@ def native_type(_string : str, _type : str):
         return float(_string)
     if _type == 'str':
         return _string
+
+def load_int(_file, _data : Extractor, _hierarchy : str = '') -> int:
+    """ Return int type """
+
+    value : int = int(data_extractor(_file.readline()).value)
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return value
+
+def load_float(_file, _data : Extractor, _hierarchy : str = '') -> float:
+    """ Return float type """
+
+    value : float = float(data_extractor(_file.readline()).value)
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return value
+
+def load_str(_file, _data : Extractor, _hierarchy : str = '') -> str:
+    """ Return str type """
+
+    value : str = data_extractor(_file.readline()).value
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return value
 
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """

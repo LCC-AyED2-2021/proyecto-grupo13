@@ -1,5 +1,5 @@
 """
-def_persist module
+persist module
 Serialization readable for humans
 Class:
     Array
@@ -55,6 +55,8 @@ def save(_object, _file, _hierarchy : str = '') -> None:
         save_dic(_object, _file, _hierarchy)
     elif typ == 'TfidfRow':
         save_tfidfrow(_object, _file, _hierarchy)
+    elif typ == 'function':
+        save_function(_object, _file, _hierarchy)
 
     # Only used when an _object contains multiple types
     elif typ == 'int':
@@ -132,6 +134,15 @@ def save_str(_object : str, _file, _hierarchy : str) -> None:
     _file.write(_hierarchy+'- '+_object+'\n')
     _file.write(footer('str', _hierarchy))
 
+def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
+    """ Serialization for method """
+
+    _file.write(header('function', _hierarchy = _hierarchy))
+    # _file.write(_hierarchy+'- '+_object+'\n')
+    _file.write(_hierarchy+'- '+str(_value)+'\n')
+    # Could can add name of module and function but, how detect it?
+    _file.write(footer('function', _hierarchy))
+
 def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
 
@@ -184,21 +195,33 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
 def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
     """ Serialization for Dic """
 
-    subtype = object_type(_object.table)
-    _file.write(header('Dic', subtype, _hierarchy))
-
-    save(_object.table, _file, _hierarchy+'  ')
-    save(_object.head, _file, _hierarchy+'  ')
+    # Multiple subtypes
+    _file.write(header('Dic', _hierarchy = _hierarchy))
     save(_object.size, _file, _hierarchy+'  ')
-
+    #save(_object.hash_function, _file, _hierarchy+'  ')
+    save_function(_object.hash_function, _object.size, _file, _hierarchy+'  ')
+    save(_object.table, _file, _hierarchy+'  ')
+    _file.write(footer('Dic'))
 
 
 def save_document(_object : Document, _file, _hierarchy : str) -> None:
     """ Serialization for Document """
 
+    # Multiple subtypes
+    _file.write(header('Dictionary', _hierarchy = _hierarchy))
+    save(_object.title, _file, _hierarchy+'  ')
+    save(_object.content, _file, _hierarchy+'  ')
+    save(_object.uuid, _file, _hierarchy+'  ')
+    save(_object.directory, _file, _hierarchy+'  ')
+    _file.write(footer('Dictionary'))
+
 
 def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
     """ Serialization for TfidfRow """
+
+    _file.write(header('TfidfRow', object_type(_object.row), _hierarchy))
+    save(_object.row, _file, _hierarchy+'  ')
+    _file.write(footer('TfidRow'))
 
 ###############################################################################
 ## Load objects
@@ -223,6 +246,8 @@ def rec_load(_file, _data : Extractor):
         return load_dic(_file, _data)
     elif _data.mclass == 'TfidfRow':
         return load_tfidfrow(_file, _data)
+    elif _data.mclass == 'function':
+        return load_function(_file, _data)
 
     #Only used when an _object contains multiple types
     elif _data.mclass == 'int':
@@ -299,6 +324,13 @@ def load_str(_file, _data : Extractor, _hierarchy : str = '') -> str:
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return value
 
+def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
+    """ Return function string_hash_function """
+
+    value : str = data_extractor(_file.readline()).value
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return string_hash_function(int(value))
+
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """
 
@@ -358,3 +390,54 @@ def load_linkedlist(_file, _data : Extractor) -> LinkedList:
 
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return llist
+
+def load_dic(_file, _data : Extractor) -> Dic:
+    """ Return Dic object """
+
+    # There is not subclass for Dic type
+    # I should check that the headers are
+    # present before assigning them to the attribute
+
+    # Size
+    size = rec_load(_file, data_extractor(_file.readline()))
+
+    # Hash Function
+    hash_function = rec_load(_file, data_extractor(_file.readline()))
+
+    # Create Dic
+    diccionary : Dic = Dic(size, hash_function)
+
+    # Table
+    diccionary.table = rec_load(_file, data_extractor(_file.readline()))
+
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return diccionary
+
+def load_document(_file, _data : Extractor) -> Document:
+    """ Return Document object """
+
+    # There is not subclass for Document type
+    # Title
+    title : String = rec_load(_file, data_extractor(_file.readline()))
+
+    # Content
+    llist : LinkedList = rec_load(_file, data_extractor(_file.readline()))
+
+    # Create Document
+    doc : Document = Document(title, llist)
+
+    # Uuid
+    doc.uuid : int = rec_load(_file, data_extractor(_file.readline()))
+
+    # directory
+    doc.directory : Dic = rec_load(_file, data_extractor(_file.readline()))
+
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return doc
+
+def load_tfidfrow(_file, _data : Extractor) -> TfidfRow:
+    """ Return TfidfRow object """
+
+    tfidfr : TfidfRow = TfidfRow(rec_load(_file, data_extractor(_file.readline())))
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return tfidfr

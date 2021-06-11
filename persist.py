@@ -141,9 +141,15 @@ def save_str(_object : str, _file, _hierarchy : str) -> None:
 def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
     """ Serialization for method """
 
-    _file.write(header('function', _hierarchy = _hierarchy))
+    def extract_function(_object : str) -> str:
+        """ Extract name of function """
+        for _ in range(10,len(_object)):
+            if _object[_] == '.':
+                return _object[10:_]
+
+    _file.write(header('function', str(_value), _hierarchy = _hierarchy))
     # _file.write(_hierarchy+'- '+_object+'\n')
-    _file.write(_hierarchy+'- '+str(_value)+'\n')
+    _file.write(_hierarchy+'- '+extract_function(str(_object))+'\n')
     # Could can add name of module and function but, how detect it?
     _file.write(footer('function', _hierarchy))
 
@@ -176,6 +182,12 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
     """ Serialization for LinkedList """
 
     length = linkedlist.length(_object)
+
+    if _object.content is None:
+        _file.write(header('LinkedList', 'NoneType', _hierarchy, length))
+        _file.write(footer('LinkedList', _hierarchy))
+        return None
+
     subtype = object_type(_object.content[0])
     _file.write(header('LinkedList', subtype, _hierarchy, length))
 
@@ -341,9 +353,13 @@ def load_str(_file, _data : Extractor, _hierarchy : str = '') -> str:
 def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
     """ Return function string_hash_function """
 
-    value : str = data_extractor(_file.readline()).value
+    value : int = int(_data.subclass)
+    name_function = data_extractor(_file.readline()).value
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
-    return personal_library.string_hash_function(int(value))
+    if name_function == 'string_hash_function':
+        return personal_library.string_hash_function(value)
+    elif name_function == 'multiplicative_hash_function':
+        return libdic.multiplicative_hash_function(value, libdic.golden_ratio())
 
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """
@@ -396,6 +412,10 @@ def load_linkedlist(_file, _data : Extractor) -> LinkedList:
             return linkedlist.cons(value, load_no_native_types(_file, _data, _deep+1))
         else:
             return linkedlist.empty()
+
+    if _data.subclass == 'NoneType':
+        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        return linkedlist.empty
 
     if is_recursive_type(_data.subclass):
         llist : LinkedList = load_no_native_types(_file, _data)

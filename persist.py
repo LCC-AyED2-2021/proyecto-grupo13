@@ -17,7 +17,9 @@ from algo1 import Array, String
 import linkedlist
 from linkedlist import LinkedList
 
+import personal_library
 from personal_library import Document, TfidfRow
+
 from libdic import Dic
 
 import typing
@@ -57,6 +59,8 @@ def save(_object, _file, _hierarchy : str = '') -> None:
         save_tfidfrow(_object, _file, _hierarchy)
     elif typ == 'function':
         save_function(_object, _file, _hierarchy)
+    elif typ == 'tuple':
+        save_tuple(_object, _file, _hierarchy)
 
     # Only used when an _object contains multiple types
     elif typ == 'int':
@@ -64,7 +68,7 @@ def save(_object, _file, _hierarchy : str = '') -> None:
     elif typ == 'str':
         save_str(_object, _file, _hierarchy)
     elif typ == 'float':
-        save_str(_object, _file, _hierarchy)
+        save_float(_object, _file, _hierarchy)
 
 def object_type(_object) -> str:
     """ Return object type of _object """
@@ -201,19 +205,19 @@ def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
     #save(_object.hash_function, _file, _hierarchy+'  ')
     save_function(_object.hash_function, _object.size, _file, _hierarchy+'  ')
     save(_object.table, _file, _hierarchy+'  ')
-    _file.write(footer('Dic'))
+    _file.write(footer('Dic', _hierarchy))
 
 
 def save_document(_object : Document, _file, _hierarchy : str) -> None:
     """ Serialization for Document """
 
     # Multiple subtypes
-    _file.write(header('Dictionary', _hierarchy = _hierarchy))
+    _file.write(header('Document', _hierarchy = _hierarchy))
     save(_object.title, _file, _hierarchy+'  ')
     save(_object.content, _file, _hierarchy+'  ')
-    save(_object.uuid, _file, _hierarchy+'  ')
-    save(_object.directory, _file, _hierarchy+'  ')
-    _file.write(footer('Dictionary'))
+    #save(_object.uuid, _file, _hierarchy+'  ')
+    #save(_object.directory, _file, _hierarchy+'  ')
+    _file.write(footer('Document', _hierarchy))
 
 
 def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
@@ -221,7 +225,15 @@ def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
 
     _file.write(header('TfidfRow', object_type(_object.row), _hierarchy))
     save(_object.row, _file, _hierarchy+'  ')
-    _file.write(footer('TfidRow'))
+    _file.write(footer('TfidfRow', _hierarchy))
+
+def save_tuple(_object : tuple, _file, _hierarchy : str) -> None:
+    """ Serialization for tuple """
+
+    _file.write(header('tuple', _hierarchy = _hierarchy, _length = len(_object)))
+    for _ in range(len(_object)):
+        save(_object[_], _file, _hierarchy+'  ')
+    _file.write(footer('tuple', _hierarchy))
 
 ###############################################################################
 ## Load objects
@@ -248,6 +260,8 @@ def rec_load(_file, _data : Extractor):
         return load_tfidfrow(_file, _data)
     elif _data.mclass == 'function':
         return load_function(_file, _data)
+    elif _data.mclass == 'tuple':
+        return load_tuple(_file, _data)
 
     #Only used when an _object contains multiple types
     elif _data.mclass == 'int':
@@ -329,7 +343,7 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
 
     value : str = data_extractor(_file.readline()).value
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
-    return string_hash_function(int(value))
+    return personal_library.string_hash_function(int(value))
 
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """
@@ -376,12 +390,12 @@ def load_linkedlist(_file, _data : Extractor) -> LinkedList:
 
     def load_no_native_types(_file, _data : Extractor, _deep : int = 0) -> LinkedList:
         """ Recursive function that calls rec_load """
-        if _deep < _data.length-1:
+
+        if _deep < _data.length:
             value = rec_load(_file, data_extractor(_file.readline()))
             return linkedlist.cons(value, load_no_native_types(_file, _data, _deep+1))
         else:
-            value = rec_load(_file, data_extractor(_file.readline()))
-            return linkedlist.cons(value, linkedlist.empty())
+            return linkedlist.empty()
 
     if is_recursive_type(_data.subclass):
         llist : LinkedList = load_no_native_types(_file, _data)
@@ -427,10 +441,10 @@ def load_document(_file, _data : Extractor) -> Document:
     doc : Document = Document(title, llist)
 
     # Uuid
-    doc.uuid : int = rec_load(_file, data_extractor(_file.readline()))
+    #doc.uuid : int = rec_load(_file, data_extractor(_file.readline()))
 
     # directory
-    doc.directory : Dic = rec_load(_file, data_extractor(_file.readline()))
+    #doc.directory : Dic = rec_load(_file, data_extractor(_file.readline()))
 
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return doc
@@ -441,3 +455,12 @@ def load_tfidfrow(_file, _data : Extractor) -> TfidfRow:
     tfidfr : TfidfRow = TfidfRow(rec_load(_file, data_extractor(_file.readline())))
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return tfidfr
+
+def load_tuple(_file, _data : Extractor) -> TfidfRow:
+    """ Return Tuple object """
+
+    tupl : tuple = ()
+    for _ in range(_data.length): # Default length
+        tupl = (*tupl, rec_load(_file, data_extractor(_file.readline())))
+    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    return tupl

@@ -45,6 +45,8 @@ import os.path
 
 # Entries in the directory
 import os #os.listdir()
+# Persistence
+import persist
 
 from algo1 import String
 import algo1
@@ -54,6 +56,8 @@ from libdic import Dic
 
 import linkedlist
 from linkedlist import LinkedList
+
+
 
 class Document:
     """ The document representation """
@@ -173,10 +177,25 @@ def search(_lib_folder : str, _args : str) -> None:
 
     print("Searching: " + _args)
 
+    with open('tfidf.def', 'r') as persist_file:
+        print("Loading from existing file")
+        tfidf = persist.load(persist_file)
+
+    with open('doc.def','r') as doc_file:
+        documetnts = persist.load(doc_file)
+    """
+    print("Creating new persist file")
+
     documetnts = load_documents(_lib_folder)
+
+    with open('doc.def','w') as doc_file:
+        persist.save(documetnts, doc_file)
 
     tfidf = doc_tfidf(documetnts)
 
+    with open('tfidf.def','w') as persist_file:
+        persist.save(tfidf, persist_file)
+    """
     results = query(String(_args), tfidf)
 
     if results is None:
@@ -190,7 +209,7 @@ def search(_lib_folder : str, _args : str) -> None:
 
             (doc_id, relevance) =  result_row.content[0]
             result_row = result_row.content[1]
-
+            print(type(Document.directory.table[3])) # las linkedlists estan vacias?
             title = libdic.search(Document.directory, doc_id)
 
             print(relevance, doc_id, title, sep="\t")

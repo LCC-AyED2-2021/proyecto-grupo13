@@ -368,27 +368,6 @@ def partition(_predicate : Callable[[A], bool]
     head = _linked_list.content[0]
     tail = _linked_list.content[1]
 
-    # rest = _linked_list.content[1]
-
-    #t = empty()
-    #f = empty()
-
-    #if _predicate(head):
-    #    t = cons(head, t)
-    #else:
-    #    f = cons(head, f)
-
-    #while not rest.content is None:
-    #    head = rest.content[0]
-    #    rest = rest.content[1]
-
-    #    if _predicate(head):
-    #        t = cons(head, t)
-    #    else:
-    #        f = cons(head, f)
-
-    #return (t, f)
-
     (t, f) = partition(_predicate, tail)
 
     if _predicate(head):

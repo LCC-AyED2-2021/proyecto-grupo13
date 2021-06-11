@@ -64,14 +64,22 @@ class Document:
 
     def __init__(self,
             _title : String,
-            _content : LinkedList[String]):
+            _content : LinkedList[String],
+            _uuid : Optional[int] = None):
         self.title = _title
         self.content = _content
-        self.uuid = Document.uuid
-        Document.uuid = Document.uuid + 1
 
-        Document.directory = libdic.insert(Document.directory, self.uuid,
-                self.title)
+        if not _uuid is None:
+            assert libdic.search(Document.directory, _uuid) is None
+            self.uuid = _uuid
+            Document.directory = libdic.insert(Document.directory, self.uuid,
+                    self.title)
+        else:
+            self.uuid = Document.uuid
+            Document.uuid = Document.uuid + 1
+
+            Document.directory = libdic.insert(Document.directory, self.uuid,
+                    self.title)
 
     def __str__(self):
         return str(self.uuid) + str(self.title) + "\n" + str(self.content)
@@ -170,7 +178,6 @@ def search(_lib_folder : str, _args : str) -> None:
     tfidf = doc_tfidf(documetnts)
 
     results = query(String(_args), tfidf)
-
 
     if results is None:
         print("No results")

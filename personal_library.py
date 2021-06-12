@@ -78,6 +78,8 @@ class Document:
             self.uuid = _uuid
             Document.directory = libdic.insert(Document.directory, self.uuid,
                     self.title)
+            if Document.uuid < _uuid:
+                Document.uuid = _uuid
         else:
             self.uuid = Document.uuid
             Document.uuid = Document.uuid + 1

@@ -1,0 +1,753 @@
+DNA vaccines: prime time is now
+Ebony N Gary and David B Weiner
+Recently newer synthetic DNA vaccines have been rapidly
+advanced to clinical study and have demonstrated an
+impressive degree of immune potency and tolerability.
+Improvements in DNA delivery over prior needle and syringe
+approaches include jet delivery, gene gun delivery, among
+others. Among the most effective of these new delivery
+methods, advanced electroporation (EP), combined with other
+advances, induces robust humoral and cellular immunity in
+both preventative as well as therapeutic studies.
+Advancements in the design of the DNA inserts include leader
+sequence changes, RNA and codon optimizations, improved
+insert designs, increased concentrations of DNA, and skin
+delivery, appear to complement newer delivery strategies.
+These advances also provide a framework for the in vivo
+production of synthetic DNA biologics. In this review, we focus
+on recent studies of synthetic DNA vaccines in the clinic for the
+prevention or treatment of infectious diseases with a focus on
+adaptive electroporation for delivery, and briefly summarize
+novel preclinical data advancing the in vivo delivery of DNAencoded antibody-like biologics.
+Address
+The Wistar Institute, Philadelphia, PA, United States
+Corresponding author:
+Weiner, David B (dweiner@wistar.org, egary@wistar.org)
+Current Opinion in Immunology 2020, 65:21–27
+This review comes from a themed issue on Vaccines
+Edited by Bali Pulendran and Rino Rappuoli
+For a complete overview see the Issue and the Editorial
+Available online 4th April 2020
+https://doi.org/10.1016/j.coi.2020.01.006
+0952-7915/ã 2020 The Author(s). Published by Elsevier Ltd. This is an
+open access article under the CC BY license (http://creativecommons.
+org/licenses/by/4.0/).
+Introduction
+Vaccines are among the most important medical interventions in human history. We are in an era of unprecedented scientific advance in vaccine technologies.
+However, the development of new vaccines faces challenges. This is due to multiple factors including the high
+cost of their development which drives a focus on larger
+markets, slower than optimal time lines for vaccine
+advancement to clinical testing, among other complexities. One example is the increased occurrence of emerging and reemerging infections which appear sporadically
+and could benefit greatly from rapid vaccine interventions. Examples include Lassa, Powasan virus, ZIKA
+virus (ZIKV), Ebola virus (EBOV), and the coronaviruses- Middle East respiratory syndrome coronavirus
+(MERS-CoV), severe acute respiratory syndrome coronavirus 1 and 2 (SARS-CoV-1 and SARS-CoV-2)- among
+many others. An ideal vaccine platform should be simple
+to deploy, rapid to develop, reproducible, temperature
+stable, and consistently manufacturable- thus lowering
+costs and development risks while providing an important new tool. The synthetic DNA (SynDNA) platform
+addresses many of these important goals.
+DNA immunogens can be directly designed and optimized from pathogen sequences and synthesized allowing flexibility and speed in preclinical testing with rapid
+transition to clinical scale up. In vivo expression of the
+constructed sequences facilitates rapid screening and
+down selection of potential vaccine candidates. Multiple
+studies have reported that synDNA allows for the generation of cellular and humoral responses against pathogens
+with impact in challenge model systems. Originally intramuscular (IM) inoculation and more recently intradermal
+(ID) delivery using highly concentrated formulations
+have induced consistent immunity in the clinic. Delivery
+methods such as jet delivery, gene gun delivery, nanoparticle delivery, and others have demonstrated increased
+DNA uptake in vivo [1].
+Adaptive electroporation (EP) [2] which controls the
+energy delivered during in vivo EP improves increases
+transformation efficiency over needle and syringe delivery. Following local injection by needle and syringe
+plasmid DNA is taken up by a limited number of cells
+at the site of injection, where the DNA is transcribed into
+mRNA and translated into antigen intracellularly. Adaptive EP increases the initial uptake of plasmid by local
+cells approximately 500x [3]. This creates a large antigen
+bolus to drive a more potent immune response. With
+adaptive EP most cells in the local field can be transfected
+[4]. Locally transfected antigen-presenting cells (APCs)
+can directly traffic to the regional lymph node (LN) which
+is critical to initiating the immune response [5,6]. Translated antigen can be shed exogenously and picked up by
+APCs for cross presentation. Shed exogenous soluble
+antigen can drain locally to the regional LN and extracellular spaces in the local environment allowing for
+engagement of B cell immunity. Local tissue becomes
+a protein factory for presentation of antigen on major
+histocompatibility complex-1 (MHC I) or MHC II molecules for re-expansion of LN primed CD8+ T cells
+(cytotoxic T lymphocytes, or CTLs) and CD4+ T cells,
+respectively (Figure 1a). For comprehensive review, see
+Ref. [4]. Since the 900
+s DNA plasmids have been
+Available online at www.sciencedirect.com
+ScienceDirect
+www.sciencedirect.com Current Opinion in Immunology 2020, 65:21–27
+delivered to tens of thousands of patients by multiple
+routes, in trials studying numerous vaccine antigen targets with a highly consistent safety record supporting its
+further clinical development [7].
+Clinical review of recent DNA vaccines
+Here we discuss recent clinical studies using the
+SynDNA platform (Figure 2) with a specific focus on
+DNA vaccines targeting emerging and re-emerging infectious diseases and cancers of infectious etiology.
+More than 2 million new human immunodeficiency virus-1
+(HIV-1) infections occur annually, highlighting the need
+for an effective prophylactic vaccine. In two multicenter,
+randomized clinical trials the immunogenicity of synDNA
+constructs encoding HIV-1 clade B gag, pol, and env
+proteins (PENNVAX-B DNA vaccine (PV)) alone, or in
+combination with plasmid-encoded IL-12 was evaluated
+with (HVTN 080) and without (HVTN 070) intramuscular
+EP. The vaccination was safe and well-tolerated. Addition
+of molecular plasmid encoded IL-12 (pIL-12) and EP
+delivery resulted in a dose sparing effect with immunogenicity superior to vaccines with electroporation, with fewer
+doses,demonstrating a dose-sparing effect ofthe combined
+platform. In the vaccine + IL-12 group with EP delivery,
+more than 80% of vaccinees had detectable HIV-specific T
+cell responses after three immunizations [8].
+Venezuelanequine encephalitis virus(VEEV)is amosquitoborne alphavirus and is a recognized biosafety threat for
+humans for which there are no approved vaccines or therapeutics. Hannaman et al. studied a DNA vaccine targeting
+theE3-E2-6K-E1 genes of theVEEVsubtype IABenvelope
+and compared intradermal versus intramuscular electroporation (EP) at various doses in a small number of human
+subjects. In this study high doseintramuscularEP resultedin
+the development of VEEV neutralizing antibodies in all
+subjects while intradermal-EP promoted neutralizing antibody at lower levels and in fewer subjects [9]. T cell
+responses were not reported in this study.
+22 Vaccines
+Figure 1
+(a) (b) DNA Immunization
+Infectious Disease Targets Malignant Targets
+DNA-based immunotherapies Plasmid
+DNA
+Plasmid
+DNA
+Transfected cells at the site of injection
+present antigens on MHC I and MHCII
+molecules, priming CD4+ abd CD8+ T
+cells. Soluble antigen primes B cell
+immunity
+•Synthesized in vivo
+•Codelivery of multiple dBiTEs
+•Easily produced
+•Long half-life
+•Antigen synthesized in vivo
+•Synthetic consensus immunogen
+ breaks self-tolerance
+•Easily produced
+•Therapeutic and prophylactic
+ treatment
+•Multiple antigens in a single
+ plasmid formulation
+SynDNA bispecifics and
+DMAbs
+DNA
+immunization Direct transfection of
+antigen-presenting cells in
+tissue
+antigen-specific B
+cell
+antigen-specific
+CD4+ T cell
+antigen-specific
+CD8+ T cell
+cancer-specific
+CD8+ T cells CD8+ T cell
+cancer-specific antigens i.e
+HPVE6, E7
+Traffic to local LNs
+and amplification of
+responses
+Antigen-debot
+provides
+re-expansion of
+LN-primed cells
+Current Opinion in Immunology
+DNA vaccination and immunotherapy. (a) DNA-encoded antigens are transcribed, translated, and presented on MHC I and II molecules in vivo,
+promoting robust anti-target immunity. (b) The 1000X increase in DNA delivery coupled with highly efficient encoded antigen production allow this
+local delivery to become a source for production of biologics. Inserts are highly designed to allow for local expression. Multiple publications have
+now described how DNA-encoded monoclonal antibodies (DMAbs), bispecific antibodies, and immunogens can be used to target cancer or
+infectious diseases.
+Current Opinion in Immunology 2020, 65:21–27 www.sciencedirect.com
+Zika virus (ZIKV) is a mosquito-borne infectious disease
+characterized by fever, rash, conjunctivitis, and malaise.
+Despite the relatively mild clinical illness, ZIKV infection
+during pregnancy is associated with severe congenital birth
+defects such as microcephaly. The first Zika vaccine
+advanced to the clinic was a synDNA vaccine delivered
+by adaptive EP [10–12]. Tebas et al. evaluated the safety
+and immunogenicity of a synthetic DNA vaccine targeting
+Zika prME, [12]. In this Phase 1 dose-ranging study
+participants received either 1 or 2 mg of ZIKV DNA
+immunogens delivered by the ID route and CELLECTRA-EP at 0, 4, and 12 weeks. After the third immunization Zika-specific binding antibodies were detected in all
+participants at average titers of 1/2000 for the 1 mg dose
+group or 1/3000 for the higher dose group) 96% of participants developed Zika-neutralizing antibodies detected via
+U87 neuronal cell assay.Importantly, passive transferstudies where patient serum was given to interferon knockout
+mice (whichare susceptible toZIKVinfection) showed that
+sera from vaccinated subjects protected mice from lethal
+pathogenic ZIKV challenge [12]. ZIKV-specific T cells
+were induced in most subjects. This ZIKV DNA vaccine
+was moved from research program initiation to the clinic in
+just 6.5 months highlighting the efficiency and speed with
+which a synthetic DNA platform can be brought to bear
+against an emerging orre-emergingpathogen.TheVaccine
+Research Center (VRC) of the national institutes of health
+reported the results of two ZIKV DNA vaccine trials(VRC
+319 and VRC320) evaluating the safety and immunogenicity of DNA plasmids encoding the PrM and E proteins of a
+ZIKV-Japanese encephalitis virus(JEV) chimera delivered
+at 4 mg doses either 2x or 3x (VRC 319) or native leaderlike
+ZIKV (VRC320) vaccines vaccinated with 4 mg doses
+immunized three times at different intervals. In VRC
+319 GMT average per group was (40–197) and for VRC
+320 GMT ranged from (28–430). The vaccines induced
+neutralizing titers using a reporter assay and showed T cell
+mediated cytokine release [13] and the authorssuggestthat
+the VRC320 vaccine group developed more consistent
+seroconversion, neutralization, and T cell immunity over
+the JEV chimeric Zika vaccine.
+Ebola virus (EBOV) is the causative agent of severe viral
+hemorrhagic disease in humans and non-human primates.
+Synthetic DNA vaccines: prime time is approaching Gary and Weiner 23
+Figure 2
+2013 2015 2016 2017 2018 2019
+DNA vaccine encoding HIV-1
+clade B gag, pol, env
+(PENNVAX-B) with/without
+Molecular IL-12 is safe and
+immunogenic. EP and pIL-12
+is dose-sparing. First
+demonstration that DNA +EP
+induces responses as potent
+as viral-vectored vaccines.
+HVTN 070/080 (ref. 5)
+DNA vaccine encoding HIV-1 clade
+B gag, pol, env (PENNVAX-GP) with
+molecular IL-12 induced almost
+100% vaccine response rate with
+durable responses. ID-EP is as
+potent as IM-EP with 1/5th dose.
+HVTN 098 (ClinicalTrials.gov
+Identifier: NCT02431767)
+Influenza HA DNA prime via
+Biojector jet delivery
+followed by trivalent
+inactivated influenza boost
+(IIV3) helathy adults. VRC
+703 (ref. 17) Wild-type and
+JEV-chimeric ZIKV
+jet-delivered DNA
+vaccines are safe and
+well tolerated in adult
+volunteers VRC319,
+320 (ref. 13)
+VEEV DNA vaccine
+is safe,
+immunogenic and
+well-tolerated in
+human patients
+(ref. 9)
+Intradermal EP of SynCone
+EBOV vaccine promotes
+cellular and humoral
+responses in humans. 18
+monts beach-to-clinic (ref.
+16)
+Anti-ZIKV DMAb clinical
+trial begins February
+2019 (clinicaltrials.gov
+identifier:
+NCT03831503)
+MERS-CoV DNA
+vaccine phase I trial,
+vaccine is safe and
+immunogenic (ref. 19)
+DNA vaccine +
+pembrolizumab
+promotes anti-tumor
+responses in prostate
+cancer patients patients
+(ref. 21)
+First-in-human ZIKV DNA
+vaccine is safe and
+immunogenic in
+humans. 6.5 months
+bench-to-clinic (ref. 12)
+HPV E6/E7 DNA
+vaccines is safe and
+efficacious against
+cervical neoplasia in
+human patients (ref.
+24)
+Influenza HA DNA prime via Biojector
+jet delivery followed by trivalent
+inactivated influenza boost (IIV3) in
+adults (ref. 21) and children aged 6-17
+years. First US study of a DNA
+vaccine in children. VRC 702 (ref. 20)
+Current Opinion in Immunology
+Selected Recent DNA vaccines in the clinic. All the reported constructs were found to be safe and immunogenic in the clinic. Several of these
+have reported clinical impact or outcomes representing important immune readouts.
+www.sciencedirect.com Current Opinion in Immunology 2020, 65:21–27
+To date, there have been twenty-nine EBOV outbreaks
+with mortality rates reaching up to 90%. Patel et al.
+reported that rapid in vivo protection of mice following
+a single immunization with a synthetic DNA vaccine
+encoding consensus EBOV glycoproteins (GP) representative of EBOV outbreak strains spanning the years from
+1976 to 2008 against a heterologous mouse-adapted
+EBOV strain [14]. SynEBOV-GP DNA immunization
+also resulted in 100% protection of macaques from lethal
+EBOV challenge [14]. Importantly in these studies
+determined that a dose-sparing 2-injection regimen
+delivered via the recently characterized intradermal-EP
+(CELLECTRA-EP) [15] route was 100% protective
+against lethal challenge. These responses were persistent
+up to one year after immunization with robust recall
+responses observed at this time point [14]. These promising results supported a first in-human (FIH) clinical
+trial. Two EBOV-GP candidates, INO-4201 encoding a
+SynconEBOV-GP antigen representative of outbreak
+strains from 1976 to 2008, and INO 4202 encoding Zaire
+Makona EBOV-GP from a 2014 outbreak, were evaluated
+alone, together, and in combination with DNA-encoded
+human interleukin-12 (IL-12) delivered by either the IM
+or ID routes using Cellectra EP. Both delivery routes
+induced potent anti-Ebola cellular and humoral immunity. However, the ID delivery route was dose sparing and
+promoted more rapid seroconversion (100% seroreactivity) after 2 immunizations. The simplicity, consistency,
+and tolerability of the ID format appears to exhibit
+important advantages for vaccine development against
+emerging and re-emerging pathogens [16], and could
+have a supportive role for the current VSV-ZEBOV
+vaccine.
+The Middle East respiratory syndrome coronavirus
+(MERS-CoV), was first identified in 2012 is responsible
+for an outbreak of cases which are clustered in the Arabian
+Peninsula. In 2015 the first spread of MERS to a nonArabian Peninsula country (Seoul, Korea), generated a
+major outbreak. Muthumani et al. reported on the development of a synthetic DNA vaccine encoding a MERS
+spike protein which induced potent humoral and cellmediated immunity in mice, non-human primates, and
+camels and protected vaccinated macaques from MERS
+associated pneumonia following virus challenge [17,18]. A
+phase-I, open-label, single-arm, dose-escalation clinical
+trial was opened at the Walter-Reed Army Institute
+for Research Clinical Trials. The vaccine was delivered
+by intramuscular injection and CELLECTRA-EP.
+Seroconversion was detected in 95% of patients.
+MERS-CoV-specific T cell responses were detected in
+76% of patients and persisted at 60 days post-final immunization [19].
+Influenza viruses which undergo antigenic drift and shift
+require new vaccine design annually to curb disease
+spread. Recently the VRC of the NIH published two
+clinical studies of a jet delivered DNA prime, matched,
+trivalent inactivated virus boost influenza vaccine regimen in healthy adult volunteers, and in children. Compared to inactivated virus prime and boost, DNA prime
+and virus boost induced trended toward greater humoral
+responses including hemagglutinin inhibition (HAI) and
+neutralization [20,21]. These findings collectively demonstrate the ability to rapidly apply the synthetic DNA
+platform in the context of infectious disease or EID, with
+potent immune performance, as well the excellent tolerability profile of the platform.
+Immunotherapy for viral diseases
+Human papilloma viruses (HPV) are oncogenic viruses
+that infect mucosal surfaces. HPV is responsible for
+almost 5% of all cancer worldwide [22]. Recombinant
+HPV particle-based vaccines against specific oncogenic
+HPVs and two strains of HPV that generate genital warts,
+have impacted the incidence of HPV infection. However,
+persons already infected with remain at high risk for a
+collection of HPV diseases, including cervical cancer,
+head and neck cancer, anal cancer, vaginal cancer, and
+others HPV-associated cancers. The first-in-human (FIH)
+clinical trial was advanced to test the hypothesis that a
+synthetic DNA vaccine encoding HPV immunogens for
+modified nuclear oncogenes E6 and E7 from HPV types
+16 and 18 (two high risk genotypes) would induce CTLs
+that might impact HPV-induced cervical intraepithelial
+neoplasia (CIN). An initial immunogenicity study [23]
+reported that the vaccine was highly immunogenic,
+driving antibodies and CTLs in almost all vaccinated
+subjects. A follow-up Phase IIb efficacy trail was subsequently reported [24]. The study showed potent induction of immunity including CD8 T cells that migrated to
+the diseased cervical tissue. Overall 49.5% of women in
+this study regressed their disease, while 40.2% regressed
+and cleared their cervical infection. This is the first
+therapeutic vaccine to show clinical efficacy against grade
+2 and 3 CIN [24]. Additional study of this approach for
+CIN is in progress. This report is also the first treatment
+efficacy data generated for a DNA approach against a
+human disease.
+The SynDNA platform has the potential to synergize
+with extant cancer therapy. In the clinic McNeel et al.
+reported that combination anti-PD-1 immunotherapy
+with a T-cell stimulating DNA vaccine was well-tolerated
+and promoted antitumor responses [25]. A more recent
+study by Agarwall et al. tested the adaptive EP delivery of
+a synHPV vaccine for treatment of HPV positive head and
+neck cancers [26]. This phase Ib/II safety, tolerability,
+and immunogenicity study reported results of immunotherapy with MEDI0457 (DNA immunotherapy targeting HPV16/18 E6/E7 co-delivered with plasmid IL12)
+delivered by adaptive CELLECTRA-EP. Twenty-two
+patients with locally advanced, p16+
+head and neck squamous cell carcinoma (HNSCC) received MEDI0457.
+24 Vaccines
+Current Opinion in Immunology 2020, 65:21–27 www.sciencedirect.com
+Overall the treatment was well tolerated. 90% of evaluable patients showed elevated antigen-specific T-cell
+activity by IFNg ELISpot, and persistent cellular
+responses surpassing 100 spot-forming units (SFUs)/106
+peripheral blood mononuclear cells (PBMCs) were noted
+out to 1 year. Induction of HPV-specific CD8+ T cells was
+observed in tumors post biopsy. One patient developed
+metastatic disease and flow-cytometric analyses revealed
+induction of HPV16-specific PD-1+ CD8+ T cells that
+were not found before MEDI0547. Treatment of this
+patient with anti-PD-1 therapy resulted in a rapid and
+durable complete response. These data demonstrate that
+MEDI0457 can induce clear and durable HPV16/18
+antigen-specific peripheral and tumor-infiltrating
+immune responses that may further benefit patients in
+the context of check point inhibitor (CPI) therapy to
+improve therapeutic outcomes. Interestingly, this group
+reported a second complete responder in the context
+of CPI combination therapy. Additional study of this
+approach is ongoing (ClinicalTrials.gov Identifier:
+NCT04001413). The combination of CPI with a potent
+T cell generating synDNA vaccine represents an important tool for additional study in the broader context of
+cancer immunotherapy.
+SynDNA biologics in the preclinical setting
+The use of biologics and modified biologicsto treat various
+diseases has rapidly expanded. Similarly, other immune
+disorders and cancers may be treated with monoclonal
+antibodies targeting cancer-specific antigens or immunosuppressive molecules present on immune cells such as
+cytotoxic T-lymphocyte-associated protein 4 (CTLA-4)
+and programmed cell death-1 (PD-1). Indeed anti-PD-1
+andCTLA-4 immunotherapyhavehadsuccessinthe clinic
+and become standard of care cancer treatment approaches
+[27]. Recent reports have described use of the SynDNAencoded monoclonal antibody (DMAb) therapy to deliver
+anti-PD-1 [28] and anti-CTLA-4 [29] immunotherapy
+in vivo. Bi-specific antibodies which engage cancer targets
+and cytotoxic T lymphocytes leading to T cell-mediated
+killing of cancer cells, are growing in clinical importance.
+The first FDA approved bispecific is Blincyto (Blinatumomab), which targets CD19 on B cellsfor treatment of acute
+lymphoblastic leukemia. Bispecfic drugs are complex to
+produce, can have short half-lives and as such, can be
+associated with high costs per treatment limiting their
+development and patient access. Taking into account its
+high local production in tissues, new SynDNA Ig production approach offer an alternative production pipeline for
+biologics. As an extension of this approach Perales-Puchalt
+reported on in vivo delivery with several months expression
+of a DNAencoded bispecific antibody delivered directly in
+vivo which demonstrated potent tumor control in a mouse
+model[30]supporting the delivery of nonnative Ig forms.
+Early reports described the use of plasmid vector systems
+forthe generationof antibody like molecules aswell as antiHIV-1 envelope neutralizing F(ab)s[31]. Xu et al. reported
+Synthetic DNA vaccines: prime time is approaching Gary and Weiner 25
+Table 1
+Selected preclinical studies for DNA-encoded biologics
+Target Disease etiology Biologic class Major findings Ref.
+Zika virus Infectious DMAb Dual or single plasmid DNA delivery system results in expression of ZIKV
+neutralizing antibodies and serum from DMAb immunized mice, protects naı¨ve
+mice from ZIKV lethal challenge.
+[38]
+Ebola virus Infectious DMAb EBOV DMAbs confer 100% protection from lethal challenge in mice/. [35,39]
+P. Aeruginosa Infectious DMAb Anti-Pseudomonas DMAB protects mice from lethal pneumonia challenge and
+synergizes with antibiotic therapy resulting in protection from Antibiotic-resistant
+pneumonia.
+[40]
+B. burgdorferi Infectious DMAb Anti-Borrelia DMAb protects mice from tick challenge and represents a novel
+method for blocking Lyme disease transmission.
+[41]
+HIV-1 Infectious F(ab) Anti-HIV envelope neutralizing VRC01 F(ab) is produced rapidly in vivo following
+DNA immunization and EP.
+[31]
+HIV-1 Infectious Broadly
+neutralizing Abs
+Multiple bNAbs expressed in mice and NHPs at high concentration
+simultaneously, for extended periods
+[33]
+Dengue Infectious DMAb Delivery of multiple neutralizing DMAbs protects against all DENV serotypes and
+prevents antibody-dependent enhancement.
+[36]
+Chikungunya virus Infectious DMAb A single injection of DMAb prophylaxis protects mice from CHIKV challenge.
+Combination of DNA and DMAb immunization affords both rapid and long-term
+protection.
+[37]
+Influenza Infectious DMAb DMAbs targeting influenza A and B protect mice from lethal challenge. [34,35]
+HIV-1 Infectious Ig-like molecule Proof-of-concept study for DNA-based delivery of anti-HIV immunoadhesins
+and in vivo modulation of protein function.
+[32]
+PD-1 Malignancy DMAb Anti-PD-1 DMAbs are produced rapidly and persist in mouse sera, extending
+therapeutic window of immune checkpoint blockade therapy.
+[28]
+CTLA-4 Malignancy DMAb Anti-CTLA-4 DMAbs are rapidly produced in vivo and shrink tumors in mouse
+cancer models.
+[29]
+HER2 Malignancy DMAb/DBiTE Anti-HER2 DMAb and a bispecific targeting HER2 and CD3 induce control of
+ovarian tumors in mice and prolong survival.
+[30]
+www.sciencedirect.com Current Opinion in Immunology 2020, 65:21–27
+the use of the synDNA platform to express and sulfate the
+antibody-like HIV-1 entry inhibitor eCD4-Ig [32] illustrating the potential for complex in vivo biologic assembly.
+Recently, Wise et al. reported that DMAbs encoding HIVspecific broadly neutralizing antibodies could produce
+functional broadly neutralizing antibodies in mice and
+non-human primates [33]. This platform continues to
+advance and DMAbs targeting influenza A and B
+[34,35], dengue [36], Chikungunya [37], Zika [38],
+and Ebola [35,39] with of protection in animal models.
+DMAbs may also provide advantages as anti-bacterial therapeuticsto complement antibiotics. Patel et al. reported that
+an optimized DMAb targeting the bacterium Pseudomonas
+aeruginosa protected against lethal pneumonia in a mouse
+model of antibiotic-resistant P. aeruginosa [40]. Similarly,
+Wang et al. reported that a designed DMAb targeting the
+Borrelia protein OspA could protect against challenge with
+Borrelia-infected ticks, blocking Lyme disease transmission
+in the gut of the feeding ticks in a mouse challenge model
+[41]. These recent studies illustrate the growing interest in
+the DMAb approach.Additionalstudy in this area islikely of
+high importance as a flexible and approach for prevention or
+treatment of infectious disease as well as for cancer therapy
+(Table 1) bringing many of the advantages of the simple
+DNA delivery platform.
+Conclusions
+The synthetic DNA platform has dramatically changed in
+its performance over the last 8 years. A combination of
+advances which have improved the delivery of the DNA
+into cells, increased tolerability, combined with multiple
+changes in genetic designs, and in formulations have
+resulted in a more potent vaccine platform with many of
+the features important for rapid vaccine development and
+deployment against emerging Infectious diseases. Later
+stage trials of these vaccines are worthy of significant
+attention. The extension of such studies to conserved
+non-viral cancer targets is similarly unique and important.
+Recent animal research studies showing disease impact
+from the biological delivery of monoclonal and bi-specific
+antibodies as DMAbs has primed an expansion of DNAencoded biologics being investigated for infectious disease
+and cancertherapiesin preclinicalsettings and hasresulted
+in the first advance of DMAbsinto this clinic (clinicaltrials.
+gov identifier: NCT03831503). The original pioneering
+DNA vaccine papers suggested the conceptual development and deployment advantages of a simple nucleic acidbased vaccine platform for impacting a host of global
+diseases[4]. Recent advancesin synthetic DNA technology have brought ussteps closer to thisimportant outcome
+and may have important implications for the development
+of vaccines against the newly emerged SARS-CoV-2.
+Conflict of interest statement
+D.B.W. has grant funding, participates in industry collaborations, and has received speaking honoraria and fees
+for consulting. This service includes serving on scientific
+review committees and advisory boards. Remuneration
+includes direct payments or stocks/stock options and in
+the interest of disclosure, therefore, he notes potential
+conflicts associated with this work with, in particular,
+Inovio, where he serves on the BOD/SAB, as well as
+with Pfizer, Bristol-Myers Squibb, Merck, Aldevron,
+Roche, Ferring Pharmaceuticals, and possibly others.
+References and recommended reading
+Papers of particular interest, published within the period of review,
+have been highlighted as
+ of outstanding interest
+1.
+
+Jorritsma S, Gowans E, Grubor-Bauk B, Wijesundara D: Delivery
+methods to increase cellular uptake and immunogenicity of
+DNA vaccines. Vaccine 2016, 34:5488-5494.
+2. Khan AS, Broderick KE, Sardesai NY: Clinical development of
+intramuscular electroporation: providing a “boost” for DNA
+vaccines. Electroporation Protocols. Springer; 2014:279-289.
+3. Lambricht L, Lopes A, Kos S, Sersa G, Pre´ at V, Vandermeulen G:
+Clinical potential of electroporation for gene therapy and DNA
+vaccine delivery. Expert Opin Drug Deliv 2016, 13:295-310.
+4.
+
+Kutzler MA, Weiner DB: DNA vaccines: ready for prime time?
+Nat Rev Genet 2008, 9:776.
+5. Chattergoon MA, Robinson TM, Boyer JD, Weiner DB: Specific
+immune induction following DNA-based immunization
+through in vivo transfection and activation of macrophages/
+antigen-presenting cells. J Immunol 1998, 160:5707-5718.
+6. Akbari O, Panjwani N, Garcia S, Tascon R, Lowrie D, Stockinger B:
+DNA vaccination: transfection and activation of dendritic cells
+as key events for immunity. J Exp Med 1999, 189:169-178.
+7. Sheets RL, Stein J, Manetz TS, Andrews C, Bailer R,
+Rathmann J, Gomez PL: Toxicological safety evaluation of
+DNA plasmid vaccines against HIV-1, Ebola, severe acute
+respiratory syndrome, or West Nile virus is similar despite
+differing plasmid backbones or gene-inserts. Toxicol Sci
+2006, 91:620-630.
+8.
+
+Kalams SA, Parker SD, Elizaga M, Metch B, Edupuganti S, Hural J,
+De Rosa S, Carter DK, Rybczyk K, Frank I: Safety and
+comparative immunogenicity of an HIV-1 DNA vaccine in
+combination with plasmid interleukin 12 and impact of
+intramuscular electroporation for delivery. J Infect Dis 2013,
+208:818-829.
+9. Hannaman D, Dupuy LC, Ellefsen B, Schmaljohn CS: A phase
+1 clinical trial of a DNA vaccine for Venezuelan equine
+encephalitis delivered by intramuscular or intradermal
+electroporation. Vaccine 2016, 34:3607-3612.
+10. Muthumani K, Griffin BD, Agarwal S, Kudchodkar SB,
+Reuschel EL, Choi H, Kraynyak KA, Duperret EK, Keaton AA,
+Chung C: In vivo protection against ZIKV infection and
+pathogenesis through passive antibody transfer and active
+immunisation with a prMEnv DNA vaccine. npj Vaccines 2016,
+1:16021.
+11. Griffin BD, Muthumani K, Warner BM, Majer A, Hagan M, Audet J,
+Stein DR, Ranadheera C, Racine T, De La Vega M-A: DNA
+vaccination protects mice against Zika virus-induced damage
+to the testes. Nat Commun 2017, 8:15743.
+12.
+
+Tebas P, Roberts CC, Muthumani K, Reuschel EL,
+Kudchodkar SB, Zaidi FI, White S, Khan AS, Racine T, Choi H:
+Safety and immunogenicity of an anti–Zika virus DNA
+vaccine—preliminary report. New Engl J Med 2017 http://dx.doi.
+org/10.1056/NEJMoa1708120.
+13. Gaudinski MR, Houser KV, Morabito KM, Hu Z, Yamshchikov G,
+Rothwell RS, Berkowitz N, Mendoza F, Saunders JG, Novik L:
+Safety, tolerability, and immunogenicity of two Zika virus DNA
+26 Vaccines
+Current Opinion in Immunology 2020, 65:21–27 www.sciencedirect.com
+vaccine candidates in healthy adults: randomised, open-label,
+phase 1 clinical trials. Lancet 2018, 391:552-562.
+14. Patel A, Reuschel EL, Kraynyak KA, Racine T, Park DH, Scott VL,
+Audet J, Amante D, Wise MC, Keaton AA: Protective efficacy and
+long-term immunogenicity in cynomolgus macaques by Ebola
+virus glycoprotein synthetic DNA vaccines. J Infect Dis 2018,
+219:544-555.
+15. Broderick K, Shen X, Soderholm J, Lin F, McCoy J, Khan A, Yan J,
+Morrow M, Patel A, Kobinger G: Prototype development and
+preclinical immunogenicity analysis of a novel minimally
+invasive electroporation device. Gene Ther 2011, 18:258.
+16.
+
+Tebas P, Kraynyak KA, Patel A, Maslow JN, Morrow MP,
+Sylvester AJ, Knoblock D, Gillespie E, Amante D, Racine T:
+Intradermal SynConJ Ebola GP DNA vaccine is temperature
+stable and safely demonstrates cellular and humoral
+immunogenicity advantages in healthy volunteers. J Infect Dis
+2019, 220.3:400-410.
+17. Muthumani K, Falzarano D, Reuschel EL, Tingey C, Flingai S,
+Villarreal DO, Wise M, Patel A, Izmirly A, Aljuaid A: A synthetic
+consensus anti–spike protein DNA vaccine induces protective
+immunity against Middle East respiratory syndrome
+coronavirus in nonhuman primates. Sci Transl Med 2015, 7
+301ra132–301ra132.
+18. Muthumani K, Falzarano D, Reuschel E, Kraynyak K, Ugen K,
+Kim P, Maslow J, Kim J, Sardesai N, Kobinger G: A synthetic
+consensus anti-spike protein DNA vaccine induces protective
+immunity against Middle East respiratory syndrome
+coronavirus in non-human primates. Int J Infect Dis 2016, 45:23.
+19.
+
+Modjarrad K, Roberts CC, Mills KT, Castellano AR, Paolino K,
+Muthumani K, Reuschel EL, Robb ML, Racine T, M-d Oh: Safety
+and immunogenicity of an anti-Middle East respiratory
+syndrome coronavirus DNA vaccine: a phase 1, open-label,
+single-arm, dose-escalation trial. Lancet Infect Dis 2019,
+19:1013-1022.
+20.
+
+Houser KV, Yamshchikov GV, Bellamy AR, May J, Enama ME,
+Sarwar U, Larkin B, Bailer RT, Koup R, Paskel M: DNA vaccine
+priming for seasonal influenza vaccine in children and
+adolescents 6 to 17 years of age: a phase 1 randomized clinical
+trial. PLoS One 2018, 13:e0206837.
+21. Carter C, Houser KV, Yamshchikov GV, Bellamy AR, May J,
+Enama ME, Sarwar U, Larkin B, Bailer RT, Koup R: Safety and
+immunogenicity of investigational seasonal influenza
+hemagglutinin DNA vaccine followed by trivalent inactivated
+vaccine administered intradermally or intramuscularly in
+healthy adults: an open-label randomized phase 1 clinical trial.
+PLoS One 2019, 14.
+22. Serrano B, Brotons M, Bosch FX, Bruni L: Epidemiology and
+burden of HPV-related disease. Best Pract Res Clin Obstet
+Gynaecol 2018, 47:14-26.
+23. Bagarazzi ML, Yan J, Morrow MP, Shen X, Parker RL, Lee JC,
+Giffear M, Pankhong P, Khan AS, Broderick KE: Immunotherapy
+against HPV16/18 generates potent TH1 and cytotoxic cellular
+immune responses. Sci Transl Med 2012, 4 155ra138–155ra138.
+24.
+
+Trimble CL, Morrow MP, Kraynyak KA, Shen X, Dallas M, Yan J,
+Edwards L, Parker RL, Denny L, Giffear M: Safety, efficacy, and
+immunogenicity of VGX-3100, a therapeutic synthetic DNA
+vaccine targeting human papillomavirus 16 and 18 E6 and E7
+proteins for cervical intraepithelial neoplasia 2/3: a
+randomised, double-blind, placebo-controlled phase 2b trial.
+Lancet 2015, 386:2078-2088.
+25. McNeel DG, Eickhoff JC, Jeraj R, Staab MJ, Straus J, Rekoske B,
+Liu G: DNA Vaccine with Pembrolizumab to Elicit Antitumor
+Responses inPatientswithMetastatic,Castration-ResistantProstate
+Cancer (mCRPC). American Society of Clinical Oncology; 2017.
+26. Aggarwal C, Cohen RB, Morrow MP, Kraynyak KA, Sylvester AJ,
+Knoblock DM, Bauml JM, Weinstein GS, Lin A, Boyer J:
+Immunotherapy targeting HPV16/18 generates potent immune
+responses in HPV-associated head and neck cancer. Clin
+Cancer Res 2019, 25:110-124.
+27. Ribas A, Wolchok JD: Cancer immunotherapy using checkpoint
+blockade. Science 2018, 359:1350-1355.
+28.
+
+Perales-Puchalt A, Duperret EK, Muthumani K, Weiner DB:
+Simplifying checkpoint inhibitor delivery through in vivo
+generation of synthetic DNA-encoded monoclonal antibodies
+(DMAbs). Oncotarget 2019, 10:13.
+29.
+
+Duperret EK, Trautz A, Stoltz R, Patel A, Wise MC, PeralesPuchalt A, Smith T, Broderick KE, Masteller E, Kim JJ: Synthetic
+DNA-encoded monoclonal antibody delivery of Anti–CTLA-4
+antibodies induces tumor shrinkage in vivo. Cancer Res 2018,
+78:6363-6370.
+30.
+
+Perales-Puchalt A, Duperret EK, Yang X, Hernandez P, Wojtak K,
+Zhu X, Jung S-H, Tello-Ruiz E, Wise MC, Montaner LJ: DNAencoded bispecific T cell engagers and antibodies present
+long-term antitumor activity. JCI Insight 2019, 4.
+31. Muthumani K, Flingai S, Wise M, Tingey C, Ugen KE, Weiner DB:
+Optimized and enhanced DNA plasmid vector based in vivo
+construction of a neutralizing anti-HIV-1 envelope
+glycoprotein Fab. Hum Vaccin Immunother 2013, 9:2253-2262.
+32.
+
+Xu Z, Wise MC, Choi H, Perales-Puchalt A, Patel A, Tello-Ruiz E,
+Chu JD, Muthumani K, Weiner DB: Synthetic DNA delivery by
+electroporation promotes robust in vivo sulfation of broadly
+neutralizing anti-HIV immunoadhesin eCD4-Ig. EBioMedicine
+2018, 35:97-105.
+33.
+
+Wise MC, Xu Z, Tello-Ruiz E, Beck C, Trautz A, Patel A, Elliott ST,
+Chokkalingam N, Kim S, Kerkau MG: In vivo delivery of synthetic
+DNA–encoded antibodies induces broad HIV-1–neutralizing
+activity. J Clin Invest 2020, 130.
+34. Elliott ST, Kallewaard NL, Benjamin E, Wachter-Rosati L,
+McAuliffe JM, Patel A, Smith TR, Schultheis K, Park DH, Flingai S:
+DMAb inoculation of synthetic cross reactive antibodies
+protects against lethal influenza A and B infections. npj
+Vaccines 2017, 2:18.
+35. Andrews CD, Luo Y, Sun M, Yu J, Goff AJ, Glass PJ, Padte NN,
+Huang Y, Ho DD: In vivo production of monoclonal antibodies
+by gene transfer via electroporation protects against lethal
+influenza and Ebola infections. Mol Ther Methods Clin Dev 2017,
+7:74-82.
+36. Flingai S, Plummer EM, Patel A, Shresta S, Mendoza JM,
+Broderick KE, Sardesai NY, Muthumani K, Weiner DB: Protection
+against dengue disease by synthetic nucleic acid antibody
+prophylaxis/immunotherapy. Sci Rep 2015, 5:12616.
+37.
+
+Muthumani K, Block P, Flingai S, Muruganantham N,
+Chaaithanya IK, Tingey C, Wise M, Reuschel EL, Chung C,
+Muthumani A: Rapid and long-term immunity elicited by DNAencoded antibody prophylaxis and DNA vaccination against
+chikungunya virus. J Infect Dis 2016, 214:369-378.
+38.
+
+Esquivel RN, Patel A, Kudchodkar SB, Park DH, Stettler K,
+Beltramello M, Allen JW, Mendoza J, Ramos S, Choi H: In vivo
+delivery of a DNA-encoded monoclonal antibody protects nonhuman primates against Zika Virus. Mol Ther 2019, 27:974-985.
+39. Patel A, Park DH, Davis CW, Smith TR, Leung A, Tierney K,
+Bryan A, Davidson E, Yu X, Racine T: In vivo delivery of synthetic
+human DNA-encoded monoclonal antibodies protect against
+ebolavirus infection in a mouse model. Cell Rep 2018, 25:1982-
+1993 e1984.
+40.
+
+Patel A, DiGiandomenico A, Keller AE, Smith TR, Park DH,
+Ramos S, Schultheis K, Elliott ST, Mendoza J, Broderick KE: An
+engineered bispecific DNA-encoded IgG antibody protects
+against Pseudomonas aeruginosa in a pneumonia challenge
+model. Nat Commun 2017, 8:637.
+41. Wang Y, Esquivel R, Flingai S, Schiller ZA, Kern A, Agarwal S,
+Chu J, Patel A, Sullivan K, Wise MC: Anti-OspA DNA-encoded
+monoclonal antibody prevents transmission of spirochetes in
+tick challenge providing sterilizing immunity in mice. J Infect
+Dis 2018, 219:1146-1150.
+Synthetic DNA vaccines: prime time is approaching Gary and Weiner 27
+www.sciencedirect.com Current Opinion in Immunology 2020, 65:21–27

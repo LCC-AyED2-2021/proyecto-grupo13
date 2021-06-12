@@ -1,0 +1,92 @@
+COMMENTARY
+Diabetes and COVID-19
+Zachary T. Bloomgarden
+Department of Medicine, Division of Endocrinology, Diabetes, and Bone Disease, Icahn School of Medicine at Mount Sinai, New York, New York
+Correspondence
+Zachary T. Bloomgarden, Department of Medicine, Division of Endocrinology, Diabetes, and Bone Disease, Icahn School of Medicine at Mount Sinai,
+New York, New York 10029.
+Email: zbloom@gmail.com
+After the recognition in December 2019 of a cluster of
+patients with pneumonia of unknown cause in
+Wuhan caused by the novel coronavirus, CoV-19,1
+China and the world have faced the extraordinary
+challenge of a previously unrecognized viral illness
+with high infectivity.2 Every year, millions of persons
+(5%-15% of the world's population) contract
+influenza,3,4 causing between 300 000 and 600 000
+excess respiratory deaths.5 In China alone, recent estimates put the annual influenza-associated mortality
+rate at more than 88 000 persons,6 likely in excess of
+any potential outcome of coronavirus disease 2019
+(COVID-19). Regardless of the potential for spread of
+COVID-19, as with influenza-related mortality,7 diabetes is an important risk factor for adverse outcome.
+Mortality rates among persons with diabetes in Hong
+Kong age 75 and over from pneumonia currently
+exceed mortality rates in this age group from cardiovascular disease and from cancer.8 Similar evidence of
+risk among persons with diabetes has been reported
+for the two earlier CoV infections, severe acute respiratory syndrome (SARS) beginning in 2002 and affecting more than 8000 persons, mainly in Asia9,10 and
+the Middle East respiratory syndrome (MERS) in 2012
+affecting more than 2000 persons, mainly in Saudi
+Arabia.11 As MERS-CoV binds to the receptor-binding
+domain of human dipeptidyl peptidase IV (DPP-IV), a
+transgenic mouse model expressing this DPP-IV
+receptor on pulmonary alveolar cells has been used to
+study the effect of diabetes in worsening disease
+severity, showing an association of diabetes with
+greater weight loss and greater pulmonary inflammation, with macrophage infiltrates similar to those seen
+clinically in the disease.12
+We acknowledge the frontline medical staff working
+day and night in China to rescue critical cases and protect the public health. We know that these great efforts
+are now and will be in the future crucial in overcoming
+COVID-19. Providing care to people with diabetes is an
+important part of the effort. The Journal of Diabetes was
+started more than a decade ago in a spirit of collaboration
+between East and West addressing the epidemiology, etiology, pathogenesis, management, complications, and
+prevention of diabetes. The journal is issuing a call for
+submission of commentaries, original articles, and case
+reports regarding issues with COVID-19 in patients with
+diabetes, as well as descriptions of basic aspects of the
+interrelationships between diabetes and the novel CoV.
+We hope in this way to support the thousands of Chinese
+medical workers involving themselves in the care of
+patients with COVID-19, and we look forward to these
+efforts helping our goal of eradication of the disease.
+REFERENCES
+1. Zhu N, Zhang D, Wang W, et al. A novel coronavirus from
+patients with pneumonia in China. N Engl J Med. 2019. https://
+doi.org/10.1056/NEJMoa2001017.
+2. Li Q, Guan X, Wu P, et al. Early transmission dynamics in
+Wuhan, China, of novel coronavirus-infected pneumonia.
+N Engl J Med. 2020. https://doi.org/10.1056/NEJMoa2001316.
+3. Nicholson KG, Wood JM, Zambon M. Influenza. Lancet. 2003;
+362:1733-1745.
+4. World Health Organization. Influenza (Seasonal), downloaded
+2020. https://www-who-int.eresources.mssm.edu/en/news-room/
+fact-sheets/detail/influenza-(seasonal)
+5. Iuliano AD, Roguski KM, Chang HH, et al. Global seasonal
+influenza-associated mortality collaborator network estimates
+of global seasonal influenza-associated respiratory mortality:
+a modelling study. Lancet. 2018;391:1285-1300.
+DOI: 10.1111/1753-0407.13027
+© 2020 Ruijin Hospital, Shanghai Jiaotong University School of Medicine and John Wiley & Sons Australia, Ltd
+Journal of Diabetes. 2020;12:347–349. wileyonlinelibrary.com/journal/jdb 347
+6. Li L, Liu Y, Wu P, et al. Influenza-associated excess respiratory
+mortality in China, 2010-15: a population-based study. Lancet
+Public Health. 2019;4:e473-e481.
+7. Goeijenbier M, van Sloten TT, Slobbe L, et al. Benefits of flu
+vaccination for persons with diabetes mellitus: a review. Vaccine. 2017;35(38):5095-5101.
+8. Wu H, Lau ESH, Ma RCW, et al. Secular trends in all-cause
+and cause-specific mortality rates in people with diabetes in
+Hong Kong, 2001-2016: a retrospective cohort study.
+Diabetologia. 2020. https://doi.org/10.1007/s00125-019-05074-7.
+9. Huang YT, Lee YC, Hsiao CJ. Hospitalization for ambulatorycare-sensitive conditions in Taiwan following the SARS
+outbreak: a population-based interrupted time series study.
+J Formos Med Assoc. 2009;108:386-394.
+10. Chan-Yeung M, Xu RH. SARS: epidemiology. Respirology.
+2003;8:S9-S14.
+11. Morra ME, Van Thanh L, Kamel MG, et al. Clinical outcomes
+of current medical approaches for Middle East respiratory syndrome: a systematic review and meta-analysis. Rev Med Virol.
+2018;28:e1977.
+12. Kulcsar KA, Coleman CM, Beck SE, Frieman MB. Comorbid
+diabetes results in immune dysregulation and enhanced disease severity following MERS-CoV infection. JCI Insight. 2019;
+4:131774.
+348 COMMENTARY

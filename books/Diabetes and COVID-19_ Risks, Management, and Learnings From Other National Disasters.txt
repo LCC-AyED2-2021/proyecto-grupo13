@@ -1,0 +1,1039 @@
+Diabetes and COVID-19: Risks,
+Management, and Learnings From
+Other National Disasters
+Diabetes Care 2020;43:1695–1703 | https://doi.org/10.2337/dc20-1192
+Evidence relating to the impact of COVID-19 in people with diabetes (PWD) is limited
+but continuing to emerge. PWD appear to be at increased risk ofmore severe COVID19 infection, though evidence quantifying the risk is highly uncertain. The extent to
+which clinical and demographic factorsmoderate this relationship is unclear, though
+signals are emerging that link higher BMI and higher HbA1c to worse outcomes in
+PWD with COVID-19. As well as posing direct immediate risks to PWD, COVID-19 also
+risks contributing to worse diabetes outcomes due to disruptions caused by the
+pandemic, including stress and changes to routine care, diet, and physical activity.
+Countries have used various strategies to support PWD during this pandemic. There
+is a high potential for COVID-19 to exacerbate existing health disparities, and
+research and practice guidelines need to take this into account. Evidence on the
+management of long-term conditions during national emergencies suggests various
+ways to mitigate the risks presented by these events.
+People with diabetes (PWD) have been identified as being at increased risk of serious
+illness from COVID-19. COVID-19 also presents substantial indirect risks to PWD
+through disruptions in health care and lifestyle factors. Understanding these risks and
+best ways to mitigate them in the short and longer term is key to facilitating informed
+decision-making during and after the COVID-19 pandemic.
+Evidence relating to COVID-19 and diabetes is limited but continuing to emerge.
+In this Perspective, we summarize evidence identified through rapid reviews. We
+consider direct and indirect risks posed to PWD by COVID-19 and management
+considerations for PWD both with and without COVID-19 infection. Recognizing
+limitations in evidence related to COVID-19, we also bring together leaders in diabetes
+care from countries with high rates of COVID-19, highlighting experiences from the
+most affected countries including Italy, France, China, the U.K., and the U.S.
+DIABETES AND RISKS FROM COVID-19
+COVID-19 Infection: Contracting the Disease
+It is unclear if PWD are more likely to contract COVID-19. PWD are considered at
+increased risk of infection generally, which has been extended to COVID-19 (1).
+Community testing for COVID-19 remains limited; hence, data predominantly come
+from hospitalized cohorts. Systematic reviews primarily consisting of data from China
+have estimated rates of 8% (95% CI 6–11%) (2), 7.87% (95% CI 6.57–9.28%) (3), and
+9.7% (95% CI 6.9–12.5%) (4) of diabetes in people hospitalized with COVID-19. The
+percentage hospitalization appears higher in the U.S., where from February 12 to 28
+March 2020, PWD accounted for 10.9% of all COVID-19 patients (similar to the proportion
+of the U.S. population with diabetes), 24% of hospitalized cases (non–intensive care unit
+1
+Centre for Evidence-Based Medicine, Nuffield
+Department of Primary Care Health Sciences,
+University of Oxford, Oxford, U.K.
+2
+Nuffield Department of Primary Care Health
+Sciences, University of Oxford, Oxford, U.K.
+3
+Medical Sciences Division, University of Oxford,
+Oxford, U.K.
+4
+University of North Carolina School of Medicine,
+Chapel Hill, NC
+5
+Department of Clinical and Experimental Medicine, Section of Metabolic Diseases and Diabetes, University of Pisa, Pisa, Italy
+6
+Peking University Diabetes Center, Peking University People’s Hospital, China 7
+Federation de Diabetologie, Bichat Hospital, Assistance Publique–Hopitaux de Paris, Paris, France ˆ 8
+INSERM, UMR_S 1138, Centre de Recherche des
+Cordeliers, Paris, France
+9
+UFR de Medecine, Universit ´ e de Paris, Paris, ´
+France
+10Diabetes Research Centre, University of Leicester, Leicester, U.K.
+Corresponding author: Jamie Hartmann-Boyce,
+jamie.hartmann-boyce@phc.ox.ac.uk
+Received 19May 2020 and accepted 19May 2020
+This article is part of a special article collection
+available at https://care.diabetesjournals.org/
+collection/diabetes-and-COVID19.
+© 2020 by the American Diabetes Association.
+Readers may use this article as long as the work is
+properly cited, the use is educational and not for
+profit, and the work is not altered. More information is available at https://www.diabetesjournals
+.org/content/license.
+Jamie Hartmann-Boyce,1 Elizabeth Morris,2
+Clare Goyder,2 Jade Kinton,3
+James Perring,3 David Nunan,1
+Kamal Mahtani,1 John B. Buse,4
+Stefano Del Prato,5 Linong Ji,6
+Ronan Roussel,7,8,9 and Kamlesh Khunti10
+Diabetes Care Volume 43, August 2020 1695
+DIABETES AND COVID-19
+[ICU]), and 32% of ICU admissions (5). A
+recent (preprint) U.K. study found uncomplicated diabetes to be the second most
+common comorbidity (19%) in patients
+hospitalized with COVID-19; complicated
+diabetes is reported in a figure only but
+prevalence looks to be approximately
+6.5% (6).
+COVID-19 Infection: Disease Severity
+Though issues with study quality and
+imprecision make it extremely difficult
+to quantify, current data suggest that
+COVID-19 is associated with worse outcomes in PWD. Reports that aggregate
+data from multiple centers are summarized
+in Table 1. There is a notable paucity of data
+on what moderates the relationship between diabetes and COVID-19 severity.
+Increased age, being male, hypertension, and cardiovascular comorbidities
+are associated with increased risks for
+COVID-19 severity (7) and are likely to
+be closely related to diabetes status. It is
+plausible that BMI (8), ethnicity (9), type
+of diabetes, diabetes control, and certain medications (10) all may also play a
+role. In two cohort studies (France and the
+U.K., U.K. study preprint) in PWD hospitalized with COVID-19, higher BMI was positively associated with worse COVID-19
+outcomes when compared with people
+with BMI 25–29.9 kg/m2 (11,12). Data on
+diabetes type and COVID-19 outcomes
+are only beginning to emerge, but preliminary (not yet peer reviewed) data
+from England (see Table 1) suggest risks
+may be higher in people with type 1
+diabetes compared with type 2 (though
+risk was increased in all PWD regardless
+of type) (12). Data on glucose control and
+COVID-19 outcomes are discussed below.
+Association Between Blood Glucose
+Control and COVID-19 Outcomes
+There are limited data to date on the
+association between blood glucose control and COVID-19 outcomes. A retrospective study of 451 people with COVID-19
+with diabetes and/or hyperglycemia
+from the U.S. reported that people with
+uncontrolled hyperglycemia had longer
+length of stay and higher mortality compared with people without diabetes or
+uncontrolled hyperglycemia (13). Another
+retrospective study of people with type 2
+diabetes from China reported that wellcontrolled blood glucose correlated with
+improved outcomes in infected patients
+(14). Worse infection may predispose to
+more difficulty managing blood glucose,
+so the causal mechanism behind correlations between glucose control and worse
+COVID-19 outcomes is unclear.
+Table 1—Aggregated data (across studies or centers) on COVID-19 severity in PWD*
+Study design Country
+Number
+of studies
+Number of
+participants Outcome measure Risk estimate
+Systematic review and
+meta-analysis (2)
+Multiple 8 3,076 Risk of diabetes in severe patients
+compared with nonsevere patients
+OR 2.07, 95% CI 0.89–4.82
+Systematic review and
+meta-analysis (63)**
+Multiple 9 2,103 Risk of diabetes in severe patients
+compared with nonsevere patients
+OR 2.67, 95% CI 1.91–3.7
+Systematic review and
+meta-analysis (4)
+Multiple 6 1,527 Risk of diabetes in severe/ICU patients
+compared with nonsevere (non-ICU)
+patients
+RR 2.21, 95% CI 0.88–5.57
+Meta-analysis (64) China 12 2,018 Diabetes rate ratio among patients with
+more severe versus those with less
+severe infection
+Rate ratio 2.26, 95% CI
+1.47–3.49
+Chinese Centers for
+Disease Control and
+Prevention report (65)
+China n/a 72,314 Case fatality rate 7.3% in PWD (compared
+with 2.3% overall)
+U.S. Centers for Disease
+Control and Prevention
+report (5)
+U.S. n/a 74,439 Not hospitalized PWD 5 6% of all COVID-19 cases
+Hospitalized, not in ICU PWD 5 24% of all COVID-19 cases
+Admitted to ICU PWD 5 32% of all COVID-19 cases
+Multicenter cohort study
+(66)
+China n/a 191 Risk of in-hospital death in PWD
+compared with those without
+(unadjusted)
+OR 2.85, 95% CI 1.35–6.05
+Retrospective review (67) China n/a 1,590 Likelihood of reaching composite end
+point (admission to ICU, intensive
+ventilation, or death) in PWD compared
+with those without (age- and smoking
+status–adjusted)
+HR 1.59, 95% CI 1.03–2.45
+Retrospective cohort
+study (15)**
+U.K. n/a 17,425,445
+(5,683 deaths
+attributed to
+COVID-19)
+Risk of in-hospital death in PWD
+compared with those without (age-,
+sex-, and comorbidities-adjusted)
+HbA1c ,7.5% (58 mmol/mol);
+HR 1.50, 95% CI 1.40–1.60.
+HbA1c $7.5% (58 mmol/mol);
+2.36 (2.18–2.56)
+Population cohort study
+(12)**
+U.K. n/a 61,414,470
+(23,804 COVID19–related
+deaths)
+Risk of in-hospital death in PWD
+compared with those without
+(adjusted for age, sex, deprivation,
+ethnicity, geographical region)
+Type 1 diabetes OR 3.50 (95%
+CI 3.15–3.89); type 2 diabetes
+OR 2.03 (95% CI 1.97–2.09)
+HR, hazard ratio; OR, odds ratio; RR, risk ratio. *Definition of severe disease was often not clear; we report here what was reported in the primary
+literature. Many of the systematic reviews include overlapping studies and have issues with quality and reporting. **Preprintdmethods and data have
+not been subject to peer review.
+1696 Diabetes and COVID-19 Diabetes Care Volume 43, August 2020
+Two recent U.K. studies (both preprint)
+reported that diabetes was independently
+associated with a higher risk of death
+that increased with higher HbA1c (12,15).
+Compared with people without diabetes,
+one study reported that PWD with HbA1c
+.7.5% (58 mmol/mol) had a higher
+chance of in-hospital death than those
+with HbA1c ,7.5% (,7.5% HR 1.50 [95%
+CI 1.40–1.60], $7.5% HR 2.36 [2.18–
+2.56]) (15). In a separate analysis, PWD
+with HbA1c .10% (86 mmol/mol) had a
+higher risk of in-hospital death related to
+COVID-19 than those with an HbA1c of
+6.5–7% (48–53 mmol/mol) (HbA1c .10%
+compared with HbA1c 6.5–7% adjusted
+HR 2.19 [95% CI 1.46–3.29] for type 1
+diabetes, 1.62 [95% CI 1.48–1.79] for
+type 2; in patients with type 2 diabetes,
+a significant difference was also detected
+when comparing HbA1c values .7.5%
+[59 mmol/mol] to the reference category) (12). These data suggest that diabetes control preinfection has a role to
+play in COVID-19 outcomes. In contrast, a
+French observational study in PWD hospitalized with COVID-19 did not find an
+association between long-term glucose
+control and COVID-19 outcomes but had
+a smaller sample (11).
+Indirect Risks to PWD Posed by
+COVID-19
+Health care services, and in some cases
+access to medication and supplies, have
+been disrupted by COVID-19. Evidence
+from other national emergencies shows
+that such disruptions can lead to worse
+diabetes outcomes during and after these
+events (16–18). Diet and physical activity
+aremainstaysofdiabetes self-management
+and can reduce risk of worse outcomes in
+PWDand thosewith cardiometabolicmultimorbidities (19). Though yet to be addressed by the COVID-19 literature, the
+pandemic presents significant disruption
+to both: a U.S. survey of PWD found more
+than a third of respondents reported
+their diet is now less healthy, and half
+report exercising less (20). The current
+pandemic and social isolation are likely to
+increase rates of anxiety and depression,
+whichmay also lead to poor adherence to
+medications and worsening of risk factor
+control (21,22).
+MANAGING DIABETES DURING THE
+COVID-19 PANDEMIC
+Reducing Risk from COVID-19
+There is little evidence on how PWD can
+reduce their risk during the COVID-19
+pandemic beyond following general infection control guidance within each
+country. More frequent blood glucose
+monitoring (in people who self-monitor)
+has been suggested, though it is unclear
+what evidence was used to make these
+recommendations (1).
+Considerations for Diabetes
+Management in All PWD
+Figure 1 summarizes specific considerations for diabetes management during
+national emergencies.
+Self-management
+There is little information on the effectiveness of self-management/self-education
+during the pandemic. A variety of online
+services have been implemented but
+have yet to be assessed (see EXPERIENCES
+FROM COUNTRIES WITH HIGH RATES OF COVID-19).
+The wider literature on care of long-term
+conditions during national emergencies
+suggests a role for educational materials
+(23). Evidence for interventions aiming
+to optimize self-management in PWD
+that are potentially feasible in disaster
+contexts include mobile phone apps (24),
+web- or computer-based interventions
+(25), text messaging (26,27), and selfmonitoring of blood glucose (28,29).
+The latter two show the most promise
+based on the available literature. However, the interventions tested may not
+be widely available or may require health
+care resources to be set up. In addition,
+choice of format should be tailored to
+patient preferences, which will vary by
+age and sociodemographic group (30).
+Diabetes Services
+Guidelines for routine diabetes care during
+the COVID-19 pandemic vary by country.
+Themes are summarized in Table 2. Studies
+of remote consultations have generally
+found positive results, though their generalizability to the current pandemic may
+be limited (31). Within diabetes, there is
+little evidence to support or oppose remote support (32,33).
+Mental Health and Diabetes-Related Distress
+There are overarching concerns about
+the impact of the COVID-19 pandemic on
+mental health and well-being (34,35).
+PWD are more prone to mental health
+issues than the general population (36).
+Adherence to treatment can worsen
+when people are distressed or have depression (21), as seen both during and
+after disasters (37,38). We found no evidence directly pertaining to management
+of diabetes-related anxiety or distress
+during this pandemic. In the general
+literature, there is mixed evidence on
+interventions to reduce diabetes-related
+distress, and the vast majority of interventions tested involve face-to-face
+contactdan unsuitable format in the
+current context (39).
+Managing COVID-19 in PWD
+Management of PWD with COVID-19
+generally follows standard sick-day rules.
+Considerations that may be specific to
+COVID-19 are summarized below.
+Medication
+Most COVID-19–related consensus statements recommend stopping metformin
+and sodium–glucose cotransporter 2 inhibitors (SGLT2i) during acute illness and
+following the sick-day rules. Dipeptidyl
+peptidase 4 inhibitors (DPP-4i), glucagonlike peptide 1 receptor agonists (GLP1RA),and insulinare the preferred options
+in particular for hospitalized patients
+(see Fig. 2) (40,41). There has been some
+discussion regarding use of ACE inhibitors
+and angiotensin receptor blockers (ARBs)
+being associated with worse outcomes in
+COVID-19, particularly in PWD. However,
+in view of data showing potential benefits, the current recommendation is to
+continue with these therapies (40).
+A number of studies are currently
+testing chloroquine/hydroxychloroquine
+for prevention or management of COVID-19.
+Careful glucose monitoring will be required in PWD due to these drugs’ antidiabetic properties, with the potential
+risk of hypoglycemia that is associated
+with increased risk of cardiac arrhythmia, cardiovascular events, and mortality (42).
+Management in Hospital
+Guidance emphasizes the importance of
+referring to local specialist diabetes teams
+and of managing hyperglycemia (43). A
+narrative review suggests insulin is the
+preferred agent for control of hyperglycemia in this context (1). In the U.S., a
+major early focus for hospital management was to move inpatient care for PWD
+to “virtual” formats where possible, to
+reduce the need for personal protective
+equipment. This included use of electronic
+health records to interrogate data, telephone communication between diabetes
+care providers and inpatients and hospital
+staff, expanded “diabetes self-management
+protocols” allowing selected inpatients to
+monitor their own glucose and self-administer
+care.diabetesjournals.org Hartmann-Boyce and Associates 1697
+insulin with oversight and advice from
+the virtual care team, and, in some
+institutions, initiating inpatient continuous
+glucose monitoring and/or flash systems.
+To minimize the need for ICU beds, several
+institutions launched subcutaneous insulin
+protocols for the treatment of diabetic
+ketoacidosis on floors with adequate nursing staffing. Virtual diabetes care teams
+focused on supporting transitions to lower
+levels of care or outpatient settings.
+EXPERIENCES FROM COUNTRIES
+WITH HIGH RATES OF COVID-19
+We summarize here experiences from
+five countries that have had significant
+COVID-19 outbreaks.
+China
+During the outbreak in China, many PWD
+were unable to access health care providers (HCPs) or medical supplies due to
+stay-at-home orders or quarantine. Hospitals reduced the number of appointments drastically. To mitigate the impact
+of those changes on diabetes management, several organizations issued guidance to PWD on how to cope with the
+situation (44,45). The guidance developed by the Chinese Geriatric Endocrine
+Society mainly focused on prevention
+and early discovery of hyperglycemic crises and management of medications and
+provided detailed instructions on how to
+get access to certified internet-based
+medical services through smartphones
+(45). If PWD urgently needed to see an
+HCP in hospital, detailed guidance on
+how to prepare for consultations before
+leaving home and minimize exposure to
+the virus were given en route and during
+the hospital visit. Guidance was promoted in the form of reading material
+and lectures given by medical professionals through internet-based public media
+such as Baidu Health (an equivalent of
+Google in China) and the WeChat mobile
+app. An expert recommendation on insulin treatment of hyperglycemia in patients
+affected with COVID-19 was developed
+(46).
+France
+On 12 March, President Macron ordered
+most people to stay at home, especially
+“at-risk” groups, including PWD. Many
+PWD were struck by the announcement
+and were not expecting to be publicly
+identified as such, without answers to
+basic questions. On 18 March, a group of
+HCPs and researchers from the Federation of Diabetology launched a web app,
+CoviDIAB, to provide PWD with diabetesspecific, scientifically based information
+and to provide support. This free service
+includes access to a frequently updated
+media library and to live webinars with
+nurses, physicians, and experts. Twice a
+week, registrants also receive short questionnaires about COVID-19 symptoms and
+tests for anxiety/depression. If indicated,
+registrants automatically receive a notice suggesting medical contact, and
+phone calls may follow. At the time of
+writing, tens of thousands of patients
+were registered. Empathy was a driving
+principle in design, and comments suggest that the service helps people to
+understand and self-manage their individual risk and to limit disruption in
+lifestyle and care. An evaluation will
+indicate to what extent it reduces the
+burden of disease. Recommendations
+have been formulated by the Frenchspeaking Diabetes Society (Societ´ e´
+Francophone du Diabete) to promote `
+the intensification of glycemic control
+by remote support by professionals
+and frequent self-monitoring. However, extremely limited evidence was
+available to guide both patients and
+HCPs. In response, a group of physicians
+and researchers from 50 French hospitals
+designed and launched a large register
+to collect data on PWD hospitalized with
+COVID-19 and their prognosis (COVID-19
+and Diabetes Outcomes [CORONADO],
+NCT04324736, ClinicalTrials.gov). Recruitment has exceeded expectation; early
+results are now available (11).
+Italy
+The first cases COVID-19 in Italy were
+recorded early in February. Tragically,
+Italy has suffered among the highest
+numbers of deaths in the world (47). At
+the time of this writing, the death rate in
+Italy was estimated at 122.52 per 1,000
+infections, i.e., a 10-fold higher rate than
+in Germany (14.14 per 1,000 infections)
+(48). This could be due to demographic
+features of the Italian population, which
+include a large proportion (23%) of people aged $65 years (49). From 9 March,
+social confinement rules were issued includ-ing restricted access to outpatient
+clinics. Access to diabetes clinics has
+been limited to urgent cases, and remote
+contacts via telephone or video teleconsultation have been officially approved
+and reimbursed by the National Health
+System. Prescriptions of glucose-lowering
+agents requiring specialist approval
+(DPP-4i, SGLT2i, GLP-1RA, and new basal
+insulin analogs) were automatically renewed until the end of May. Special joint
+recommendations have been promptly
+issued by the Italian Society of Diabetes
+(SID), the Association of Italian Diabetologists (AMD), the Italian Society of Endocrinology (SIE), and the Italian Society
+of Pediatric Endocrinology (SIEDP) (50).
+The same organizations have opened a
+Facebook page entitled “One hour with
+Self-/remote
+Figure 1—Considerations for diabetes management during national emergencies. T1D, type 1
+diabetes.
+1698 Diabetes and COVID-19 Diabetes Care Volume 43, August 2020
+AMD, SID, and SIEDP” allowing PWD and
+their relatives to contact specialists (51).
+A government web page providing simple and pragmatic recommendations has
+been created focusing on disruptions to
+physical activity and diet as a result of
+social confinement (52). At the time of
+writing, discussions were ongoing regarding restarting clinical activities
+and how to organize post-COVID diabetes clinics.
+U.K.
+Over 90% of PWD in the U.K. are managed
+in primary care, by enhanced diabetesskilled primary care physicians, nurses,
+and health care assistants. These models
+have shown to be effective in reducing
+hospitalizations, outpatient attendance,
+and admissions for diabetes-related
+complications (53). In March, the government issued guidance on social distancing and self-isolation (54). In England,
+people considered especially clinically vulnerable (including some but
+not all PWD) were contacted by the
+government with advice on shielding.
+All people at high risk, including PWD,
+were advised to only leave the house
+for limited periods for essential shopping and one form of exercise (55). The
+Primary Care Diabetes Society and the
+Association of British Clinical Diabetologists have issued guidance on managing
+PWD in primary care (56). The national
+charity Diabetes UK has been active in
+giving advice to PWD through their website and social media. Both primary and
+secondary care are providing emergency
+and routine follow-up using telephone or
+video consultations including support for
+mental well-being, though there are some
+regional variations. Social media channels
+have been set up where HCPs are sharing
+experience in managing people in the
+community and hospital and exchanging
+new guidance. A number of self-managementeducation programs have beenmade
+freely available. There are also discussions regarding longer-term plans to
+phase in face-to-face consultations for
+routine chronic disease management.
+U.S.
+The lack of universal health coverage
+poses additional challenges to PWD and
+their care providers during the COVID-19
+pandemic in the U.S. There has been an
+almost wholesale switch to virtual care
+for outpatient appointments, but there
+aremany failings in this approach. Phone
+visits provide a much lower rate of reimbursement than video visits, but many
+of the most vulnerable patients have
+inadequate equipment or connectivity to
+support video visits. Contacts with certified diabetes educators by phone or
+video are not reimbursed. Additional
+efforts have been made to communicate
+with PWD at home to ensure that they
+are safe. Laboratory and physical exam
+monitoring of complications has virtually ceased for most patients as long
+as they symptomatically remain well.
+Table 2—Selection of guidance and recommendations relating to routine care in PWD during COVID-19 pandemic
+Service Recommendations
+Inpatient diabetes services c Inpatient diabetes services will need to continue and potentially increase capacity, with need for
+team approach re: glycemic control and nutritional status, and consideration of “virtual visits” for
+reviews (see MANAGEMENT IN HOSPITAL) (68).
+Urgent/acute diabetes care (outpatient) c Face-to-face consultations should continue in the following circumstances: a new diagnosis of
+T1D; urgent insulin start where symptomatic, HbA1c .10% (86 mmol/mol), or ketones detected;
+teaching blood glucose monitoring for urgent reasons; or in cases where physical examination is
+essential (e.g., foot ulcer, infection, some points in pregnancy) (69).
+c Virtual (telephone, video, or e-mail) consultations should be used in the following circumstances:
+follow-up of new T1D diagnoses; vulnerable patients (recent hospital admission, recurrent severe
+hypoglycemia, HbA1c .11% [99 mmol/mol]); intensive follow-up in high-risk situations; or where
+risk of attending an appointment face-to-face is greater than the benefits (69).*
+Routine diabetes care c Consider routine diabetes care delivered virtually in the context of broader long-term condition
+management and prioritization, taking into account individual risk factors and clinical needs (68).
+c The following should be deferred: routine appointments where diabetes is stable and wellmanaged; face-to-face structured group education courses; flash glucose monitoring start
+sessions; where the risk of attending an appointment is greater than the benefits; and where
+deferring appointments will not compromise clinical care (69).
+Foot services for PWD c May need to continueat full capacitywith consideration ofmoving support to remote forms where
+possible (68); many of these services are essential (70).
+c Access to in-person support should continue for those with acute or limb-threatening problems
+(70) or where physical examination is essential (69).
+c All new referrals should ideally be reviewed within 24 h (70).
+Pregnancy services for PWD c May need to continueat full capacitywith consideration ofmoving support to remote forms where
+possible (68).
+c In-person support will be essential for physical examinations and/or teaching blood glucose
+monitoring at some points in pregnancy (69).
+Blood tests for PWD c Urgent blood testmonitoring should continue (e.g., declining renal function, raised potassium, low
+sodium) (69).
+Eye screening for PWD c This was not mentioned in the guidance reviewed but we understand in most affected countries
+eye screening has been halted in view of high risk of transfer. Of note, evidence indicates that risk
+stratifying is possible (71).
+*PWD may be concerned about the need to visit hospital; they should be encouraged to contact their physician in case of any signs or symptoms
+related to acute diabetes complications.
+care.diabetesjournals.org Hartmann-Boyce and Associates 1699
+Many patients have lost insurance coverage. Prescription fills for diabetes medications are down 10%; a survey of PWD
+found one in six respondents needing
+insulin experienced a problem. A similar
+proportion reported issues with obtaining test strips, and a quarter of respondents reported issues with obtaining
+pump or continuous glucose monitoring
+supplies (20). Many pharmaceutical
+companies have stepped in to increase
+access to otherwise unaffordable medications. In data available through the
+end of March, relatively early in the U.S.
+COVID-19 course, approximately 80% of
+clinicians reported serious strain and
+nearly two-thirds were uncertain whether
+they would be able to keep their practices
+open due to insufficient financial resources
+and low volume of reimbursable work.
+Overall visits (virtual and face-to-face) for
+chronic asymptomatic care were down
+;50% (57). As the future course of the
+epidemic in theU.S. is uncertain and seems
+likely to persist for many weeks, the threat
+to PWD is grave. The hope is that new
+government initiatives and innovation on
+the part of stakeholders will fill the
+emerging cracks in an already fragmented system.
+CONSIDERATIONS FOR
+MANAGEMENT OF LONG-TERM
+CONDITIONS DURING NATIONAL
+EMERGENCIES
+Evidence on the management of longterm conditions during national emergencies suggests various ways tomitigate
+the risks presented by these events,
+which predominantly fall under two phases:
+planning and response (23). These strategies are outlined in Table 3.
+AFTER COVID-19
+There is much uncertainty as to how the
+COVID-19 pandemic will end and what
+will be left in its wake. Disruptions that
+arise due to national emergencies can
+lead to increased HbA1c in those affected
+up to 16 months later, with some evidence that this is particularly the case for
+people of lower socioeconomic status
+and those treated with insulin (18,23). A
+lack of access to routine health care is a
+leading cause of morbidity and mortality
+after disasters; stroke, acute myocardial
+infarctions, and diabetes complications are all shown to increase after the
+immediate threat has dissipated (26,58).
+Services such as diabetes clinics may also
+rethink their organization to minimize risk
+of ongoing transmission.
+CONCLUSIONS
+The need for decisive action creates an
+important tension when evidence is limited. An example here is the classification
+of PWD as being at increased risk from
+COVID-19 and therefore subject to increased preventive measures. Though
+risk is clearly increased, quantification is
+scant. There is little to no evidence on
+potentially moderating factors, despite
+the fact that these data are routinely
+collected in data sets used for existing
+analyses; the results presented are often
+unadjusted and use single disease categories, ignoring potential differences between type 1 and type 2 diabetes and
+multimorbidities, which are associated
+with worse outcomes (59).
+In the face of a limited evidence base
+relating directly to COVID-19, decisions
+Figure 2—Possible flowchart for management of people hospitalized with diabetes and COVID-19, adapted with permission from Ceriello et al. (49).
+ACEi, ACE inhibitors; AGIs, a-glucosidase inhibitors; BNP, brain natriuretic peptide; CAD, coronary artery disease; CGM, continuous glucose monitoring;
+CK, creatine kinase; CKD, chronic kidney disease; CRP, C-reactive protein; eGFR, estimated glomerular filtration rate (mL/min/ 1.73m2
+); MI, myocardial
+infarction; NT-proBNP, N-terminal prohormone of brain natriuretic peptide; OADs; oral antidiabetes drugs; PAD, peripheral arterial disease; RF, risk
+factor; SUs, sulfonylureas; TIA, transient ischemic attack.
+1700 Diabetes and COVID-19 Diabetes Care Volume 43, August 2020
+can be informed by international experiences to date and, to some extent, from
+the literature as it relates to other national emergencies. This latter source of
+evidence shows the toll of disruptions to
+diabetes care is often most pronounced
+after the acute phase of the emergency
+or disaster has passed. In some cases, the
+excess morbidity and mortality in the
+aftermath of national emergencies is
+higher than the toll during the emergency itself. History issues a stark warning here when considering the balance
+between diverting resources toward the
+acute COVID-19 crisis and maintaining
+routine care for people living with longterm conditions.
+Finally, in reviewing what has been
+written on the topic of diabetes and
+COVID-19, we have been struck by two
+noticeable absences. The first is the
+absence of literature on wider contextual
+factors. PWD are likely to be impacted by
+COVID-19 just as much outside the health
+care setting as within it, with particular
+concerns relating to disruptions to diet
+and physical activity, increased stress,
+and burdens on mental health and
+well-being, yet the literature to date focuses almost exclusively on clinical management. The other unspoken issue in the
+literature we reviewed is that of inequality.
+COVID-19 is not an equal-opportunity disease. The burden will disproportionally be
+borne by people from less-advantaged
+groups (60). Emerging data also suggest
+that COVID-19 may pose more of a risk
+to nonwhite ethnic groups (9). Diabetes
+discriminates in similar ways, and the
+intersection of diabetes and COVID-19
+creates a maelstrom in which existing
+health disparities risk exacerbation with
+profound and long-lasting consequences.
+COVID-19 holds a mirror to our health care
+systems and care of PWD; may we do all
+we can now to make that reflection favorable in hindsight.
+Acknowledgments. Parts of this article are
+based on Rapid Reviews conducted for the Centre
+for Evidence-Based Medicine’s COVID-19 Evidence
+Service (23,61,62).
+Funding. This work was not funded. E.M. and
+C.G. are funded by Wellcome Trust fellowships. J.B.B. is supported by grants from the
+National Institutes of Health (UL1TR002489 and
+P30DK124723). K.K. acknowledges support from
+the National Institute for Health Research (NIHR)
+Applied Research Collaboration East Midland
+(NIHR ARC-EM) and the NIHR Leicester Biomedical Research Centre.
+The views expressed are those of the authors
+and not those of the universities, the NIHR, or the
+U.K. Department of Health and Social Care.
+Duality of Interest. J.B.B. reports nonfinancial
+support and other from Adocia, AstraZeneca,
+Dance Biopharm, Dexcom, Eli Lilly, Fractyl, GI
+Dynamics, Intarcia Therapeutics, Lexicon, MannKind, Metavention, NovaTarg, Novo Nordisk,
+Orexigen, PhaseBio, Sanofi, Senseonics, vTv Therapeutics, and Zafgen; grants and nonfinancial
+support from AstraZeneca, Eli Lilly, Intarcia Therapeutics, Johnson & Johnson, Lexicon, Medtronic,
+NovaTarg, Novo Nordisk, Sanofi, Theracos, Tolerion, and vTv Therapeutics; personal fees from
+Cirius Therapeutics Inc. and CSL Behring; and
+personal fees and other from Mellitus Health,
+Pendulum Therapeutics, PhaseBio, and Stability
+Health, outside the submitted work. R.R. reports
+grants, personal fees, and nonfinancial support
+from Sanofi, personal fees and nonfinancial
+support from Merck Sharp & Dohme, personal
+fees from AstraZeneca, grants and personal fees
+from Novo Nordisk, personal fees from Janssen,
+personal fees from Eli Lilly, personal fees from
+Abbott, personal fees from Medtronic, grants
+and personal fees from Diabnext, and personal
+fees from Mundipharma, outside the submitted
+work. K.K. has received grants from Bohringer
+Ingelheim, AstraZeneca, Novartis, Novo Nordisk,
+Sanofi, Eli Lilly, Merck Sharp & Dohme, and
+Servier, outside the submitted work. K.K. has
+served as a consultant, speaker, or an advisory
+board member for AstraZeneca, Bayer, Napp
+Pharmaceuticals, Eli Lilly, Merck Sharp & Dohme,
+Novartis, Novo Nordisk, Roche, Berlin-Chemie
+AG/Menarini Group, Sanofi, Servier, and Boehringer Ingelheim. No other potential conflicts of
+interest relevant to this article were reported.
+Author Contributions. J.H.-B., E.M., C.G., D.N.,
+K.M., and K.K. were involved in concept and
+design. J.H.-B., E.M., C.G., J.K., and J.P. reviewed
+studies for inclusion and extracted relevant data.
+J.B.B., S.D.P., L.J., R.R., and K.K. contributed
+experiences from individual countries. J.H.-B.
+drafted the remainder of the article. All authors
+edited and approved the final manuscript. J.H.-B.
+had full access to all data and final responsibility
+for the decision to submit for publication.
+References
+1. Gupta R, Ghosh A, Singh AK, Misra A. Clinical
+considerations for patients with diabetes in times
+of COVID-19 epidemic. Diabetes Metab Syndr
+2020;14:211–212
+2. Yang J, Zheng Y, Gou X, et al. Prevalence of
+comorbidities and its effects in patients infected
+with SARS-CoV2: a systematic review and metaanalysis. Int J Infect Dis 2020;94:91–95
+3. Emami A, Javanmardi F, Pirbonyeh N, Akbari
+A. Prevalence of underlying diseases in hospitalized patients with COVID-19: a systematic
+review and meta-analysis. Arch Acad Emerg Med
+2020;8:e35
+4. Li B, Yang J, Zhao F, et al. Prevalence and impact
+of cardiovascular metabolic diseases on COVID-19
+in China. Clin Res Cardiol 2020;109:531–538
+5. CDC COVID-19 Response Team. Preliminary
+estimates of the prevalence of selected underlying
+Table 3—Strategies suggested for mitigating risks to management of long-term conditions during national emergencies (23)
+Phase Suggested strategy
+Planning c Collaboration, including the role of community-based partnerships
+c Development of culturally adapted resources for people living with LTCs, including print and web-based educational materials
+and access to support telephone lines
+c Access to online self-management education programs
+c Monitoring for patients using prescription data on assessing adherence to medications
+c Proactive remote review of patients requiring care for LTCs and their possible needs if health care services are disrupted
+c Clear point of contact for patient care should disasters/emergencies occur
+c Improving identification and tracking mechanisms for people living with LTCs
+Response c Triage and resource allocation
+c Transfer of care to allied HCPs including nurses and pharmacists
+c Communication between different agencies
+c Business continuity plans for pharmacies, and consideration of 30-day supplies from pharmacists
+c Ensuring access to appropriate foods where supplies may be limited (for people with LTCs impacted by diet)
+c Dedicated patient transportation or mobile clinics for patients requiring in-person care who may be affected by transport
+difficulties
+c Continued guidance from patient support groups
+LTCs, long-term conditions.
+care.diabetesjournals.org Hartmann-Boyce and Associates 1701
+health conditions among patients with coronavirus disease 2019 – United States, February 12-March 28, 2020. MMWR Morb
+Mortal Wkly Rep 2020;69:382–386
+6. Docherty AB, Harrison EM, Green CA, et al.
+Features of 16,749 hospitalised UK patients with
+COVID-19 using the ISARIC WHO Clinical Characterisation Protocol. 28 April 2020 [preprint].
+medRxiv. DOI: 10.1101/2020.04.23.20076042
+7. Jordan RE, Adab P, Cheng KK. Covid-19: risk
+factors for severe disease and death. BMJ 2020;
+368:m1198
+8. Stefan N, Birkenfeld AL, Schulze MB, Ludwig
+DS. Obesity and impaired metabolic health in
+patients with COVID-19. Nat Rev Endocrinol
+2020;2020:1–2
+9. Khunti K, Singh AK, Pareek M, Hanif W. Is
+ethnicity linked to incidence or outcomes of
+covid-19? BMJ 2020;369:m1548
+10. Aronson JK, Ferner RE. Angiotensin converting enzyme (ACE) inhibitors and angiotensin
+receptor blockers in COVID-19. 22 March 2020.
+Available from: https://www.cebm.net/covid-19/
+angiotensin-converting-enzyme-ace-inhibitors-andangiotensin-receptor-blockers-in-covid-19/. Accessed
+1 May 2020
+11. Cariou B, Samy H, Wargny M, et al. Phenotypic characteristics and prognosis of inpatients
+with COVID-19 and diabetes: the CORONADO
+study. Diabetologia. 29 May 2020 [Epub ahead of
+print] DOI: 10.1007/s00125-020-05180-x
+12. NHS England. Type 1 and type 2 diabetes and
+COVID-19 related mortality in England. 20 May
+2020. Available from: https://www.england.nhs
+.uk/publication/type-1-and-type-2-diabetes-andcovid-19-related-mortality-in-england/. Accessed
+21 May 2020
+13. Bode B, Garrett V, Messler J, et al. Glycemic
+characteristics and clinical outcomes of COVID-19
+patients hospitalized in the United States. J Diabetes Sci Technol.9 May 2020 [Epub ahead of
+print]. DOI: 10.1177/1932296820924469
+14. Zhu L, She Z-G, Cheng X, et al. Association of
+blood glucose control and outcomes in patients
+with COVID-19 and pre-existing type 2 diabetes.
+Cell Metab 2020;31:1068–1077
+15. The OpenSAFELY Collaborative; Williamson
+E, Walker AJ, Bhaskaran KJ, et al. OpenSAFELY:
+factors associated with COVID-19-related hospital death in the linkedelectronic health records of
+17 million adult NHS patients. 7 May 2020 [preprint]. medRxiv. DOI: 10.1101/2020.05.06.20092999
+16. Saulnier DD, Brolin Ribacke K, von Schreeb J.
+No calm after the storm: A systematic review of
+human health following flood and storm disasters. Prehosp Disaster Med 2017;32:568–579
+17. Fonseca VA, Smith H, Kuhadiya N, et al.
+Impact of a natural disaster on diabetes: exacerbation of disparities and long-term consequences. Diabetes Care 2009;32:1632–1638
+18. Ng J, Atkin SL, Rigby AS, Walton C, Kilpatrick
+ES. The effect of extensive flooding in Hull on the
+glycaemic control of patients with diabetes.
+Diabet Med 2011;28:519–524
+19. Chudasama YV, Zaccardi F, Gillies CL, et al.
+Leisure-time physical activity and life expectancy in
+people with cardiometabolic multimorbidity and
+depression. J Intern Med 2020;287:87–99
+20. dQ&A. Impact of COVID-19 on the diabetes
+community in the United States, 2020. Available
+from https://d-qa.com/impact-of-covid-19-on-theusa-diabetes-community/?utm_source5Closer1Look1
+Subscribers12018&utm_campaign54285f7ac19-
+2020-04-19_WIR_4%2F13-4%2F1704_18_2020&utm_
+medium5email&utm_term50_c55d924bf1-
+4285f7ac19-409220105. Accessed 24 April 2020
+21. Grenard JL, Munjas BA, Adams JL, et al. Depression and medication adherence in the treatment of chronic diseases in the United States:
+a meta-analysis. J Gen Intern Med 2011;26:1175–
+1182
+22. Qiu J, Shen B, Zhao M, Wang Z, Xie B, Xu Y. A
+nationwide survey of psychological distress
+among Chinese people in the COVID-19 epidemic:
+implications and policy recommendations. Gen
+Psychiatr 2020;33:e100213
+23. Hartmann-Boyce J, Mahtani KR. CEBM: Supporting people with long-term conditions (LTCs)
+during national emergencies. Available from:
+https://www.cebm.net/covid-19/supporting-peoplewith-long-term-conditions-ltcs-during-nationalemergencies/. Accessed 18 April 2020 2020
+24. Aminuddin HB, Jiao N, Jiang Y, Hong J, Wang
+W. Effectiveness of smartphone-based selfmanagement interventions on self-efficacy, selfcare activities, health-related quality of life and
+clinical outcomes in patients with type 2 diabetes:
+a systematic review and meta-analysis. Int J Nurs
+Stud. 8 February 2019 [Epub ahead of print]. DOI:
+10.1016/j.ijnurstu.2019.02.003
+25. Pal K, Eastwood SV, Michie S, et al. Computerbased diabetes self-management interventions
+for adults with type 2 diabetesmellitus. Cochrane
+Database Syst Rev 2013 3:CD008776
+26. Huang L, Yan Z, Huang H. The effect of short
+message service intervention on glycemic control
+in diabetes: a systematic review and meta-analysis.
+Postgrad Med 2019;131:566–571
+27. Sahin C, Courtney KL, Naylor PJE, E Rhodes R.
+Tailored mobile text messaging interventions
+targeting type 2 diabetes self-management:
+a systematic review and a meta-analysis. Digit
+Health 2019;5:2055207619845279
+28. Xu Y, Tan DHY, Lee JY-C. Evaluating the impact
+of self-monitoring of blood glucose frequencies on
+glucose control in patients with type 2 diabetes
+who do not use insulin: a systematic review and
+meta-analysis. Int J Clin Pract 2019;73:e13357
+29. Malanda UL, Welschen LMC, Riphagen II,
+Dekker JM, Nijpels G, Bot SDM. Self-monitoring
+of blood glucose in patients with type 2 diabetes
+mellitus who are not using insulin. Cochrane
+Database Syst Rev 2012;1:CD005060
+30. Woolley AK, Chudasama Y, Seidu SI, et al.
+Influence of sociodemographic characteristics on
+the preferred format of healtheducation delivery
+in individuals with type 2 diabetes mellitus and or
+cardiovascular disease: a questionnaire study.
+Diabet Med 2020;37:982–990
+31. The Health Foundation. Using virtual consultations in the fight against COVID-19: Interview with Professor Trish Greenhalgh, 30 March
+2020. Available from https://www.health.org
+.uk/news-and-comment/newsletter-features/usingvirtual-consultations-in-the-fight-against-covid19. Accessed 18 April 2020
+32. Farrell K, Holmes-Walker DJ. Mobile phone
+support is associated with reduced ketoacidosis
+in young adults. Diabet Med 2011;28:1001–
+1004
+33. Viana LV, Gomes MB, Zajdenverg L, Pavin EJ,
+Azevedo MJ; Brazilian Type 1 Diabetes Study
+Group. Interventions to improve patients’ compliance with therapies aimed at lowering glycated
+hemoglobin (HbA1c)in type 1 diabetes: systematic
+review and meta-analyses of randomized controlled clinical trials of psychological, telecare, and
+educational interventions. Trials 2016;17:94
+34. World Health Organisation. Mental Health
+and psychosocial considerations during the COVID-19
+outbreak. 18March 2020. Available from https://
+www.who.int/docs/default-source/coronaviruse/
+mental-health-considerations.pdf. Accessed 18
+April 2020
+35. Shelvin M, McBride O, Murphy J, et al.
+Anxiety, depression, traumatic stress, and COVID-19
+related anxiety in the UK general population suring
+the COVID-19 pandemic. 18 April 2020 [preprint].
+PsyArXiv DOI: 10.31234/osf.io/hb6nq
+36. The All-Party Parliamentary Group for Diabetes (APPG Diabetes). Diabetes and Mental
+Health. Available from: https://www.diabetes
+.org.uk/resources-s3/2018-08/Diabetes%20and%
+20Mental%20Health%20%28PDF%2C%205.7MB%
+29.pdf. Accessed April 18, 2020
+37. Krousel-Wood MA, Islam T, Muntner P, et al.
+Medication adherence in older clinic patients
+with hypertension after Hurricane Katrina: implications for clinical practice and disaster management. Am J Med Sci 2008;336:99–104
+38. Khan Y, Albache N, Almasri I, Gabbay RA. The
+management of diabetes in conflict settings:
+Focus on the Syrian crisis. Diabetes Spectr 2019;
+32:264–269
+39. Chew BH, Vos RC, Metzendorf MI, Scholten
+RJ, Rutten GE. Psychological interventions for
+diabetes-related distress in adults with type 2
+diabetes mellitus. Cochrane Database Syst Rev
+2017;9:CD011469
+40. Ceriello A, Standl E, Catrinoiu D, et al.; Diabetes and Cardiovascular Disease (D&CVD)
+EASD Study Group. Issues of cardiovascular risk management in people with diabetes in the COVID-19
+era. Diabetes Care 2020;43:1427–1432
+41. Bornstein SR, Rubino F, Khunti K, et al.
+Practical recommendations for the management
+of diabetes in patients with COVID-19. Lancet
+Diabetes Endocrinol 2020; 8:546–550
+42. Wondafrash DZ, Desalegn TZ, Yimer EM,
+Tsige AG, Adamu BA, Zewdie KA. Potential effect
+of hydroxychloroquine in diabetes mellitus: A
+systematic review on preclinical and clinical trial
+studies. J Diabetes Res 2020;2020:5214751
+43. NHS London Clinical Networks. Management
+of diabetes in emergency department during
+coronavirus pandemic. Available from https://
+www.england.nhs.uk/london/wp-content/uploads/
+sites/8/2020/04/Covid-19-Management-of-diabetesin-emergency-department-crib-sheet-updated150420.pdf. Accessed 18 April 2020
+44. WeiqingW,ZhongyanS,GuangW,etal.Expert
+recommendations for diabetes management in
+primary care during COVID-19 pandemic. Zhonghua Neifenmi Daixie Zazhi 2020;36:185–190
+45. Linong J, Guangwei L, Qiuhong G, et al.
+Guidance on diabetes management in elderly
+during COVID-19 pandemic. Chin J Diabetes
+2020;28:1–6
+46. Linong J, Jiajun Z, Zhiguang Z, et al. Recommendation on insulin treatment in diabetes patients affected with COVID-19. Chin J Diabetes
+2020;28:1–5
+47. Remuzzi A, Remuzzi G. COVID-19 and Italy:
+what next? Lancet 2020;395:1225–1228
+48. Euronews. Coronavirus statistics: latest
+numbers on COVID-19 cases and deaths, 2020.
+1702 Diabetes and COVID-19 Diabetes Care Volume 43, August 2020
+Available from https://www.euronews.com/
+2020/04/04/covid-19-coronavirus-breakdown-ofdeaths-and-infections-worldwide. Accessed 20
+April 2020
+49. Onder G, Rezza G, Brusaferro S. Case-fatality
+rate and characteristics of patients dying in relation to COVID-19 in Italy. JAMA 2020;323:1775–1776
+50. SIE - Societa Italiana di Endocrinologia. `
+Emergenza COVID, 2020. Available from http://
+societaitalianadiendocrinologia.it/html/cnt/
+emergenza-covid.asp. Accessed 5 April 2020
+51. SID - Societa Italiana di Diabetologia. One `
+hour with AMD, SID and SIEDP [in Italian],
+2020. Available from http://www.siditalia.it/
+progetto-un-ora-con-amd-sid-siedp. Accessed
+5 April 2020
+52. Ministero della Salute. Nuovo coronavirus in
+Italia, 2020. Available from http://www.salute.gov
+.it/nuovocoronavirus. Accessed 20 April 2020
+53. Seidu S, Davies MJ, Farooqi A, Khunti K. Integrated primary care: is this the solution to the
+diabetes epidemic? Diabet Med 2017;34:748–750
+54. Public Health England. Guidance on shielding and protecting people who are clinically
+extremelyvulnerable fromCOVID-19,2020.Available
+from https://www.gov.uk/government/publications/
+guidance-on-shielding-and-protecting-extremelyvulnerable-persons-from-covid-19/guidanceon-shielding-and-protecting-extremely-vulnerablepersons-from-covid-19. Accessed 15 April 2020
+55. NHS. People at higher risk from coronavirus,
+2020. Available from https://www.nhs.uk/conditions/
+coronavirus-covid-19/advice-for-people-at-highrisk/. Accessed 24 April 2020
+56. Association of British Clinical Diabetologists.
+COVID-19 (Coronavirus) information for healthcare professionals, 2020. Available from https://
+abcd.care/coronavirus. Accessed 24 April 2020
+57. IQVIA. Monitoring the impact of COVID-19
+on the pharmaceutical market. Available from
+https://www.iqvia.com/-/media/iqvia/pdfs/
+files/iqvia-covid-19-market-tracking-us.pdf?
+_51587334105503. Accessed 19 April 2020
+58. Mokdad AH, Mensah GA, Posner SF, Reed E,
+Simoes EJ, Engelgau MM; Chronic Diseases and
+Vulnerable Populations in Natural Disasters Working Group. When chronic conditions become acute:
+prevention and control of chronic diseases and
+adverse health outcomes during natural disasters.
+Prev Chronic Dis 2005;2:A04
+59. Zemedikun DT, Gray LJ, Khunti K, Davies MJ,
+Dhalwani NN. Patterns of multimorbidity in
+middle-aged and older adults: An analysis of
+the UK biobank data. Mayo Clin Proc 2018;93:
+857–866
+60. Royal College of Physicians. COVID-19 and
+mitigating impact on health inequalities. Available from https://www.rcplondon.ac.uk/news/
+covid-19-and-mitigating-impact-health-inequalities.
+Accessed 18 April 2020
+61. Hartmann-Boyce J, Morris E, Goyder C, et al.
+Diabetes and risks from COVID-19. Available
+from https://www.cebm.net/covid-19/diabetesand-risks-from-covid-19/. Accessed 18 April2020
+62. Hartmann-Boyce J, Morris E, Goyder C, et al.
+Managing diabetes during the COVID-19 pandemic. Available from https://www.cebm.net/
+covid-19/managing-diabetes-during-the-covid-19-
+pandemic/. Accessed 18 April 2020
+63. Chen Y, Gong X, Wang L, Guo J. Effects of
+hypertension, diabetes and coronary heart disease on COVID-19 diseases severity: a systematic
+review and meta-analysis. 30 March 2020 [preprint]. medRxiv. DOI: 10.1101/2020.03.25.20043133
+64. Fadini GP, Morieri ML, Longato E, Avogaro A.
+Prevalence and impact of diabetes among people
+infected with SARS-CoV-2. J Endocrinol Invest
+2020;43:867–869;
+65. Wu Z, McGoogan JM. Characteristics of and
+important lessons from the coronavirus disease 2019
+(COVID-19) outbreak in China: summary of a report of
+72 314 cases from the Chinese Center for Disease
+Control and Prevention. JAMA 2020;323:1239–1242
+66. Zhou F, Yu T, Du R, et al. Clinical course and
+risk factors for mortality of adult inpatients with
+COVID-19 in Wuhan, China: a retrospective cohort study. Lancet 2020;395:1054–1062
+67. Guan WJ, Liang WH, Zhao Y, et al.; China
+Medical Treatment Expert Group for COVID-19.
+Comorbidity and its impact on 1590 patients with
+COVID-19 in China: a nationwide analysis. Eur
+Respir J 2020;55:2000547
+68. NHS; Royal College of Physicians; Association
+of British Clinical Diabetologists. Clinical guide for
+the management of people with diabetes during
+the coronovirus pandemic (19 March 2020, Version 2). Available from https://www.england.nhs
+.uk/coronavirus/wp-content/uploads/sites/52/2020/
+03/speciality-guide-diabetes-19-march-v2-updated.pdf.
+Accessed 18 April 2020
+69. NHS London Clinical Networks. Outpatient
+appointment prioritisation for specialist diabetes
+departments during the coronavirus pandemic.
+Available from: https://www.england.nhs.uk/london/
+wp-content/uploads/sites/8/2020/04/4.-Covid-19-
+Diabetes-Outpatient-Appointment- PrioritisationCrib-Sheet-27032020.pdf. Accessed 18 April 2020
+70. NHS London Clinical Networks. Clinical strategy for servicemanagement of diabetic foot units
+during the COVID-19 pandemic. Available from
+https://www.england.nhs.uk/london/wp-content/
+uploads/sites/8/2020/04/5.-Covid-19-Clinical-Strategyfor-MDFTs-Crib-Sheet-02042020.pdf. Accessed 18
+April 2020
+71. Leese GP, Stratton IM, Land M, et al.; Four
+Nations Diabetic Retinopathy Screening Study
+Group. Progression of diabetes retinal status
+within community screening programs and potential implications for screening intervals. Diabetes Care 2015;38:488–494
+care.diabetesjournals.org Hartmann-Boyce and Associates 1703

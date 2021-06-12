@@ -191,7 +191,7 @@ def search(_lib_folder : str, _args : str) -> None:
             (doc_id, relevance) =  result_row.content[0]
             result_row = result_row.content[1]
 
-            title = libdic.search(Document.directory, doc_id)
+            title = libdic.search(directory, doc_id)
 
             print(relevance, doc_id, title, sep="\t")
 

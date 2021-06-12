@@ -20,6 +20,7 @@ from linkedlist import LinkedList
 import personal_library
 from personal_library import Document, TfidfRow
 
+import libdic
 from libdic import Dic
 
 import typing
@@ -356,9 +357,10 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
     value : int = int(_data.subclass)
     name_function = data_extractor(_file.readline()).value
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
-    if name_function == 'string_hash_function':
+    print(name_function)
+    if name_function == 'string_hash_function\n':
         return personal_library.string_hash_function(value)
-    elif name_function == 'multiplicative_hash_function':
+    elif name_function == 'multiplicative_hash_function\n':
         return libdic.multiplicative_hash_function(value, libdic.golden_ratio())
 
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:

@@ -10,7 +10,9 @@ Class:
     TfidfRow
 """
 
-# Import Class
+#pylint: disable=too-few-public-methods,no-else-return,invalid-name
+from typing import Optional
+
 import algo1
 from algo1 import Array, String
 
@@ -23,10 +25,10 @@ from personal_library import Document, TfidfRow
 import libdic
 from libdic import Dic
 
-import typing
 
 # TextIOWrapper
 class Extractor:
+    """ Doc string """
     def __init__(self,
             _class : str = '',
             _subclass : str = None,
@@ -71,32 +73,25 @@ def save(_object, _file, _hierarchy : str = '') -> None:
     elif typ == 'float':
         save_float(_object, _file, _hierarchy)
 
-def object_type(_object) -> str:
+def object_type(_object ) -> str:
     """ Return object type of _object """
 
-    def extract_type(_class : str) -> str:
-        """ Return class """
+    return type(_object).__name__
 
-        length : int = (len(_class))
-        for _ in range(length-3, -1, -1):
-            if _class[_] == "." or _class[_] == "'":
-                return _class[_+1:length-2]
-
-    return extract_type(str(type(_object)))
-
-def header(_type : str, _subtype : str = '', _hierarchy : str = '', _length : int = None) -> str:
+def header(_type : str, _subtype : str = '', _hierarchy : str = '',
+        _length : Optional[int] = None) -> str:
     """ Construct class head """
 
     temp_title : str = '!pyObj<'+_type+'>{'+_subtype+'}'
     if len(_hierarchy) == 0:
-        if _length != None:
+        if _length is not None:
             return temp_title+'{'+str(_length)+'}\n'
         return temp_title+'\n'
 
     spaces : str = ''
     for _ in range(len(_hierarchy)-2):
         spaces += ' '
-    if _length != None:
+    if _length is not None:
         return spaces+'- '+temp_title+'{'+str(_length)+'}\n'
     return spaces+'- '+temp_title+'\n'
 
@@ -142,11 +137,13 @@ def save_str(_object : str, _file, _hierarchy : str) -> None:
 def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
     """ Serialization for method """
 
-    def extract_function(_object : str) -> str:
+    def extract_function(__object : str) -> str:
         """ Extract name of function """
-        for _ in range(10,len(_object)):
-            if _object[_] == '.':
-                return _object[10:_]
+        for _ in range(10,len(__object)):
+            if __object[_] == '.':
+                return __object[10:_]
+
+        raise Exception("Couldn't extract function name from: " + __object)
 
     _file.write(header('function', str(_value), _hierarchy = _hierarchy))
     # _file.write(_hierarchy+'- '+_object+'\n')
@@ -319,6 +316,8 @@ def data_extractor(_line : str) -> Extractor:
             return extract_class(_line, _)
         elif _line[_] == '-':
             return extract_value(_line, _+2)
+
+    raise Exception("Coudln't extract data: " + _line)
 
 def native_type(_string : str, _type : str):
     """ Convert string in _type """

@@ -134,6 +134,8 @@ def create_array(_length : int, _type : str) -> Array:
     if _type == 'str':
         return Array(_length, 'c')
 
+    raise Exception("Unknown type: " + _type)
+
 def is_letter(_code : int) -> bool:
     """ Detect letter """
     lower : bool = _code >= 65 and _code <= 90

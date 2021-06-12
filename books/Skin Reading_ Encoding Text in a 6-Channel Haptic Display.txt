@@ -1,0 +1,651 @@
+Skin Reading: Encoding Text in a 6-Channel Haptic Display
+Granit Luzhnica
+Know-Center
+Graz, Austria
+gluzhnica@know-center.at
+Eduardo Veas
+National University of Cuyo
+Mendoza, Argentina
+eduveas@gmail.com
+Viktoria Pammer
+Graz University of Technology
+Graz, Austria
+viktoria.pammer@tugraz.at
+ABSTRACT
+This paper investigates the communication of natural language messages using a wearable haptic display. Our research spans both the design of the haptic display, as well
+as the methods for communication that use it. First, three
+wearable configurations are proposed basing on haptic perception fundamentals. To encode symbols, we devise an overlapping spatiotemporal stimulation (OST) method, that distributes stimuli spatially and temporally with a minima gap.
+An empirical study shows that, compared with spatial stimulation, OST is preferred in terms of recall. Second, we propose an encoding for the entire English alphabet and a training method for letters, words and phrases. A second study investigates communication accuracy. It puts four participants
+through five sessions, for an overall training time of approximately 5 hours per participant. Results reveal that after one
+hour of training, participants were able to discern 16 letters,
+and identify two- and three-letter words. They could discern
+the full English alphabet (26 letters, 92% accuracy) after approximately three hours of training, and after five hours participants were able to interpret words transmitted at an average duration of 0.6s per word.
+Author Keywords
+wearable; haptic display; vibortactile stimulation;
+overlapped spatio-temporal stimulation; user study; HCI;
+ACM Classification Keywords
+H.5.2 Information Interfaces and Presentation: User Interfaces—Haptic I/O
+INTRODUCTION
+Most real life activities require people’s attention as well
+as freedom of movement. Conversely, a growing number
+of wearable and personal mobile devices are part of everyday life for a considerable number of people. They compete for people’s concentration, drawing attention away from
+important tasks. Secondary feedback is often disregarded
+when an activity requires the full concentration of a person
+but what if a person could feel the information about secondary tasks while keeping full concentration on the primary
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+ISWC 16, September 12-16, 2016, Heidelberg, Germany
+c 2016 ACM 978-1-4503-4460-9/16/09 ...$15.00.
+DOI: http://dx.doi.org/10.1145/2971763.2971769
+ones [2]? Alternative display modalities can reduce demands
+on the predominant visual display. Tactile displays among
+them have great potential but are largely underutilized [2].
+Today’s wearables and mobiles (smartphones, wrist bands,
+smart watches etc.) sport simple tactile communication: vibration is typically used to notify the user of an event, without
+any further information about its nature or content.
+Indeed, wearable devices are capable of transmitting richer
+information. For instance, Brown and Kaaresoja [3] generated distinctive vibration patterns with the vibration motor
+on a smartphone to encode the caller ID. This is conceptually analogous to having individual ring tones for different
+callers. Brewster and Brwon defined tactons as vibrotactile
+encoded messages [2]. Tactons have been used to enrich
+the user experience and provide a less intrusive computer-tohuman communication in many scenarios. Examples range
+from navigation aid [10, 9], presenting visual information to
+car drivers [23], assistive systems in medical surgery [17] or
+haptic experience in story telling [29]. Also, the entertainment industry uses haptic displays to enrich the user experience, e.g., transmitting relevant information during gaming.
+As specific target user group, visually or auditory impaired
+people have a particular interest in haptic displays. Following the idea of directly encoding speech to vibrotactile, during 80s and 90s, several vibrotactile hearing aids were proposed [21]. However, they just supplement lipreading and
+thus do not constitute a complete hearing solution [21]. With
+a haptics display for natural language messages combined
+with recent advances in speech recognition, it would be possible to translate speech-to-text and then text-to-tactile for a
+complete hearing solution. A modern ”seeing aid” for the visually impaired would use the video feed from a wearable
+camera capturing the environment, carry out image analysis (object recognition) and message recognized information
+(cars, pedestrians, faces, traffic signs, etc.) to the user. Additionally, it could use OCR to recognize written text (street
+names and numbers, shop names etc.) and synthesize text in
+haptic messages to help the user with space orientation.
+Our research aims at constructing a haptics device and methods for natural language messages. The first research goal
+is to design a haptic display and the corresponding stimulation method. For the latter, an empirical study validates our
+implementation of an overlapped spatiotemporal stimulation
+method to synthesize haptic patterns. The second research
+goal is to communicate messages. We design the encoding
+and training methods for the English alphabet. A second
+study validates the feasibility of our approach.
+BACKGROUND AND RELATED WORK
+Gault [11] performed the first experiment directly encoding
+speech to touch using a piezoelectric unit named ”telectactor”. Similarly, Kirman [18] transmitted speech streams to
+the palm of the hand using a 15 × 15 vibrator matrix. Six
+participants learned to differentiate the patterns of 15 different words. Another approach of conveying information is by
+directly imprinting a low resolution version of the object into
+the skin by using an array of tactile stimulators. White [27]
+used a 20×20 array of tactile vibrators on the back (mounted
+on a sitting chair) to transform images captured by a camera
+into tactile stimulus. The vibrators were placed 12mm apart
+from each other. After training, participants were able to successfully recognize object shapes (circle, square and triangle)
+captured by a camera. Optacon [1] was the first commercial
+device developed following this approach. It used a video
+camera and a 6 × 24 matrix of vibrators placed on the finger
+of the user to convert letters to tactile stimulus. Shape printing techniques are also used in active-touch screens, where
+the sensation is perceived by moving the finger along the tactile digital screen that integrates the stimulation [28].
+In 1957, Geldard [12] constructed a tactile device called Vibratese to transmit text using vibrotactile stimulation. Vibratese used three levels of intensity, three duration intervals
+and five body position for vibrators on the chest to encode
+45 symbols (letters, numbers and most frequent short words).
+For each symbol only one vibrator was active. The system
+was capable of transmitting letter per 0.12 s on average. After 65 hours of training, one subject was capable of receiving 38 wpm (words per minute). In [26], the author investigated the letter-by-letter and word-by-word reading speeds
+for both visual readings and a tactile reading. Tactile reading
+was accomplished with six simulators (pneumatically operated probes points at the fingertips). The experiment revealed
+that on average the tactile letter-by-letter reading speed can
+go up to 18wpm as opposed to 19.5 wpm for visual letterby-letter reading. For word-by-word reading users achieved
+44wpm via tactile reading and 108.5wpm via visual reading.
+Conversely, much research concentrated on the details of encoding and also where to position the tactile stimulators. Typically a combination of variations in amplitude [24, 25, 28],
+frequency [24, 25, 28], duration [14, 12] and body locations [12, 28] have been used to encode tactons. Recently,
+Novich et al. investigated the discrimination of different
+stimulus patterns depending on the encoding techniques [21].
+They found that spatio-temporal stimuli, with patterns generated by sequentially turning the neighbouring motors on and
+off to produce vibratory sweeps across the skin, delivered significantly better results than patterns generated by simultaneous stimuli (spatial) with same intensity, or patterns generated
+by a single motor only varying the intensity. They also discovered that for optimal discrimination, the stimuli should be
+at least 6 cm apart when placed on the back of the participant.
+The user’s back has been a preferred body location for tactile stimulation [21, 4]. However, other body parts such as
+forearms [5, 22], fingers [1, 6, 7, 4], palms [18, 6, 7, 4], backhand [10], chest [12] have been used. We explore the forearm
+and the back of the hand for stimulation locations and employ a priority-based overlapping spatio-temporal stimulation
+to transmit tactons that later encode letters.
+A WEARABLE HAPTIC DISPLAY FOR MESSAGING
+The purpose of our haptic display is to transmit generic tactons that can be combined to form arbitrary messages. Such
+a device can be used to communicate messages of different
+types and find application in different scenarios. For example,
+tactons can be used to transmit letters of the English alphabet,
+and it should be possible to combine them to form words.
+Requirements
+Different considerations inform our design. We set basic
+requirements regarding transmission and wearability of our
+haptic display:
+Encoding capacity. It should be able to encode enough tactons to enable communication of messages.
+Throughput. To be efficient, it should transmit tactons at a
+high speed, so that the user can combine consecutive patterns
+into messages.
+Convenience. It should not hinder user’s normal activities. It
+should be worn comfortably with different types of clothing.
+Wearability. It should be easy to put on and take off. It should
+also be precise: as it will be used to encode messages in combinations of vibrotactile patterns, it is important that vibrators
+are at the same body location when worn repeatedly.
+Haptic Perception
+Haptics is a perceptual system that uses sensory information derived from cutaneous (skin embedded) mechanoreceptors and thermoreceptors together with kinesthetic input
+from mechanoreceptors embedded in muscles, tendons and
+joints [19]. To determine the right stimulation method, our
+design is mostly influenced by the cutaneous subsystem.
+There are four types of mechanoreceptors in the skin, characterized by the relative size of their receptive field (small
+/ large) and the adaption rate (SA: slow-adapting, FA: fast
+adapting) with regards to onset/offset of skin deformation
+vs continued response during sustained skin deformation.
+They are: small SAI (Merkel), large SAII (Ruffini), small
+FAI(Meissner), large FAII (Pacinian). SAI, FAI and FAII
+have been proven to vibration detection at very-low, low,
+and high frequencies in the hand, respectively (∼ 5Hz,
+5 − 40Hz,40 − 400Hz) [20]. Whereas in general, the vibrotactile range of the skin has been found to span a range of
+20 − 1000Hz, with maximum sensitivity around 250 Hz [15,
+14]. Our vibromotors work in the range of 220 +/ − 30 Hz.
+Cutaneous receptors determine the spatial and temporal resolving capacity of the skin (spatial and temporal acuity), and
+are spread with different densities in the body. Tactile spatial acuity varies significantly across the body surface, being
+highest on the fingertips and lowest on the back. It is important to consider the two point discrimination, defining the
+minimum distance required for two spatial stimuli to be discriminated, which for fingers is around 5 mm [17, 19], about
+1 cm for palm and 4cm for forearm [19]. Temporal acuity
+studies indicate that people can discriminate between successive taps on the skin with a gap of 5ms [13].
+Wearable Designs
+It is clear that spatial acuity of the skin limits the relative number of vibrators that can be used. To increase the number of
+symbols, they have to be encoded in combinations of vibromotors. Hence, vibromotors have to be sufficiently separated,
+so that they can be discriminated when stimulated together.
+Taking into account the convenience and wearability requirements in contrast with the spatial acuity of the skin in different body parts, we chose three body setups for body position:
+hand, arm, and two-arm.
+Hand configuration. Although the skin of the palm has a high
+resolution in terms of spatial acuity, positioning the device on
+the back of the hand makes it unobtrusive. The vibromotors
+can be put inside a glove, in the back of the hand and fingers,
+as shown in Figure 1a, so as to avoid interfering with grasp
+and hand interactions typically performed with the palm. On
+the fingers, vibromotors are placed on the middle phalanx
+leaving the fingertips free. They can be kept uncovered by
+utilizing a partially finger-less glove as shown in Figure 3.
+Arm configuration. Vibromotors can be fixed within a sleeve.
+The relative size of the vibromotors in relation to the spatial
+acuity in the forearm limit their number to six (6); we chose
+to place three on the outer and three on the inner side of the
+forearm, as shown in Figure 1b. In a preliminary test, we
+noticed that it may be difficult to identify vibration patterns
+with motors on the opposing sides without training. Hence, a
+”two-arm” configuration was introduced.
+Two-arm configuration. It requires two sleeves to fix the vibromotors on each forearm. On each forearm, two vibromotors were placed on the outer side (extremes), and one in
+the middle on the inner side of the forearm, see Figure 1c.
+A drawback of the two-arm configuration is that it requires
+wiring, e.g., across the back to the controller. Alternatively, it
+could be implemented with two controllers connected wirelessly.
+A sketch of the wearable configurations with the locations of
+vibromotors is illustrated in Figure 1. An Arduino-Duo board
+coupled to a power regulator (LM2596S) controls 3.4 mm vibrotactile motors of type ROB-08449 (Voltage range: 2.5V
+3.8V ; Amplitude vibration: 0.8G). Note that the discussion
+on wearable configurations does not address wiring and hardware, which surely impact convenience and wearability.
+Patterns of Haptic Stimulation
+Tactons can be encoded using different stimulation techniques e.g. spatial (location of stimulus), temporal (duration
+of stimulus), varying amplitude or even frequency (of vibration). To fulfill the throughput requirement, the stimulation
+patterns need to ensure a short time of transmission.
+With spatial encoding, all motors in a pattern are activated
+concurrently for the same duration of time. Hence, the transmission time remains constant regardless of the number of
+motors involved (see Figure 2). However, during a study trial
+that was intended to identify design issues, participants often
+failed to detect at least one vibrator in simultaneous stimulations. This problem is known as masking, as one stimulus
+decreases the dectectablility (masks) of another one [6, 8].
+(a) Hand (b) Forearm (c) Both forearms
+Figure 1: Wearable configurations: positions of the vibrotactile motors and pictures form actual wearable prototypes
+Figure 2: Spatial, classical spatiotemporal and the overlapping spatiotemporal stimuli
+The vibrators more often missed were the pinky and ring fingers. Novich [21] found out that spatiotemporal encoding results in much better discrimination compared to spatial one.
+In spatiotemporal encoding each motor is turned on only after
+the previous one has been turned off, hence yielding a higher
+transmission duration and lower throughput.
+To address this issue we devised an overlapping spatiotemporal stimulation (OST) in which the vibration motors are
+activated in sequence but their vibration time overlaps (see
+Figure 2). That is, a pattern starts with a single tactile stimulus (one active motor); after a gap time the next motor is
+activated, continuing so until all motors in the pattern are active. Hence, the total duration of a tacton equals the duration
+time of a single active motor (base duration) plus the sum
+of in-between gaps (see Figure 2). We use a gap of 10ms,
+twice the minimum suggested value (5ms) [13]. Moreover,
+to determine the onset order we used priorities based on location sensitivity. The least sensitive locations were assigned
+a higher priority. When a tacton is composed of several stimuli, the order of the stimulus is determined by the assigned
+priority. In the case of the hand configuration the priority order was: pinky, ring, middle, index and thumb. The priority
+was chosen following results in Haggan et al[16], which were
+confirmed in our trials. For the forearm, the middle part was
+assigned the highest priority followed by the upper part; the
+lowest priority was assigned to the wrist. Priorities for the
+forearm were assigned in accordance with the sensitivity levels of the forearm [5].
+Figure 3: a): A finger-less glove for the ”Hand” configuration with the positions of motors annotated. b): Letter encoding for
+hand configuration. Only active motors that are used for encoding the letterers are displayed in each hand).
+Acc Abs
+M S OST p S OST p
+2 .88 (.23) .89 (.23) 1.0 .77(.42) .79(.41) .29
+3 .80 (.24) .83 (.22) <.01 .53(.50) .59(.49) <.01
+Table 1: Localization accuracy (Acc) and absolute accuracy(Abs) depending on number of used motors (M) for both
+stimuli types, p: pair-wise comparison
+Study 1: Haptic Patterns and Sensitivity
+The first experiment aimed at evaluating the suggested device configurations and stimulation patterns with regards to
+how accurately users identify the locus of vibrotactile stimuli. Precisely, the study counted three independent variables:
+configuration (Arm, Two-arm, Hand), stimulation (S=spatial,
+OST=overlapped spatio-temporal), and active vibration motor count (1,2,3), and random-with-constraints variable duration with values 100ms, 80ms, 50ms. The dependent variable
+was accuracy. The accuracy value was assigned as number of
+correctly identified stimuli (active motors) versus the number
+of all stimuli that compose the given pattern. We also compute absolute accuracy having a value of 1 only if the entire
+pattern (all active motors) is identified correctly, 0 otherwise.
+Participants. Twelve (four males and 8 females) persons aged
+between 24 and 33 years participated in this experiment.
+Procedure Every participant was subject of 162 tacton stimulations, where for every possible combination of variables (in
+random order) 3 random tactons were chosen (3×3×2×3×
+3 = 162). After each stimulation, the participant was asked
+to localize the source, i.e. to point to the active motors involved. Overall, we were looking for the stimulation method
+that yields the highest accuracy. We also seek to identify a
+suitable configuration for the text application.
+Results. First, we analyzed stimulation type across all configurations, particularly the vibration counts 2 and 3, as both
+stimulation methods yield the same stimulation for single vibrator patterns. Factorial ANOVA indicated significant effects both in Accuracy (F(1) = 17.9, p < .01) and Absolute
+Accuracy(F(1) = 34.67, p < .001). Pairwise comparisons
+using Wilcoxon signed-rank, shown in Table 2, indicate that
+for patterns with three motors the OST performs significantly
+better. Hence, we decided to continue using OST stimulation.
+Furthermore, Table 2 shows the localization performance for
+configuration and vibrator count when using the OST. A factorial ANOVA indicated significant effects in both Accuracy
+(F(2) = 34.05, p < .001) and Absolute Accuracy (F(2) =
+M A 2A H pH−2A
+Acc
+1 .92 (.27) 1.0 (.00) .99 (.07) .32
+2 .78 (.30) .97 (.12) .91 (.20) <.01
+3 .74 (.26) .90 (.18) .86 (.18) .03
+All .81 (.29) .96 (.13) .92 (.17) <.01
+Abs
+1 .92 (.27) 1.0 (.00) .99 (.07) .32
+2 .61 (.49) .94 (.24) .83 (.38) <.01
+3 .40 (.49) .75 (.44) .61 (.49) <.01
+All .0.65 (.48) .90 (.31) .81 (.39) <.01
+Table 2: Localization accuracy (Acc) and absolute accuracy(Abs) for number of used motors and configuration when
+using OST stimulation. A: Arm, 2A: Two arms, H: Hand,
+pH−2A: pair-wise comparison (between H and 2A)
+12.7, p < .001). Table 2 shows the result of paired-wise comparisons (Wilcoxon signed-rank) for ”Two-arm” and ”Hand”.
+All differences between ”Hand” and ”Arm” as well as between ”Arm” and ”Two-arm” configurations are significant
+(p < .001). ”Two-arm” configuration is the most accurate,
+followed by the ”Hand”.
+Summary. Comparing results for stimulation types (see Table
+1) showed that OST performed better and it is the one we will
+further use. Results for the different configurations indicate
+that ”Two-arm” is the configuration with maximum discrimination, followed by ”Hand”. The ”Arm” configuration had
+undoubtedly the worst performance. This may be due to the
+small distance between stimulus on each side of the forearm.
+Our next study involves extended training requiring the device to be worn on and off for five days. The ”Two-arm”
+configuration resulted in a higher identification accuracy, but
+it has two major drawbacks facing our next study: wearability and technical. In terms of wearability, during study 1 we
+noted that sleeves can be rotated, resulting in the undesirable
+effect that a participant may feel the stimulus in a different
+area of the arm. For the first study, it did not matter as the
+two sleeves ware worn only once by each participant. But
+for the next study, the motors are expected to be at the same
+locus each day a user wears it. Aforementioned technical aspects of wiring contribute to this issue; making it difficult to
+wear the device as required by the study. Thus, we will retain
+the ”Hand” configuration for the next study.
+SKIN READING: ON DECODING HAPTIC MESSAGES
+This experiment investigated to what extent the participants
+can learn to successfully decode messages in English using
+the above described haptic display. We describe an encoding
+for the entire English alphabet and a specific training program
+Figure 4: Training program process for a session
+# Train
+rounds
+Reinf.
+rounds
+Letters Base
+duration
+Words/
+unique
+BL Gap
+1 8 4 16 100ms 16 / 4 800ms
+2 10 5 21 100ms 26 / 6 800ms
+3 5 3 26 100ms 82 / 40 500ms
+4 3 2 26 100ms
+48 / 48 250ms
+25 / 25 150ms
+25 / 25 100ms
+5 3 2 26 70ms
+48 / 48 250ms
+25 / 25 150ms
+25 / 25 100ms
+Table 3: Training program rounds, number of letters, number
+of words, stimulation base duration and between letter (BL)
+gap used for each session
+designed for our device. Finally we present results of four
+participants of our training program.
+Encoding
+We decided to encode the alphabet in patterns with at most
+three vibromotors, as the more vibrators are used to encode a
+letter, the longer the transmission duration. Also, using more
+vibrators will incur in higher recognition errors. To encode
+the alphabet, we considered the frequency of letters 1
+and encoded the six most frequent letters each with a single vibrator,
+and increased the number of vibrators with decreasing frequency of letters. This way, common letters are transmitted
+faster, contributing to a higher throughput and should be more
+accurately decoded by participants. The encoding resulted in
+6 single-vibrator letters, 15 two-vibrator letters, and 5 threevibrator letters. The complete scheme is shown in Figure 3.
+Training Program
+The training program was designed to teach participants to
+recognize letters, words and messages in English. It is divided in five sessions of approximately one hour each.Each
+session consisted of several rounds of: i) training, introducing letters in a number of repetitions, ii) reinforcement (testing), allowing participants to test if they recognized learned
+letters, iii) word challenge, engaging participants in recognizing words or messages. Participants were only gradually
+introduced to the full English alphabet of 26 letters throughout sessions 1 − 3. Sessions 1 − 3 introduced single new
+1
+https://en.wikipedia.org/wiki/Letter_frequency
+letters at a rate of 16, 5, 5 for each corresponding session.
+The word challenge rounds were introduced from session 1,
+to keep participants engaged with a feeling of progress. The
+goal of sessions 4 − 5 was to train participants with smaller
+letter duration and time-gaps between letters in a word.
+In training rounds, letters were shown multimodally, meaning that, the letter was stimulated via the haptic display, but
+also displayed visually (visual cue) on the screen and spoken
+aloud (audio cue) via computer speakers. The letters were
+repeatedly shown in every training round, following a predefined sequence. In the reinforcement rounds, letters were
+tested in a randomized order by first stimulating them via the
+haptic display and then asking the participants to type in the
+perceived letter. After the letter was typed in, the correct letter was shown (visually and auditory). Visually, the letter was
+shown in green if identified correctly. Otherwise, the correct
+letter was shown in green and wrongly identified letter in red.
+The role of reinforcement rounds was dual: first, giving feedback to the users to promote reinforcement learning and second, to record performance for the purpose of the evaluation.
+In the word challenge rounds, full words were stimulated via
+haptic display which participants had to identify and type in.
+In both reinforcement and word challenge rounds, the participants could request re-stimulation before answering. Figure
+4 illustrates a session process and Table 3 presents the number of training, reinforcement and word challenge rounds in
+each session, the number of letters, words and the used timing (stimulus base duration for each letter; gap time between
+letters when transmitting a word).
+Study 2: Skin Reading
+Participants. Four persons (three male and one female) aged
+between 25 and 36 years participated in this experiment.
+Procedure. Participants were first introduced to the study and
+the haptic display. Next, they completed five training sessions
+of our training program, each on a different day. For each
+day, the last reinforcement round and the challenge rounds
+were used to collect the following performance indicators: i)
+accuracy (whether participants recognized letters and words),
+ii) response time (the time it took a participant to enter the
+response), and iii) re-stimulation (whether the participant requested to repeat the stimulation).
+Results. First, we analyzed the letter recognition accuracy
+across last testing rounds of all sessions. The results are pre-
+Session Accuracy TTR Re-stim UL TL
+1 .98 (.14) 2.45 (2.31) .11 (.31) 18 54
+2 .95 (.22) 2.12 (1.27) .08 (.27) 23 92
+3 .92 (.27) 3.23 (4.90) .21 (.41) 26 52
+4 .90 (.30) 2.81 (2.13) .18 (.38) 26 52
+5 .94 (.24) 2.40 (2.73) .11 (.31) 26 52
+Table 4: Letter recognition accuracy, time to respond (TTR),
+the re-stimulation rate (re-stim), number of unique letters
+(UL) and all tested letters (TL) for each session
+# of motors Accuracy TTR Re-stim
+1 .96 (.20) 1.66 (0.60) .04 (.20)
+2 .96 (.20) 2.55 (3.42) .10 (.30)
+3 .85 (.36) 2.84 (1.56) .22 (.42)
+Table 5: Letter recognition accuracy (last session), time to
+respond and the re-stimulation rate depending on the number
+of stimuli used to encode the letter
+sented in Table 4. Already after the first day, participants
+were able to identify the letters correctly with an accuracy of
+98%. As the number of letters growed in the next two sessions, the recognition accuracy drooped to 95% in Session 2
+respectively 92% in Session 3. It is important to note the results of the last session which represent the final results, as
+it constitutes the end of the entire training, where the participants achieved an accuracy of 94%. An analysis of accuracy
+depending on the number of motors used to encode a letter
+during the Session 5 is shown in Table 5. The accuracy is
+high both letters encoded with one and two motors (96%). On
+contrast, for the letters encoded with three motors, factorial
+ANOVA indicates (F(1) = 3.2, p = .04) that the accuracy
+is significantly worse (85%). Letters encoded with one and
+two motors were recognized with high accuracy (96%). In
+contrast, a factorial ANOVA indicates (F(1) = 3.2, p = .04)
+that the accuracy was significantly worse (85%) for letters encoded with three motors.
+Second, we calculated word recognition accuracy depending on the length of the word (presented in Table 6). The
+accuracy is calculated as the number of correct entered letters within the word (considering exact positions of the letters within the word) divided by the word length. The overall accuracy stays over 90% for all words, and differences
+depending on number of letters are not significant (factorial
+ANOVA: F(1) = 2.0, p = .11). The accuracy depending
+on the session and gap time between consecutive letters (bl)
+when transmitting a word is presented in Table 8. Using
+a gap of 500ms in the third session results in accuracy of
+96%. However as we proceed to reduce the gap time between
+the letters and also decrease the stimulation time, the performance decreased as well. In sessions 4 and 5, we use three
+Word length 2 3 4 5
+Accuracy .93 (.19) .90 (.22) .94 (.17) .92 (.20)
+Table 6: Word recognition accuracy depending on the number
+of letters within the word
+Phrase Answer Accuracy
+GO THERE NO THETE 0.75
+SIT DOWN SIT DOWN 1.00
+HAVE IT HARE IT 0.86
+DO IT DO IT 1.00
+IT WORKS IT WORKS 1.00
+SAY HI SAY HI 1.00
+SIT UP SIT UP 1.00
+NO WAY NO WAY 1.00
+COME HERE COME HERE 1.00
+Table 7: Tested phrases, participant answers and accuracy
+(performed only by one participant after session 5)
+Session BL Gap Accuracy
+1 800ms .89 (.27)
+2 500ms .97 (.16)
+3 500ms .95 (.16)
+4 250ms .93 (.17)
+4 150ms .92 (.22)
+4 100ms .86 (.25)
+5 250ms .91 (.19)
+5 150ms .92 (.20)
+5 100ms .87 (.27)
+Table 8: Word recognition accuracy depending on the session
+and between letters (BL) gap
+different gap times which yield three different results, with
+the gap of 0.15 achieving the best accuracy. Nonetheless, a
+factorial ANOVA (F(1) = 1.02, p = .36 for session 4 and
+F(1) = 0.95, p = .39 for session 5) reveals that the differences in accuracy for different bl gaps are not significant.
+After all five sessions, the best performing participant was invited to a phrase challenge. The phrase challenge consisted
+on skin reading nine two-word phrases, with each word having 2 − 4 characters. The base duration (d) for letters was
+set to 70ms, between letters gap (bl) was 100ms and the gap
+between words was 270ms (bl + d + bl). The participant
+achieved an accuracy of 95.6% with a variance of 9.06%.
+DISCUSSION AND OUTLOOK
+The first study revealed that a wearable six-channel vibrotactile display worn in a hand or on both forearms can be used to
+encode distinguishable tactons composed of one, two or three
+vibromotors. Using the OST stimulation method with locations prioritized based on the perception potential, improved
+the localization accuracy of the stimulation.
+The second study showed that by using the ”Hand” configuration and the OST stimulation with the proposed letter encoding and training program, participants learned the entire
+alphabet in relatively short time. In fact by the third session,
+after approximately 3 hours of training, they could already
+recognize the letters with an accuracy of 92%. By the fifth
+session, after five hours of training, participants had achieved
+an accuracy of 94% in letter recognition, even though the base
+stimulation duration (d) was decreased to 70ms. In the last
+session, most problems occurred with letters encoded with
+three vibromotors. However, there are only five of them, and
+Figure 5: Stimulation process for letters, words and sentences
+they are the least used ones. To calculate the (theoretical)
+system accuracy for the alphabet application, one should also
+take into consideration the frequencies of the letters since the
+less frequent letters will influence the accuracy of the overall system much less than the more frequently-used ones. We
+calculate the overall system accuracy taking into account the
+frequency of the letters (in English alphabet) using the following weighted accuracy: ac =
+P
+i
+aci νi
+, where ac represents the overall system accuracy, aci represents the average
+accuracy of the ith letter, νi represents the frequency of the
+ith letter according to the probability distribution given for
+the English language. Note that, P
+i
+νi = 1. In our case,
+after a relatively short training the theoretical weighted accuracy was rather high ac = 96.3%. Moreover, within this time
+the participants learned to recognize words as a sequence of
+stimulated letters with a quite high accuracy (87% − 92% depending on the bl used gap).
+Potential Throughput
+Let us denote the base duration of a tacton with d. For letters
+encoded with multiple motors using the OST, there is a small
+gap g between the activation of different motors. Hence, the
+total stimulation time (td) is d for letters encoded with a single motor, d + g for the letters encoded with two motors and
+d+ 2g for letters that use 3 motors. Considering the probability distribution of the letters in the English language, then the
+average stimuli duration would be ld ≈ d+0.5g. In session 5,
+we set d = 0.07s, g = 0.01s which results in an average letter
+transmission of ld ≈ 0.075s. Considering that an average English word has 4 letters it takes wd = 4ld+3bl = 4d+2g+3bl
+to transmit a word, where bl is the gap between two subsequent letters. In the last session we set the d = 0.07s,
+g = 0.01s and use bl ∈ {0.1, 0.15, 0.25}s. For bl = 0.1s,
+the word transmission duration is wd = 0.6s. In order to
+transmit sentences, we need a delimiter between words to denote spaces. This could be a special tacton e.g. all motors
+using spatial stimuli that would take 0.07 (or simply a gap of
+this duration) and we use a gap of 0.1 before and after this
+tacton (bw = 0.27). Here, the word transmission rate would
+be ∈ {78.1, 65.4, 49.3} wpm for each of the bl values. So
+for bl = 0.1 (used in session 5) the throughput is 78.1 wpm.
+Clearly, the main overhead is the gap between letters (bl). If
+we speculate that with a longer training we can manage decreasing it to 5ms, then the transmission rate would be 105.5
+wpm, which is close to the speed at which an average human
+reads normal text (108.5 wpm) [26].
+Limitations
+Our haptic display is a prototype developed for research purposes. As such, it is not suited for normal use which would
+require a sophisticated embedding into the glove (e.g. cables
+not visible, smaller electronic components). It should also be
+fully mobile (wirelessly accessible from a mobile phone or
+PC) and contain an operating battery. Despite the promising
+results of our second study (i.e., the participants learned to interpret letters and words rather fast), a longer period of training would be necessary in order to achieve a level of performance and proficiency needed for every-day use Moreover,
+because of long training process, we had only 4 participants
+and the results may not generalize to a wider population. In
+addition, motivation plays an important role: more motivated
+people, especially those who benefit a lot from the system
+(e.g., hearing- visually-impaired individuals), may perform
+much better than less motivated individuals.
+Design Considerations
+In the second study, participants made most mistakes in identifying letters encoded with three vibromotors. One alternative to reduce such errors would be to place more motors on
+the hand. This would allow to encode more letters with just
+a single or two stimuli, while using overall more locations on
+the hand. With 7 motors we could encode 28 tactons with
+only one and two active motors and with 8 motors a total of
+36, enough to include punctuation and also some commonlyused words. Having tactons encoded in at most two motors
+is likely to speed up the learning process and improve performance. Furthermore, the ”Two-arm” configuration could be
+used for better stimuli discrimination. However, two sleeves
+require more effort to wear especially in terms of aligning the
+motors so that they always are placed at the same spot. Moreover, having two wireless wearable (sleeves) that require synchronization between them in matters of milliseconds could
+pose an additional challenge.
+CONCLUSION
+This paper describes a concrete implementation of a haptics
+display shaped as a glove, an overlapping spatio-temporal
+stimulation method, and an encoding for letters therewith.
+The decisions for the concrete design and implementation are
+preceded by a thorough discussion of perceptual factors and
+design considerations, wearable designs (forearm configuration, two-arms configuration, hand configuration); as well as
+a study comparing stimulation methods (Study 1). The main
+contribution of this work lies validating empirically the feasibility of using such a wearable haptic display for messages
+(Study 2). In the second study, four participants were trained
+for approximately five hours, each in five training sessions.
+Participants learned to interpret the full English alphabet after three hours of training. At the end of the training, participants were able to interpret words transmitted at a duration of
+0.6s per word (four-letter words), with an average accuracy
+of M = 87%, sd = 27%. With a slightly slower rate, they
+achieved an even higher accuracy of M = 92%, sd = 20%.
+These results open several research avenues. Overall, the
+achieved speed and accuracy of understanding show that skin
+reading has the potential for real-world applications.
+ACKNOWLEDGMENTS
+This work is partially funded by MoreGrasp (H2020-ICT-2014-1 643955).
+The Know-Center is funded within the Austrian COMET Program - Competence Centers for Excellent Technologies - under the auspices of the Austrian Federal Ministry of Transport, Innovation and Technology, the Austrian
+Federal Ministry of Economy, Family and Youth and by the State of Styria.
+COMET is managed by the Austrian Research Promotion Agency FFG.
+We thank Christoffer Ojeling for his work in constructing the hardware. ¨
+REFERENCES
+1. Bliss, J. C., Katcher, M. H., Rogers, C. H., and Shepard,
+R. P. Optical-to-tactile image conversion for the blind.
+IEEE Transactions on Man-Machine Systems 11, 1
+(March 1970), 58–65.
+2. Brewster, S., and Brown, L. M. Tactons: Structured
+tactile messages for non-visual information display. In
+Proceedings of the Fifth Conference on Australasian
+User Interface - Volume 28, AUIC ’04 (2004), 15–23.
+3. Brown, L. M., and Kaaresoja, T. Feel who’s talking:
+Using tactons for mobile phone alerts. In CHI ’06
+Extended Abstracts on Human Factors in Computing
+Systems, CHI EA ’06, ACM (2006), 604–609.
+4. Cholewiak, R. W., and Collins, A. A. The generation of
+vibrotactile patterns on a linear array: Influences of
+body site, time, and presentation mode. Perception &
+Psychophysics 62, 6, 1220–1235.
+5. Cholewiak, R. W., and Collins, A. A. Vibrotactile
+localization on the arm: Effects of place, space, and age.
+Perception & Psychophysics 65, 7, 1058–1077.
+6. Cholewiak, R. W., and Collins, A. A. Vibrotactile
+pattern discrimination and communality at several body
+sites. Perception & Psychophysics 57, 5, 724–737.
+7. Cholewiak, R. W., and Craig, J. C. Vibrotactile pattern
+recognition and discrimination at several body sites.
+Perception & Psychophysics 35, 6, 503–514.
+8. Craig, J. C. Temporal integration of vibrotactile patterns.
+Perception & Psychophysics 32, 3 (1982), 219–229.
+9. de Jesus Oliveira, and Maciel, A. Assessment of tactile
+languages as navigation aid in 3d environments. In
+EUROHAPTICS, 2014 (2014).
+10. de Jesus Oliveira, and Maciel, A. Introducing the
+modifier tactile pattern for vibrotactile communication.
+In EUROHAPTICS, 2014 (2014).
+11. Gault, R. H. Progress in experiments on tactual
+interpretation of oral speech. The Journal of Abnormal
+Psychology and Social Psychology 19, 2 (1924), 155.
+12. Geldard, F. A. Adventures in tactile literacy. American
+Psychologist 12, 3 (1957), 115–124.
+13. Gescheider, G. A., Wright, J. H., and Verrillo, R. T.
+Information-processing channels in the tactile sensory
+system: A psychophysical and physiological analysis.
+Psychology Press, 2010.
+14. Gunther, E. Skinscape: A tool for composition in the
+tactile modality. PhD thesis, Massachusetts Institute of
+Technology, 2001.
+15. Gunther, E., Davenport, G., and O’Modhrain, S.
+Cutaneous grooves: Composing for the sense of touch.
+In Proceedings of the 2002 Conference on New
+Interfaces for Musical Expression, NIME ’02, National
+University of Singapore (2002), 1–6.
+16. Hoggan, E. E., Anwar, S., and Brewster, S. A. Mobile
+Multi-actuator Tactile Displays. 2007.
+17. Kern, T. A. Engineering Haptic Devices: A Beginner’s
+Guide for Engineers, 1st ed. Springer Publishing
+Company, Incorporated, 2009.
+18. Kirman, J. H. Tactile perception of computerderived
+formant patterns from voiced speech. The Journal of the
+Acoustical Society of America 55, 1 (1974).
+19. Lederman, S. J., and Klatzky, R. L. Haptic perception: A
+tutorial. Attention, Perception, & Psychophysics 71, 7.
+20. Lofvenberg, J., and Johansson, R. Regional differences
+and interindividual variability in sensitivity to vibration
+in the glabrous skin of the human hand. Brain Research
+301, 1 (1984), 65 – 72.
+21. Novich, S. D., and Eagleman, D. M. Using space and
+time to encode vibrotactile information: toward an
+estimate of the skin’s achievable throughput.
+Experimental Brain Research, 10 (2015).
+22. Oakley, I., Kim, Y., Lee, J., and Ryu, J. Determining the
+feasibility of forearm mounted vibrotactile displays. In
+2006 14th Symposium on Haptic Interfaces for Virtual
+Environment and Teleoperator Systems (2006), 27–34.
+23. Spence, C., and Ho, C. Tactile and multisensory spatial
+warning signals for drivers. Haptics, IEEE Transactions
+on 1, 2 (July 2008), 121–129.
+24. Summers, I. R., Whybrow, J. J., Gratton, D. A., Milnes,
+P., Brown, B. H., and Stevens, J. C. Tactile information
+transfer: A comparison of two stimulation sites. The
+Journal of the Acoustical Society of America 118, 4
+(2005), 2527–2534.
+25. Ternes, D., and MacLean, K. E. Designing large sets of
+haptic icons with rhythm. In EuroHaptics, M. Ferre, Ed.,
+Springer (Madrid, Spain, 2008), 199–208.
+26. Troxel, D. Experiments in tactile and visual reading.
+Human Factors in Electronics, IEEE Transactions on
+HFE-8, 4 (Dec 1967), 261–263.
+27. White, B. W., Saunders, F. A., Scadden, L.,
+Bach-Y-Rita, P., and Collins, C. C. Seeing with the skin.
+Perception & Psychophysics 7, 1, 23–27.
+28. Xu, C., Israr, A., Poupyrev, I., Bau, O., and Harrison, C.
+Tactile display for the visually impaired using
+teslatouch. In CHI ’11 Extended Abstracts on Human
+Factors in Computing Systems, CHI EA ’11, ACM (New
+York, NY, USA, 2011), 317–322.
+29. Yannier, N., Israr, A., Lehman, J. F., and Klatzky, R. L.
+FeelSleeve: Haptic feedback to enhance early reading. In
+Proceedings of the 33rd Annual ACM Conference on
+Human Factors in Computing Systems, CHI 2015, 2015
+(2015), 1015–1024.

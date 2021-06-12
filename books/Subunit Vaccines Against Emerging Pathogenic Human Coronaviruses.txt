@@ -1,0 +1,2031 @@
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 1
+REVIEW
+published: 28 February 2020
+doi: 10.3389/fmicb.2020.00298
+Edited by:
+Lijun Rong,
+The University of Illinois at Chicago,
+United States
+Reviewed by:
+Ahmed Mohamed Kandeil,
+National Research Centre, Egypt
+Liang Qiao,
+Loyola University Chicago,
+United States
+*Correspondence:
+Shibo Jiang
+shibojiang@fudan.edu.cn
+Lanying Du
+ldu@nybc.org
+Specialty section:
+This article was submitted to
+Virology,
+a section of the journal
+Frontiers in Microbiology
+Received: 28 November 2019
+Accepted: 10 February 2020
+Published: 28 February 2020
+Citation:
+Wang N, Shang J, Jiang S and
+Du L (2020) Subunit Vaccines Against
+Emerging Pathogenic Human
+Coronaviruses.
+Front. Microbiol. 11:298.
+doi: 10.3389/fmicb.2020.00298
+Subunit Vaccines Against Emerging
+Pathogenic Human Coronaviruses
+Ning Wang1
+, Jian Shang2
+, Shibo Jiang1,3
+ and Lanying Du1
+
+1 Lindsley F. Kimball Research Institute, New York Blood Center, New York, NY, United States, 2 Department of Veterinary
+and Biomedical Sciences, College of Veterinary Medicine, University of Minnesota, Saint Paul, MN, United States, 3 Key
+Laboratory of Medical Molecular Virology (MOE/NHC/CAMS), School of Basic Medical Sciences, Shanghai Medical College,
+Fudan University, Shanghai, China
+Seven coronaviruses (CoVs) have been isolated from humans so far. Among them, three
+emerging pathogenic CoVs, including severe acute respiratory syndrome coronavirus
+(SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and a newly
+identified CoV (2019-nCoV), once caused or continue to cause severe infections in
+humans, posing significant threats to global public health. SARS-CoV infection in
+humans (with about 10% case fatality rate) was first reported from China in 2002, while
+MERS-CoV infection in humans (with about 34.4% case fatality rate) was first reported
+from Saudi Arabia in June 2012. 2019-nCoV was first reported from China in December
+2019, and is currently infecting more than 70000 people (with about 2.7% case
+fatality rate). Both SARS-CoV and MERS-CoV are zoonotic viruses, using bats as their
+natural reservoirs, and then transmitting through intermediate hosts, leading to human
+infections. Nevertheless, the intermediate host for 2019-nCoV is still under investigation
+and the vaccines against this new CoV have not been available. Although a variety of
+vaccines have been developed against infections of SARS-CoV and MERS-CoV, none
+of them has been approved for use in humans. In this review, we have described the
+structure and function of key proteins of emerging human CoVs, overviewed the current
+vaccine types to be developed against SARS-CoV and MERS-CoV, and summarized
+recent advances in subunit vaccines against these two pathogenic human CoVs. These
+subunit vaccines are introduced on the basis of full-length spike (S) protein, receptorbinding domain (RBD), non-RBD S protein fragments, and non-S structural proteins,
+and the potential factors affecting these subunit vaccines are also illustrated. Overall,
+this review will be helpful for rapid design and development of vaccines against the new
+2019-nCoV and any future CoVs with pandemic potential. This review was written for
+the topic of Antivirals for Emerging Viruses: Vaccines and Therapeutics in the Virology
+section of Frontiers in Microbiology.
+Keywords: human coronaviruses, pathogenesis, SARS-CoV, MERS-CoV, 2019-nCoV, subunit vaccines
+INTRODUCTION
+Coronaviruses (CoVs) belong to the subfamily Othocoronavirinae, in the family Coronaviridae of
+the order Nidovirales. According to the 10th Report on Virus Taxonomy from the International
+Committee on Taxonomy of Viruses (ICTV), the Othocoronavirinae is comprised of four
+genera, including alphacoronavirus (alpha-CoV), betacoronavirus (beta-CoV), gammacoronavirus
+Frontiers in Microbiology | www.frontiersin.org 1 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 2
+Wang et al. Subunit Vaccines Against Coronaviruses
+(gamma-CoV), and deltacoronavirus (delta-CoV) (King et al.,
+2018). Alpha- and beta-CoVs can infect mammals, including
+but not limited to bats, pigs, cats, mice, and humans (Kusanagi
+et al., 1992; Li et al., 2005b; Poon et al., 2005; Drexler et al.,
+2014; Pedersen, 2014; Kudelova et al., 2015; Cui et al., 2019).
+Gamma- and delta-CoVs usually infect birds, while some of
+them could infect mammals (Woo et al., 2009a, 2012, 2014; Ma
+et al., 2015). Since the late sixties, CoVs have been recognized
+as one of the viral sources responsible for the common cold.
+Among all CoVs identified so far, seven have the ability to
+infect humans, including human coronavirus 229E (HCoV-229E)
+and human coronavirus NL63 (HCoV-NL63), which belong to
+alpha-CoVs (Hamre and Procknow, 1966; Chiu et al., 2005),
+as well as human coronavirus OC43 (HCoV-OC43), human
+coronavirus HKU1 (HCoV-HKU1), severe acute respiratory
+syndrome coronavirus (SARS-CoV), Middle East respiratory
+syndrome coronavirus (MERS-CoV), and the newly emerged
+coronavirus (2019-nCoV), which are known to be beta-CoVs
+(Drosten et al., 2003; Ksiazek et al., 2003; Vabret et al., 2003; Woo
+et al., 2005; Zaki et al., 2012; Du et al., 2016b; Zhang et al., 2020;
+Zhu et al., 2020) (Figure 1).
+Four human CoVs, including HCoV-229E, HCoV-NL63,
+HCoV-OC43, and HCoV-HKU1, have been identified in humans,
+but without causing severe infections. HCoV-229E was isolated
+from nasal secretions of medical students with minor upper
+respiratory disease. This virus was an original isolate, and was first
+reported in the 1960s (Hamre and Procknow, 1966). In addition
+to HCoV-229E, several studies have reported the recovery of
+HCoV-OC43 from patients with upper respiratory tract illness
+(Tyrrell and Bynoe, 1965; Hamre et al., 1967; McIntosh et al.,
+1967; Kapikian et al., 1969). In 2004, HCoV-NL63 was isolated
+from clinical species of infants suffering from pneumonia or
+bronchiolitis, and characterized for its ability to infect human
+respiratory tract (Fouchier et al., 2004; van der Hoek et al.,
+2004). The subsequent study in 2005 identified a new member
+of CoVs, named HCoV-HKU1, from a 71-year-old man with
+pneumonia (Woo et al., 2005). Generally, these four viruses are
+the most common pathogens causing mild upper respiratory
+infection or asymptomatic infection, and count for about 30%
+of all colds (Myint, 1994; Lau et al., 2006; Kim et al., 2017).
+In the serological surveillance on healthy adults, HCoV-229E,
+HCoV-NL63, and HCoV-OC43 demonstrated more than 90%
+seropositive with the immunological assay. It appears common
+for these CoVs to infect children (Mourez et al., 2007; Shao
+et al., 2007; Severance et al., 2008). In contrast to the above
+three human CoVs, HCoV-HKU1 has around 50% seropositive
+in healthy individuals and a relatively low exposure rate in
+children (Lehmann et al., 2008; Severance et al., 2008). Although
+the prevalence of various CoVs is different, the incidence
+among these viruses shows no significant difference (Woo et al.,
+2009b). The afore-mentioned four CoVs have been detected
+in 2.1–17.9% of clinical specimens (Esper et al., 2006; Lau
+et al., 2006; Gerna et al., 2007; Regamey et al., 2008; Matoba
+et al., 2015; Killerby et al., 2018). These viruses have also
+been associated with lower respiratory tract illness in children,
+elders, and immunodeficient individuals (Falsey et al., 2002;
+Fouchier et al., 2004; Woo et al., 2005; Gerna et al., 2006). HCoV229E and HCoV-OC43 may lead to central nervous system
+infection since viral RNAs are detected in the brain of some
+patients (Arbour et al., 2000; Desforges et al., 2014).
+Unlike the above four human CoVs, SARS-CoV, MERSCoV, and 2019-nCoV have caused severe pneumonia and/or
+failure of other organs, even death, among infected populations
+(Nicholls et al., 2003; Zhong et al., 2003; Zaki et al., 2012;
+Zhu et al., 2020). The epidemic outbreak of SARS-CoV began
+in the Guangdong Province of China in November 2002, and
+spread through human-to-human transmission to other parts
+of the world within a few months (Ksiazek et al., 2003). From
+November 2002 to August 2003, SARS-CoV infected more than
+8,098 people in 29 counties, resulting in over 774 deaths with
+∼10% fatality rate (Du et al., 2009a). Palm civets serving as a
+potential intermediate host of this virus were traced immediately
+(Tu et al., 2004). Chinese horseshoe bats (Rhinolophus sinicus)
+are the natural reservoir of SARS-CoV (Li et al., 2005b). Various
+bat SARS-related CoVs (SARSr-CoV) have been identified in
+Yunnan, China, several of which can infect human cells, and
+have been further characterized (Ge et al., 2013; Hu et al., 2017).
+These discoveries indicate the threat of re-emergence of SARSCoV or SARSr-CoV.
+A decade later, another highly pathogenic human CoV,
+MERS-CoV, emerged, and the first patient with MERS-CoV
+infection was reported in Saudi Arabia in June 2012 (Zaki
+et al., 2012). By December 26, 2019, a total of 2,494 laboratoryconfirmed cases of MERS, including 858 associated deaths in
+27 countries (fatality rate 34.4%), were reported to the WHO1
+.
+Globally, the majority (about 80%) of human cases have been
+reported in Saudi Arabia, where people get infected through
+direct contact with infected dromedary camels or persons2
+(Zaki et al., 2012). Isolation of MERS-CoV and detection of
+neutralizing antibodies from dromedary camels suggest that
+these camels are potentially an important intermediate host
+(Reusken et al., 2013; Azhar et al., 2014). Similar to SARSCoV, MERS-CoV is also an emerging zoonotic virus (Li and
+Du, 2019). Bats habituate several CoVs phylogenetically related
+to MERS-CoV, and some of them are identical to MERS-CoVs,
+suggesting that MERS-CoV may originate from bats (Annan
+et al., 2013; Lelli et al., 2013; Lau et al., 2018; Luo et al., 2018a).
+Different from SARS-CoV, which has not caused infections
+in humans since 2004 (Du et al., 2009a), the transmission
+of MERS-CoV has not been interrupted, and the infected
+human cases continue increasing1
+(Mobaraki and Ahmadzadeh,
+2019). Currently, human-to-human transmission of MERSCoV is limited.
+A new CoV, 2019-nCoV, has caught worldwide attention
+(Liu and Saif, 2020; Zhang et al., 2020). It was first identified
+in Wuhan, China in December 2019, from patients with
+pneumonia (Zhu et al., 2020), and has infected more than
+70000 people globally, including 2,009 deaths (∼2.7% fatality
+1https://www.who.int/emergencies/mers-cov/en/
+2https://www.who.int/docs/default-source/coronaviruse/situation-reports/
+20200219-sitrep-30-covid-19.pdf?sfvrsn=6e50645_2
+Frontiers in Microbiology | www.frontiersin.org 2 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 3
+Wang et al. Subunit Vaccines Against Coronaviruses
+FIGURE 1 | Phylogenetic tree of coronaviruses (CoVs) based on the nucleotide sequences of RNA dependent RNA polymerase (RdRp). The Tree, with 1,000
+bootstrap values, was constructed by the maximum likelihood method using MEGA 6. The four main phylogenetic clusters correspond to genera alpha-CoV,
+beta-CoV, gamma-CoV, and delta-CoV. Each CoV genus contains different subgenera. The letters in blue indicate human CoVs.
+rate), as of February 19, 2020, particularly in China, and the
+other parts of the world, including Australia, Japan, Malaysia,
+Singapore, South Korea, Viet Nam, Cambodia, Philippines,
+Thailand, Nepal, Sri Lanka, India, United States, Canada, France,
+Finland, Germany, Italy, Russian Federation, Spain, Sweden,
+United Kingdom, Belgium, Egypt, and United Arab Emirates3
+.
+Different from MERS-CoV but similar to SARS-CoV, 2019-nCoV
+can cause human-to-human transmission, and its intermediate
+host that leads to the current human infection and outbreak is
+still under investigation.
+3https://www.who.int/docs/default-source/coronaviruse/situation-reports/
+20200204-sitrep-15-ncov.pdf?sfvrsn=88fe8ad6_2
+GENOME OF EMERGING HUMAN
+CORONAVIRUSES, AS WELL AS
+STRUCTURE AND FUNCTION OF THEIR
+KEY PROTEINS
+The human CoVs are enveloped viruses with a positive-sense,
+single-stranded RNA genome. They are 80–160 nm in diameter.
+Like other CoVs, human CoVs contain the largest viral genome
+[27–32 kilobase pairs (kb)] among the RNA viruses, and they
+share similar genome organization (Fehr and Perlman, 2015).
+Two large overlapping open reading frames (ORFs), ORF 1a and
+ORF 1b, occupy two-thirds of the genome at the 50
+-terminus, and
+Frontiers in Microbiology | www.frontiersin.org 3 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 4
+Wang et al. Subunit Vaccines Against Coronaviruses
+a third of the genome at the 30
+-terminus encodes four common
+structural proteins in the gene order of spike (S), envelope
+(E), membrane (M), and nucleocapsid (N) (50–30
+) (Fehr and
+Perlman, 2015). The large ORF 1ab is a replicase gene encoding
+polyproteins 1a (pp1a) and pp1b/1ab, which can be cleaved into
+15–16 non-structural proteins (nsp2-nsp16 or nsp1-nsp16) by
+3C-like proteinase (3CLpro, nsp5) and papain-like proteinase
+(PLpro, nsp3) (Bailey-Elkin et al., 2014; Fehr and Perlman, 2015;
+Tomar et al., 2015; Snijder et al., 2016). In addition to the
+genes encoding the above structural proteins, the genes encoding
+accessory proteins have also been detected in the 30
+region
+between S–E–M–N (Fehr and Perlman, 2015). Some beta-CoVs,
+such as HCoV-OC43 and HCoV-HKU1, contain hemagglutininesterase (HE) gene located between ORF 1ab and S gene encoding
+an additional structural protein, HE (De Groot et al., 2011;
+Desforges et al., 2013; Huang et al., 2015). Similar to other human
+CoVs, SARS-CoV possesses a ∼29-kb genome, which encodes
+pp1a and pp1ab, four main structural proteins (S, E, M, and
+N), and eight accessory proteins, such as 3a, 3b, 6, 7a, 7b, 8a,
+8b, and 9b (Figure 2A) (Marra et al., 2003; Snijder et al., 2003).
+The MERS-CoV genome is about 30 kb in length and encodes
+pp1a, pp1ab, four structural proteins (S, E, M, and N), and
+five accessory proteins (3, 4a, 4b, 5, and 8b) (Figure 2A) (van
+Boheemen et al., 2012). The genomic RNA of SARS-CoV and
+MERS-CoV is packed inside capsid formed by the N protein,
+while the M, E, and S proteins form the envelope surrounding the
+capsid (Figure 2B). Accessory genes may incorporate into virions
+at low levels (Liu et al., 2014). Nevertheless, neither SARS-CoV
+nor MERS-CoV appears to contain the HE gene (Rota et al., 2003;
+Zaki et al., 2012).
+Several proteins of human CoVs are important for viral
+infection and/or pathogenesis. For example, most nsps
+participate in viral RNA replication and/or transcription
+(Snijder et al., 2016). The accessory proteins interact with host
+cells, potentially helping the viruses to evade the immune system
+and increase their virulence (Menachery et al., 2017). The HE
+protein assists in the attachment of virus–host cells, thus playing
+a key role in the production of infectious virions, as in the case
+of HCoV-OC43 (Desforges et al., 2013). The M and E proteins
+are responsible for virus assembly or promote virulence (Scobey
+et al., 2013; DeDiego et al., 2014). Different from the above
+proteins, the S protein of human CoVs mediates viral entry
+into host cells and subsequent membrane fusion, enabling viral
+infection (Du et al., 2009a; Lu et al., 2014). The S protein is a
+class I viral protein, which can be cleaved into two functional
+subunits, an amino-terminal S1 subunit and a carboxyl-terminal
+S2 subunit. The S1 subunit is responsible for virus–host cell
+receptor binding, whereas the S2 subunit is involved in virus–
+host membrane fusion (Li et al., 2005a; Lu et al., 2014). The S1
+contains two major domains, an N-terminal domain (NTD) and
+a C-terminal domain (CTD). In general, NTDs mediate sugar
+binding (Li, 2016; Li et al., 2017; Ou et al., 2017; Hulswit et al.,
+2019; Tortorici et al., 2019), whereas CTDs facilitate protein
+receptor recognition (Wong et al., 2004; Hofmann et al., 2006;
+Lu et al., 2013). The NTDs and CTDs of the S1 subunit can bind
+host receptors or function as receptor-binding domains (RBDs)
+(Lu et al., 2013; Hulswit et al., 2019). The entry of human CoVs
+relies on the interaction between viral and cellular membrane
+proteins. Recognition of S1 subunit with a receptor and/or
+sugar on the cell surface initiates the infection (Li, 2015). After
+the initial recognition and binding, the S protein undergoes
+conformational changes, followed by membrane fusion through
+the S2 region (Li, 2015, 2016; Du et al., 2017). Consequently, the
+viral genetic materials are delivered into the host cell through the
+fusion core (Du et al., 2009a).
+Similar to HCoV-NL63 (Hofmann et al., 2005; Li, 2015),
+SARS-CoV recognizes, through the RBD in the CTD region of
+its S1 subunit, angiotensin-converting enzyme 2 (ACE2) as the
+receptor on the target cell (Li et al., 2003). The RBD (CTD) in
+two states (standing or lying) has been observed in the trimeric S
+protein. ACE2 binds to standing RBD, specifically in the receptorbinding motif (RBM), keeping the RBD in the “standing” state
+(Yuan et al., 2017). In addition to human ACE2, SARS-CoV S
+protein could also bind to palm civet and mouse ACE2s (Li et al.,
+2004; Li, 2008). Mutations in the RBD of S1 subunit are required
+for cross-species transmission of SARS-CoV (Li et al., 2005c; Li,
+2008, 2016). Several bat SARSr-CoVs have been identified, and
+these CoVs can utilize human ACE2 as their receptor to bind
+the target cells (Ge et al., 2013; Hu et al., 2017). The structure
+of SARS-CoV S trimer and RBD binding to the ACE2 receptor is
+shown in Supplementary Figures S1A,B.
+MERS-CoV RBD shares a structure similar to that of the
+homology domain of SARS-CoV (Wang et al., 2013). However,
+antibodies induced by SARS-CoV RBD have no cross-reactivity
+and/or cross-neutralizing activity to MERS-CoV (Du et al.,
+2013b). Moreover, MERS-CoV utilizes dipeptidyl peptidase 4
+(DPP4) as a receptor through the RBD (CTD) region (Raj et al.,
+2013), which is distinct from the SARS-CoV receptor ACE2.
+Although the core regions of SARS-CoV and MERS-CoV RBDs
+are similar, their RBM regions are significantly different, which
+explains why they recognize different receptors (Li, 2015). MERSCoV S trimer also maintains a structure similar to that of SARSCoV S trimer. Both standing and lying states can be detected in
+the MERS-CoV RBDs, whereas DPP4 only binds to the standing
+RBD (Pallesen et al., 2017; Yuan et al., 2017). MERS-CoV is
+clustered with Ty-BatCoV HKU4 and Pi-BatCoV HKU5 in the
+subgenus Merbecovirus. Ty-BatCoV HKU4, but not Pi-BatCoV
+HKU5, could use human DPP4 as a receptor (Yang et al., 2014b).
+Recently, some MERS-related CoVs (MERSr-CoVs) have been
+discovered from bats that can enter human DPP4-expressing cells
+(Lau et al., 2018; Luo et al., 2018a). These findings suggest that
+the emergence of MERSr-CoV may threaten human health owing
+to their potential for cross-species transmission. The MERS-CoV
+S protein and RBD and their complexes, along with the DPP4
+receptor, are shown in Supplementary Figures S1C,D.
+Recent studies have found that the new human CoV, 2019-
+nCoV, which belongs to the species of SARSr-CoV, shares high
+sequence identify (about 79.5%) to SARS-CoV (Zhou et al., 2020).
+The genome of 2019-nCoV encodes pp1ab (translated from ORF
+1ab), four structural proteins (S, E, M, and N), and six accessory
+proteins (3a, 6, 7a, 7b, 8, and 10) (Figure 2A). Same as SARSCoV and MERS-CoV, 2019-nCoV appears to have no HE gene.
+The virion of 2019-nCoV consists of similar structure as SARSCoV and MERS-CoV (Figure 2B). Like SARS-CoV, 2019-nCoV
+Frontiers in Microbiology | www.frontiersin.org 4 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 5
+Wang et al. Subunit Vaccines Against Coronaviruses
+FIGURE 2 | Schematic structure of SARS-CoV, MERS-CoV, and 2019-nCoV. (A) Schematic diagram of genomic organization of SARS-CoV, MERS-CoV, and
+2019-nCoV. The genomic regions or open-reading frames (ORFs) are compared. Structural proteins, including spike (S), envelope (E), membrane (M) and
+nucleocapsid (N) proteins, as well as non-structural proteins translated from ORF 1a and ORF 1b and accessory proteins, including 3a, 3b, 6, 7a, 7b, 8a, 8b, and 9b
+(for SARS-CoV), 3, 4a, 4b, 5, and 8b (for MERS-CoV), and 3a, 6, 7a, 7b, 8, and 10 (for 2019-nCoV) are indicated. 50
+-UTR and 30
+-UTR, untranslated regions at the Nand C-terminal regions, respectively. Kb, kilobase pair. (B) Schematic structure of virion of SARS-CoV, MERS-CoV, and 2019-nCoV and its major structural proteins.
+also uses ACE2 as its cellular receptor to enter host cells (Zhou
+et al., 2020). Currently, the structure of 2019-nCoV RBD and/or
+its binding with the viral receptor has not yet been available.
+OVERVIEW OF VACCINES AGAINST
+EMERGING PATHOGENIC HUMAN
+CORONAVIRUSES
+Unlike the four low pathogenic human CoVs, including
+HCoV-229E, HCoV-NL63, HCoV-OC43, and HCoV-HKU1,
+which cause mild to no pathogenesis in humans, SARS-CoV,
+MERS-CoV, and 2019-CoV are three highly pathogenic human
+CoVs (Channappanavar and Perlman, 2017; Cui et al., 2019;
+Zhu et al., 2020). With the increasing numbers of 2019-nCoV and
+MERS-CoV infections and continuous threat of re-emergence of
+SARS-CoV, as well as the potential of SARS- and MERS-related
+CoVs to cause human infections, it is critical to develop vaccines
+with strong efficacy and safety targeting these viruses to prevent
+their infections in humans. Since the vaccines against 2019-nCoV
+have not been available, the rest of the review will focus on the
+vaccines against SARS-CoV and MERS-CoV.
+Although a variety of vaccines have been developed against
+SARS-CoV and MERS-CoV, most of them are in the preclinical
+studies, and only several have been tested in clinical trials4,5
+(Du et al., 2016b; Cho et al., 2018). Nevertheless, no vaccines
+4https://clinicaltrials.gov/ct2/show/NCT03615911
+5https://clinicaltrials.gov/ct2/show/NCT03399578
+Frontiers in Microbiology | www.frontiersin.org 5 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 6
+Wang et al. Subunit Vaccines Against Coronaviruses
+have been approved for the prevention of SARS and MERS
+in humans, demonstrating the need to develop effective and
+safe vaccines to control current MERS-CoV infection, or to
+be stockpiled for potential use against re-emerged SARS-CoV
+or SARSr-CoV. Particularly, effective and safe vaccines are
+urgently needed to prevent and control the current outbreak
+of 2019-nCoV.
+Most SARS-CoV and MERS-CoV vaccines developed thus
+far are based on the inactivated or live attenuated viruses,
+DNAs, proteins, nanoparticles, viral vectors, including viruslike particles (VLPs) (Zeng et al., 2004; Jiang et al., 2005;
+Liu et al., 2005; Du et al., 2009a, 2016b; Pimentel et al.,
+2009; Al-Amri et al., 2017). Each vaccine type has different
+advantages and disadvantages. For instance, inactivated and liveattenuated virus-based vaccines are vaccine types developed
+using the most traditional approaches. Although they generally
+induce highly potent immune responses and/or protection, the
+possibility for incomplete inactivation of viruses or recovering
+virulence exists, resulting in significant safety concerns (Zhang
+et al., 2014). Also, these traditional vaccines may induce the
+antibody-dependent enhancement (ADE) effect, as in the case
+of SARS-CoV infection (Luo et al., 2018b). Similarly, some
+viral-vectored vaccines can elicit specific antibody and cellular
+immune responses with neutralizing activity and protection, but
+they might also induce anti-vector immunity or present preexisting immunity, causing some harmful immune responses.
+Instead, DNA and nanoparticle vaccines maintain strong
+safety profile; however, the immunogenicity of these vaccines
+is usually lower than that of virus- or viral vector-based
+vaccines, often requiring optimization of sequences, components,
+or immunization routes, inclusion of appropriate adjuvants,
+or application of combinational immunization approaches
+(Zhang et al., 2014).
+SUBUNIT VACCINES AGAINST
+SARS-CoV AND MERS-CoV
+Subunit vaccines are vaccines developed based on the synthetic
+peptides or recombinant proteins. Unlike inactivated or liveattenuated virus and some viral vectored vaccines, this vaccine
+type mainly contains specific viral antigenic fragments, but
+without including any components of infectious viruses,
+eliminating the concerns of incomplete inactivation, virulence
+recovery, or pre-existing immunity (Du et al., 2008; Deng
+et al., 2012). Similar to DNA or VLP-based vaccines, subunit
+vaccines are generally safe without causing potential harmful
+immune responses, making them promising vaccine candidates.
+Moreover, subunit vaccines may target specific, well-defined
+neutralizing epitopes with improved immunogenicity and/or
+efficacy (Du et al., 2008; Zhang et al., 2014).
+A number of subunit vaccines against SARS-CoV and
+MERS-CoV have been developed, and these are described
+in detail in the next paragraphs. The targets used for the
+development of SARS-CoV and MERS-CoV subunit vaccines are
+also be discussed.
+Potential Targets for Development of
+SARS-CoV and MERS-CoV Subunit
+Vaccines
+The S protein of SARS-CoV and MERS-CoV plays a vital role
+in receptor binding and membrane fusion. Thus, the S protein,
+but not other structural proteins, is the major antigen to induce
+protective neutralizing antibodies to block viruses from binding
+their respective receptor and thus inhibit viral infection (Bisht
+et al., 2004; Buchholz et al., 2004; Bukreyev et al., 2004; Yang
+et al., 2004). As a result, the S protein is also a major target for the
+development of subunit vaccines against SARS-CoV and MERSCoV. Both full-length S protein and its antigenic fragments,
+including S1 subunit, NTD, RBD, and S2 subunit, can serve as
+important targets for the development of subunit vaccines (Guo
+et al., 2005; Mou et al., 2013; Wang et al., 2015; Jiaming et al.,
+2017; Zhou et al., 2018).
+Although subunit vaccines based on the full-length S protein
+may elicit potent immune responses and/or protection, studies
+have found that antibodies induced by some of these vaccines
+mediate enhancement of viral infection in vitro, as in the
+case of SARS-CoV (Kam et al., 2007; Jaume et al., 2012),
+raising safety concerns for the development of full-length S
+protein-based subunit vaccines against SARS-CoV and MERSCoV. In contrast, RBD-based subunit vaccines comprise the
+major critical neutralizing domain (Du and Jiang, 2015; Zhou
+et al., 2019). Therefore, these vaccines may generate potent
+neutralizing antibodies with strong protective immunity against
+viral infection. S1 subunit, for example, is much shorter than
+the full-length S protein, but it is no less able to induce strong
+immune responses and/or protection against viral infection (Li
+et al., 2013; Adney et al., 2019). Thus, this fragment can be used
+as an alternative target for subunit vaccine development. Despite
+their ability to induce immune responses and/or neutralizing
+antibodies, NTD and S2 as the targets of subunit vaccines are
+less immunogenic, eliciting significantly lower antibody titers,
+cellular immune responses, and/or protection than the other
+regions, such as full-length, S1, and RBD (Guo et al., 2005;
+Jiaming et al., 2017). Therefore, in terms of safety and efficacy,
+the RBD and/or S1 of S protein could be applied as critical
+targets for the development of subunit vaccine candidates against
+SARS-CoV, MERS-CoV, SARSr-CoV, and MERSr-CoV. Because
+of its conserved amino acid sequences and high homology among
+different virus strains (Elshabrawy et al., 2012; Zhou et al., 2018),
+the S2 subunit has potential to be used as a target for the
+development of universal vaccines against divergent virus strains.
+In addition to the S protein, the N protein of SARS-CoV
+and MERS-CoV may serve as an additional target for the
+development of subunit vaccines. Unlike S protein, the N protein
+has no ability to elicit neutralizing antibodies to block virusreceptor interaction and neutralize viral infection, but it may
+induce specific antibody and cellular immune responses (Liu
+et al., 2006; Zheng et al., 2009). Several immunodominant B-cell
+and T-cell epitopes have been identified in the N protein of SARSCoV and MERS-CoV, some of which are conserved in mice,
+non-human primates, and humans (Liu et al., 2006; Chan et al.,
+2011; Veit et al., 2018). Other proteins, such as M protein, can be
+Frontiers in Microbiology | www.frontiersin.org 6 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 7
+Wang et al. Subunit Vaccines Against Coronaviruses
+used as potential targets of SARS-CoV and MERS-CoV subunit
+vaccines. Notably, SARS-CoV M protein-derived peptides have
+immunogenicity to induce high-titer antibody responses in the
+immunized animals (He et al., 2005b), suggesting the potential
+for utilizing this protein to develop subunit vaccines.
+Subunit Vaccines Against SARS-CoV
+Numerous subunit vaccines against SARS-CoV have been
+developed since the outbreak of SARS, the majority of which use
+the S protein and/or its antigenic fragments, in particular, RBD,
+as the vaccine target (Table 1).
+SARS-CoV Subunit Vaccines Based on Full-Length S
+Protein
+Subunit vaccines based on SARS-CoV S protein, including fulllength or trimeric S protein, are immunogenic with protection
+against SARS-CoV infection (He et al., 2006a; Kam et al.,
+2007; Li et al., 2013). Either insect cell-expressed full-length
+(FL-S) or extracellular domain (EC-S) SARS-CoV S protein
+developed high-titer S-specific antibodies with neutralizing
+activity against pseudotyped SARS-CoV expressing S protein of
+representative SARS-CoV human and palm civet strains (Tor2,
+GD03, and SZ3) isolated during the 2002 and 2003 or 2003
+and 2004 outbreaks (He et al., 2006a). In addition, full-length
+S-ectodomain proteins fused with or without a foldon trimeric
+motif (S or S-foldon) could elicit specific antibody responses
+and neutralizing antibodies, protecting immunized mice against
+SARS-CoV challenge with undetectable virus titers in the lungs
+(Li et al., 2013). Moreover, a subunit vaccine (triSpike) based
+on a full-length S protein trimer induced specific serum and
+mucosal antibody responses and efficient neutralizing antibodies
+against SARS-CoV infection (Kam et al., 2007). Nevertheless, this
+vaccine also resulted in Fcγ receptor II (FcγRII)-dependent and
+ACE2-independent ADE, particularly in human monocytic or
+lymphoblastic cell lines infected with pseudotyped SARS-CoV
+expressing viral S protein, or in Raji B cells (B-cell lymphoma
+line) infected with live SARS-CoV (Kam et al., 2007; Jaume et al.,
+2012), raising significant concerns over the use of full-length S
+protein as a SARS vaccine target.
+SARS-CoV Subunit Vaccines Based on RBD
+SARS-CoV RBD contains multiple conformation-dependent
+epitopes capable of eliciting high-titer neutralizing antibodies;
+thus, it is a major target for the development of SARS vaccines
+(He et al., 2004, 2005a; Jiang et al., 2012; Zhu et al., 2013). Subunit
+vaccines based on the SARS-CoV RBD have been extensively
+explored. Studies have found that a fusion protein containing
+RBD and the fragment crystallizable (Fc) region of human IgG1
+(RBD-Fc) elicited highly potent neutralizing antibodies against
+SARS-CoV in the immunized rabbits and mice, which strongly
+blocked the binding between S1 protein and SARS-CoV receptor
+ACE2 (He et al., 2004). This RBD protein induced long-term,
+high-level SARS-CoV S-specific antibodies and neutralizing
+antibodies that could be maintained for 12 months after
+immunization, protecting most of the vaccinated mice against
+SARS-CoV infection (Du et al., 2007). In addition, recombinant
+RBDs (residues 318–510 or 318–536) stably or transiently
+expressed in Chinese hamster ovary (CHO) cells bound strongly
+to RBD-specific monoclonal antibodies (mAbs), elicited hightiter anti-SARS-CoV neutralizing antibodies, and protected most,
+or all, of the SARS-CoV-challenged mice, with undetectable viral
+RNA and undetectable or significantly reduced viral load (Du
+et al., 2009c, 2010). Significantly, a 293T cell-expressed RBD
+protein maintains excellent conformation and good antigenicity
+to bind SARS-CoV RBD-specific neutralizing mAbs. It elicited
+highly potent neutralizing antibodies that completely protected
+immunized mice against SARS-CoV challenge (Du et al., 2009b).
+Particularly, RBDs from the S proteins of Tor2, GD03, and SZ3,
+representative strains of SARS-CoV isolated from human 2002–
+2003, 2003–2004, and palm civet strains, can induce high-titer
+cross-neutralizing antibodies against pseudotyped SARS-CoV
+expressing respective S proteins (He et al., 2006c). Different
+from the full-length S protein-based SARS subunit vaccines, no
+obvious pathogenic effects have been identified in the RBD-based
+SARS subunit vaccines (Kam et al., 2007; Jaume et al., 2012).
+SARS-CoV Subunit Vaccines Based on Non-RBD S
+Protein Fragments
+SARS subunit vaccines based on S protein fragments (S1 and
+S2), other than the RBD, have shown immunogenicity and/or
+protective efficacy against SARS-CoV infection (Guo et al., 2005;
+Li et al., 2013). For example, recombinant S1 proteins fused with
+or without foldon elicited specific antibodies with neutralizing
+activity that protected immunized mice against high-dose SARSCoV challenge (Li et al., 2013). Although some studies have
+demonstrated that recombinant SARS-CoV S2 (residues 681–
+980) protein elicits specific non-neutralizing antibody response in
+mice (Guo et al., 2005), others have indicated that mAbs targeting
+highly conserved heptad repeat 1 (HR1) and HR2 domains of
+SARS-CoV S protein have broad neutralizing activity against
+pseudotyped SARS-CoV expressing S protein of divergent strains
+(Elshabrawy et al., 2012), indicating the potential of utilizing the
+S2 region as a broad-spectrum anti-SARS-CoV vaccine target
+(Zheng et al., 2009).
+SARS-CoV Subunit Vaccines Based on Non-S
+Structural Proteins
+Subunit vaccines based on the N and M proteins of SARSCoV have shown immunogenicity in vaccinated animals (Liu
+et al., 2006; Zheng et al., 2009). Studies have revealed
+that a plant-expressed SARS-CoV N protein conjugated with
+Freund’s adjuvant elicited specific IgG antibodies, including
+IgG1 and IgG2a subtypes, and cellular immune responses in
+mice, whereas another E. coli-expressed N protein conjugated
+with Montanide ISA-51 and cysteine-phosphate-guanine (CpG)
+adjuvants induced specific IgG antibodies toward a Th1
+(IgG2a)-type response in mice (Liu et al., 2006; Zheng et al.,
+2009). Although N-specific antibodies have been detected in
+convalescent-phase SARS patient and immunized rabbit sera,
+they have no neutralizing activity against SARS-CoV infection
+(Qiu et al., 2005). In addition, immunodominant M protein
+peptides (M1-31 and M132-161) identified using convalescentphase sera of SARS patients and immunized mouse and rabbit
+sera have immunogenicity to elicit specific IgG antibodies in
+Frontiers in Microbiology | www.frontiersin.org 7 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 8
+Wang et al. Subunit Vaccines Against Coronaviruses TABLE 1 | Subunit Vaccines against SARS-CoV
+a
+.
+Name Antigenicity and
+functionality
+Adjuvant Route Animal
+models
+Antibody response Cellular immune
+response
+Protection References
+Subunit vaccines based on SARS-CoV full-length or trimeric S protein
+FL-S and EC-S
+proteins
+Bind to SARS-CoV
+S1, NTD, RBD, and
+S2-specific mAbs
+MPL
++ TDM S.C. BALB/c mice Elicit SARS-CoV S-specific Abs
+(IgG, > 1: 2 × 10
+5), neutralizing
+(> 1:2.4 × 10
+4) pseudotyped
+SARS-CoV (Tor2, GD03, and
+SZ3 strains)
+N/A N/A He et al., 2006a
+S andS-foldon
+proteins
+N/A TiterMax Gold;
+Alum Hydro
++ MPL
+S.C. or I.M. BALB/c mice Elicit SARS-CoV S-specific Abs
+(IgG, > 1:10
+4) in mice,
+neutralizing (
+∼2.4 × 10
+2 for S;
+∼1:7 × 10
+2 for S-foldon) live
+SARS-CoV (Urbani strain)
+N/A Protect vaccinated
+mice from challenge of
+SARS-CoV (Urbani
+strain, 10
+5 TCID50) with
+undetectable viral load
+in lungs
+Li et al., 2013
+triSpike protein N/A Alum hydro I.P. or S.C. BALB/c mice;
+Hamsters
+Elicits SARS-CoV S-specific
+mucosal and serum Abs (IgA
+and IgG) in mice and hamsters,
+blocking S-ACE2 receptor
+binding and neutralizing live
+SARS-CoV (HKU-39849 strain);
+induces ADE
+N/A Protects vaccinated
+hamsters from
+challenge of SARS-CoV
+(Urbani strain, 10
+3
+TCID50) with
+undetectable or
+reduced viral load in
+lungs
+Kam et al., 2007;
+Jaume et al., 2012
+Subunit vaccines based on SARS-CoV RBD protein
+RBD-Fc protein N/A Freund’s I.D. orI.M. BALB/c mice;
+Rabbits
+Elicits SARS-CoV
+S/RBD-specific Abs (IgG) in
+mice and rabbits, neutralizing
+pseudotyped
+(rabbits: ≥ 7.3 × 10
+4) and live
+(mice: 1:4 × 10
+3
+;
+rabbits: > 1:1.5 × 10
+4
+)
+SARS-CoV (BJ01 strain)
+N/A Protects majority (4/5)
+of vaccinated mice
+from challenge of
+SARS-CoV (BJ01
+strain, 10
+6 TCID50),
+with one mouse
+showing mild alveolar
+damage in lungs
+He et al., 2004; Du
+et al., 2007
+RBD193-CHO;
+RBD219-CHO
+proteins
+Binds to
+SARS-CoV
+RBD-specific mAbs
+(neutralizing 24H8,
+31H12, 35B5,
+33G4, 19B2;
+non-neutralizing
+17H9)
+Freund’s S.C. BALB/c mice Elicit SARS-CoV RBD-specific
+Abs, neutralizing pseudotyped
+(< 1:10
+4 for RBD193-CHO;
+1:5.8 × 10
+4 for RBD219-CHO)
+and live (< 1:10
+3 for
+RBD193-CHO; 1:10
+3 for
+RBD219-CHO) SARS-CoV
+(GZ50 strain)
+Induce SARS-CoV
+RBD-specific
+cellular immune
+responses (IFN-γ,
+IL-2, IL-4, IL-10) in
+mice
+Protect all (for
+RBD219-CHO) or
+majority (3/5, for
+RBD219-CHO) of
+vaccinated mice from
+challenge of SARS-CoV
+(GZ50 strain, 100
+TCID50 for
+RBD193-CHO; 5 × 10
+5
+TCID50 for
+RBD219-CHO) with
+undetectable viral RNA
+or no, to reduced, viral
+load in lungs
+Du et al., 2009c,
+2010
+(Continued)
+Frontiers in Microbiology | www.frontiersin.org 8 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 9
+Wang et al. Subunit Vaccines Against Coronaviruses TABLE 1 | Continued Name Antigenicity and functionality Adjuvant Route Animal models Antibody response Cellular immune response Protection References RBD-293T protein Binds to SARS-CoV RBD-specific mAbs (neutralizing 24H8, 31H12, 35B5, 33G4, 19B2; non-neutralizing 17H9) SAS S.C. BALB/c mice Elicits SARS-CoV RBD-specific Abs (IgG), neutralizing pseudotyped (1:6.9 × 10
+5) and
+live (1:1.6 × 10
+3) SARS-CoV
+(GZ50 strain)
+N/A Protects all vaccinated
+mice from challenge of
+SARS-CoV (GZ50
+strain, 100 TCID50) with
+undetectable viral RNA
+and viral load in lungs
+Du et al., 2009b
+S318-510
+protein
+N/A Alum; Alum
++ CpG S.C. 129S6/SvEv
+mice
+Elicits SARS-CoV-specific Abs
+(IgG, IgG1, and IgG2a) in mice.
+Reduces neutralization after
+removing glycosylation
+Induces SARS-CoV
+S-specific cellular
+immune responses
+(IFN-γ) in mice
+N/A Zakhartchouk et al.,
+2007
+Subunit vaccines based on non-RBD SARS-CoV S protein fragments
+S1 and
+S1-foldon
+proteins
+N/A TiterMax Gold;
+Alum Hydro
++ MPL
+S.C. or I.M. BALB/c mice Elicit SARS-CoV S-specific Abs
+(IgG, > 1:10
+4) in mice,
+neutralizing (1:1.7 × 10
+2 for S1;
+1:90 for S1-foldon) live
+SARS-CoV (Urbani strain)
+N/A Protect vaccinated
+mice from challenge of
+SARS-CoV (Urbani
+strain, 10
+5 TCID50) with
+undetectable viral load
+in lungs
+Li et al., 2013
+S2 protein N/A Freund’s S.C. BALB/c mice Elicits SARS-CoV S2-specific
+Abs (IgG, 1:1.6 × 10
+3) in mice
+with no neutralizing activity
+Induces SARS-CoV
+S2-specific cellular
+immune responses
+(IFN-γ and IL-4) in
+mice
+N/A Guo et al., 2005
+Subunit vaccines based on SARS-CoV non-S structural proteins (i.e. N and M)
+rN protein N/A Freund’s I.P. BALB/c mice Elicits SARS-CoV N-specific
+Abs (IgG (1:1.8 × 10
+3), IgG1,
+and IgG2a) in mice
+Induces cellular
+immune responses
+with up-regulated
+IFN-γ and IL-10
+cytokines in mice
+N/A Zheng et al., 2009
+rN protein N/A Montanide
++ CpG;
+Freund’s
+S.C. BALB/c mice Elicits SARS-CoV N-specific
+Abs (IgG) in mice
+Induces SARS-CoV
+N-specific cellular
+immune responses
+(IFN- γ) in mice
+N/A Liu et al., 2006
+M1-31 and
+M132-161
+peptides
+Bind to sera from
+SARS patients or
+immunized mice
+and rabbits
+Freund’s I.D. BALB/c mice;
+NZW rabbits
+Induce SARS-CoV M-specific
+Abs (IgG) in rabbits
+N/A N/A He et al., 2005b
+aAbs, antibodies; ADE, antibody-dependent enhancement; Alum hydro, aluminum hydroxide; CHO, Chinese hamster ovary; CpG, cysteine-phosphate-guanine; I.D., intradermal; I.M., intramuscular; IFN-γ , interferon
+gamma; IL-2, interleukin 2; IL-4, interleukin 4; IL-10, Interleukin 10; I.P., intraperitoneal; mAbs, monoclonal antibodies; Montanide, Montanide ISA-51; MPL
++ TDM, monophosphoryl lipid A and trehalose dicorynomycolate;
+N/A, not reported; NTD, N-terminal domain; NZW rabbits, New Zealand White rabbits; RBD, receptor-binding domain; SAS, Sigma adjuvant system; S.C., subcutaneous; TCID50, median tissue culture infectious dose.
+Frontiers in Microbiology | www.frontiersin.org 9 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 10
+Wang et al. Subunit Vaccines Against Coronaviruses
+rabbits (He et al., 2005b). In spite of their immunogenicity,
+it appears that these N- and M-based SARS subunit vaccines
+have not been investigated for their protective efficacy against
+SARS-CoV infection. Thus, it is unclear whether these nonS structural protein-based SARS subunit vaccines can prevent
+SARS-CoV infection.
+Potential Factors Affecting SARS-CoV Subunit
+Vaccines
+A number of factors may affect the expression of proteins
+to be used as SARS subunit vaccines; apart from their
+immunogenicity and/or protective efficacy. Understanding of
+these factors is important to generate subunit vaccines with good
+quality, high immunogenicity, and excellent protection against
+SARS-CoV infection.
+The expression of recombinant protein-based SARS subunit
+vaccines may be changed by the following factors. First, addition
+of an intron splicing enhancer to the truncated SARS-CoV
+S protein fragments results in better enhancement of protein
+expression in mammalian cells than the exon splicing enhancers,
+and different cells may result in different fold increase of
+protein expression (Chang et al., 2006). Second, inclusion of
+a post-transcriptional gene silencing suppressor p19 protein
+from tomato bushy stunt virus to a SARS-CoV N protein
+may significantly increase its transient expression in tobacco
+(Zheng et al., 2009).
+The following factors may affect the immunogenicity and
+protective efficacy of protein-based SARS subunit vaccines,
+including same proteins expressed in different expression
+systems, and same proteins with various lengths, amino acid
+mutations, or deletions (He et al., 2006b; Du et al., 2009b).
+For example, RBD proteins containing different lengths (193-
+mer: RBD193-CHO or 219-mer: RBD219-CHO) elicited different
+immune responses and protective efficacy against SARS-CoV
+challenge (Du et al., 2009c, 2010). A recombinant SARS-CoV
+RBD (RBD-293T) protein expressed in mammalian cell system
+was able to induce stronger neutralizing antibody response than
+those expressed in insect cells (RBD-Sf9) and E. coli (RBDEc) (Du et al., 2009b), suggesting that RBD purified from
+mammalian cells has preference for further development due
+to its ability to maintain native conformation. Notably, a single
+mutation (R441A) in the RBD of SARS-CoV disrupted its major
+neutralizing epitopes and affinity to bind viral receptor ACE2,
+thus abolishing the vaccine’s immunogenicity, and hence, its
+ability to induce neutralizing antibodies in immunized animals
+(He et al., 2006b). Additionally, deletion of a particular amino
+acid by changing a glycosylation site in the SARS-CoV RBD
+(RBD219-N1) also resulted in the alteration of subunit vaccine’s
+immunogenicity (Chen et al., 2014).
+Other factors that potentially affect the immunogenicity
+of SARS subunit vaccines include immunization routes and
+adjuvants (Zakhartchouk et al., 2007; Li et al., 2013). Significantly
+high-titer antibodies were induced by monomeric or trimeric
+SARS-CoV S and S1 proteins through the intramuscular (I.M.)
+route compared to the subcutaneous (S.C.) route (Li et al.,
+2013). Moreover, a SARS-CoV RBD subunit vaccine conjugated
+with Alum plus CpG adjuvants elicited a higher level of IgG2a
+antibody and interferon gamma (IFN-γ) secretion than the RBD
+with Alum alone (Zakhartchouk et al., 2007).
+Subunit Vaccines Against MERS-CoV
+Subunit vaccines against MERS-CoV have been developed
+extensively, almost all of which are based on the S protein,
+including full-length S timer, NTD, S1, and S2, particularly
+RBD. These subunit vaccines, including their antigenicity,
+functionality, immunogenicity, and protective efficacy in
+different animal models, are summarized in Table 2.
+MERS-CoV Subunit Vaccines Based on Full-Length S
+Protein
+Subunit vaccines based on the full-length S protein cover both
+RBD and non-RBD neutralizing epitopes, some of which may
+be located in the conserved S2 subunit; thus this type of
+subunit vaccines are expected to induce high-titer neutralizing
+antibodies. Although several MERS-CoV full-length S proteinbased vaccines have been reported in other vaccine types,
+including viral vectors and DNAs (Wang et al., 2015; Wang C.
+et al., 2017; Haagmans et al., 2016; Zhou et al., 2018), only
+a few subunit vaccines have been developed that rely on
+the full-length S protein. For example, a recombinant MERSCoV S protein trimer (MERS S-2P) in prefusion conformation
+binds to the DPP4 receptor, as well as to the MERS-CoV
+NTD, RBD, and S2-specific neutralizing mAbs (Pallesen et al.,
+2017). Whereas this protein induces neutralizing antibodies
+in mice against divergent pseudotyped MERS-CoV in vitro,
+its in vivo protective activity against MERS-CoV infection
+is unknown (Pallesen et al., 2017). Therefore, more studies
+are needed to elucidate the potential for the development
+of MERS-CoV full-length S-based subunit vaccines, including
+understanding their protective efficacy and identifying possible
+harmful immune responses.
+MERS-CoV Subunit Vaccines Based on RBD
+Numerous MERS-CoV RBD-based subunit vaccines have been
+developed and extensively evaluated in available animal models
+since the emergence of MERS-CoV (Table 2) (Du et al., 2013c;
+Tai et al., 2017; Zhou et al., 2018). In general, these subunit
+vaccines have strong immunogenicity and are capable of inducing
+high neutralizing antibodies and/or protection against MERSCoV infection (Ma et al., 2014b; Zhang et al., 2016; Tai et al.,
+2017; Wang Y. et al., 2017). Most subunit vaccines based on the
+MERS-CoV RBD have been described in detail in a previous
+review article (Zhou et al., 2019). In this section, we will briefly
+introduce these RBD-targeting MERS vaccines, and compare
+their functionality, antigenicity, immunogenicity, and protection
+against MERS-CoV infection.
+Co-crystallographic analyses of MERS-CoV RBD and/or
+RBD/DPP4 complexes have confirmed that the RBD is attributed
+to residues 367–588 (Chen et al., 2013) or 367–606 (Lu et al.,
+2013) in the MERS-CoV S1 subunit. Indeed, a recombinant
+MERS-CoV RBD (rRBD) fragment (residues 367–606) elicits
+RBD-specific antibody and cellular immune responses and
+neutralizing antibodies in mice and/or non-human primates
+(NHPs) (Lan et al., 2014, 2015). However, it only partially protects
+Frontiers in Microbiology | www.frontiersin.org 10 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 11
+Wang et al. Subunit Vaccines Against Coronaviruses TABLE 2 | Subunit Vaccines against MERS-CoV
+a
+.
+Name Functionality and
+antigenicity
+Adjuvant Route Animal
+models
+Antibody response Cellular immune
+response
+Protective efficacy References
+Subunit vaccines based on MERS-CoV full-length S protein
+MERS S-2P
+protein
+Binds to DPP4
+receptor and
+MERS-CoV S-NTD,
+RBD, and
+S2-specific
+neutralizing mAbs
+(G2, D12, and G4,
+respectively)
+SAS I.M. BALB/c mice Elicits neutralizing Abs in mice,
+neutralizing 7 pseudotyped
+MERS-CoV
+N/A N/A Pallesen et al.,
+2017
+Subunit vaccines based on MERS-CoV RBD protein
+rRBD
+(S367-606)
+protein
+N/A Alum
+Hydro
++ CpG
+or poly(I:C);
+IFA
++ CpG
+(mouse);
+Alum (NHPs)
+I.M. or S.C. BALB/c mice;
+NHPs
+Elicits MERS-CoV RBD-specific
+Abs in mice (IgG, IgG1, IgG2a,
+and IgG2b) and NHPs (IgG),
+neutralizing pseudotyped
+(mouse: < 1:5 × 10
+2) and live
+(NHPs: < 1:5 × 10
+2
+)
+MERS-CoV (EMC2012 strain)
+Induces
+MERS-CoV
+RBD-specific
+cellular immune
+responses (IFN-γ,
+TNF-α, IL-2, IL-4,
+IL-6, and IL-10) in
+mice and/or
+monkeys
+Partially protects
+vaccinated NHPs from
+challenge of
+MERS-CoV (EMC2012
+strain, 6.5 × 10
+7
+TCID50) with alleviated
+pneumonia and
+decreased viral load
+Lan et al., 2014,
+2015
+RBD
+(S377-662)-Fc
+protein
+Binds to DPP4
+receptor
+Poly(I:C);
+Montanide
+I.N. or S.C. BALB/c mice Elicits MERS-CoV S1- and
+RBD-specific Abs (IgA, IgG
+(> 1:10
+4), IgG1, IgG2a, and
+IgG3) in mice, neutralizing
+(≥ 1:2.4 × 10
+2) live MERS-CoV
+(EMC2012 strain)
+Induces
+MERS-CoV
+S1-specific cellular
+immune responses
+(IFN-γ and IL-2) in
+mice
+N/A Du et al., 2013c;
+Ma et al., 2014b
+RBD
+(S377-588)-Fc
+protein
+Binds to DPP4
+receptor and
+MERS-CoV RBD
+specific neutralizing
+mAbs (Mersmab1,
+m336, m337, and
+m338)
+Montanide;
+MF59;
+AddaVax
+I.M. or S.C. BALB/c mice;
+hDPP4-Tg
+mice;
+Rabbits
+Elicits MERS-CoV S1 and
+RBD-specific Abs in mice (IgG
+(> 1:10
+5), IgG1, and IgG2a)
+and rabbits (IgG), neutralizing
+17 pseudotyped (≥ 1:10
+4) and
+2 live (≥ 1:10
+3) MERS-CoV
+(EMC2012 and London1-2012
+strains)
+Induces
+MERS-CoV
+S1-specific cellular
+immune responses
+(IFN-γ and IL-2) in
+mice
+Protects vaccinated
+Ad5/hDPP4-
+transduced BALB/c
+mice and majority (4/6)
+of vaccinated
+hDPP4-Tg mice from
+MERS-CoV (EMC2012
+strain, 10
+5 PFU for
+BALB/c; 10
+3−4 TCID50
+for Tg) challenge,
+without immunological
+toxicity or eosinophilic
+immune enhancement
+Du et al., 2013a;
+Ma et al., 2014b;
+Tang et al., 2015;
+Zhang et al., 2016;
+Nyon et al., 2018
+RBD-Fd protein Binds to DPP4
+receptor and
+MERS-CoV
+RBD-specific
+neutralizing mAbs
+(Mersmab1, m336,
+m337, and m338)
+MF59;
+Alum
+I.M. or S.C. BALB/c mice;
+hDPP4-Tg mice
+Elicits MERS-CoV S1-specific
+Abs (IgG (> 1:10
+5), IgG1, and
+IgG2a) in mice, neutralizing at
+least 9 pseudotyped (> 1:10
+4
+)
+and live (> 1:10
+3) MERS-CoV
+(EMC2012 strain)
+N/A Protects majority (5/6)
+of vaccinated
+hDPP4-Tg mice from
+challenge of
+MERS-CoV (EMC2012
+strain, 10
+4 TCID50)
+Tai et al., 2016
+(Continued)
+Frontiers in Microbiology | www.frontiersin.org 11 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 12
+Wang et al. Subunit Vaccines Against Coronaviruses TABLE 2 | Continued Name Functionality and antigenicity Adjuvant Route Animal models Antibody response Cellular immune response Protective efficacy References RBD (T579N) protein Binds to receptor DPP4 and MERS-CoV RBD-specific neutralizing mAbs (hMS-1, m336, m337, and m338) Montanide; Alum I.M. or S.C. BALB/c mice; hDPP4-Tg mice Elicits neutralizing Abs
+(> 1:3 × 10
+3) in mice against
+live MERS-CoV (EMC2012
+strain)
+N/A Protects all vaccinated
+hDPP4-Tg mice from
+challenge of
+MERS-CoV (EMC2012
+strain, 10
+4 TCID50)
+Du et al., 2016a
+Subunit vaccines based on non-RBD MERS-CoV S protein fragments
+S1 protein N/A Ribi;
+Alum pho
+I.M. BALB/c mice;
+NHPs
+Elicits MERS-CoV S1-specific
+Abs in mice (IgG and IgG1) and
+NHPs (IgG), neutralizing 8
+pseudotyped and live
+MERS-CoV (JordanN3 strain)
+N/A Protects vaccinated
+NHPs from challenge of
+MERS-CoV (JordanN3
+strain, 5 × 10
+6 PFU)
+with reduced
+abnormalities on chest
+CT
+Wang et al., 2015
+S1 protein N/A Advax
++ SAS I.M. Dromedary
+camels;
+Alpacas
+Elicits neutralizing Abs in
+dromedary camels (≥ 1:80) and
+alpacas (≥ 1:6.4 × 10
+2) against
+live MERS-CoV (EMC2012
+strain)
+N/A Protects vaccinated
+dromedary camels and
+alpacas from challenge
+of MERS-CoV
+(EMC2012 strain, 10
+7
+TCID50) with reduced
+and delayed viral
+shedding in the upper
+airways (in camels) or
+complete protection (in
+alpacas)
+Adney et al., 2019
+rNTD protein N/A Alum
+pho
++ CpG
+I.M. BALB/c mice;
+Ad5-hDPP4
+mice
+Elicits MERS-CoV
+S-NTD-specific Abs
+(IgG, ≥ 1:10
+4) in mice,
+neutralizing pseudotyped and
+live (1:40) MERS-CoV
+(EMC2012 strain)
+Induces
+MERS-CoV
+S-NTD-specific
+cellular immune
+responses (IFN-γ,
+IL-2, IL-6, IL-10,
+and IL-17A) in mice
+Protects vaccinated
+Ad5-hDPP4-
+transduced mice from
+challenge of
+MERS-CoV (EMC2012
+strain, 10
+5 PFU) with
+reduced lung
+abnormalities and
+respiratory tract
+pathology
+Jiaming et al., 2017
+SP3 peptide
+(aa736-761)
+N/A Freund’s N/A BALB/c mice;
+NZW rabbits
+Elicits MERS-CoV S-specific
+Abs (IgG, 1:10
+4) in rabbits,
+neutralizing pseudotyped
+MERS-CoV
+N/A N/A Yang et al., 2014a
+aaa, amino acid; Abs, antibodies; Ad5, adenovirus serotype 5; Ad5-hDPP4 mice, Ad5-hDPP4-transuced mice; Alum hydro, aluminum hydroxide; Alum pho, Aluminum phosphate; hDPP4, human dipeptidyl peptidase
+4; hDPP4-Tg mice, transgenic mice expressing MERS-CoV receptor human DPP4; IFA, incomplete Freund’s adjuvant; I.M., intramuscular; I.N., intranasal; mAbs, monoclonal antibodies; Montanide, Montanide ISA51;
+N/A, not reported; NHPs, non-human primates; NZW, rabbits, New Zealand White rabbits; PFU, plaque-forming unit; rRBD, recombinant RBD; SAS, Sigma Adjuvant System; S.C., subcutaneous; TCID50, median tissue
+culture infectious dose; TNF-α, tumor necrosis factor (TNF)-alpha.
+Frontiers in Microbiology | www.frontiersin.org 12 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 13
+Wang et al. Subunit Vaccines Against Coronaviruses
+NHPs from MERS-CoV infection by alleviating pneumonia and
+clinical manifestations, as well as decreasing viral load (Lan et al.,
+2015). In addition, an RBD protein fragment containing MERSCoV S residues 377–622 fused with the Fc tag of human IgG can
+induce MERS-CoV S1- and/or RBD-specific humoral and cellular
+immune responses in the immunized mice with neutralizing
+activity against MERS-CoV infection (Du et al., 2013c; Jiang
+et al., 2013). However, after comparing several versions of MERSCoV RBD fragments with different lengths, it was found that
+a truncated RBD (residues 377–588) had the highest DPP4-
+binding affinity and induced the highest-titer IgG antibodies and
+neutralizing antibodies against MERS-CoV, identifying its role as
+a critical neutralizing domain (Ma et al., 2014b).
+Subsequently, several MERS-CoV subunit vaccines have been
+designed based on the identified critical neutralizing domain of
+RBD fragment, including those expressed in a stable CHO cell
+line (S377-588-Fc), fusing with a trimeric motif foldon (RBDFd), or containing single or multiple mutations in the RBD of
+representative human and camel strains from the 2012–2015
+MERS outbreaks (Tai et al., 2016, 2017; Nyon et al., 2018).
+These RBD proteins maintain good conformation, functionality,
+antigenicity, and immunogenicity, with ability to bind the DPP4
+receptor and RBD-specific neutralizing mAbs and to elicit robust
+neutralizing antibodies cross-neutralizing multiple strains of
+MERS pseudoviruses and live MERS-CoV (Tai et al., 2016, 2017;
+Nyon et al., 2018). It is noted that the wild-type MERS-CoV RBD
+proteins consisting of the identified critical neutralizing domain
+confer partial protection of hDPP4-transgenic (hDPP4-Tg) mice
+from MERS-CoV infection without causing immunological
+toxicity or eosinophilic immune enhancement (Tai et al., 2016;
+Wang Y. et al., 2017; Nyon et al., 2018); nevertheless, a
+structurally designed mutant version of such RBD protein with
+a non-neutralizing epitope masked (T579N) preserves intact
+conformation and significantly improves overall neutralizing
+activity and protective efficacy, resulting in the full protection
+of hDPP4-Tg mice against high-dose MERS-CoV challenge
+(Du et al., 2016a).
+The above studies indicate that protein lengths to be chosen
+as MERS-CoV subunit vaccines and/or structure-based vaccine
+design can impact on the immunogenicity and/or protection of
+RBD-based subunit vaccines.
+MERS-CoV Subunit Vaccines Based on Non-RBD S
+Protein Fragments
+MERS vaccines targeting non-RBD regions of S protein have
+been developed and investigated in mice and NHPs. It has
+been shown that a MERS-CoV S1 protein formulated with
+Ribi (for mice) or aluminum phosphate (for NHPs) adjuvant
+elicited robust neutralizing antibodies in mice and NHPs
+against divergent strains of pseudotyped and live MERSCoV, protecting NHPs from MERS-CoV infection (Wang
+et al., 2015). In addition, MERS-CoV S1 protein adjuvanted
+with Advax and Sigma Adjuvant System induced low-titer
+neutralizing antibodies in dromedary camels with reduced
+and delayed viral shedding after MERS-CoV challenge, but
+high-titer neutralizing antibodies in alpacas with complete
+protection of viral shedding from viral infection, indicating
+that protection of MERS-CoV infection is positively correlated
+with serum neutralizing antibody titers (Adney et al., 2019).
+Moreover, immunization with a recombinant MERS-CoV NTD
+protein (rNTD) can induce neutralizing antibodies and cellmediated responses, protecting Ad-hDPP4-transduced mice
+against MERS-CoV challenge (Jiaming et al., 2017). Notably,
+specific antibodies with neutralizing activity have been elicited
+by a S2 peptide sequence (residues 736–761) of MERS-CoV
+in rabbits (Yang et al., 2014a), but the protective efficacy
+of this peptide vaccine is unknown. The above reports
+demonstrate the potential for the development of MERS
+subunit vaccines based on the non-RBD fragments of MERSCoV S protein.
+MERS-CoV Subunit Vaccines Based on Non-S
+Structural Proteins
+Unlike SARS subunit vaccines which have been designed based
+on viral N and M proteins, it appears that very few subunit
+vaccines have been developed based on the non-S structural
+protein(s) of MERS-CoV. One study reports the induction
+of specific antibodies by MERS-CoV N peptides (Yang et al.,
+2014a), and another report shows that N protein is used for
+development of vaccines based on viral vector Vaccinia virus,
+modified Vaccinia Ankara (MVA) (Veit et al., 2018). This
+may be potentially a consequence of the weak immunogenicity
+and/or protective efficacy of non-S structural proteins, further
+confirming the role of MERS-CoV S protein as the key target for
+the development of MERS vaccines, including subunit vaccines.
+Potential Factors Affecting MERS-CoV Subunit
+Vaccines
+Similar to SARS-CoV subunit vaccines, the immunogenicity
+and/or protection of MERS-CoV subunit vaccines may also be
+affected by a number of factors, such as antigen sequences,
+fragment lengths, adjuvants, vaccination pathways, antigen doses,
+immunization doses and intervals used.
+As described above, MERS-CoV subunit vaccines containing
+different antigens or fragment lengths, particularly those based
+on the RBD, have apparently variable immunogenicity and/or
+protective efficacy, and a critical neutralizing domain that
+contains an RBD fragment corresponding to residues 377–588 of
+S protein elicits the highest neutralizing antibodies among several
+fragments tested (Ma et al., 2014b; Zhang et al., 2015).
+Adjuvants play an essential role in enhancing host immune
+responses to MERS-CoV subunit vaccines, including those
+based on the RBD, and different adjuvants can promote
+host immune responses to variant levels (Lan et al., 2014;
+Zhang et al., 2016). For example, while a MERS-CoV RBD
+subunit vaccine (S377-588 protein fused with Fc) alone
+induced detectable neutralizing antibody and T-cell responses
+in immunized mice, inclusion of an adjuvant enhanced its
+immunogenicity. Particularly, among the adjuvants (Freund’s,
+aluminum, Monophosphoryl lipid A, Montanide ISA51 and
+MF59) conjugated with this RBD protein, MF59 could best
+potentiate the protein to induce the highest-titer anti-S
+antibodies and neutralizing antibodies, protecting mice against
+MERS-CoV infection (Zhang et al., 2016). Moreover, a
+Frontiers in Microbiology | www.frontiersin.org 13 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 14
+Wang et al. Subunit Vaccines Against Coronaviruses
+recombinant RBD (rRBD) protein plus alum and CpG adjuvants
+elicited the highest neutralizing antibodies against pseudotyped
+MERS-CoV infection, whereas the strongest T-cell responses
+were induced by this protein plus Freund’s and CpG adjuvants
+(Lan et al., 2014).
+Vaccination pathways are important in inducing efficient
+immune responses, and different immunization routes may elicit
+different immune responses to the same protein antigens. For
+example, immunization of mice with a MERS-CoV subunit
+vaccine (RBD-Fc) via the intranasal route induced higher
+levels of cellular immune responses and stronger local mucosal
+neutralizing antibody responses against MERS-CoV infection
+than those induced by the same vaccine via the S.C. pathway (Ma
+et al., 2014a). In addition, while Freund’s and CpG-adjuvanted
+rRBD protein elicited higher-level systematic and local IFNγ-producing T cells via the S.C. route, this protein adjuvanted
+with Alum and CpG induced higher-level tumor necrosis factoralpha (TNF-α) and interleukin 4 (IL-4)-secreting T cells via the
+I.M. route (Lan et al., 2014).
+Antigen dosage, immunization doses, and intervals may
+significantly affect the immunogenicity of MERS-CoV subunit
+vaccines. Notably, a MERS-CoV RBD (S377-588-Fc) subunit
+vaccine immunized at 1 µg elicited strong humoral and cellular
+immune responses and neutralizing antibodies in mice although
+the one immunized at 5 and 20 µg elicited a higher level of
+S1-specific antibodies (Tang et al., 2015). In addition, among
+the regimens at one dose and two doses at 1-, 2-, and 3-week
+intervals, 2 doses of this protein boosted at 4 weeks resulted
+in the highest antibodies and neutralizing antibodies against
+MERS-CoV infection (Wang Y. et al., 2017).
+POTENTIAL CHALLENGES AND FUTURE
+PERSPECTIVES FOR SARS-CoV AND
+MERS-CoV SUBUNIT VACCINES
+Compared with other vaccine types such as inactivated virus
+and viral-vectored vaccines, SARS and MERS subunit vaccines
+are much safer and do not cause obvious side effects. However,
+these subunit vaccines may face some important challenges,
+mostly arising from their relatively low immunogenicity, which
+must be combined with appropriate adjuvants or optimized for
+suitable protein sequences, fragment lengths, and immunization
+schedules. In addition, structure and epitope-based vaccine
+design has become a promising strategy to improve the efficacy
+of subunit vaccines. This is evidenced by a structurally designed
+MERS-CoV RBD-based protein which has significantly improved
+neutralizing activity and protection against MERS-CoV infection
+(Du et al., 2016a). It is prospected that more structureguided novel strategies will be developed to improve the
+overall immunogenicity and efficacy of subunit vaccines against
+emerging pathogenic human coronaviruses, including those
+targeting SARS-CoV and MERS-CoV. Although a large number
+of SARS and MERS subunit vaccines have been developed with
+potent immunogenicity and/or protection in available animal
+models, virtually all remain in the preclinical stage. It is thus
+expected that one or several of these promising subunit vaccines
+can be further processed into clinical trials to confirm their
+immunogenicity against viral infections in humans.
+RAPID DEVELOPMENT OF SUBUNIT
+VACCINES AGAINST THE NEW
+PATHOGENIC HUMAN CORONAVIRUS
+Currently, the newly identified 2019-nCoV is spreading to infect
+people, resulting in significant global concerns. It is critical to
+rapidly design and develop effective vaccines to prevent infection
+of this new coronavirus. Since S protein and its fragments, such
+as RBD, of SARS-CoV, and MERS-CoV are prime targets for
+developing subunit vaccines against these two highly pathogenic
+human CoVs, it is expected that similar regions of 2019-nCoV
+can also be used as key targets for developing vaccines against
+this new coronavirus (Jiang et al., 2020). Similarly, other regions
+of 2019-nCoV, including S1 and S2 subunits of S protein and
+N protein, can be applied as alternative targets for vaccine
+development. Taken together, the approaches and strategies in
+the development of subunit vaccines against SARS and MERS
+described in this review will provide important information for
+the rapid design and development of safe and effective subunit
+vaccines against 2019-nCoV infection.
+AUTHOR CONTRIBUTIONS
+SJ and LD conceived the idea and revised and edited the
+manuscript. NW and LD collected information and drafted the
+manuscript. JS performed the structural analysis. All authors read
+and made final approval of the manuscript.
+FUNDING
+This work was supported by the NIH grants R01AI137472
+and R01AI139092.
+SUPPLEMENTARY MATERIAL
+The Supplementary Material for this article can be found
+online at: https://www.frontiersin.org/articles/10.3389/fmicb.
+2020.00298/full#supplementary-material
+FIGURE S1 | Structures of SARS-CoV and MERS-CoV S proteins, RBDs, and
+their complexes with respective receptor. Trimeric S proteins of SARS-CoV (PDB:
+5×5b) (A) and MERS-CoV (PDB: 5×5f) (C) are colored differently for each
+monomer. Two conformations of the RBD in each trimeric S protein are labeled as
+standing and lying states. The RBDs of each S protein are shown as light blue on
+the right panel. ACE2 and DPP4 receptors are respectively modeled to the trimeric
+S proteins by match-alignment of SARS-CoV RBD-ACE2 complex (PDB: 2AJF) to
+SARS-CoV S trimer (B) or MERS-CoV RBD-DPP4 complex (PDB: 4kr0) to
+MERS-CoV S trimer (D). Each of the RBD-receptor complexes is shown on the
+right panel. ACE2, angiotensin-converting enzyme 2; DPP4, dipeptidyl peptidase
+4; RBD, receptor-binding domain; S, spike.
+Frontiers in Microbiology | www.frontiersin.org 14 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 15
+Wang et al. Subunit Vaccines Against Coronaviruses
+REFERENCES
+Adney, D. R., Wang, L., van Doremalen, N., Shi, W., Zhang, Y., Kong, W. P., et al.
+(2019). Efficacy of an adjuvanted Middle East respiratory syndrome coronavirus
+spike protein vaccine in dromedary camels and alpacas. Viruses 11:E212. doi:
+10.3390/v11030212
+Al-Amri, S. S., Abbas, A. T., Siddiq, L. A., Alghamdi, A., Sanki, M. A., AlMuhanna, M. K., et al. (2017). Immunogenicity of candidate MERS-CoV
+DNA vaccines based on the spike protein. Sci. Rep. 7:44875. doi: 10.1038/srep
+44875
+Annan, A., Baldwin, H. J., Corman, V. M., Klose, S. M., Owusu, M., Nkrumah,
+E. E., et al. (2013). Human betacoronavirus 2c EMC/2012-related viruses in
+Bats, Ghana and Europe. Emerg. Infect. Dis. 19, 456–459. doi: 10.3201/eid1903.
+121503
+Arbour, N., Day, R., Newcombe, J., and Talbot, P. J. (2000). Neuroinvasion by
+human respiratory coronaviruses. J. Virol. 74, 8913–8921. doi: 10.1128/jvi.74.
+19.8913-8921.2000
+Azhar, E. I., El-Kafrawy, S. A., Farraj, S. A., Hassan, A. M., Al-Saeed, M. S., Hashem,
+A. M., et al. (2014). Evidence for camel-to-human transmission of MERS
+coronavirus. N. Engl. J. Med. 370, 2499–2505. doi: 10.1056/NEJMoa1401505
+Bailey-Elkin, B. A., Knaap, R. C., Johnson, G. G., Dalebout, T. J., Ninaber, D. K., van
+Kasteren, P. B., et al. (2014). Crystal structure of the Middle East respiratory
+syndrome coronavirus (MERS-CoV) papain-like protease bound to ubiquitin
+facilitates targeted disruption of deubiquitinating activity to demonstrate its
+role in innate immune suppression. J. Biol. Chem. 289, 34667–34682. doi: 10.
+1074/jbc.M114.609644
+Bisht, H., Roberts, A., Vogel, L., Bukreyev, A., Collins, P. L., Murphy, B. R., et al.
+(2004). Severe acute respiratory syndrome coronavirus spike protein expressed
+by attenuated vaccinia virus protectively immunizes mice. Proc. Natl. Acad. Sci.
+U.S.A. 101, 6641–6646. doi: 10.1073/pnas.0401939101
+Buchholz, U. J., Bukreyev, A., Yang, L. J., Lamirande, E. W., Murphy, B. R.,
+Subbarao, K., et al. (2004). Contributions of the structural proteins of severe
+acute respiratory syndrome coronavirus to protective immunity. Proc. Natl.
+Acad. Sci. U.S.A. 101, 9804–9809. doi: 10.1073/pnas.0403492101
+Bukreyev, A., Lamirande, E. W., Buchholz, U. J., Vogel, L. N., Elkins, W. R., St
+Claire, M., et al. (2004). Mucosal immunisation of African green monkeys
+(Cercopithecus aethiops) with an attenuated parainfluenza virus expressing
+the SARS coronavirus spike protein for the prevention of SARS. Lancet 363,
+2122–2127. doi: 10.1016/s0140-6736(04)16501-x
+Chan, P. K., Ma, S., and Ngai, S. M. (2011). Identification of T-cell epitopes
+of SARS-coronavirus for development of peptide-based vaccines and cellular
+immunity assessment methods. Hong Kong Med. J. 17(Suppl. 6), 26–30.
+Chang, C. Y., Hong, W. W., Chong, P., and Wu, S. C. (2006). Influence of intron
+and exon splicing enhancers on mammalian cell expression of a truncated spike
+protein of SARS-CoV and its implication for subunit vaccine development.
+Vaccine 24, 1132–1141. doi: 10.1016/j.vaccine.2005.09.011
+Channappanavar, R., and Perlman, S. (2017). Pathogenic human coronavirus
+infections: causes and consequences of cytokine storm and immunopathology.
+Semin. Immunopathol. 39, 529–539. doi: 10.1007/s00281-017-0629-x
+Chen, W. H., Du, L., Chag, S. M., Ma, C., Tricoche, N., Tao, X., et al. (2014). Yeastexpressed recombinant protein of the receptor-binding domain in SARS-CoV
+spike protein with deglycosylated forms as a SARS vaccine candidate. Hum.
+Vaccin. Immunother. 10, 648–658. doi: 10.4161/hv.27464
+Chen, Y., Rajashankar, K. R., Yang, Y., Agnihothram, S. S., Liu, C., Lin, Y. L., et al.
+(2013). Crystal structure of the receptor-binding domain from newly emerged
+Middle East respiratory syndrome coronavirus. J. Virol. 87, 10777–10783. doi:
+10.1128/jvi.01756-13
+Chiu, S. S., Chan, K. H., Chu, K. W., Kwan, S. W., Guan, Y., Poon, L. L., et al.
+(2005). Human coronavirus NL63 infection and other coronavirus infections in
+children hospitalized with acute respiratory disease in Hong Kong, China. Clin.
+Infect. Dis. 40, 1721–1729. doi: 10.1086/430301
+Cho, H., Excler, J. L., Kim, J. H., and Yoon, I. K. (2018). Development of Middle
+East respiratory syndrome coronavirus vaccines - advances and challenges.
+Hum. Vaccin. Immunother. 14, 304–313. doi: 10.1080/21645515.2017.138
+9362
+Cui, J., Li, F., and Shi, Z. L. (2019). Origin and evolution of pathogenic
+coronaviruses. Nat. Rev. Microbiol. 17, 181–192. doi: 10.1038/s41579-018-
+0118-9
+De Groot, R. J., Baker, S., Baric, R., Enjuanes, L., Gorbalenya, A., Holmes,
+K. V., et al. (2011). “Family Coronaviridae, virus taxomomy: classification and
+nomenclature of viruses,” in Ninth Report of the International Committee on
+Taxonomy of Viruses, eds A. M. Q. King, M. J. Adams, E. B. Carstens, and E. J.
+Lefkowitz (Amsterdam: Elsevier Academic Press), 806–826.
+DeDiego, M. L., Nieto-Torres, J. L., Jimenez-Guardeno, J. M., Regla-Nava, J. A.,
+Castano-Rodriguez, C., Fernandez-Delgado, R., et al. (2014). Coronavirus
+virulence genes with main focus on SARS-CoV envelope gene. Virus. Res. 194,
+124–137. doi: 10.1016/j.virusres.2014.07.024
+Deng, M. P., Hu, Z. H., Wang, H. L., and Deng, F. (2012). Developments of
+subunit and VLP vaccines against influenza A virus. Virol. Sin. 27, 145–153.
+doi: 10.1007/s12250-012-3241-1
+Desforges, M., Desjardins, J., Zhang, C., and Talbot, P. J. (2013). The acetyl-esterase
+activity of the hemagglutinin-esterase protein of human coronavirus OC43
+strongly enhances the production of infectious virus. J. Virol. 87, 3097–3107.
+doi: 10.1128/jvi.02699-12
+Desforges, M., Le Coupanec, A., Brison, E., Meessen-Pinard, M., and Talbot,
+P. J. (2014). Neuroinvasive and neurotropic human respiratory coronaviruses:
+potential neurovirulent agents in humans. Adv. Exp. Med. Biol. 807, 75–96.
+doi: 10.1007/978-81-322-1777-0_6
+Drexler, J. F., Corman, V. M., and Drosten, C. (2014). Ecology, evolution and
+classification of bat coronaviruses in the aftermath of SARS. Antiviral Res. 101,
+45–56. doi: 10.1016/j.antiviral.2013.10.013
+Drosten, C., Gunther, S., Preiser, W., van der Werf, S., Brodt, H. R., Becker,
+S., et al. (2003). Identification of a novel coronavirus in patients with severe
+acute respiratory syndrome. N. Engl. J. Med. 348, 1967–1976. doi: 10.1056/
+NEJMoa030747
+Du, L., He, Y., Jiang, S., and Zheng, B. J. (2008). Development of subunit vaccines
+against severe acute respiratory syndrome. Drugs Today 44, 63–73. doi: 10.1358/
+dot.2008.44.1.1131830
+Du, L., He, Y., Zhou, Y., Liu, S., Zheng, B. J., and Jiang, S. (2009a). The spike protein
+of SARS-CoV - a target for vaccine and therapeutic development. Nat. Rev.
+Microbiol. 7, 226–236. doi: 10.1038/nrmicro2090
+Du, L., and Jiang, S. (2015). Middle East respiratory syndrome: current status
+and future prospects for vaccine development. Expert Opin. Biol. Ther. 15,
+1647–1651. doi: 10.1517/14712598.2015.1092518
+Du, L., Kou, Z., Ma, C., Tao, X., Wang, L., Zhao, G., et al. (2013a). A truncated
+receptor-binding domain of MERS-CoV Spike protein potently inhibits MERSCoV infection and induces strong neutralizing antibody responses: implication
+for developing therapeutics and vaccines. PLoS One 8:e81587. doi: 10.1371/
+journal.pone.0081587
+Du, L., Ma, C., and Jiang, S. (2013b). Antibodies induced by receptor-binding
+domain in spike protein of SARS-CoV do not cross-neutralize the novel human
+coronavirus hCoV-EMC. J. Infect. 67, 348–350. doi: 10.1016/j.jinf.2013.05.002
+Du, L., Tai, W., Yang, Y., Zhao, G., Zhu, Q., Sun, S., et al. (2016a). Introduction
+of neutralizing immunogenicity index to the rational design of MERS
+coronavirus subunit vaccines. Nat. Commun. 7:13473. doi: 10.1038/ncomms
+13473
+Du, L., Tai, W., Zhou, Y., and Jiang, S. (2016b). Vaccines for the prevention against
+the threat of MERS-CoV. Expert Rev. Vaccines 15, 1123–1134. doi: 10.1586/
+14760584.2016.1167603
+Du, L., Yang, Y., Zhou, Y., Lu, L., Li, F., and Jiang, S. (2017). MERS-CoV spike
+protein: a key target for antivirals. Expert Opin. Ther. Targets 21, 131–143.
+doi: 10.1080/14728222.2017.1271415
+Du, L., Zhao, G., Chan, C. C., Li, L., He, Y., Zhou, Y., et al. (2010). A 219-mer CHOexpressing receptor-binding domain of SARS-CoV S protein induces potent
+immune responses and protective immunity. Viral. Immunol. 23, 211–219.
+doi: 10.1089/vim.2009.0090
+Du, L., Zhao, G., Chan, C. C., Sun, S., Chen, M., Liu, Z., et al. (2009b). Recombinant
+receptor-binding domain of SARS-CoV spike protein expressed in mammalian,
+insect and E. coli cells elicits potent neutralizing antibody and protective
+immunity. Virology 393, 144–150. doi: 10.1016/j.virol.2009.07.018
+Du, L., Zhao, G., He, Y., Guo, Y., Zheng, B. J., Jiang, S., et al. (2007). Receptorbinding domain of SARS-CoV spike protein induces long-term protective
+immunity in an animal model. Vaccine 25, 2832–2838. doi: 10.1016/j.vaccine.
+2006.10.031
+Du, L., Zhao, G., Kou, Z., Ma, C., Sun, S., Poon, V. K., et al. (2013c). Identification
+of a receptor-binding domain in the S protein of the novel human coronavirus
+Frontiers in Microbiology | www.frontiersin.org 15 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 16
+Wang et al. Subunit Vaccines Against Coronaviruses
+Middle East Respiratory Syndrome coronavirus as an essential target for vaccine
+development. J. Virol. 87, 9939–9942. doi: 10.1128/jvi.01048-13
+Du, L., Zhao, G., Li, L., He, Y., Zhou, Y., Zheng, B. J., et al. (2009c). Antigenicity
+and immunogenicity of SARS-CoV S protein receptor-binding domain stably
+expressed in CHO cells. Biochem. Biophys. Res. Commun. 384, 486–490. doi:
+10.1016/j.bbre.2009.05.003
+Elshabrawy, H. A., Coughlin, M. M., Baker, S. C., and Prabhakar, B. S. (2012).
+Human monoclonal antibodies against highly conserved HR1 and HR2
+domains of the SARS-CoV spike protein are more broadly neutralizing. PLoS
+One 7:e50366. doi: 10.1371/journal.pone.0050366
+Esper, F., Weibel, C., Ferguson, D., Landry, M. L., and Kahn, J. S. (2006).
+Coronavirus HKU1 infection in the United States. Emerg. Infect. Dis. 12,
+775–779. doi: 10.3201/eid1205.051316
+Falsey, A. R., Walsh, E. E., and Hayden, F. G. (2002). Rhinovirus and coronavirus
+infection-associated hospitalizations among older adults. J. Infect. Dis. 185,
+1338–1341. doi: 10.1086/339881
+Fehr, A. R., and Perlman, S. (2015). Coronaviruses: an overview of their replication
+and pathogenesis. Methods Mol. Biol. 1282, 1–23. doi: 10.1007/978-1-4939-
+2438-7_1
+Fouchier, R. A. M., Hartwig, N. G., Bestebroer, T. M., Niemeyer, B., de Jong, J. C.,
+Simon, J. H., et al. (2004). A previously undescribed coronavirus associated with
+respiratory disease in humans. Proc. Natl. Acad. Sci. U.S.A. 101, 6212–6216.
+doi: 10.1073/pnas.0400762101
+Ge, X. Y., Li, J. L., Yang, X. L., Chmura, A. A., Zhu, G., Epstein, J. H., et al.
+(2013). Isolation and characterization of a bat SARS-like coronavirus that uses
+the ACE2 receptor. Nature 503, 535–538. doi: 10.1038/nature12711
+Gerna, G., Campanini, G., Rovida, F., Percivalle, E., Sarasini, A., Marchi, A.,
+et al. (2006). Genetic variability of human coronavirus OC43-, 229E-, and
+NL63-like strains and their association with lower respiratory tract infections
+of hospitalized infants and immunocompromised patients. J. Med. Virol. 78,
+938–949. doi: 10.1002/jmv.20645
+Gerna, G., Percivalle, E., Sarasini, A., Campanini, G., Piralla, A., Rovida, F.,
+et al. (2007). Human respiratory coronavirus HKU1 versus other coronavirus
+infections in Italian hospitalised patients. J. Clin. Virol. 38, 244–250. doi: 10.
+1016/j.jcv.2006.12.008
+Guo, Y., Sun, S., Wang, K., Zhang, S., Zhu, W., and Chen, Z. (2005). Elicitation of
+immunity in mice after immunization with the S2 subunit of the severe acute
+respiratory syndrome coronavirus. DNA Cell Biol. 24, 510–515. doi: 10.1089/
+dna.2005.24.510
+Haagmans, B. L., van den Brand, J. M., Raj, V. S., Volz, A., Wohlsein, P., Smits,
+S. L., et al. (2016). An orthopoxvirus-based vaccine reduces virus excretion after
+MERS-CoV infection in dromedary camels. Science 351, 77–81. doi: 10.1126/
+science.aad1283
+Hamre, D., Kindig, D. A., and Mann, J. (1967). Growth and intracellular
+development of a new respiratory virus. J. Virol. 1, 810–816. doi: 10.1128/jvi.
+1.4.810-816.1967
+Hamre, D., and Procknow, J. J. (1966). A new virus isolated from human
+respiratory tract. Proc. Soc. Exp. Biol. Med. 121, 190–193. doi: 10.3181/
+00379727-121-30734
+He, Y., Li, J., Heck, S., Lustigman, S., and Jiang, S. (2006a). Antigenic and
+immunogenic characterization of recombinant baculovirus-expressed severe
+acute respiratory syndrome coronavirus spike protein: implication for vaccine
+design. J. Virol. 80, 5757–5767. doi: 10.1128/jvi.00083-06
+He, Y., Li, J., and Jiang, S. (2006b). A single amino acid substitution (R441A) in
+the receptor-binding domain of SARS coronavirus spike protein disrupts the
+antigenic structure and binding activity. Biochem. Biophys. Res. Commun. 344,
+106–113. doi: 10.1016/j.bbrc.2006.03.139
+He, Y., Li, J., Li, W., Lustigman, S., Farzan, M., and Jiang, S. (2006c). Crossneutralization of human and palm civet severe acute respiratory syndrome
+coronaviruses by antibodies targeting the receptor-binding domain of spike
+protein. J. Immunol. 176, 6085–6092. doi: 10.4049/jimmunol.176.10.6085
+He, Y., Lu, H., Siddiqui, P., Zhou, Y., and Jiang, S. (2005a). Receptor-binding
+domain of severe acute respiratory syndrome coronavirus spike protein
+contains multiple conformation-dependent epitopes that induce highly potent
+neutralizing antibodies. J. Immunol. 174, 4908–4915. doi: 10.4049/jimmunol.
+174.8.4908
+He, Y., Zhou, Y., Liu, S., Kou, Z., Li, W., Farzan, M., et al. (2004). Receptorbinding domain of SARS-CoV spike protein induces highly potent neutralizing
+antibodies: implication for developing subunit vaccine. Biochem. Biophys. Res.
+Commun. 324, 773–781. doi: 10.1016/j.bbrc.2004.09.106
+He, Y., Zhou, Y., Siddiqui, P., Niu, J., and Jiang, S. (2005b). Identification of
+immunodominant epitopes on the membrane protein of the severe acute
+respiratory syndrome-associated coronavirus. J. Clin. Microbiol. 43, 3718–3726.
+doi: 10.1128/jcm.43.8.3718-3726.2005
+Hofmann, H., Pyrc, K., van der Hoek, L., Geier, M., Berkhout, B., and Pohlmann,
+S. (2005). Human coronavirus NL63 employs the severe acute respiratory
+syndrome coronavirus receptor for cellular entry. Proc. Natl. Acad. Sci. U.S.A.
+102, 7988–7993. doi: 10.1073/pnas.0409465102
+Hofmann, H., Simmons, G., Rennekamp, A. J., Chaipan, C., Gramberg, T.,
+Heck, E., et al. (2006). Highly conserved regions within the spike proteins
+of human coronaviruses 229E and NL63 determine recognition of their
+respective cellular receptors. J. Virol. 80, 8639–8652. doi: 10.1128/jvi.005
+60-06
+Hu, B., Zeng, L. P., Yang, X. L., Ge, X. Y., Zhang, W., Li, B., et al. (2017). Discovery
+of a rich gene pool of bat SARS-related coronaviruses provides new insights
+into the origin of SARS coronavirus. PLoS Pathog. 13:e1006698. doi: 10.1371/
+journal.ppat.1006698
+Huang, X., Dong, W., Milewska, A., Golda, A., Qi, Y., Zhu, Q. K., et al. (2015).
+Human coronavirus HKU1 spike protein uses O-Acetylated sialic acid as an
+attachment receptor determinant and employs hemagglutinin-esterase protein
+as a receptor-destroying enzyme. J. Virol. 89, 7202–7213. doi: 10.1128/jvi.
+00854-15
+Hulswit, R. J. G., Lang, Y., Bakkers, M. J. G., Li, W., Li, Z., Schouten, A., et al. (2019).
+Human coronaviruses OC43 and HKU1 bind to 9-O-acetylated sialic acids via
+a conserved receptor-binding site in spike protein domain A. Proc. Natl Acad.
+Sci. U.S.A. 116, 2681–2690. doi: 10.1073/pnas.1809667116
+Jaume, M., Yip, M. S., Kam, Y. W., Cheung, C. Y., Kien, F., Roberts, A., et al.
+(2012). SARS CoV subunit vaccine: antibody-mediated neutralisation and
+enhancement. Hong Kong Med. J. 18(Suppl. 2), 31–36.
+Jiaming, L., Yanfeng, Y., Yao, D., Yawei, H., Linlin, B., Baoying, H., et al. (2017). The
+recombinant N-terminal domain of spike proteins is a potential vaccine against
+Middle East respiratory syndrome coronavirus (MERS-CoV) infection. Vaccine
+35, 10–18. doi: 10.1016/j.vaccine.2016.11.064
+Jiang, S., Bottazzi, M. E., Du, L., Lustigman, S., Tseng, C. T., Curti, E., et al. (2012).
+Roadmap to developing a recombinant coronavirus S protein receptor-binding
+domain vaccine for severe acute respiratory syndrome. Expert Rev. Vaccines 11,
+1405–1413. doi: 10.1586/erv.12.126
+Jiang, S., Du, L., and Shi, Z. (2020). An emerging coronavirus causing pneumonia
+outbreak in Wuhan, China: calling for developing therapeutic and prophylactic
+strategies. Emerg Microbes Infect. 9, 275–277. doi: 10.1080/22221751.2020.
+1723441
+Jiang, S., He, Y., and Liu, S. (2005). SARS vaccine development. Emerg. Infect. Dis.
+11, 1016–1020. doi: 10.3201/1107.050219
+Jiang, S., Lu, L., Du, L., and Debnath, A. K. (2013). A predicted receptor-binding
+and critical neutralizing domain in S protein of the novel human coronavirus
+HCoV-EMC. J. Infect. 66, 464–466. doi: 10.1016/j.jinf.2012.12.003
+Kam, Y. W., Kien, F., Roberts, A., Cheung, Y. C., Lamirande, E. W., Vogel, L.,
+et al. (2007). Antibodies against trimeric S glycoprotein protect hamsters against
+SARS-CoV challenge despite their capacity to mediate FcgammaRII-dependent
+entry into B cells in vitro. Vaccine 25, 729–740. doi: 10.1016/j.vaccine.2006.
+08.011
+Kapikian, A. Z., James, H. D., Kelly, S. J., Dees, J. H., Turner, H. C., McIntosh, K.,
+et al. (1969). Isolation from man of avian infectious bronchitis virus-like viruses
+(coronavirus) similar to 229E virus with some epidemiological observations.
+J. Infect. Dis. 119, 282–290. doi: 10.1093/infdis/119.3.282
+Killerby, M. E., Biggs, H. M., Haynes, A., Dahl, R. M., Mustaquim, D., Gerber, S. I.,
+et al. (2018). Human coronavirus circulation in the United States 2014-2017.
+J. Clin. Virol. 101, 52–56. doi: 10.1016/j.jcv.2018.01.019
+Kim, K. Y., Han, S. Y., Kim, H. S., Cheong, H. M., Kim, S. S., and Kim, D. S. (2017).
+Human coronavirus in the 2014 winter season as a cause of lower respiratory
+tract infection. Yonsei Med. J. 58, 174–179. doi: 10.3349/ymj.2017.58.1.174
+King, A. M. Q., Lefkowitz, E. J., Mushegian, A. R., Adams, M. J., Dutilh, B. E.,
+Gorbalenya, A. E., et al. (2018). Changes to taxonomy and the international
+code of virus classification and nomenclature ratified by the international
+committee on taxonomy of viruses (2018). Arch. Virol. 163, 2601–2631. doi:
+10.1007/s00705-018-3847-1
+Frontiers in Microbiology | www.frontiersin.org 16 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 17
+Wang et al. Subunit Vaccines Against Coronaviruses
+Ksiazek, T. G., Erdman, D., Goldsmith, C. S., Zaki, S. R., Peret, T., Emery, S., et al.
+(2003). A novel coronavirus associated with severe acute respiratory syndrome.
+N. Engl. J. Med. 348, 1953–1966. doi: 10.1056/NEJMoa030781
+Kudelova, M., Belvoncikova, P., Vrbova, M., Kovalova, A., Stibraniova, I.,
+Kocakova, P., et al. (2015). Detection of murine herpesvirus 68 (MHV-68) in
+dermacentor reticulatus ticks. Microb. Ecol. 70, 785–794. doi: 10.1007/s00248-
+015-0622-7
+Kusanagi, K., Kuwahara, H., Katoh, T., Nunoya, T., Ishikawa, Y., Samejima, T.,
+et al. (1992). Isolation and serial propagation of porcine epidemic diarrhhea
+virus in cell-cultures and partial characterization of the isolate. J. Vet. Med. Sci.
+54, 313–318. doi: 10.1292/jvms.54.313
+Lan, J., Deng, Y., Chen, H., Lu, G., Wang, W., Guo, X., et al. (2014). Tailoring
+subunit vaccine immunity with adjuvant combinations and delivery routes
+using the Middle East respiratory coronavirus (MERS-CoV) receptor-binding
+domain as an antigen. PLoS One 9:e112602. doi: 10.1371/journal.pone.011
+2602
+Lan, J., Yao, Y., Deng, Y., Chen, H., Lu, G., Wang, W., et al. (2015).
+Recombinant receptor binding domain protein induces partial protective
+immunity in rhesus macaques against Middle East respiratory syndrome
+coronavirus challenge. EBioMedicine 2, 1438–1446. doi: 10.1016/j.ebiom.2015.
+08.031
+Lau, S. K., Woo, P. C., Yip, C. C., Tse, H., Tsoi, H. W., Cheng, V. C., et al. (2006).
+Coronavirus HKU1 and other coronavirus infections in Hong Kong. J. Clin.
+Microbiol. 44, 2063–2071. doi: 10.1128/jcm.02614-05
+Lau, S. K. P., Zhang, L., Luk, H. K. H., Xiong, L., Peng, X., Li, K. S. M., et al. (2018).
+Receptor usage of a novel bat lineage C betacoronavirus reveals evolution
+of Middle East respiratory syndrome-related coronavirus spike proteins for
+human dipeptidyl peptidase 4 binding. J. Infect. Dis. 218, 197–207. doi: 10.1093/
+infdis/jiy018
+Lehmann, C., Wolf, H., Xu, J. G., Zhao, Q. B., Shao, Y. M., Motz, M., et al. (2008).
+A line immunoassay utilizing recombinant nucleocapsid proteins for detection
+of antibodies to human coronaviruses. Diagn. Microbiol. Infect. Dis. 61, 40–48.
+doi: 10.1016/j.diagmicrobio.2007.12.002
+Lelli, D., Papetti, A., Sabelli, C., Rosti, E., Moreno, A., and Boniotti, M. B.
+(2013). Detection of coronaviruses in bats of various species in Italy. Viruses
+5, 2679–2689. doi: 10.3390/v5112679
+Li, F. (2008). Structural analysis of major species barriers between humans and
+palm civets for severe acute respiratory syndrome coronavirus infections.
+J. Virol. 82, 6984–6991. doi: 10.1128/jvi.00442-08
+Li, F. (2015). Receptor recognition mechanisms of coronaviruses: a decade of
+structural studies. J. Virol. 89, 1954–1964. doi: 10.1128/jvi.02615-14
+Li, F. (2016). Structure, function, and evolution of coronavirus spike proteins.
+Annu. Rev. Virol. 3, 237–261. doi: 10.1146/annurev-virology-110615-042301
+Li, F., and Du, L. (2019). MERS coronavirus: an emerging zoonotic virus. Viruses
+11:E663. doi: 10.3390/v11070663
+Li, F., Li, W., Farzan, M., and Harrison, S. C. (2005a). Structure of SARS
+coronavirus spike receptor-binding domain complexed with receptor. Science
+309, 1864–1868. doi: 10.1126/science.1116480
+Li, W., Shi, Z., Yu, M., Ren, W., Smith, C., Epstein, J. H., et al. (2005b). Bats
+are natural reservoirs of SARS-like coronaviruses. Science 310, 676–679. doi:
+10.1126/science.1118391
+Li, W., Zhang, C., Sui, J., Kuhn, J. H., Moore, M. J., Luo, S., et al. (2005c).
+Receptor and viral determinants of SARS-coronavirus adaptation to human
+ACE2. EMBO J. 24, 1634–1643. doi: 10.1038/sj.emboj.7600640
+Li, J., Ulitzky, L., Silberstein, E., Taylor, D. R., and Viscidi, R. (2013).
+Immunogenicity and protection efficacy of monomeric and trimeric
+recombinant SARS coronavirus spike protein subunit vaccine candidates.
+Viral. Immunol. 26, 126–132. doi: 10.1089/vim.2012.0076
+Li, W., Greenough, T. C., Moore, M. J., Vasilieva, N., Somasundaran, M., Sullivan,
+J. L., et al. (2004). Efficient replication of severe acute respiratory syndrome
+coronavirus in mouse cells is limited by murine angiotensin-converting
+enzyme 2. J. Virol. 78, 11429–11433. doi: 10.1128/jvi.78.20.11429-11433.
+2004
+Li, W., Hulswit, R. J. G., Widjaja, I., Raj, V. S., McBride, R., Peng, W., et al. (2017).
+Identification of sialic acid-binding function for the Middle East respiratory
+syndrome coronavirus spike glycoprotein. Proc. Natl Acad. Sci. U.S.A. 114,
+E8508–E8517. doi: 10.1073/pnas.1712592114
+Li, W., Moore, M. J., Vasilieva, N., Sui, J., Wong, S. K., Berne, M. A., et al.
+(2003). Angiotensin-converting enzyme 2 is a functional receptor for the SARS
+coronavirus. Nature 426, 450–454. doi: 10.1038/nature02145
+Liu, D. X., Fung, T. S., Chong, K. K., Shukla, A., and Hilgenfeld, R. (2014).
+Accessory proteins of SARS-CoV and other coronaviruses. Antiviral Res. 109,
+97–109. doi: 10.1016/j.antiviral.2014.06.013
+Liu, R. Y., Wu, L. Z., Huang, B. J., Huang, J. L., Zhang, Y. L., Ke, M. L., et al. (2005).
+Adenoviral expression of a truncated S1 subunit of SARS-CoV spike protein
+results in specific humoral immune responses against SARS-CoV in rats. Virus
+Res. 112, 24–31. doi: 10.1016/j.virusres.2005.02.009
+Liu, S. J., Leng, C. H., Lien, S. P., Chi, H. Y., Huang, C. Y., Lin, C. L., et al.
+(2006). Immunological characterizations of the nucleocapsid protein based
+SARS vaccine candidates. Vaccine 24, 3100–3108. doi: 10.1016/j.vaccine.2006.
+01.058
+Liu, S. L., and Saif, L. (2020). Emerging viruses without borders: the Wuhan
+coronavirus. Viruses 12:E130. doi: 10.3390/v12020130
+Lu, G., Hu, Y., Wang, Q., Qi, J., Gao, F., Li, Y., et al. (2013). Molecular basis of
+binding between novel human coronavirus MERS-CoV and its receptor CD26.
+Nature 500, 227–231. doi: 10.1038/nature12328
+Lu, L., Liu, Q., Zhu, Y., Chan, K. H., Qin, L., Li, Y., et al. (2014). Structure-based
+discovery of Middle East respiratory syndrome coronavirus fusion inhibitor.
+Nat. Commun. 5:3067. doi: 10.1038/ncomms4067
+Luo, C. M., Wang, N., Yang, X. L., Liu, H. Z., Zhang, W., Li, B., et al. (2018a).
+Discovery of novel bat coronaviruses in south China that use the same receptor
+as MERS coronavirus. J. Virol. 92, e116–e118. doi: 10.1128/jvi.00116-18
+Luo, F., Liao, F. L., Wang, H., Tang, H. B., Yang, Z. Q., and Hou, W. (2018b).
+Evaluation of antibody-dependent enhancement of SARS-CoV infection in
+rhesus macaques immunized with an inactivated SARS-CoV vaccine. Virol. Sin.
+33, 201–204. doi: 10.1007/s12250-018-0009-2
+Ma, C., Li, Y., Wang, L., Zhao, G., Tao, X. R., Tseng, C. T., et al. (2014a).
+Intranasal vaccination with recombinant receptor-binding domain of MERSCoV spike protein induces much stronger local mucosal immune responses
+than subcutaneous immunization: implication for designing novel mucosal
+MERS vaccines. Vaccine 32, 2100–2108. doi: 10.1016/j.vaccine.2014.02.004
+Ma, C., Wang, L., Tao, X., Zhang, N., Yang, Y., Tseng, C. T., et al. (2014b). Searching
+for an ideal vaccine candidate among different MERS coronavirus receptorbinding fragments - The importance of immunofocusing in subunit vaccine
+design. Vaccine 32, 6170–6176. doi: 10.1016/j.vaccine.2014.08.086
+Ma, Y., Zhang, Y., Liang, X., Lou, F., Oglesbee, M., Krakowka, S., et al.
+(2015). Origin, evolution, and virulence of porcine deltacoronaviruses in the
+United States. mBio 6:e00064. doi: 10.1128/mBio.00064-15
+Marra, M. A., Jones, S. J., Astell, C. R., Holt, R. A., Brooks-Wilson, A., Butterfield,
+Y. S., et al. (2003). The genome sequence of the SARS-associated coronavirus.
+Science 300, 1399–1404. doi: 10.1126/science.1085953
+Matoba, Y., Abiko, C., Ikeda, T., Aoki, Y., Suzuki, Y., Yahagi, K., et al. (2015).
+Detection of the human coronavirus 229E, HKU1, NL63, and OC43 between
+2010 and 2013 in Yamagata, Japan. Jpn. J. Infect. Dis. 68, 138–141. doi: 10.7883/
+yoken.JJID.2014.266
+McIntosh, K., Becker, W. B., and Chanock, R. M. (1967). Growth in suckling-mouse
+brain of IBV-like viruses from patients with upper respiratory tract disease.
+Proc. Natl. Acad. Sci. U.S.A. 58, 2268–2273. doi: 10.1073/pnas.58.6.2268
+Menachery, V. D., Mitchell, H. D., Cockrell, A. S., Gralinski, L. E., Yount, BL
+Jr, Graham, R. L., et al. (2017). MERS-CoV accessory ORFs play key role for
+infection and pathogenesis. mBio 8:e00665-17. doi: 10.1128/mBio.00665-17
+Mobaraki, K., and Ahmadzadeh, J. (2019). Current epidemiological status of
+Middle East respiratory syndrome coronavirus in the world from 1.1.2017 to
+17.1.2018: a cross-sectional study. BMC Infect. Dis. 19:351. doi: 10.1186/s12879-
+019-3987-2
+Mou, H., Raj, V. S., van Kuppeveld, F. J., Rottier, P. J., Haagmans, B. L., and
+Bosch, B. J. (2013). The receptor binding domain of the new Middle East
+Respiratory Syndrome coronavirus maps to a 231-residue region in the spike
+protein that efficiently elicits neutralizing antibodies. J. Virol. 87, 9379–9383.
+doi: 10.1128/jvi.01277-13
+Mourez, T., Vabret, A., Han, Y., Dina, J., Legrand, L., Corbet, S., et al. (2007).
+Baculovirus expression of HCoV-OC43 nucleocapsid protein and development
+of a Western blot assay for detection of human antibodies against HCoV-OC43.
+J. Virol. Methods 139, 175–180. doi: 10.1016/j.jviromet.2006.09.024
+Frontiers in Microbiology | www.frontiersin.org 17 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 18
+Wang et al. Subunit Vaccines Against Coronaviruses
+Myint, S. H. (1994). Human coronaviruses - A brief review. Rev. Med. Virol. 4,
+35–46. doi: 10.1002/rmv.1980040108
+Nicholls, J. M., Poon, L. L., Lee, K. C., Ng, W. F., Lai, S. T., Leung, C. Y., et al.
+(2003). Lung pathology of fatal severe acute respiratory syndrome. Lancet 361,
+1773–1778. doi: 10.1016/s0140-6736(03)13413-7
+Nyon, M. P., Du, L., Tseng, C. K., Seid, C. A., Pollet, J., Naceanceno, K. S., et al.
+(2018). Engineering a stable CHO cell line for the expression of a MERScoronavirus vaccine antigen. Vaccine 36, 1853–1862. doi: 10.1016/j.vaccine.
+2018.02.065
+Ou, X., Guan, H., Qin, B., Mu, Z., Wojdyla, J. A., Wang, M., et al. (2017). Crystal
+structure of the receptor binding domain of the spike glycoprotein of human
+betacoronavirus HKU1. Nat. Commun. 8:2529. doi: 10.1038/ncomms15216
+Pallesen, J., Wang, N., Corbett, K. S., Wrapp, D., Kirchdoerfer, R. N., Turner, H. L.,
+et al. (2017). Immunogenicity and structures of a rationally designed prefusion
+MERS-CoV spike antigen. Proc. Natl. Acad. Sci. U.S.A. 114, E7348–E7357.
+doi: 10.1073/pnas.1707304114
+Pedersen, N. C. (2014). An update on feline infectious peritonitis: virology and
+immunopathogenesis. Vet. J. 201, 123–132. doi: 10.1016/j.tvjl.2014.04.017
+Pimentel, T. A., Yan, Z., Jeffers, S. A., Holmes, K. V., Hodges, R. S., and Burkhard,
+P. (2009). Peptide nanoparticles as novel immunogens: design and analysis of
+a prototypic severe acute respiratory syndrome vaccine. Chem. Biol. Drug Des.
+73, 53–61. doi: 10.1111/j.1747-0285.2008.00746.x
+Poon, L. L., Chu, D. K., Chan, K. H., Wong, O. K., Ellis, T. M., Leung, Y. H., et al.
+(2005). Identification of a novel coronavirus in bats. J. Virol. 79, 2001–2009.
+doi: 10.1128/jvi.79.4.2001-2009.2005
+Qiu, M., Shi, Y., Guo, Z., Chen, Z., He, R., Chen, R., et al. (2005). Antibody
+responses to individual proteins of SARS coronavirus and their neutralization
+activities. Microbes Infect. 7, 882–889. doi: 10.1016/j.micinf.2005.02.006
+Raj, V. S., Mou, H., Smits, S. L., Dekkers, D. H., Muller, M. A., Dijkman, R., et al.
+(2013). Dipeptidyl peptidase 4 is a functional receptor for the emerging human
+coronavirus-EMC. Nature 495, 251–254. doi: 10.1038/nature12005
+Regamey, N., Kaiser, L., Roiha, H. L., Deffernez, C., Kuehni, C. E., Latzin, P., et al.
+(2008). Viral etiology of acute respiratory infections with cough in infancy -
+A community-based birth cohort study. Pediatr. Infect. Dis. J. 27, 100–105.
+doi: 10.1097/INF.0b013e31815922c8
+Reusken, C. B., Haagmans, B. L., Muller, M. A., Gutierrez, C., Godeke, G. J., Meyer,
+B., et al. (2013). Middle East respiratory syndrome coronavirus neutralising
+serum antibodies in dromedary camels: a comparative serological study. Lancet
+Infect. Dis. 13, 859–866. doi: 10.1016/s1473-3099(13)70164-6
+Rota, P. A., Oberste, M. S., Monroe, S. S., Nix, W. A., Campagnoli, R., Icenogle,
+J. P., et al. (2003). Characterization of a novel coronavirus associated with severe
+acute respiratory syndrome. Science 300, 1394–1399. doi: 10.1126/science.
+1085952
+Scobey, T., Yount, B. L., Sims, A. C., Donaldson, E. F., Agnihothram, S. S.,
+Menachery, V. D., et al. (2013). Reverse genetics with a full-length infectious
+cDNA of the Middle East respiratory syndrome coronavirus. Proc. Natl. Acad.
+Sci. U.S.A. 110, 16157–16162. doi: 10.1073/pnas.1311542110
+Severance, E. G., Bossis, I., Dickerson, F. B., Stallings, C. R., Origoni, A. E., Sullens,
+A., et al. (2008). Development of a nucleocapsid-based human coronavirus
+immunoassay and estimates of individuals exposed to coronavirus in a US
+metropolitan population. Clin. Vaccine Immunol. 15, 1805–1810. doi: 10.1128/
+cvi.00124-08
+Shao, X., Guo, X., Esper, F., Weibel, C., and Kahn, J. S. (2007). Seroepidemiology
+of group I human coronaviruses in children. J. Clin. Virol. 40, 207–213. doi:
+10.1016/j.jcv.2007.08.007
+Snijder, E. J., Bredenbeek, P. J., Dobbe, J. C., Thiel, V., Ziebuhr, J., Poon, L. L.,
+et al. (2003). Unique and conserved features of genome and proteome of SARScoronavirus, an early split-off from the coronavirus group 2 lineage. J. Mol. Biol.
+331, 991–1004. doi: 10.1016/s0022-2836(03)00865-9
+Snijder, E. J., Decroly, E., and Ziebuhr, J. (2016). The nonstructural proteins
+directing coronavirus RNA synthesis and processing. Adv. Virus Res. 96, 59–
+126. doi: 10.1016/bs.aivir.2016.08.008
+Tai, W., Wang, Y., Fett, C. A., Zhao, G., Li, F., Perlman, S., et al. (2017).
+Recombinant receptor-binding domains of multiple middle east respiratory
+syndrome coronaviruses (MERS-CoVs) induce cross-neutralizing antibodies
+against divergent human and camel MERS-CoVs and antibody escape mutants.
+J. Virol 91:e01651-16. doi: 10.1128/jvi.01651-16
+Tai, W., Zhao, G., Sun, S., Guo, Y., Wang, Y., Tao, X., et al. (2016). A recombinant
+receptor-binding domain of MERS-CoV in trimeric form protects human
+dipeptidyl peptidase 4 (hDPP4) transgenic mice from MERS-CoV infection.
+Virology 499, 375–382. doi: 10.1016/j.virol.2016.10.005
+Tang, J., Zhang, N., Tao, X., Zhao, G., Guo, Y., Tseng, C. T., et al. (2015).
+Optimization of antigen dose for a receptor-binding domain-based subunit
+vaccine against MERS coronavirus. Hum. Vaccin. Immunother. 11, 1244–1250.
+doi: 10.1080/21645515.2015.1021527
+Tomar, S., Johnston, M. L., St John, S. E., Osswald, H. L., Nyalapatla, P. R., Paul,
+L. N., et al. (2015). Ligand-induced dimerization of Middle East respiratory
+syndrome (MERS) coronavirus nsp5 protease (3CLpro): implifications for nsp5
+regulation and the development of antivirals. J. Biol. Chem. 290, 19403–19422.
+doi: 10.1074/jbc.M115.651463
+Tortorici, M. A., Walls, A. C., Lang, Y., Wang, C., Li, Z., Koerhuis, D.,
+et al. (2019). Structural basis for human coronavirus attachment to sialic
+acid receptors. Nat. Struct. Mol. Biol. 26, 481–489. doi: 10.1038/s41594-019-
+0233-y
+Tu, C., Crameri, G., Kong, X., Chen, J., Sun, Y., Yu, M., et al. (2004). Antibodies
+to SARS coronavirus in civets. Emerg. Infect. Dis. 10, 2244–2248. doi: 10.3201/
+eid1012.040520
+Tyrrell, D. A., and Bynoe, M. L. (1965). Cultivation of a novel type of commoncold virus in organ cultures. Br. Med. J. 1, 1467–1470. doi: 10.1136/bmj.1.5448.
+1467
+Vabret, A., Mourez, T., Gouarin, S., Petitjean, J., and Freymuth, F. (2003). An
+outbreak of coronavirus OC43 respiratory infection in Normandy, France. Clin.
+Infect. Dis. 36, 985–989. doi: 10.1086/374222
+van Boheemen, S., de Graaf, M., Lauber, C., Bestebroer, T. M., Raj, V. S., Zaki,
+A. M., et al. (2012). Genomic characterization of a newly discovered coronavirus
+associated with acute respiratory distress syndrome in humans. mBio 3:e00473-
+12. doi: 10.1128/mBio.00473-12
+van der Hoek, L., Pyrc, K., Jebbink, M. F., Vermeulen-Oost, W., Berkhout, R. J.,
+Wolthers, K. C., et al. (2004). Identification of a new human coronavirus. Nat.
+Med. 10, 368–373. doi: 10.1038/nm1024
+Veit, S., Jany, S., Fux, R., Sutter, G., and Volz, A. (2018). CD8+ T cells responding
+to the Middle East Respiratory Syndrome coronavirus nucleocapsid protein
+delivered by vaccinia virus MVA in mice. Viruses 10:E718. doi: 10.3390/
+v10120718
+Wang, C., Zheng, X., Gai, W., Zhao, Y., Wang, H., Wang, H., et al. (2017). MERSCoV virus-like particles produced in insect cells induce specific humoural
+and cellular imminity in rhesus macaques. Oncotarget 8, 12686–12694. doi:
+10.18632/oncotarget.8475
+Wang, L., Shi, W., Joyce, M. G., Modjarrad, K., Zhang, Y., Leung, K., et al. (2015).
+Evaluation of candidate vaccine approaches for MERS-CoV. Nat. Commun.
+6:7712. doi: 10.1038/ncomms8712
+Wang, N., Shi, X., Jiang, L., Zhang, S., Wang, D., Tong, P., et al.
+(2013). Structure of MERS-CoV spike receptor-binding domain complexed
+with human receptor DPP4. Cell Res. 23, 986–993. doi: 10.1038/cr.
+2013.92
+Wang, Y., Tai, W., Yang, J., Zhao, G., Sun, S., Tseng, C. K., et al. (2017).
+Receptor-binding domain of MERS-CoV with optimal immunogen dosage
+and immunization interval protects human transgenic mice from MERS-CoV
+infection. Hum. Vaccin. Immunother. 13, 1615–1624. doi: 10.1080/21645515.
+2017.1296994
+Wong, S. K., Li, W., Moore, M. J., Choe, H., and Farzan, M. (2004). A 193-
+amino acid fragment of the SARS coronavirus S protein efficiently binds
+angiotensin-converting enzyme 2. J. Biol. Chem. 279, 3197–3201. doi: 10.1074/
+jbc.C300520200
+Woo, P. C., Lau, S. K., Chu, C. M., Chan, K. H., Tsoi, H. W., Huang, Y.,
+et al. (2005). Characterization and complete genome sequence of a novel
+coronavirus, coronavirus HKU1, from patients with pneumonia. J. Virol. 79,
+884–895. doi: 10.1128/jvi.79.2.884-895.2005
+Woo, P. C., Lau, S. K., Lam, C. S., Lai, K. K., Huang, Y., Lee, P., et al.
+(2009a). Comparative analysis of complete genome sequences of three avian
+coronaviruses reveals a novel group 3c coronavirus. J. Virol. 83, 908–917. doi:
+10.1128/jvi.01977-08
+Woo, P. C., Lau, S. K., Lam, C. S., Lau, C. C., Tsang, A. K., Lau, J. H., et al.
+(2012). Discovery of seven novel mammalian and avian coronaviruses in
+the genus deltacoronavirus supports bat coronaviruses as the gene source of
+alphacoronavirus and betacoronavirus and avian coronaviruses as the gene
+source of gammacoronavirus and deltacoronavirus. J. Virol. 86, 3995–4008.
+doi: 10.1128/jvi.06540-11
+Frontiers in Microbiology | www.frontiersin.org 18 February 2020 | Volume 11 | Article 298
+fmicb-11-00298 February 27, 2020 Time: 15:35 # 19
+Wang et al. Subunit Vaccines Against Coronaviruses
+Woo, P. C., Lau, S. K., Lam, C. S., Tsang, A. K., Hui, S. W., Fan, R. Y., et al. (2014).
+Discovery of a novel bottlenose dolphin coronavirus reveals a distinct species
+of marine mammal coronavirus in gammacoronavirus. J. Virol. 88, 1318–1331.
+doi: 10.1128/jvi.02351-13
+Woo, P. C., Lau, S. K., Yip, C. C., Huang, Y., and Yuen, K. Y. (2009b). More
+and more coronaviruses: human coronavirus HKU1. Viruses 1, 57–71. doi:
+10.3390/v1010057
+Yang, Y., Deng, Y., Wen, B., Wang, H., Meng, X., Lan, J., et al. (2014a). The
+amino acids 736-761 of the MERS-CoV spike protein induce neutralizing
+antibodies: implications for the development of vaccines and antiviral agents.
+Viral Immunol. 27, 543–550. doi: 10.1089/vim.2014.0080
+Yang, Y., Du, L., Liu, C., Wang, L., Ma, C., Tang, J., et al. (2014b). Receptor
+usage and cell entry of bat coronavirus HKU4 provide insight into bat-tohuman transmission of MERS coronavirus. Proc. Natl. Acad. Sci. U.S.A. 111,
+12516–12521. doi: 10.1073/pnas.1405889111
+Yang, Z. Y., Kong, W. P., Huang, Y., Roberts, A., Murphy, B. R., Subbarao, K., et al.
+(2004). A DNA vaccine induces SARS coronavirus neutralization and protective
+immunity in mice. Nature 428, 561–564. doi: 10.1038/nature02463
+Yuan, Y., Cao, D., Zhang, Y., Ma, J., Qi, J., Wang, Q., et al. (2017). CryoEM structures of MERS-CoV and SARS-CoV spike glycoproteins reveal the
+dynamic receptor binding domains. Nat. Commun. 8:15092. doi: 10.1038/
+ncomms15092
+Zakhartchouk, A. N., Sharon, C., Satkunarajah, M., Auperin, T., Viswanathan, S.,
+Mutwiri, G., et al. (2007). Immunogenicity of a receptor-binding domain of
+SARS coronavirus spike protein in mice: implications for a subunit vaccine.
+Vaccine 25, 136–143. doi: 10.1016/j.vaccine.2006.06.084
+Zaki, A. M., van Boheemen, S., Bestebroer, T. M., Osterhaus, A. D., and Fouchier,
+R. A. (2012). Isolation of a novel coronavirus from a man with pneumonia in
+Saudi Arabia. N. Engl. J. Med. 367, 1814–1820. doi: 10.1056/NEJMoa1211721
+Zeng, F., Chow, K. Y., Hon, C. C., Law, K. M., Yip, C. W., Chan, K. H., et al. (2004).
+Characterization of humoral responses in mice immunized with plasmid DNAs
+encoding SARS-CoV spike gene fragments. Biochem. Biophys. Res. Commun.
+315, 1134–1139. doi: 10.1016/j.bbrc.2004.01.166
+Zhang, N., Channappanavar, R., Ma, C., Wang, L., Tang, J., Garron, T., et al.
+(2016). Identification of an ideal adjuvant for receptor-binding domain-based
+subunit vaccines against Middle East respiratory syndrome coronavirus. Cell.
+Mol. Immunol. 13, 180–190. doi: 10.1038/cmi.2015.03
+Zhang, N., Jiang, S., and Du, L. (2014). Current advancements and potential
+strategies in the development of MERS-CoV vaccines. Expert Rev. Vaccines 13,
+761–774. doi: 10.1586/14760584.2014.912134
+Zhang, N., Tang, J., Lu, L., Jiang, S., and Du, L. (2015). Receptor-binding domainbased subunit vaccines against MERS-CoV. Virus Res. 202, 151–159. doi: 10.
+1016/j.virusres.2014.11.013
+Zhang, N., Wang, L., Deng, X., Liang, R., Su, M., He, C., et al. (2020). Recent
+advances in the detection of respiratory virus infection in humans. J. Med. Virol.
+[Epub ahead of print].
+Zheng, N., Xia, R., Yang, C., Yin, B., Li, Y., Duan, C., et al. (2009). Boosted
+expression of the SARS-CoV nucleocapsid protein in tobacco and its
+immunogenicity in mice. Vaccine 27, 5001–5007. doi: 10.1016/j.vaccine.2009.
+05.073
+Zhong, N. S., Zheng, B. J., Li, Y. M., Poon, L. L., Xie, Z. H., Chan, K. H., et al.
+(2003). Epidemiology and cause of severe acute respiratory syndrome (SARS)
+in Guangdong, People’s Republic of China, in February, 2003. Lancet 362,
+1353–1358. doi: 10.1016/s0140-6736(03)14630-2
+Zhou, P., Yang, X. L., Wang, X. G., Hu, B., Zhang, L., Zhang, W., et al. (2020). A
+pneumonia outbreak associated with a new coronavirus of probable bat origin.
+Nature [Epub ahead of print].
+Zhou, Y., Jiang, S., and Du, L. (2018). Prospects for a MERS-CoV spike
+vaccine. Expert Rev. Vaccines 17, 677–686. doi: 10.1080/14760584.2018.150
+6702
+Zhou, Y., Yang, Y., Huang, J., Jiang, S., and Du, L. (2019). Advances in MERSCoV vaccines and therapeutics based on the receptor-binding domain. Viruses
+11:E60. doi: 10.3390/v11010060
+Zhu, N., Zhang, D., Wang, W., Li, X., Yang, B., Song, J., et al. (2020). A novel
+coronavirus from patients with pneumonia in China, 2019. N. Engl. J. Med.
+[Epub ahead of print].
+Zhu, X., Liu, Q., Du, L., Lu, L., and Jiang, S. (2013). Receptor-binding domain
+as a target for developing SARS vaccines. J. Thoracic Dis. 5, S142–S148. doi:
+10.3978/j.issn.2072-1439.2013.06.06
+Conflict of Interest: The authors declare that the research was conducted in the
+absence of any commercial or financial relationships that could be construed as a
+potential conflict of interest.
+Copyright © 2020 Wang, Shang, Jiang and Du. This is an open-access article
+distributed under the terms of the Creative Commons Attribution License (CC BY).
+The use, distribution or reproduction in other forums is permitted, provided the
+original author(s) and the copyright owner(s) are credited and that the original
+publication in this journal is cited, in accordance with accepted academic practice. No
+use, distribution or reproduction is permitted which does not comply with these terms.
+Frontiers in Microbiology | www.frontiersin.org 19 February 2020 | Volume 11 | Article 298

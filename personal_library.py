@@ -125,35 +125,21 @@ def create(_lib_folder : str) -> None:
 
     heading(1)
 
-    print("Creating a document\n")
+    print("Creating index...\n")
 
-    doc_title = input("What's the docment's title?\n")
-    file_name = algo1.concat_string(
-            title_normalize(String(doc_title)),
-            String(".txt"))
-    file_path = os.path.join(_lib_folder, file_name.arr.data)
+    documetnts = load_documents(_lib_folder)
 
+    tfidf = doc_tfidf(documetnts)
 
-    # Keep asking until there are no colisions
-    while os.path.exists(file_path):
-        print("Error: file already exists: ", file_path)
-        print("Please change the title")
+    print("Save index...")
+    with open("tfidf.def", 'x') as file_writable:
+        persist.save(tfidf, file_writable)
 
-        print("Creating a document\n")
+    print("Save directory...")
+    with open("directory.def", 'x') as file_writable:
+        persist.save(Document.directory, file_writable)
 
-        doc_title = input("What's the docment's title?\n")
-        file_name = algo1.concat_string(
-                title_normalize(String(doc_title)), String(".txt"))
-        file_path = os.path.join(_lib_folder, file_name.arr.data)
-
-    # At this point we know the document is not present
-
-    print("Please, Enter the docment's content. Ctrl-D when Done.")
-    with open(file_path, 'x') as file_handle:
-        file_handle.write(doc_title + '\n')
-        for line in sys.stdin.readlines():
-            file_handle.write(line)
-
+    print("Done")
 
 def title_normalize(_title : String) -> String:
     """ Normalizes the file name:
@@ -177,9 +163,19 @@ def search(_lib_folder : str, _args : str) -> None:
 
     print("Searching: " + _args)
 
-    documetnts = load_documents(_lib_folder)
+    print("Load index...")
+    tfidf = None
+    with open("tfidf.def", 'r') as file_readable:
+        tfidf = persist.load(file_readable)
 
-    tfidf = doc_tfidf(documetnts)
+    assert not tfidf is None
+
+    print("Load directory...")
+    directory = None
+    with open("directory.def", 'r') as file_readable:
+        directory = persist.load(file_readable)
+
+    assert not directory is None
 
     results = query(String(_args), tfidf)
 

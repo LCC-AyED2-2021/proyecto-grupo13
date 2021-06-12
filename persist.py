@@ -362,6 +362,8 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
         return personal_library.string_hash_function(value)
     elif name_function == 'multiplicative_hash_function\n':
         return libdic.multiplicative_hash_function(value, libdic.golden_ratio())
+    else:
+        raise Exception("Unkown function:", name_function)
 
 def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     """ Return Array object """

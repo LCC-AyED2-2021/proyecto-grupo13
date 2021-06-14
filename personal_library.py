@@ -311,51 +311,7 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 def load_documents(_lib_folder : str) -> LinkedList[Document]:
     """ Load all the documents in the library """
 
-    def read_doc(_doc : list) -> Document:
-        """ Capture words in a document """
-
-        def read_line(_line : String, _list : LinkedList[String]) -> LinkedList[String]:
-            """ Capture words by line. Adds to _list """
-
-            word : String = String('')
-
-            # Explore characters in String
-            for _ in range(algo1.strlen(_line)):
-
-                if _line[_] != ' ' and _line[_] != '\n':
-                    # Save character
-                    word = algo1.concat(word, _line[_])
-
-                elif algo1.strlen(word) != 0:
-                    # Save word
-                    _list = linkedlist.cons(word, _list)
-                    word = algo1.String('')
-
-            return _list
-
-
-        def linkedlist_to_string(_list : LinkedList[String]) -> String:
-            # Concatenate linkedlist elements
-
-            return linkedlist.foldl(algo1.concat_string, String(''), _list)
-
-        # LinkedLists for Document
-        title : LinkedList[String] = linkedlist.empty()
-        body : LinkedList[String] = linkedlist.empty()
-        is_title : bool = True
-
-        # Explore lists in _doc
-        for _ in range(len(_doc)):
-            if is_title:
-                title = read_line(String(_doc[_]), title)
-                is_title = False
-            else:
-                body = read_line(String(_doc[_]), body)
-
-        new_doc : Document = Document(
-                algo1.join(linkedlist.reverse(title), ' '), body)
-
-        return new_doc
+    print("Laoding documents...")
 
     # Add tailing / if missing
     if _lib_folder[-1] != '/':
@@ -377,9 +333,20 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
         for doc in entries:
 
             with open(_lib_folder + doc, 'r') as file_readable:
-                text : list = file_readable.readlines()
-            new_doc : Document = read_doc(text)
+                content : LinkedList[String] = linkedlist.empty()
+                for line in file_readable.readlines():
+                    content = linkedlist.foldr(linkedlist.cons,
+                            content,
+                            algo1.split(String(line), " "))
+
+
+                title = title_normalize(String(doc))
+                new_doc : Document = Document(title, content)
+
+            print("Loading: ", doc)
             library = linkedlist.cons(new_doc, library)
+
+        print("Loading Complete")
 
         return library
 

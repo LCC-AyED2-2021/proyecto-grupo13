@@ -82,14 +82,31 @@ def foldr(folder: Callable[[A, B], B], init: B, linked_list: LinkedList[A]) -> B
         tail = linked_list.content[1]
         return folder(head, foldr(folder, init, tail))
 
-def foldl(folder: Callable[[B, A], B], init: B, linked_list: LinkedList[A]) -> B:
+def foldl(_folder: Callable[[B, A], B], _init: B, _linked_list: LinkedList[A]) -> B:
     """ foldl """
-    if linked_list.content is None:
-        return init
-    else:
-        head = linked_list.content[0]
-        tail = linked_list.content[1]
-        return foldl(folder, folder(init, head), tail)
+
+    # PSEUDO PYTHON
+
+    # if _linked_list.content is None:
+    #     return _init
+
+    #head = linked_list.content[0]
+    #tail = linked_list.content[1]
+    #return foldl(folder, folder(init, head), tail)
+
+    # What follows is no longer pseudo-python
+    # We lift circunvent real python maximum rec depth
+
+    cursor = _linked_list
+    result = _init
+    while not cursor.content is None:
+        result = _folder(result, cursor.content[0])
+        cursor = cursor.content[1]
+
+    return result
+
+
+
 
 def lmap(mapper: Callable[[A], B], linked_list: LinkedList[A]) -> LinkedList[B]:
     """ maps """

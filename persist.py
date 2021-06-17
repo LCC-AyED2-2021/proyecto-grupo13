@@ -28,7 +28,13 @@ from libdic import Dic
 
 # TextIOWrapper
 class Extractor:
-    """ Doc string """
+    """ Attributes to store info from line of file """
+    # mclass: class of the object to return
+    # subclass: type of the object within the object to return
+    # (only if it contains a unique type)
+    # length: number of items
+    # value: value of type subclass
+
     def __init__(self,
             _class : str = '',
             _subclass : str = None,
@@ -308,7 +314,7 @@ def data_extractor(_line : str) -> Extractor:
 
         if _line[_] == '!':
             return extract_class(_line, _)
-        return Extractor(_value = _line[_:len(_line)])
+        return Extractor(_value = _line[_:len(_line)-1]) # delete \n
 
     length = len(_line)
     for _ in range(length):
@@ -317,6 +323,7 @@ def data_extractor(_line : str) -> Extractor:
         elif _line[_] == '-':
             return extract_value(_line, _+2)
 
+    return Extractor(_class = '', _value = '')
     raise Exception("Coudln't extract data: " + _line)
 
 def native_type(_string : str, _type : str):
@@ -357,9 +364,9 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
     name_function = data_extractor(_file.readline()).value
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     print(name_function)
-    if name_function == 'string_hash_function\n':
+    if name_function == 'string_hash_function':
         return personal_library.string_hash_function(value)
-    elif name_function == 'multiplicative_hash_function\n':
+    elif name_function == 'multiplicative_hash_function':
         return libdic.multiplicative_hash_function(value, libdic.golden_ratio())
     else:
         raise Exception("Unkown function:", name_function)
@@ -391,9 +398,17 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
 def load_string(_file, _data : Extractor) -> String:
     """ Return String object """
 
+    # Experimental
     line : Extractor = data_extractor(_file.readline())
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
-    return String(line.value[0:len(line.value)-1]) # Delete '\n'
+    if not line.mclass and not line.value:
+        line = data_extractor(_file.readline())
+
+    end_type : Extractor = data_extractor(_file.readline())
+    if not end_type.mclass and not end_type.value:
+        end_type = data_extractor(_file.readline())
+    assert _data.mclass == end_type.mclass, "Error reading the file"
+
+    return String(line.value)
 
 def load_linkedlist(_file, _data : Extractor) -> LinkedList:
     """ Return LinkedList object """

@@ -110,24 +110,26 @@ We write a module that persists the structures used. It supports:
 * Dic
 * Document
 
-The module saves a file in a plain text format, *.def
+The module saves a file in a plain text format, `*.def`
 
 Determines the class of the object and creates the dump file.
 
 The header contains two subsections:
 
+```
 * !!python/object: beginning of a structure.
 * <_class_>: type of structure.
+```
 
 And two optional subsections:
 
-* {_subclass_}: indicates the type contained in the structure
-* {_int_}: length of the structure.
+* `{_subclass_}`: indicates the type contained in the structure
+* `{_int_}`: length of the structure.
 
 The footer contains only two subsections:
 
-* !!python/object: ending of a structure.
-* <_class_>: type of structure.
+* `!!python/object`: ending of a structure.
+* `<_class_>`: type of structure.
 
 ### Examples
 

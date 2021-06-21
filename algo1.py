@@ -184,11 +184,12 @@ def split(_text: String, _limit : str) -> LinkedList[String]:
     """ Return words in LinkedList. """
 
     words : LinkedList = linkedlist.empty()
+    n : str = '\n' # Filter '\n'
     init : int = 0
     end : int = 0
 
     for _ in range(strlen(_text)):
-        if _text[_] == _limit:
+        if _text[_] == _limit or _text[_] == n:
             if init != end:
                 words = linkedlist.cons(substr(_text, init, end), words)
             init = end + 1

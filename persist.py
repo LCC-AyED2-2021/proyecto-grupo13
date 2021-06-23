@@ -177,8 +177,11 @@ def save_string(_object : String, _file, _hierarchy : str) -> None:
     #Only saves one line string
     _file.write(header('String', 'str', _hierarchy))
     _file.write(_hierarchy+'- ')
+    __ : int = 0
     for _ in range(len(_object)):
         _file.write(str(_object[_]))
+        if _object[_] == '\n':
+           _file.write(_hierarchy+'- ')
     _file.write('\n')
     _file.write(footer('String', _hierarchy))
 
@@ -398,17 +401,20 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
 def load_string(_file, _data : Extractor) -> String:
     """ Return String object """
 
-    # Experimental
     line : Extractor = data_extractor(_file.readline())
-    if not line.mclass and not line.value:
+    text : String = String('')
+    flag : bool = False
+    while not line.mclass:
+        if line.value:
+            if flag:
+                text = algo1.concat(text, '\n')
+            text = algo1.concat(text, line.value)
+            flag = True
         line = data_extractor(_file.readline())
 
-    end_type : Extractor = data_extractor(_file.readline())
-    if not end_type.mclass and not end_type.value:
-        end_type = data_extractor(_file.readline())
-    assert _data.mclass == end_type.mclass, "Error reading the file"
+    assert _data.mclass == line.mclass, "Error reading the file"
 
-    return String(line.value)
+    return text
 
 def load_linkedlist(_file, _data : Extractor) -> LinkedList:
     """ Return LinkedList object """

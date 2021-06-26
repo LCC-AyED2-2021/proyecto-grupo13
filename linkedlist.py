@@ -73,14 +73,14 @@ def singleton(a: A) -> LinkedList[A]:
     """ A singleton """
     return cons(a, empty())
 
-def foldr(folder: Callable[[A, B], B], init: B, linked_list: LinkedList[A]) -> B:
+def foldr(_folder: Callable[[A, B], B], _init: B, _linked_list: LinkedList[A]) -> B:
     """ foldr """
-    if linked_list.content is None:
-        return init
+    if _linked_list.content is None:
+        return _init
     else:
-        head = linked_list.content[0]
-        tail = linked_list.content[1]
-        return folder(head, foldr(folder, init, tail))
+        head = _linked_list.content[0]
+        tail = _linked_list.content[1]
+        return _folder(head, foldr(_folder, _init, tail))
 
 def foldl(_folder: Callable[[B, A], B], _init: B, _linked_list: LinkedList[A]) -> B:
     """ foldl """
@@ -139,7 +139,7 @@ def reverse(linked_list: LinkedList[A]) -> LinkedList[A]:
 
 def maximum(linked_list: LinkedList[float]) -> Optional[float]:
     """ return the maximum """
-    def max_folder(a: float, acc: Optional[float]) -> Optional[float]:
+    def max_folder(acc: Optional[float], a: float) -> Optional[float]:
         if acc is None:
             return a
         else:
@@ -148,7 +148,7 @@ def maximum(linked_list: LinkedList[float]) -> Optional[float]:
             else:
                 return acc
 
-    return foldr(max_folder, None, linked_list)
+    return foldl(max_folder, None, linked_list)
 
 def concatenate(linked_list_a: LinkedList[A], linked_list_b: LinkedList[A]) -> LinkedList[A]:
     """ concatenate """
@@ -456,6 +456,22 @@ def quick_sort_by(_lte : Callable[[A, A], bool],
     return concatenate(
         quick_sort_by(_lte, left),
         concatenate(pivots, quick_sort_by(_lte, right)))
+
+def index(_linked_list : LinkedList[A], idx : int) -> Optional[A]:
+    """ The element at index idx """
+
+    assert(idx >= 0)
+
+    if _linked_list.content is None:
+        return None
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    if idx == 0:
+        return head
+
+    return index(tail, idx - 1)
 
 def main() -> None:
     """ main """

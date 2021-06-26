@@ -151,3 +151,31 @@ def dmap(_mapper : Callable[[V], W], _dic : Dic[K, V]) -> Dic[K, W]:
             _dic.table[idx])
 
     return retDic
+
+def dic_health(_dic : Dic[K, V]) -> None:
+    """ Helath report for a directory """
+
+    print("Size: ", _dic.size)
+
+    collisions : LinkedList[int] = linkedlist.empty()
+    for idx in range(_dic.size):
+        collisions = linkedlist.cons(
+                linkedlist.length(_dic.table[idx]),
+                collisions)
+
+    max_collisions = linkedlist.maximum(collisions)
+
+    if not max_collisions is None:
+        print("Max collisions: ", max_collisions)
+
+    elements = linkedlist.lsum(collisions)
+    print("Elements: ", elements)
+
+    collisions = linkedlist.quick_sort_by(lambda x, y: x <= y,
+            collisions)
+
+    median : Optional[int] = linkedlist.index(collisions, _dic.size // 2)
+
+    print("Median: ", median)
+
+    print("Load factor: ", elements / _dic.size)

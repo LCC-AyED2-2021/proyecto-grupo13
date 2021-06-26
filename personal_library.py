@@ -98,7 +98,7 @@ class TfidfRow:
     This could be upgraded to a priority queue.
     """
     def __init__(self,
-            _row : LinkedList[Tuple[int, float]]):
+            _row : LinkedList[Tuple[int, Tuple[int, float]]]):
         self.row = _row
 
 def main() -> None:
@@ -127,10 +127,11 @@ def create(_lib_folder : str) -> None:
 
     heading(1)
 
-    print("Creating index...\n")
+    print("Creating index...")
 
     documetnts = load_documents(_lib_folder)
 
+    print("Computing index...")
     tfidf = doc_tfidf(documetnts)
 
     print("Save index...")
@@ -141,6 +142,7 @@ def create(_lib_folder : str) -> None:
     with open("directory.def", 'x') as file_writable:
         persist.save(Document.directory, file_writable)
 
+    libdic.dic_health(tfidf)
     print("Done")
 
 def title_normalize(_title : String) -> String:
@@ -186,15 +188,15 @@ def search(_lib_folder : str, _args : str) -> None:
 
         result_row = results.row
 
-        print("Relevance", "id", "title", sep="\t")
+        print("Freq", "title", "relevance", sep="\t")
         while not result_row.content is None:
 
-            (doc_id, relevance) =  result_row.content[0]
+            (doc_id, (freq, relevance)) =  result_row.content[0]
             result_row = result_row.content[1]
 
             title = libdic.search(directory, doc_id)
 
-            print(relevance, doc_id, title, sep="\t")
+            print(freq, title, relevance, sep="\t")
 
 
 
@@ -280,9 +282,10 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 
             return libdic.update_with_default(__tf,
                     lambda x : TfidfRow(linkedlist.insert(x.row , __doc.uuid,
-                        freq / total_words * word_idf)),
+                        (freq, freq / total_words * word_idf))),
                     word,
-                    TfidfRow(linkedlist.singleton((__doc.uuid, freq / total_words * word_idf))))
+                    TfidfRow(linkedlist.singleton((__doc.uuid,
+                        (freq, freq / total_words * word_idf)))))
 
 
         return linkedlist.foldl(folder_,
@@ -298,8 +301,9 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     tfidf = linkedlist.foldl(tfidf_folder, tfidf, _docs)
 
     # Sort in decreasing order
-    def lte(__a : Tuple[int, float], __b : Tuple[int, float]) -> bool:
-        return __a[1] > __b[1]
+    def lte(__a : Tuple[int, Tuple[int, float]],
+            __b : Tuple[int, Tuple[int, float]]) -> bool:
+        return __a[1][0] > __b[1][0]
 
 
     tfidf = libdic.dmap(lambda r:

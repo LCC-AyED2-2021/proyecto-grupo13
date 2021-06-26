@@ -50,6 +50,7 @@ class Extractor:
 ## Dump objects
 ###############################################################################
 
+# Dispatches the currect save function
 def save(_object, _file, _hierarchy : str = '') -> None:
     """ Dump in file """
 
@@ -262,6 +263,7 @@ def load(_file):
     """ Wrapper for rec_load """
     return rec_load(_file, data_extractor(_file.readline()))
 
+# Dispatches to the right load function
 def rec_load(_file, _data : Extractor):
     """ Load and return object """
 

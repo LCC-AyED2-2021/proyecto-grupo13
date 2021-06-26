@@ -345,7 +345,9 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
                             content,
                             linkedlist.lmap(algo1.lower,
                             linkedlist.lmap(select_letters,
-                            linkedlist.str_split(String(line), " "))))
+                            linkedlist.concatmap(lambda s:
+                                linkedlist.str_split(s, "-"),
+                            linkedlist.str_split(String(line), " ")))))
 
 
                 title = title_normalize(String(doc))

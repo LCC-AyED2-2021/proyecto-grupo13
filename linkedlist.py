@@ -156,6 +156,13 @@ def concatenate(linked_list_a: LinkedList[A], linked_list_b: LinkedList[A]) -> L
     """ concatenate """
     return foldr(cons, linked_list_b, reverse(linked_list_a))
 
+def concatmap(_mapper : Callable[[A], LinkedList[B]],
+        _linked_list : LinkedList[A]) -> LinkedList[B]:
+
+    """ Map and concatenate """
+
+    return foldl(concatenate, empty(), lmap(_mapper, _linked_list))
+
 def elem(a: A, linked_list: LinkedList[A]) -> bool:
     """ true if a in linked_list """
     return foldr(lambda x, y: x == a or y, False, linked_list)

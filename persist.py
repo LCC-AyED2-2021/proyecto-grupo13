@@ -382,7 +382,7 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
     def load_native_types(_file, _data : Extractor):
         """ Create Array of _type and loads values """
 
-        array : Array = algo1.create_array(_data.length, _data.subclass)
+        array : Array = create_array(_data.length, _data.subclass)
         for _ in range (_data.length):
             line = data_extractor(_file.readline())
             array[_] = native_type(line.value, _data.subclass)
@@ -391,7 +391,7 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
 
 
     if is_recursive_type(_data.subclass):
-        array : Array = algo1.create_array(_data.length, _data.subclass)
+        array : Array = create_array(_data.length, _data.subclass)
         for _ in range(_data.length):
             array[_] = rec_load(_file, data_extractor(_file.readline()))
         assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
@@ -510,3 +510,22 @@ def load_tuple(_file, _data : Extractor) -> TfidfRow:
         tupl = (*tupl, rec_load(_file, data_extractor(_file.readline())))
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return tupl
+
+###############################################################################
+
+def create_array(_length : int, _type : str) -> Array:
+    """ Return new Array """
+
+    if _type == 'int':
+        return Array(_length, 0)
+    if _type == 'LinkedList':
+        return Array(_length, LinkedList())
+    if _type == 'float':
+        return Array(_length, 0.0)
+    if _type == 'Array':
+        return Array(_length, Array())
+    if _type == 'str':
+        return Array(_length, 'c')
+
+    raise Exception("Unknown type: " + _type)
+

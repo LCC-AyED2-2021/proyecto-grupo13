@@ -28,6 +28,8 @@ I denounce and renounce all the code in this repository.
 """
 #pylint: disable=too-few-public-methods,no-else-return,invalid-name
 from typing import Generic, TypeVar, Callable, Optional, Tuple
+from algo1 import String
+import algo1
 
 A = TypeVar('A')
 B = TypeVar('B')
@@ -207,6 +209,15 @@ def from_array(arr):
 
     for idx in range(len(arr)):
         ret = cons(arr[len(arr) - 1 - idx], ret)
+
+    return ret
+
+def from_string(_arr : String) -> LinkedList[str]:
+    """ Create a list from an array"""
+    ret : LinkedList[str] = empty()
+
+    for idx in range(len(_arr)):
+        ret = cons(_arr[len(_arr) - 1 - idx], ret)
 
     return ret
 
@@ -472,6 +483,41 @@ def index(_linked_list : LinkedList[A], idx : int) -> Optional[A]:
         return head
 
     return index(tail, idx - 1)
+
+def str_split(_text: String, _limit : str) -> LinkedList[String]:
+    """ Return words in LinkedList. """
+
+    words : LinkedList = empty()
+    n : str = '\n' # Filter '\n'
+    init : int = 0
+    end : int = 0
+
+    for _ in range(algo1.strlen(_text)):
+        if _text[_] == _limit or _text[_] == n:
+            if init != end:
+                words = cons(algo1.substr(_text, init, end), words)
+            init = end + 1
+        end += 1
+    if init != end:
+        words = cons(algo1.substr(_text, init, end), words)
+    return words
+
+def ljoin(_words : LinkedList[String], _union : str) -> String:
+    """ Joins words with _union character """
+
+    text : String = String('')
+
+    for _ in range(length(_words)):
+        assert not _words.content is None
+        head = _words.content[0]
+        tail = _words.content[1]
+        #head tiene el primer elemento
+
+        text = algo1.concat_string(head, text)
+        text = algo1.concat_string(String(_union), text)
+        # tail tiene el resto de la lista
+        _words = tail
+    return algo1.substr(text, 1, algo1.strlen(text))
 
 def main() -> None:
     """ main """

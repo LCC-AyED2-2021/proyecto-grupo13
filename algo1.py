@@ -6,8 +6,6 @@
 #pylint: disable=too-few-public-methods, invalid-name
 
 from typing import TypeVar, Generic, Callable, List
-from linkedlist import LinkedList
-import linkedlist
 import functools
 
 import copy
@@ -120,22 +118,6 @@ def concat_string(_s: String, _c : String) -> String:
     """ Concatenate """
     return String(_s.arr.data+_c.arr.data)
 
-def create_array(_length : int, _type : str) -> Array:
-    """ Return new Array """
-
-    if _type == 'int':
-        return Array(_length, 0)
-    if _type == 'LinkedList':
-        return Array(_length, LinkedList())
-    if _type == 'float':
-        return Array(_length, 0.0)
-    if _type == 'Array':
-        return Array(_length, Array())
-    if _type == 'str':
-        return Array(_length, 'c')
-
-    raise Exception("Unknown type: " + _type)
-
 def is_letter(_code : int) -> bool:
     """ Detect letter """
     lower : bool = _code >= 65 and _code <= 90
@@ -180,40 +162,6 @@ def strip(_name: String) -> String:
                 spaces += 1
     return new_name
 
-def split(_text: String, _limit : str) -> LinkedList[String]:
-    """ Return words in LinkedList. """
-
-    words : LinkedList = linkedlist.empty()
-    n : str = '\n' # Filter '\n'
-    init : int = 0
-    end : int = 0
-
-    for _ in range(strlen(_text)):
-        if _text[_] == _limit or _text[_] == n:
-            if init != end:
-                words = linkedlist.cons(substr(_text, init, end), words)
-            init = end + 1
-        end += 1
-    if init != end:
-        words = linkedlist.cons(substr(_text, init, end), words)
-    return words
-
-def join(_words : LinkedList[String], _union : str) -> String:
-    """ Joins words with _union character """
-
-    text : String = String('')
-
-    for _ in range(linkedlist.length(_words)):
-        assert not _words.content is None
-        head = _words.content[0]
-        tail = _words.content[1]
-        #head tiene el primer elemento
-
-        text = concat_string(head, text)
-        text = concat_string(String(_union), text)
-        # tail tiene el resto de la lista
-        _words = tail
-    return substr(text, 1, strlen(text))
 
 def join_space(_name: String, _union: str) -> String:
     """ Join character in ' ' """

@@ -155,7 +155,9 @@ def title_normalize(_title : String) -> String:
         Not tested with modified characters (á,ì,ŷ) and ñ
     """
 
-    return algo1.lower(algo1.join(algo1.split(algo1.delete_symbols(_title), ' '), '_'))
+    return algo1.lower(
+            linkedlist.ljoin(
+                linkedlist.str_split(algo1.delete_symbols(_title), ' '), '_'))
 
 ###############################################################################
 ## Search specific code
@@ -341,7 +343,9 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
                 for line in file_readable.readlines():
                     content = linkedlist.foldr(linkedlist.cons,
                             content,
-                            algo1.split(String(line), " "))
+                            linkedlist.lmap(algo1.lower,
+                            linkedlist.lmap(select_letters,
+                            linkedlist.str_split(String(line), " "))))
 
 
                 title = title_normalize(String(doc))
@@ -379,6 +383,28 @@ def string_hash_function(_size : int) -> Callable[[String], int]:
         return hash_value
 
     return hash_func
+
+def select_letters(_string : String) -> String:
+    """ remove non-letters """
+
+    chars : LinkedList[str] = linkedlist.lfilter(
+            lambda c: c in string.ascii_letters,
+            linkedlist.from_string(_string))
+
+    ret : String = String("")
+
+    idx = 0
+    while not chars.content is None:
+        ret = algo1.concat_string(ret, String(chars.content[0]))
+
+        chars = chars.content[1]
+        idx = idx + 1
+
+    return ret
+
+
+
+
 
 if __name__ == '__main__':
     main()

@@ -131,13 +131,32 @@ def lmap(mapper: Callable[[A], B], linked_list: LinkedList[A]) -> LinkedList[B]:
 
             return cons(mapper(head), finish)
 
-def land(linked_list: LinkedList[bool]) -> bool:
+def land(_linked_list: LinkedList[bool]) -> bool:
     """ all true """
-    return foldr(lambda x, y: x and y, True, linked_list)
+    cursor = _linked_list
 
-def reverse(linked_list: LinkedList[A]) -> LinkedList[A]:
+    ret = True
+    while not cursor.content is None and ret:
+
+        ret = cursor.content[0]
+        cursor = cursor.content[1]
+
+    return ret
+
+
+def reverse(_linked_list: LinkedList[A]) -> LinkedList[A]:
     """ reverses """
-    return foldr(cons, empty(), linked_list)
+    cursor = _linked_list
+
+    ret : LinkedList[A] = empty()
+
+    while not cursor.content is None:
+
+        ret = cons(cursor.content[0], ret)
+        cursor = cursor.content[1]
+
+    return ret
+
 
 def maximum(linked_list: LinkedList[float]) -> Optional[float]:
     """ return the maximum """
@@ -152,9 +171,19 @@ def maximum(linked_list: LinkedList[float]) -> Optional[float]:
 
     return foldl(max_folder, None, linked_list)
 
-def concatenate(linked_list_a: LinkedList[A], linked_list_b: LinkedList[A]) -> LinkedList[A]:
+def concatenate(_linked_list_a: LinkedList[A], _linked_list_b: LinkedList[A]) -> LinkedList[A]:
     """ concatenate """
-    return foldr(cons, linked_list_b, reverse(linked_list_a))
+    ret : LinkedList[A] = _linked_list_b
+
+    cursor = reverse(_linked_list_a)
+
+    while not cursor.content is None:
+
+        ret = cons(cursor.content[0], ret)
+        cursor = cursor.content[1]
+
+    return ret
+
 
 def concatmap(_mapper : Callable[[A], LinkedList[B]],
         _linked_list : LinkedList[A]) -> LinkedList[B]:
@@ -177,10 +206,23 @@ def unique(linked_list: LinkedList[A]) -> LinkedList[A]:
 
     return foldr(uniq_folder, empty(), linked_list)
 
-def length(linked_list: LinkedList[A]) -> int:
+def length(_linked_list: LinkedList[A]) -> int:
     """ the length """
 
-    return foldr(lambda _, y: y + 1, 0, linked_list)
+    ret : int = 0
+
+    cursor = _linked_list
+
+    while not cursor.content is None:
+
+        ret = ret + 1
+        cursor = cursor.content[1]
+
+    return ret
+
+# foldr =  0.262 -> 0
+# foldl =  0.19
+# length = 0.038 -> 0.066
 
 def lzip(linked_list_a: LinkedList[A], linked_list_b: LinkedList[A]) -> LinkedList[Tuple[A, A]]:
     """ True if all equal """

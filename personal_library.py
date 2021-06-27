@@ -341,7 +341,8 @@ def load_documents(_lib_folder : str) -> LinkedList[Document]:
             with open(_lib_folder + doc, 'r') as file_readable:
                 content : LinkedList[String] = linkedlist.empty()
                 for line in file_readable.readlines():
-                    content = linkedlist.foldr(linkedlist.cons,
+                    content = linkedlist.foldl(
+                            lambda a, e: linkedlist.cons(e, a),
                             content,
                             linkedlist.lmap(algo1.lower,
                             linkedlist.lmap(select_letters,

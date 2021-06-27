@@ -153,6 +153,54 @@ def tfidf_from_dic(
 
     return tfidf
 
+def directory_to_dic(_dic : Dic[String, LinkedList]
+        ) -> dict[int, str]:
+    """ Encode the directory """
+
+    cursor = libdic.assocs(_dic)
+    ret : dict[int, str] = {}
+
+    while not cursor.content is None:
+        idx = cursor.content[0]
+        ret[idx[0]] = str(idx[1])
+        cursor = cursor.content[1]
+
+    return ret
+
+def directory_from_dic(
+        _dic : dict[int, str]
+        ) -> Dic[String, LinkedList]:
+    """ from dict """
+
+    directory : Dic[String, TfidfRow] = Dic(1000, libdic.multiplicative_hash_function(1000,libdic.golden_ratio()))
+
+    for (idx, title) in _dic.items():
+
+        directory = libdic.insert(directory, int(idx), String(title))
+
+    return directory
+
+def tfidfrow_to_list(_row : TfidfRow) -> list[Tuple[int, Tuple[int, float]]]:
+    """ Encode a row """
+    cursor : LinkedList[Tuple[int, Tuple[int, float]]] = _row.row
+
+    ret : list[Tuple[int, Tuple[int, float]]] = []
+
+    while not cursor.content is None:
+        ret.insert(0, cursor.content[0])
+        cursor = cursor.content[1]
+
+    return ret
+
+def tfidfrow_from_list(_row : list[Tuple[int, Tuple[int, float]]]) -> TfidfRow:
+    """ from list """
+
+    ret : TfidfRow = TfidfRow(linkedlist.empty())
+
+    for elem in _row:
+        ret.row = linkedlist.cons(elem, ret.row)
+
+    return ret
 
 def main() -> None:
     """ The entry point """
@@ -192,7 +240,7 @@ def create(_lib_folder : str) -> None:
 
     print("Save directory...")
     with open("directory.def", 'x') as file_writable:
-        persist.save(Document.directory, file_writable)
+        file_writable.write(json.dumps(directory_to_dic(Document.directory)))
 
     libdic.dic_health(tfidf)
     print("Done")
@@ -231,7 +279,9 @@ def search(_args : str) -> None:
     print("Load directory...")
     directory = None
     with open("directory.def", 'r') as file_readable:
-        directory = persist.load(file_readable)
+        line = file_readable.readline()
+        directory = directory_from_dic(json.loads(line))
+        #directory = persist.load(file_readable)
 
     assert not directory is None
 

@@ -125,21 +125,21 @@ def save_int(_object : int, _file, _hierarchy : str) -> None:
 
     _file.write(header('in', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+str(_object)+'\n')
-    _file.write(footer('in', _hierarchy))
+    #_file.write(footer('in', _hierarchy))
 
 def save_float(_object : float, _file, _hierarchy : str) -> None:
     """ Serialization for float """
 
     _file.write(header('fl', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+str(_object)+'\n')
-    _file.write(footer('fl', _hierarchy))
+    #_file.write(footer('fl', _hierarchy))
 
 def save_str(_object : str, _file, _hierarchy : str) -> None:
     """ Serialization for str """
 
     _file.write(header('st', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+_object+'\n')
-    _file.write(footer('st', _hierarchy))
+    #_file.write(footer('st', _hierarchy))
 
 def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
     """ Serialization for method """
@@ -156,7 +156,7 @@ def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
     # _file.write(_hierarchy+'- '+_object+'\n')
     _file.write(_hierarchy+'- '+extract_function(str(_object))+'\n')
     # Could can add name of module and function but, how detect it?
-    _file.write(footer('fu', _hierarchy))
+    #_file.write(footer('fu', _hierarchy))
 
 def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
@@ -170,7 +170,7 @@ def save_array(_object : Array, _file, _hierarchy : str) -> None:
     else:
         for _ in range(len(_object)):
             _file.write(_hierarchy+'- '+str(_object[_])+'\n')
-    _file.write(footer('Ar', _hierarchy))
+    #_file.write(footer('Ar', _hierarchy))
 
 def save_string(_object : String, _file, _hierarchy : str) -> None:
     """ Serialization for String """
@@ -193,7 +193,7 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
 
     if _object.content is None:
         _file.write(header('Li', 'NoneType', _hierarchy, length))
-        _file.write(footer('Li', _hierarchy))
+        #_file.write(footer('Li', _hierarchy))
         return None
 
     subtype = object_type(_object.content[0])
@@ -214,7 +214,7 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
             _file.write(_hierarchy+'  '+'- '+str(head)+'\n')
             _object = tail
 
-    _file.write(footer('Li', _hierarchy))
+    #_file.write(footer('Li', _hierarchy))
 
 def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
     """ Serialization for Dic """
@@ -225,7 +225,7 @@ def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
     #save(_object.hash_function, _file, _hierarchy+'  ')
     save_function(_object.hash_function, _object.size, _file, _hierarchy+'  ')
     save(_object.table, _file, _hierarchy+'  ')
-    _file.write(footer('Di', _hierarchy))
+    #_file.write(footer('Di', _hierarchy))
 
 
 def save_document(_object : Document, _file, _hierarchy : str) -> None:
@@ -237,7 +237,7 @@ def save_document(_object : Document, _file, _hierarchy : str) -> None:
     save(_object.content, _file, _hierarchy+'  ')
     #save(_object.uuid, _file, _hierarchy+'  ')
     #save(_object.directory, _file, _hierarchy+'  ')
-    _file.write(footer('Do', _hierarchy))
+    #_file.write(footer('Do', _hierarchy))
 
 
 def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
@@ -245,7 +245,7 @@ def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
 
     _file.write(header('Tf', object_type(_object.row)[0:2], _hierarchy))
     save(_object.row, _file, _hierarchy+'  ')
-    _file.write(footer('Tf', _hierarchy))
+    #_file.write(footer('Tf', _hierarchy))
 
 def save_tuple(_object : tuple, _file, _hierarchy : str) -> None:
     """ Serialization for tuple """
@@ -253,7 +253,7 @@ def save_tuple(_object : tuple, _file, _hierarchy : str) -> None:
     _file.write(header('tu', _hierarchy = _hierarchy, _length = len(_object)))
     for _ in range(len(_object)):
         save(_object[_], _file, _hierarchy+'  ')
-    _file.write(footer('tu', _hierarchy))
+    #_file.write(footer('tu', _hierarchy))
 
 ###############################################################################
 ## Load objects
@@ -345,21 +345,21 @@ def load_int(_file, _data : Extractor, _hierarchy : str = '') -> int:
     """ Return int type """
 
     value : int = int(data_extractor(_file.readline()).value)
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return value
 
 def load_float(_file, _data : Extractor, _hierarchy : str = '') -> float:
     """ Return float type """
 
     value : float = float(data_extractor(_file.readline()).value)
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return value
 
 def load_str(_file, _data : Extractor, _hierarchy : str = '') -> str:
     """ Return str type """
 
     value : str = data_extractor(_file.readline()).value
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return value
 
 def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
@@ -367,7 +367,7 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
 
     value : int = int(_data.subclass)
     name_function = data_extractor(_file.readline()).value
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
 
     if name_function == 'string_hash_function':
         return personal_library.string_hash_function(value)
@@ -386,7 +386,7 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
         for _ in range (_data.length):
             line = data_extractor(_file.readline())
             array[_] = native_type(line.value, _data.subclass)
-        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
         return array
 
 
@@ -394,7 +394,7 @@ def load_array(_file, _data : Extractor, _hierarchy : str = '') -> Array:
         array : Array = create_array(_data.length, _data.subclass)
         for _ in range(_data.length):
             array[_] = rec_load(_file, data_extractor(_file.readline()))
-        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
         return array
 
     else:
@@ -440,7 +440,7 @@ def load_linkedlist(_file, _data : Extractor) -> LinkedList:
             return linkedlist.empty()
 
     if _data.subclass == 'NoneType':
-        assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+        #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
         return linkedlist.empty
 
     if is_recursive_type(_data.subclass):
@@ -448,7 +448,7 @@ def load_linkedlist(_file, _data : Extractor) -> LinkedList:
     else:
         llist : LinkedList = load_native_types(_file, _data)
 
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return llist
 
 def load_dic(_file, _data : Extractor) -> Dic:
@@ -470,7 +470,7 @@ def load_dic(_file, _data : Extractor) -> Dic:
     # Table
     diccionary.table = rec_load(_file, data_extractor(_file.readline()))
 
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return diccionary
 
 def load_document(_file, _data : Extractor) -> Document:
@@ -492,14 +492,14 @@ def load_document(_file, _data : Extractor) -> Document:
     # directory
     #doc.directory : Dic = rec_load(_file, data_extractor(_file.readline()))
 
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return doc
 
 def load_tfidfrow(_file, _data : Extractor) -> TfidfRow:
     """ Return TfidfRow object """
 
     tfidfr : TfidfRow = TfidfRow(rec_load(_file, data_extractor(_file.readline())))
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return tfidfr
 
 def load_tuple(_file, _data : Extractor) -> TfidfRow:
@@ -508,7 +508,7 @@ def load_tuple(_file, _data : Extractor) -> TfidfRow:
     tupl : tuple = ()
     for _ in range(_data.length): # Default length
         tupl = (*tupl, rec_load(_file, data_extractor(_file.readline())))
-    assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
+    #assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
     return tupl
 
 ###############################################################################

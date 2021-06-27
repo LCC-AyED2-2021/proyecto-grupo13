@@ -55,29 +55,29 @@ def save(_object, _file, _hierarchy : str = '') -> None:
     """ Dump in file """
 
     typ = object_type(_object)
-    if typ == 'Array':
+    if typ == 'Array': #Array
         save_array(_object, _file, _hierarchy)
-    elif typ == 'String':
+    elif typ == 'String': #String
         save_string(_object, _file, _hierarchy)
-    elif typ == 'LinkedList':
+    elif typ == 'LinkedList': #LinkedList
         save_linkedlist(_object, _file, _hierarchy)
-    elif typ == 'Document':
+    elif typ == 'Document': #Document
         save_document(_object, _file, _hierarchy)
-    elif typ == 'Dic':
+    elif typ == 'Dic': #Dic
         save_dic(_object, _file, _hierarchy)
-    elif typ == 'TfidfRow':
+    elif typ == 'TfidfRow': #TfidfRow
         save_tfidfrow(_object, _file, _hierarchy)
-    elif typ == 'function':
+    elif typ == 'function': #function
         save_function(_object, _file, _hierarchy)
-    elif typ == 'tuple':
+    elif typ == 'tuple': #tuple
         save_tuple(_object, _file, _hierarchy)
 
     # Only used when an _object contains multiple types
-    elif typ == 'int':
+    elif typ == 'int': #int
         save_int(_object, _file, _hierarchy)
-    elif typ == 'str':
+    elif typ == 'str': #str
         save_str(_object, _file, _hierarchy)
-    elif typ == 'float':
+    elif typ == 'float': #float
         save_float(_object, _file, _hierarchy)
 
 def object_type(_object ) -> str:
@@ -89,7 +89,7 @@ def header(_type : str, _subtype : str = '', _hierarchy : str = '',
         _length : Optional[int] = None) -> str:
     """ Construct class head """
 
-    temp_title : str = '!pyObj<'+_type+'>{'+_subtype+'}'
+    temp_title : str = '!pyO<'+_type+'>{'+_subtype+'}'
     if len(_hierarchy) == 0:
         if _length is not None:
             return temp_title+'{'+str(_length)+'}\n'
@@ -108,31 +108,31 @@ def footer(_type : str, _hierarchy : str = '') -> str:
 
     spaces : str = ''
     if len(_hierarchy) == 0:
-        return '!pyEnd<'+_type+'>\n'
+        return '!pyE<'+_type+'>\n'
     for _ in range(len(_hierarchy)-2):
         spaces += ' '
-    return spaces+'- '+'!pyEnd<'+_type+'>\n'
+    return spaces+'- '+'!pyE<'+_type+'>\n'
 
 def is_recursive_type(_type : str) -> bool:
     """ Return False if type is int, str, float """
 
-    if _type == 'int' or _type == 'float' or _type == 'str':
+    if _type == 'in' or _type == 'fl' or _type == 'str':
         return False
     return True
 
 def save_int(_object : int, _file, _hierarchy : str) -> None:
     """ Serialization for int """
 
-    _file.write(header('int', _hierarchy = _hierarchy))
+    _file.write(header('in', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+str(_object)+'\n')
-    _file.write(footer('int', _hierarchy))
+    _file.write(footer('in', _hierarchy))
 
 def save_float(_object : float, _file, _hierarchy : str) -> None:
     """ Serialization for float """
 
-    _file.write(header('float', _hierarchy = _hierarchy))
+    _file.write(header('fl', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+str(_object)+'\n')
-    _file.write(footer('float', _hierarchy))
+    _file.write(footer('fl', _hierarchy))
 
 def save_str(_object : str, _file, _hierarchy : str) -> None:
     """ Serialization for str """
@@ -152,17 +152,17 @@ def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
 
         raise Exception("Couldn't extract function name from: " + __object)
 
-    _file.write(header('function', str(_value), _hierarchy = _hierarchy))
+    _file.write(header('fu', str(_value), _hierarchy = _hierarchy))
     # _file.write(_hierarchy+'- '+_object+'\n')
     _file.write(_hierarchy+'- '+extract_function(str(_object))+'\n')
     # Could can add name of module and function but, how detect it?
-    _file.write(footer('function', _hierarchy))
+    _file.write(footer('fu', _hierarchy))
 
 def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
 
     subtype = object_type(_object[0])
-    _file.write(header('Array', subtype, _hierarchy, len(_object)))
+    _file.write(header('Ar', subtype, _hierarchy, len(_object)))
 
     if is_recursive_type(subtype):
         for _ in range(len(_object)):
@@ -170,13 +170,13 @@ def save_array(_object : Array, _file, _hierarchy : str) -> None:
     else:
         for _ in range(len(_object)):
             _file.write(_hierarchy+'- '+str(_object[_])+'\n')
-    _file.write(footer('Array', _hierarchy))
+    _file.write(footer('Ar', _hierarchy))
 
 def save_string(_object : String, _file, _hierarchy : str) -> None:
     """ Serialization for String """
 
     #Only saves one line string
-    _file.write(header('String', 'str', _hierarchy))
+    _file.write(header('St', 'str', _hierarchy))
     _file.write(_hierarchy+'- ')
     __ : int = 0
     for _ in range(len(_object)):
@@ -184,7 +184,7 @@ def save_string(_object : String, _file, _hierarchy : str) -> None:
         if _object[_] == '\n':
            _file.write(_hierarchy+'- ')
     _file.write('\n')
-    _file.write(footer('String', _hierarchy))
+    _file.write(footer('St', _hierarchy))
 
 def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
     """ Serialization for LinkedList """
@@ -192,12 +192,12 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
     length = linkedlist.length(_object)
 
     if _object.content is None:
-        _file.write(header('LinkedList', 'NoneType', _hierarchy, length))
-        _file.write(footer('LinkedList', _hierarchy))
+        _file.write(header('Li', 'NoneType', _hierarchy, length))
+        _file.write(footer('Li', _hierarchy))
         return None
 
     subtype = object_type(_object.content[0])
-    _file.write(header('LinkedList', subtype, _hierarchy, length))
+    _file.write(header('Li', subtype, _hierarchy, length))
 
     if is_recursive_type(subtype):
         for _ in range(length):
@@ -214,46 +214,46 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
             _file.write(_hierarchy+'  '+'- '+str(head)+'\n')
             _object = tail
 
-    _file.write(footer('LinkedList', _hierarchy))
+    _file.write(footer('Li', _hierarchy))
 
 def save_dic(_object : Dic, _file, _hierarchy : str) -> None:
     """ Serialization for Dic """
 
     # Multiple subtypes
-    _file.write(header('Dic', _hierarchy = _hierarchy))
+    _file.write(header('Di', _hierarchy = _hierarchy))
     save(_object.size, _file, _hierarchy+'  ')
     #save(_object.hash_function, _file, _hierarchy+'  ')
     save_function(_object.hash_function, _object.size, _file, _hierarchy+'  ')
     save(_object.table, _file, _hierarchy+'  ')
-    _file.write(footer('Dic', _hierarchy))
+    _file.write(footer('Di', _hierarchy))
 
 
 def save_document(_object : Document, _file, _hierarchy : str) -> None:
     """ Serialization for Document """
 
     # Multiple subtypes
-    _file.write(header('Document', _hierarchy = _hierarchy))
+    _file.write(header('Do', _hierarchy = _hierarchy))
     save(_object.title, _file, _hierarchy+'  ')
     save(_object.content, _file, _hierarchy+'  ')
     #save(_object.uuid, _file, _hierarchy+'  ')
     #save(_object.directory, _file, _hierarchy+'  ')
-    _file.write(footer('Document', _hierarchy))
+    _file.write(footer('Do', _hierarchy))
 
 
 def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
     """ Serialization for TfidfRow """
 
-    _file.write(header('TfidfRow', object_type(_object.row), _hierarchy))
+    _file.write(header('Tf', object_type(_object.row), _hierarchy))
     save(_object.row, _file, _hierarchy+'  ')
-    _file.write(footer('TfidfRow', _hierarchy))
+    _file.write(footer('Tf', _hierarchy))
 
 def save_tuple(_object : tuple, _file, _hierarchy : str) -> None:
     """ Serialization for tuple """
 
-    _file.write(header('tuple', _hierarchy = _hierarchy, _length = len(_object)))
+    _file.write(header('tu', _hierarchy = _hierarchy, _length = len(_object)))
     for _ in range(len(_object)):
         save(_object[_], _file, _hierarchy+'  ')
-    _file.write(footer('tuple', _hierarchy))
+    _file.write(footer('tu', _hierarchy))
 
 ###############################################################################
 ## Load objects
@@ -267,27 +267,27 @@ def load(_file):
 def rec_load(_file, _data : Extractor):
     """ Load and return object """
 
-    if _data.mclass == 'Array':
+    if _data.mclass == 'Ar':
         return load_array(_file, _data)
-    elif _data.mclass == 'String':
+    elif _data.mclass == 'St':
         return load_string(_file, _data)
-    elif _data.mclass == 'LinkedList':
+    elif _data.mclass == 'Li':
         return load_linkedlist(_file, _data)
-    elif _data.mclass == 'Document':
+    elif _data.mclass == 'Do':
         return load_document(_file, _data)
-    elif _data.mclass == 'Dic':
+    elif _data.mclass == 'Di':
         return load_dic(_file, _data)
-    elif _data.mclass == 'TfidfRow':
+    elif _data.mclass == 'Tf':
         return load_tfidfrow(_file, _data)
-    elif _data.mclass == 'function':
+    elif _data.mclass == 'fu':
         return load_function(_file, _data)
-    elif _data.mclass == 'tuple':
+    elif _data.mclass == 'tu':
         return load_tuple(_file, _data)
 
     #Only used when an _object contains multiple types
-    elif _data.mclass == 'int':
+    elif _data.mclass == 'in':
         return load_int(_file, _data)
-    elif _data.mclass == 'float':
+    elif _data.mclass == 'fl':
         return load_float(_file, _data)
     elif _data.mclass == 'str':
         return load_str(_file, _data)
@@ -334,9 +334,9 @@ def data_extractor(_line : str) -> Extractor:
 def native_type(_string : str, _type : str):
     """ Convert string in _type """
 
-    if _type == 'int':
+    if _type == 'in':
         return int(_string)
-    if _type == 'float':
+    if _type == 'fl':
         return float(_string)
     if _type == 'str':
         return _string

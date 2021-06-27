@@ -105,16 +105,15 @@ def main() -> None:
     """ The entry point """
 
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument("lib", help = "Where to store/search for files")
-    arg_parser.add_argument("--create", help = "Create a document", action="store_true")
-    arg_parser.add_argument("--search", help = "Search a term")
+    arg_parser.add_argument("--create", metavar = "FOLDER", help = "Create the index", type=str)
+    arg_parser.add_argument("--search", metavar = "TERM", help = "Search a term")
 
     args = arg_parser.parse_args()
 
     if args.create:
-        return create(args.lib)
+        return create(args.create)
     elif args.search:
-        return search(args.lib, args.search)
+        return search(args.search)
 
     return None
 
@@ -163,7 +162,7 @@ def title_normalize(_title : String) -> String:
 ## Search specific code
 ###############################################################################
 
-def search(_lib_folder : str, _args : str) -> None:
+def search(_args : str) -> None:
     """ Handles the search of documents """
 
     print("Searching: " + _args)
@@ -182,7 +181,7 @@ def search(_lib_folder : str, _args : str) -> None:
 
     assert not directory is None
 
-    results = query(String(_args), tfidf)
+    results = query(algo1.lower(String(_args)), tfidf)
 
     if results is None:
         print("No results")

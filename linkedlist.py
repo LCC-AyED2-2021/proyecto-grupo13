@@ -220,10 +220,6 @@ def length(_linked_list: LinkedList[A]) -> int:
 
     return ret
 
-# foldr =  0.262 -> 0
-# foldl =  0.19
-# length = 0.038 -> 0.066
-
 def lzip(linked_list_a: LinkedList[A], linked_list_b: LinkedList[A]) -> LinkedList[Tuple[A, A]]:
     """ True if all equal """
     def zip_rec(list_a: LinkedList[A], list_b: LinkedList[A]) -> LinkedList[Tuple[A, A]]:

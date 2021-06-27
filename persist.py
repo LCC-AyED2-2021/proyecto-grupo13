@@ -116,7 +116,7 @@ def footer(_type : str, _hierarchy : str = '') -> str:
 def is_recursive_type(_type : str) -> bool:
     """ Return False if type is int, str, float """
 
-    if _type == 'in' or _type == 'fl' or _type == 'str':
+    if _type == 'in' or _type == 'fl' or _type == 'st':
         return False
     return True
 
@@ -137,9 +137,9 @@ def save_float(_object : float, _file, _hierarchy : str) -> None:
 def save_str(_object : str, _file, _hierarchy : str) -> None:
     """ Serialization for str """
 
-    _file.write(header('str', _hierarchy = _hierarchy))
+    _file.write(header('st', _hierarchy = _hierarchy))
     _file.write(_hierarchy+'- '+_object+'\n')
-    _file.write(footer('str', _hierarchy))
+    _file.write(footer('st', _hierarchy))
 
 def save_function(_object, _value : int, _file, _hierarchy : str) -> None:
     """ Serialization for method """
@@ -162,7 +162,7 @@ def save_array(_object : Array, _file, _hierarchy : str) -> None:
     """ Serialization for Array """
 
     subtype = object_type(_object[0])
-    _file.write(header('Ar', subtype, _hierarchy, len(_object)))
+    _file.write(header('Ar', subtype[0:2], _hierarchy, len(_object)))
 
     if is_recursive_type(subtype):
         for _ in range(len(_object)):
@@ -176,7 +176,7 @@ def save_string(_object : String, _file, _hierarchy : str) -> None:
     """ Serialization for String """
 
     #Only saves one line string
-    _file.write(header('St', 'str', _hierarchy))
+    _file.write(header('St', 'st', _hierarchy))
     _file.write(_hierarchy+'- ')
     __ : int = 0
     for _ in range(len(_object)):
@@ -197,7 +197,7 @@ def save_linkedlist(_object : LinkedList, _file, _hierarchy : str) -> None:
         return None
 
     subtype = object_type(_object.content[0])
-    _file.write(header('Li', subtype, _hierarchy, length))
+    _file.write(header('Li', subtype[0:2], _hierarchy, length))
 
     if is_recursive_type(subtype):
         for _ in range(length):
@@ -243,7 +243,7 @@ def save_document(_object : Document, _file, _hierarchy : str) -> None:
 def save_tfidfrow(_object : TfidfRow, _file, _hierarchy : str) -> None:
     """ Serialization for TfidfRow """
 
-    _file.write(header('Tf', object_type(_object.row), _hierarchy))
+    _file.write(header('Tf', object_type(_object.row)[0:2], _hierarchy))
     save(_object.row, _file, _hierarchy+'  ')
     _file.write(footer('Tf', _hierarchy))
 
@@ -289,7 +289,7 @@ def rec_load(_file, _data : Extractor):
         return load_int(_file, _data)
     elif _data.mclass == 'fl':
         return load_float(_file, _data)
-    elif _data.mclass == 'str':
+    elif _data.mclass == 'st':
         return load_str(_file, _data)
 
 def data_extractor(_line : str) -> Extractor:
@@ -338,7 +338,7 @@ def native_type(_string : str, _type : str):
         return int(_string)
     if _type == 'fl':
         return float(_string)
-    if _type == 'str':
+    if _type == 'st':
         return _string
 
 def load_int(_file, _data : Extractor, _hierarchy : str = '') -> int:
@@ -368,7 +368,7 @@ def load_function(_file, _data : Extractor, _hierarchy : str = ''): # -> ?
     value : int = int(_data.subclass)
     name_function = data_extractor(_file.readline()).value
     assert _data.mclass == data_extractor(_file.readline()).mclass, "Error reading the file"
-    print(name_function)
+
     if name_function == 'string_hash_function':
         return personal_library.string_hash_function(value)
     elif name_function == 'multiplicative_hash_function':
@@ -516,15 +516,15 @@ def load_tuple(_file, _data : Extractor) -> TfidfRow:
 def create_array(_length : int, _type : str) -> Array:
     """ Return new Array """
 
-    if _type == 'int':
+    if _type == 'in':
         return Array(_length, 0)
-    if _type == 'LinkedList':
+    if _type == 'Li':
         return Array(_length, LinkedList())
-    if _type == 'float':
+    if _type == 'fl':
         return Array(_length, 0.0)
-    if _type == 'Array':
+    if _type == 'Ar':
         return Array(_length, Array())
-    if _type == 'str':
+    if _type == 'st':
         return Array(_length, 'c')
 
     raise Exception("Unknown type: " + _type)

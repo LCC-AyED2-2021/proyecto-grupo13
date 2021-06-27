@@ -393,11 +393,12 @@ def select_letters(_string : String) -> String:
             lambda c: c in string.ascii_letters,
             linkedlist.from_string(_string))
 
-    ret : String = String("")
+    ret : String = String("F" * linkedlist.length(chars))
 
     idx = 0
     while not chars.content is None:
-        ret = algo1.concat_string(ret, String(chars.content[0]))
+        # ret = algo1.concat_string(ret, String(chars.content[0]))
+        ret[idx] = chars.content[0][0]
 
         chars = chars.content[1]
         idx = idx + 1

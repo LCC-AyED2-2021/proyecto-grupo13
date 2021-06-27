@@ -70,7 +70,9 @@ class String:
     """Hell on Earth"""
     def __init__(self,string):
         self.arr=Array(len(string),'c')
-        self.arr.data=string
+
+        for (idx, _) in enumerate(string):
+            self.arr[idx] = string[idx]
 
     def __getitem__(self,index):
         return self.arr[index]
@@ -79,7 +81,7 @@ class String:
         self.arr[index]=value
 
     def __str__(self):
-        return str(self.arr.data)
+        return ''.join(self.arr.data)
 
     def __len__(self):
         return len(self.arr)
@@ -109,9 +111,9 @@ def strcmp(t : String ,p : String):
     return True
 
 # O(|s|)
-def concat(s,c):
-    """ Concatenate """
-    return String(s.arr.data+c)
+# def wrong_concat(s,c):
+#     """ Concatenate """
+#     return String(s.arr.data+c)
 
 # O(|s|)
 def concat_string(_s: String, _c : String) -> String:
@@ -137,7 +139,7 @@ def delete_symbols(_name: String) -> String:
     for _ in range(strlen(_name)):
         code = ord(_name[_])
         if is_letter(code):
-            new_name = concat(new_name, _name[_])
+            new_name = concat_string(new_name, String(_name[_]))
     return new_name
 
 def strip(_name: String) -> String:
@@ -150,14 +152,14 @@ def strip(_name: String) -> String:
     for _ in range(strlen(_name)):
         if status:
             if _name[_] != ' ':
-                new_name = concat(new_name, _name[_])
+                new_name = concat_string(new_name, String(_name[_]))
                 status = False
         else:
             if _name[_] != ' ':
                 if spaces != 0:
-                    new_name = concat(new_name, ' ')
+                    new_name = concat_string(new_name, String(' '))
                     spaces = 0
-                new_name = concat(new_name, _name[_])
+                new_name = concat_string(new_name, String(_name[_]))
             else:
                 spaces += 1
     return new_name
@@ -170,9 +172,9 @@ def join_space(_name: String, _union: str) -> String:
 
     for _ in range(strlen(_name)):
         if _name[_] == ' ':
-            new_name = concat(new_name, _union)
+            new_name = concat_string(new_name, String(_union))
         else:
-            new_name = concat(new_name, _name[_])
+            new_name = concat_string(new_name, _name[_])
     return new_name
 
 def lower(_name: String) -> String:
@@ -185,5 +187,5 @@ def lower(_name: String) -> String:
         code = ord(_name[_])
         if 65 <= code <= 90:
             code += 32
-        new_name = concat(new_name, chr(code))
+        new_name = concat_string(new_name, String(chr(code)))
     return new_name

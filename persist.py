@@ -409,8 +409,8 @@ def load_string(_file, _data : Extractor) -> String:
     while not line.mclass:
         if line.value:
             if flag:
-                text = algo1.concat(text, '\n')
-            text = algo1.concat(text, line.value)
+                text = algo1.concat_string(text, String('\n'))
+            text = algo1.concat_string(text, String(line.value))
             flag = True
         line = data_extractor(_file.readline())
 

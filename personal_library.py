@@ -42,6 +42,7 @@ import argparse
 import string
 # Path manipulation
 import os.path
+import json
 
 # Entries in the directory
 import os #os.listdir()
@@ -101,6 +102,58 @@ class TfidfRow:
             _row : LinkedList[Tuple[int, Tuple[int, float]]]):
         self.row = _row
 
+def tfidfrow_to_list(_row : TfidfRow) -> list[Tuple[int, Tuple[int, float]]]:
+    """ Encode a row """
+    cursor : LinkedList[Tuple[int, Tuple[int, float]]] = _row.row
+
+    ret : list[Tuple[int, Tuple[int, float]]] = []
+
+    while not cursor.content is None:
+        ret.insert(0, cursor.content[0])
+        cursor = cursor.content[1]
+
+    return ret
+
+def tfidfrow_from_list(_row : list[Tuple[int, Tuple[int, float]]]) -> TfidfRow:
+    """ from list """
+
+    ret : TfidfRow = TfidfRow(linkedlist.empty())
+
+    for elem in _row:
+        ret.row = linkedlist.cons(elem, ret.row)
+
+    return ret
+
+
+def tfidf_to_dic(_dic : Dic[String, TfidfRow]
+        ) -> dict[str, list[Tuple[int, Tuple[int, float]]]]:
+    """ Encode the tfidf """
+
+
+    cursor = libdic.assocs(_dic)
+
+    ret : dict[str, list[Tuple[int, Tuple[int, float]]]] = {}
+
+    while not cursor.content is None:
+        (key, val) = cursor.content[0]
+        ret[str(key)] = tfidfrow_to_list(val)
+        cursor = cursor.content[1]
+
+    return ret
+
+def tfidf_from_dic(
+        _dic : dict[str, list[Tuple[int, Tuple[int, float]]]]
+        ) -> Dic[String, TfidfRow]:
+    """ from dict """
+
+    tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
+
+    for (word, row) in _dic.items():
+        tfidf = libdic.insert(tfidf, String(word), tfidfrow_from_list(row))
+
+    return tfidf
+
+
 def main() -> None:
     """ The entry point """
 
@@ -135,7 +188,7 @@ def create(_lib_folder : str) -> None:
 
     print("Save index...")
     with open("tfidf.def", 'x') as file_writable:
-        persist.save(tfidf, file_writable)
+        file_writable.write(json.dumps(tfidf_to_dic(tfidf)))
 
     print("Save directory...")
     with open("directory.def", 'x') as file_writable:
@@ -170,7 +223,8 @@ def search(_args : str) -> None:
     print("Load index...")
     tfidf = None
     with open("tfidf.def", 'r') as file_readable:
-        tfidf = persist.load(file_readable)
+        line = file_readable.readline()
+        tfidf = tfidf_from_dic(json.loads(line))
 
     assert not tfidf is None
 

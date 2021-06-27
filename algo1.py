@@ -142,28 +142,21 @@ def delete_symbols(_name: String) -> String:
             new_name = concat_string(new_name, String(_name[_]))
     return new_name
 
-def strip(_name: String) -> String:
+
+def str_strip(_str: String) -> String:
     """ Delete first and last ' '. Clean multiple ' ' """
 
-    spaces : int = 0
-    status : bool = True
-    new_name : String = String('')
+    start : int = 0
 
-    for _ in range(strlen(_name)):
-        if status:
-            if _name[_] != ' ':
-                new_name = concat_string(new_name, String(_name[_]))
-                status = False
-        else:
-            if _name[_] != ' ':
-                if spaces != 0:
-                    new_name = concat_string(new_name, String(' '))
-                    spaces = 0
-                new_name = concat_string(new_name, String(_name[_]))
-            else:
-                spaces += 1
-    return new_name
+    while _str[start] == ' ' and start < strlen(_str):
+        start = start + 1
 
+    end = strlen(_str) - 1
+
+    while end >= start and _str[end] == ' ':
+        end = end - 1
+
+    return substr(_str, start, end)
 
 def join_space(_name: String, _union: str) -> String:
     """ Join character in ' ' """

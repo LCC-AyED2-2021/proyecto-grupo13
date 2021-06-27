@@ -267,6 +267,36 @@ def lfilter(p : Callable[[A], bool], _linked_list : LinkedList[A] ) -> LinkedLis
         else:
             return rest
 
+def drop_while(_predicate : Callable[[A], bool],
+        _linked_list : LinkedList[A]) -> LinkedList[A]:
+    """drop_while even [2,4,3,2] = [3, 2]"""
+
+    if _linked_list.content is None:
+        return empty()
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    if _predicate(head):
+        return drop_while(_predicate, tail)
+    else:
+        return cons(head, tail)
+
+def take_while(_predicate : Callable[[A], bool],
+        _linked_list : LinkedList[A]) -> LinkedList[A]:
+    """take_while even [2,4,3,2] = [2, 4]"""
+
+    if _linked_list.content is None:
+        return empty()
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    if _predicate(head):
+        return cons(head, take_while(_predicate, tail))
+    else:
+        return empty()
+
 
 def delete(_linked_list : LinkedList[Tuple[A, B]],
         _key : A) -> LinkedList[Tuple[A, B]]:
@@ -512,19 +542,26 @@ def str_split(_text: String, _limit : str) -> LinkedList[String]:
 def ljoin(_words : LinkedList[String], _union : str) -> String:
     """ Joins words with _union character """
 
-    text : String = String('')
+    lens : int = lsum(lmap(algo1.strlen, _words))
 
-    for _ in range(length(_words)):
-        assert not _words.content is None
-        head = _words.content[0]
-        tail = _words.content[1]
-        #head tiene el primer elemento
+    result : String = String(' ' * (lens + length(_words) - 1))
 
-        text = algo1.concat_string(head, text)
-        text = algo1.concat_string(String(_union), text)
-        # tail tiene el resto de la lista
-        _words = tail
-    return algo1.substr(text, 1, algo1.strlen(text))
+    cursor = _words
+
+    idx = 0
+    while not cursor.content is None:
+        head = cursor.content[0]
+        for off in range(algo1.strlen(head)):
+            result[idx + off] = head[off]
+
+        cursor = cursor.content[1]
+
+        if not cursor.content is None:
+            result[idx + off + 1] = _union
+
+            idx = idx + off + 2
+
+    return result
 
 def main() -> None:
     """ main """

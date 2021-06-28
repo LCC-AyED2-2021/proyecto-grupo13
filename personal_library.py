@@ -149,7 +149,7 @@ def tfidf_from_dic(
 
     return tfidf
 
-def directory_to_dic(_dic : Dic[String, LinkedList]
+def directory_to_dic(_dic : Dic[int, String]
         ) -> dict[int, str]:
     """ Encode the directory """
 
@@ -165,38 +165,17 @@ def directory_to_dic(_dic : Dic[String, LinkedList]
 
 def directory_from_dic(
         _dic : dict[int, str]
-        ) -> Dic[String, LinkedList]:
+        ) -> Dic[int, String]:
     """ from dict """
 
-    directory : Dic[String, TfidfRow] = Dic(1000, libdic.multiplicative_hash_function(1000,libdic.golden_ratio()))
+    directory : Dic[int, String] = Dic(
+            1000, libdic.multiplicative_hash_function(1000,libdic.golden_ratio()))
 
     for (idx, title) in _dic.items():
 
         directory = libdic.insert(directory, int(idx), String(title))
 
     return directory
-
-def tfidfrow_to_list(_row : TfidfRow) -> list[Tuple[int, Tuple[int, float]]]:
-    """ Encode a row """
-    cursor : LinkedList[Tuple[int, Tuple[int, float]]] = _row.row
-
-    ret : list[Tuple[int, Tuple[int, float]]] = []
-
-    while not cursor.content is None:
-        ret.insert(0, cursor.content[0])
-        cursor = cursor.content[1]
-
-    return ret
-
-def tfidfrow_from_list(_row : list[Tuple[int, Tuple[int, float]]]) -> TfidfRow:
-    """ from list """
-
-    ret : TfidfRow = TfidfRow(linkedlist.empty())
-
-    for elem in _row:
-        ret.row = linkedlist.cons(elem, ret.row)
-
-    return ret
 
 def main() -> None:
     """ The entry point """
@@ -404,7 +383,7 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     # Sort in decreasing order
     def lte(__a : Tuple[int, Tuple[int, float]],
             __b : Tuple[int, Tuple[int, float]]) -> bool:
-        return __a[1][0] > __b[1][0]
+        return __a[1][0] >= __b[1][0]
 
 
     tfidf = libdic.dmap(lambda r:

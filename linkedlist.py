@@ -27,7 +27,7 @@
 I denounce and renounce all the code in this repository.
 """
 #pylint: disable=too-few-public-methods,no-else-return,invalid-name
-from typing import Generic, TypeVar, Callable, Optional, Tuple
+from typing import Generic, TypeVar, Callable, Optional, Tuple, Union
 from algo1 import String
 import algo1
 

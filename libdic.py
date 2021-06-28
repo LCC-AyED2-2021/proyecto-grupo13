@@ -163,7 +163,8 @@ def dic_health(_dic : Dic[K, V]) -> None:
                 linkedlist.length(_dic.table[idx]),
                 collisions)
 
-    max_collisions = linkedlist.maximum(collisions)
+    max_collisions = linkedlist.maximum(
+            linkedlist.lmap(float, collisions))
 
     if not max_collisions is None:
         print("Max collisions: ", max_collisions)

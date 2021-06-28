@@ -41,13 +41,9 @@ import argparse
 # Letter definitions
 import string
 # Path manipulation
+import os #os.listdir()
 import os.path
 import json
-
-# Entries in the directory
-import os #os.listdir()
-# Persistence
-import persist
 
 from algo1 import String
 import algo1
@@ -293,7 +289,7 @@ def search(_args : str) -> None:
 
         result_row = results.row
 
-        print("Freq", "title", "relevance", sep="\t")
+        print("Freq", "relevance", "Title", sep="\t")
         while not result_row.content is None:
 
             (doc_id, (freq, relevance)) =  result_row.content[0]
@@ -301,7 +297,7 @@ def search(_args : str) -> None:
 
             title = libdic.search(directory, doc_id)
 
-            print(freq, title, relevance, sep="\t")
+            print(freq, relevance, title, sep="\t")
 
 
 

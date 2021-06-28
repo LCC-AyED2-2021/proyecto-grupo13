@@ -170,15 +170,15 @@ def join_space(_name: String, _union: str) -> String:
             new_name = concat_string(new_name, _name[_])
     return new_name
 
-def lower(_name: String) -> String:
+def lower(_str: String) -> String:
     """ Convert to lowercase """
 
-    code : int
-    new_name : String = String('')
+    result : String = String(' ' * strlen(_str))
 
-    for _ in range(strlen(_name)):
-        code = ord(_name[_])
+    for idx in range(strlen(_str)):
+        code : int = ord(_str[idx])
         if 65 <= code <= 90:
             code += 32
-        new_name = concat_string(new_name, String(chr(code)))
-    return new_name
+        result[idx] = chr(code)
+
+    return result

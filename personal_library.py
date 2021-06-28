@@ -408,7 +408,7 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 
 
     tfidf = libdic.dmap(lambda r:
-            TfidfRow(linkedlist.quick_sort_by(lte, r.row)), tfidf)
+            TfidfRow(linkedlist.merge_sort_by(lte, r.row)), tfidf)
 
     return tfidf
 

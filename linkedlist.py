@@ -543,10 +543,98 @@ def quick_sort_by(_lte : Callable[[A, A], bool],
         quick_sort_by(_lte, left),
         concatenate(pivots, quick_sort_by(_lte, right)))
 
+
+def split_at(_linked_list : LinkedList[A], idx : int
+        ) -> Tuple[LinkedList[A], LinkedList[A]]:
+    """ [a] -> Int -> ([a], [a])
+    Splits a list at the specified position
+
+    E.g: iso_split_at(0, [1,2,3]) = ([], [1,2,3])
+    """
+
+    assert idx >= 0
+    assert idx < length(_linked_list)
+
+    if idx == 0:
+        return (empty(), _linked_list)
+
+    assert not _linked_list.content is None
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    (left, right) = split_at(tail, idx - 1)
+    return (cons(head, left), right)
+
+
+def merge_sort_by(
+        _lte : Callable[[A, A], bool],
+        _linked_list : LinkedList[A]
+        ) -> LinkedList[A]:
+    """ Sort a list by the merge sort algorithm """
+    def merge(
+            _lte : Callable[[A, A], bool],
+            _linked_list_a : LinkedList[A], _linked_list_b : LinkedList[A]
+            ) -> LinkedList[A]:
+        """ Merges two sorted linked lists. (for merge sort) """
+
+        def is_ordered(__linked_list : LinkedList[A]) -> bool:
+            """ True if the list is ordered """
+
+            if __linked_list.content is None:
+                return True
+
+            head = __linked_list.content[0]
+            tail = __linked_list.content[1]
+
+            if tail.content is None:
+                # A list with a single element is ordered
+                return True
+
+            tail_head = tail.content[0]
+            tail_tail = tail.content[1]
+
+            return _lte(head, tail_head) and is_ordered(tail_tail)
+
+        assert is_ordered(_linked_list_a)
+        assert is_ordered(_linked_list_b)
+
+        if _linked_list_a.content is None:
+            return _linked_list_b
+
+        if _linked_list_b.content is None:
+            return _linked_list_a
+
+        head_a = _linked_list_a.content[0]
+        tail_a = _linked_list_a.content[1]
+
+        head_b = _linked_list_b.content[0]
+        tail_b = _linked_list_b.content[1]
+
+        if _lte(head_a, head_b):
+            rest = merge(_lte, tail_a, cons(head_b, tail_b))
+            return cons(head_a, rest)
+        else:
+            rest = merge(_lte, cons(head_a, tail_a), tail_b)
+            return cons(head_b, rest)
+
+    if _linked_list.content is None:
+        return empty()
+
+    head = _linked_list.content[0]
+    tail = _linked_list.content[1]
+
+    if tail.content is None:
+        return singleton(head)
+
+    list_length = length(_linked_list)
+    (left, right) = split_at(_linked_list, list_length // 2)
+    return merge(_lte, merge_sort_by(_lte, left), merge_sort_by(_lte, right))
+
 def index(_linked_list : LinkedList[A], idx : int) -> Optional[A]:
     """ The element at index idx """
 
-    assert(idx >= 0)
+    assert idx >= 0
 
     if _linked_list.content is None:
         return None

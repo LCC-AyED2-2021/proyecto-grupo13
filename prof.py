@@ -1,4 +1,3 @@
-import persist
 import personal_library
 import cProfile
 import pstats

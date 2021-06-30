@@ -1,15 +1,54 @@
 ---
-title: Project
+dpi: 300
+title: "Biblioteca Personal"
+author: "Aner Lucero, Emiliano Flores"
+institute: "UNCUYO"
+topic: "Proyecto Semestral"
+theme: "Frankfurt"
+subtitle: "Para la busqueda de documentos relevantes."
 date: \today
+titlegraphic: title.png
+logo: logo-small.png
 header-includes:
  - \usepackage{setspace}
 ---
 
-# Sample Query
+# Funcionalidad
+
+## Indexado
+\tiny
+```
+$ time pseudo-python -O personal_library.py --create books
+
+# Creating index...
+Laoding documents...
+Loading:  Bidirectional LSTM-CRF Models for Sequence Tagging.txt
+Loading:  DNA vaccines_ prime time is now.txt
+...
+Loading Complete
+Computing index...
+Save index...
+Save directory...
+Size:  500
+Max collisions:  38.0
+Elements:  11471
+Median:  23
+Load factor:  22.942
+Done
+
+real    0m9.621s
+user    0m9.033s
+sys     0m0.070s
+```
+\normalsize
+
+# Funcionalidad
+
+## Consulta
 
 \tiny
 ```
-$ time python -O personal_library.py --search network
+$ time pseudo-python -O personal_library.py --search network
 
 Searching: network
 Load index...
@@ -28,6 +67,75 @@ sys	0m0.023s
 ```
 \normalsize
 
+# Funcionalidad
+
+::: columns
+
+:::: column
+
+## Relevancia `tf-idf`
+
+$$
+\text{tf}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}
+$$
+
+$$
+\text{idf}(t, D) = \log \frac{|D|}{|\{d \in D, t \in d\}|}
+$$
+
+- Resultados relevantes
+- Usada en el 83% de los sistemas de recomendación de texto.
+
+::::
+
+:::: column
+
+## Frecuencia
+
+$$
+f_{t,d} = \frac{|\{t' \in d, t' = t\}|}{|\{t' \in d\}|}
+$$
+
+- Fácil de computar.
+- Favorece documentos largos.
+
+::::
+:::
+
+# Funcionamiento Indexado
+
+## Document
+
+- Identificador numérico. : `Int`
+- Título : `String`
+- Contenido : `LinkedList[String]`
+
+# Funcionamiento Indexado
+
+## Aclaración sobre la matriz `tf-idf`.
+
+- **No** es un `Array` 2D
+- **Es** un mapeo `String -> TfIdfRow` donde la llave es un término.
+
+## `TfIdfRow`
+
+`LinkedList[(doc-id, frequencia, relevancia)]`
+
+# Funcionamiento Indexado
+
+## Cañería
+
+```
+folder name =>
+	LinkedList[Document] =>
+	(
+		TF :: Dic[String, int] =>
+		Matrix TF-IDF :: Dic[String, TfIdfRow]
+	) => Serialization
+```
+
+
+
 # In the evening
 
 - Eat spaghetti
@@ -37,3 +145,7 @@ sys	0m0.023s
 
 - And the answer is...
 - $f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n$  
+
+# Links
+
+- [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), https://en.wikipedia.org/wiki/Tf%E2%80%93idf

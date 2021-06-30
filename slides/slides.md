@@ -134,12 +134,49 @@ folder name =>
 	) => Serialization
 ```
 
+# Serialización
 
+## Persist.py
 
-# In the evening
+```
+Módulo escrito para guardar estructuras utilizadas:
+    Array
+    String
+    LinkedList
+    Document
+    Dic
+    TfIdfRow
+```
 
-- Eat spaghetti
-- Drink wine
+# Serialización
+
+::: columns
+
+:::: column
+
+## Propósito
+
+- Formato legible, etiquetas
+- No ejecuta código malicioso
+
+::::
+
+:::: column
+
+## Problemas
+
+- Archivos relativamente grandes
+- \textbf{Lento} en la carga
+
+::::
+:::
+
+# Serialización
+
+## JSON
+
+- Soluciona problemas anteriores
+- Costo: convertir las estructuras a diccionarios Python
 
 # Conclusion
 

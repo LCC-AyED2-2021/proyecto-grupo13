@@ -55,6 +55,10 @@ import linkedlist
 from linkedlist import LinkedList
 
 
+def n_tfidf_cells() -> int:
+    """ how many """
+    return 547
+
 
 class Document:
     """ The document representation """
@@ -142,7 +146,8 @@ def tfidf_from_dic(
         ) -> Dic[String, TfidfRow]:
     """ from dict """
 
-    tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
+    tfidf : Dic[String, TfidfRow] = Dic(n_tfidf_cells(),
+            string_hash_function(n_tfidf_cells()))
 
     for (word, row) in _dic.items():
         tfidf = libdic.insert(tfidf, String(word), tfidfrow_from_list(row))
@@ -328,7 +333,7 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
 
     # idf["word"] = log (n_docs / <number of docs that contain "word" )
 
-    idf : Dic[String, float] = Dic(500, string_hash_function(500))
+    idf : Dic[String, float] = Dic(200, string_hash_function(200))
 
     idf = linkedlist.foldl(idf_folder, idf, _docs)
 
@@ -376,7 +381,8 @@ def doc_tfidf(_docs : LinkedList[Document]) -> Dic[String, TfidfRow]:
     # tfidf["word", doc] = --------------------------------------- * idf["word"]
     #                      <total words in doc>
 
-    tfidf : Dic[String, TfidfRow] = Dic(500, string_hash_function(500))
+    tfidf : Dic[String, TfidfRow] = Dic(n_tfidf_cells(),
+            string_hash_function(n_tfidf_cells()))
 
     tfidf = linkedlist.foldl(tfidf_folder, tfidf, _docs)
 
@@ -460,7 +466,7 @@ def string_hash_function(_size : int) -> Callable[[String], int]:
         hash_value : int = 0
         seed_value : int = 53
         for _ in range(algo1.strlen(_key)):
-            hash_value = (hash_value * seed_value + ord(_key[_])) % _size
+            hash_value = (hash_value * seed_value + ord(_key[_]) - ord('a')) % _size
         return hash_value
 
     return hash_func

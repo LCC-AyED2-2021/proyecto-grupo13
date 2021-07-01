@@ -163,6 +163,13 @@ def dic_health(_dic : Dic[K, V]) -> None:
                 linkedlist.length(_dic.table[idx]),
                 collisions)
 
+    min_collisions = linkedlist.minimum_by(
+            lambda x, y: x <= y,
+            collisions)
+
+    if not min_collisions is None:
+        print("Min collisions: ", min_collisions)
+
     max_collisions = linkedlist.maximum(
             linkedlist.lmap(float, collisions))
 

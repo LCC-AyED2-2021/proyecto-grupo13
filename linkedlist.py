@@ -27,7 +27,7 @@
 I denounce and renounce all the code in this repository.
 """
 #pylint: disable=too-few-public-methods,no-else-return,invalid-name
-from typing import Generic, TypeVar, Callable, Optional, Tuple, Union
+from typing import Generic, TypeVar, Callable, Optional, Tuple
 from algo1 import String
 import algo1
 
@@ -157,6 +157,20 @@ def reverse(_linked_list: LinkedList[A]) -> LinkedList[A]:
 
     return ret
 
+def minimum_by(_lte : Callable[[A, A], bool],
+        linked_list: LinkedList[A]
+        ) -> Optional[A]:
+    """ return the minimum """
+    def min_folder(acc: Optional[A], a: A) -> Optional[A]:
+        if acc is None:
+            return a
+        else:
+            if _lte(a, acc):
+                return a
+            else:
+                return acc
+
+    return foldl(min_folder, None, linked_list)
 
 def maximum(linked_list: LinkedList[float]) -> Optional[float]:
     """ return the maximum """
@@ -294,16 +308,19 @@ def lfilter(p : Callable[[A], bool], _linked_list : LinkedList[A] ) -> LinkedLis
 
     if _linked_list.content is None:
         return empty()
-    else:
-        head = _linked_list.content[0]
-        tail = _linked_list.content[1]
 
-        rest = lfilter(p, tail)
+    cursor = _linked_list
 
+    ret : LinkedList[A] = empty()
+
+    while not cursor.content is None:
+        head = cursor.content[0]
         if p(head):
-            return cons(head, rest)
-        else:
-            return rest
+            ret = cons(head, ret)
+        cursor = cursor.content[1]
+
+    return ret
+
 
 def drop_while(_predicate : Callable[[A], bool],
         _linked_list : LinkedList[A]) -> LinkedList[A]:

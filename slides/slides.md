@@ -134,6 +134,16 @@ folder name =>
 	) => Serialization
 ```
 
+# Tabla Hash
+
+## Funciones de Hash
+```
+Método de multiplicación
+Polynomial Rolling Hash: Horner's method:
+    - Divide el polinomio en monomios
+    - Evita desbordamiento de enteros
+```
+
 # Serialización
 
 ## Persist.py
@@ -179,7 +189,7 @@ Módulo escrito para guardar estructuras utilizadas:
 - Costo: convertir las estructuras a diccionarios Python
 
 # Conclusion
-
+diccionario python
 - And the answer is...
 - $f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n$  
 

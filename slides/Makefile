@@ -1,4 +1,4 @@
-slides.pdf: slides.md title.png logo-small.png
+slides.pdf: slides.md title.png logo-small.png load.png
 	pandoc -t beamer $< -o $@
 
 title.png: title.jpg
@@ -6,3 +6,6 @@ title.png: title.jpg
 
 logo-small.png: logo.jpg
 	convert -units PixelsPerInch logo.jpg -resample 300 -resize 25% $@
+
+load.png: ../hash_load.py
+	python ../hash_load.py | gnuplot -p -e "set terminal png size 400,300; set output 'load.png'; plot '<cat' with boxes"

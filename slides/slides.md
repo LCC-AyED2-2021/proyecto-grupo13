@@ -134,15 +134,91 @@ folder name =>
 	) => Serialization
 ```
 
+# Tabla Hash
 
+## Funciones de Hash
+```
+Método de multiplicación
+Polynomial Rolling Hash: Horner's method:
+    - Divide el polinomio en monomios
+    - Evita desbordamiento de enteros
+```
+# Tabla Hash
 
-# In the evening
+## Estructura
 
-- Eat spaghetti
-- Drink wine
+```
+- Tamaño de 547
+- Colisiones resueltas por encadenamiento
+```
+## Grafico colisiones y celdas
+ \centering
+ \includegraphics[scale=0.35]{collisions.png}
+
+# Tabla Hash
+
+## Estructura
+```
+- Load factor: lf = 22
+- Cantidad máxima de colisiones: max_col = 38
+- Mediana: 23
+```
+
+## Conclusión
+```
+- Idealmente
+```
+$$max\_col <= lf$$
+```
+- La mediana nos da un resultado realista y aceptable
+```
+
+# Serialización
+
+## Persist.py
+
+```
+Módulo escrito para guardar estructuras utilizadas:
+    Array
+    String
+    LinkedList
+    Document
+    Dic
+    TfIdfRow
+```
+
+# Serialización
+
+::: columns
+
+:::: column
+
+## Propósito
+
+- Formato legible, etiquetas
+- No ejecuta código malicioso
+
+::::
+
+:::: column
+
+## Problemas
+
+- Archivos relativamente grandes
+- \textbf{Lento} en la carga
+
+::::
+:::
+
+# Serialización
+
+## JSON
+
+- Soluciona problemas anteriores
+- Costo: convertir las estructuras a diccionarios Python
 
 # Conclusion
-
+diccionario python
 - And the answer is...
 - $f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n$  
 

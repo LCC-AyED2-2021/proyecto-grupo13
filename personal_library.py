@@ -54,10 +54,12 @@ from libdic import Dic
 import linkedlist
 from linkedlist import LinkedList
 
+sys.setrecursionlimit(10000)
+
 
 def n_tfidf_cells() -> int:
     """ how many """
-    return 547
+    return 1009
 
 
 class Document:

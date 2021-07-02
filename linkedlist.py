@@ -289,7 +289,7 @@ def lall(predicate : Callable[[A], bool], linked_list : LinkedList[A]) -> bool:
         tail = linked_list.content[1]
         return predicate(head) and lall(predicate, tail)
 
-def pylist(_linked_list : LinkedList[A] ) -> list[A]:
+def pylist(_linked_list : LinkedList[A] ):# -> list[A]:
     """ Convert a linked list to a python list. Used for debuging """
     def pylist_rec(__acc : list[A], __linked_list : LinkedList[A]) -> list[A]:
         if __linked_list.content is None:

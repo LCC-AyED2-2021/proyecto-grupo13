@@ -466,7 +466,7 @@ def string_hash_function(_size : int) -> Callable[[String], int]:
         hash_value : int = 0
         seed_value : int = 53
         for _ in range(algo1.strlen(_key)):
-            hash_value = (hash_value * seed_value + ord(_key[_]) - ord('a')) % _size
+            hash_value = (hash_value * seed_value + ord(_key[_])) % _size
         return hash_value
 
     return hash_func
@@ -474,9 +474,10 @@ def string_hash_function(_size : int) -> Callable[[String], int]:
 def select_letters(_string : String) -> String:
     """ remove non-letters """
 
-    chars : LinkedList[str] = linkedlist.lfilter(
+    chars : LinkedList[str] = linkedlist.reverse(
+            linkedlist.lfilter(
             lambda c: c in string.ascii_letters,
-            linkedlist.from_string(_string))
+            linkedlist.from_string(_string)))
 
     ret : String = String("F" * linkedlist.length(chars))
 

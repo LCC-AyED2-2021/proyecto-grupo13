@@ -151,9 +151,11 @@ folder name =>
 - Tamaño de 547
 - Colisiones resueltas por encadenamiento
 
+# Tabla Hash
+
 ## Grafico colisiones y celdas
 
-![Collisions](load.png)
+![Colisiones](load.png)
 
 # Tabla Hash
 
@@ -210,10 +212,51 @@ Módulo escrito para guardar estructuras utilizadas:
 
 # Serialización
 
+## Ejemplo de salida
+
+\tiny
+```
+!pyObj<Dic>{Array}{547}
+  - !pyObj<int>{}{}
+    - 547
+  - !pyObj<function>{}{547}
+    - multiplicative_hash_function
+  - !pyObj<Array>{LinkedList}{547}
+    - !pyObj<LinkedList>{Tuple}{2}
+      - !pyObj<String>{}{}
+        - raise
+      - !pyObj<LinkedList>{Tuple}{2}
+        - !pyObj<Tuple>{float}{}
+          - 0.3453479832123
+        -!pyObj<int>{}{}
+          - 4
+      - !pyObj<LinkedList>{Tuple}{2}
+        - !pyObj<Tuple>{float}{}
+        ...
+```
+\normalsize
+
+# Serialización
+
 ## JSON
 
 - Soluciona problemas anteriores
 - Costo: convertir las estructuras a diccionarios Python
+
+# Serialización
+
+## Ejemplo de salida
+\tiny
+```
+{"those": [[3, [1, 5.670965996701542e-05]], [4, [1, 2.6240868853476483e-05]], [7, [1, 8.56653464
+2388508e-06]], [8, [1, 0.00022453393693836772]], [0, [4, 0.0001094367087598767]], [1, [6, 6.4591
+95446172223e-05]], [2, [7, 0.00021352700310484896]], [5, [13, 0.00030547496305212136]], [6, [32,
+0.0004277965843530244]], [11, [34, 0.0002843547216052503]]], "adding": [[0, [1, 0.00016485778641
+478236]], [3, [1, 0.00034171455324046956]], [7, [1, 5.1619240176108156e-05]], [11, [1, 5.0395059
+113216046e-05]]], "establish": [[0, [1, 0.00026887146897179695]], [11, [4, 0.0003287632053629458
+7]]], "ot": [[10, [2, 0.0009265125465279643]]], "flows": [[7, [1, 0.00011675546914382373]]],...}
+```
+\normalsize
 
 # Conclusion
 diccionario python

@@ -138,9 +138,9 @@ folder name =>
 
 ## Funciones de Hash
 
--  Método de multiplicación
+-  Método de multiplicación -> \textit{O(1)}
 
-- Polynomial Rolling Hash: Horner's method:
+- Polynomial Rolling Hash: Horner's method -> \textit{O(n)}
 	- Divide el polinomio en monomios
 	- Evita desbordamiento de enteros
 
@@ -212,6 +212,21 @@ Módulo escrito para guardar estructuras utilizadas:
 
 # Serialización
 
+## Complejidad
+
+\tiny
+```
+persist.save()
+```
+Complejidad -> \textit{O(size * n)}
+
+```
+persist.load()
+```
+Complejidad -> \textit{O(lines * max\_length(line))}
+
+\normalsize
+
 ## Ejemplo de salida
 
 \tiny
@@ -257,6 +272,15 @@ Módulo escrito para guardar estructuras utilizadas:
 7]]], "ot": [[10, [2, 0.0009265125465279643]]], "flows": [[7, [1, 0.00011675546914382373]]],...}
 ```
 \normalsize
+
+# Consulta
+
+## Funcionamiento
+
+- Carga las estructuras desde disco
+- Realiza la busqueda habitual en la matriz
+- Captura la busqueda en una fila, e imprime resultados
+- Complejidad -> \textit{O(n)}
 
 # Conclusion
 diccionario python

@@ -134,6 +134,22 @@ folder name =>
 	) => Serialization
 ```
 
+# Funcionamiento Indexado
+
+## Complejidad
+
+- `term frequency` $O(|D| \text{x} |d|)$ orden la longitud del documento, uno por documento.
+- `idf` $O(|D| \text{x} |d|)$
+- `tf-idf` $O(|D| \text{x} |d|)$
+- `ordenar por relevancia`: $O(|D| \log|D|)$, `merge-sort`
+
+# Funcionamiento Consulta
+
+## Consulta en tabla hash
+
+- $O(1)$ la consulta, en el hash
+- $O(|D|)$ mostrar los resultados.
+
 # Tabla Hash
 
 ## Funciones de Hash
@@ -253,6 +269,27 @@ Complejidad -> \textit{O(lines * max\_length(line))}
 
 # Serialización
 
+## Pickle
+
+
+> **Warning**
+> 
+> The pickle module is not secure. Only unpickle data you trust.
+> 
+> It is possible to construct malicious pickle data which will execute arbitrary
+> code during unpickling. Never unpickle data that could have come from an
+> untrusted source, or that could have been tampered with.
+> 
+> Consider signing data with hmac if you need to ensure that it has not been
+> tampered with.
+> 
+> Safer serialization formats such as json may be more appropriate if you are
+> processing untrusted data. See Comparison with json.
+
+`https://docs.python.org/3/library/pickle.html`
+
+# Serialización
+
 ## JSON
 
 - Soluciona problemas anteriores
@@ -283,9 +320,9 @@ Complejidad -> \textit{O(lines * max\_length(line))}
 - Complejidad -> \textit{O(n)}
 
 # Conclusion
-diccionario python
-- And the answer is...
-- $f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n$  
+
+- Hash tables y load factor
+- Serialization
 
 # Links
 

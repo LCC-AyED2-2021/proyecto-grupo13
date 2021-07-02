@@ -137,48 +137,48 @@ folder name =>
 # Tabla Hash
 
 ## Funciones de Hash
-```
-Método de multiplicación
-Polynomial Rolling Hash: Horner's method:
-    - Divide el polinomio en monomios
-    - Evita desbordamiento de enteros
-```
+
+-  Método de multiplicación
+
+- Polynomial Rolling Hash: Horner's method:
+	- Divide el polinomio en monomios
+	- Evita desbordamiento de enteros
+
 # Tabla Hash
 
 ## Estructura
 
-```
 - Tamaño de 547
 - Colisiones resueltas por encadenamiento
-```
+
 ## Grafico colisiones y celdas
- \centering
- \includegraphics[scale=0.35]{collisions.png}
+
+![Collisions](load.png)
 
 # Tabla Hash
 
 ## Estructura
-```
+
 - Load factor: lf = 22
 - Cantidad máxima de colisiones: max_col = 38
 - Mediana: 23
-```
 
 ## Conclusión
-```
+
 - Idealmente
-```
-$$max\_col <= lf$$
-```
+
+$$ \text{max\_col} <= lf \text{????} $$ 
+
 - La mediana nos da un resultado realista y aceptable
-```
+
 
 # Serialización
 
 ## Persist.py
 
-```
 Módulo escrito para guardar estructuras utilizadas:
+
+```
     Array
     String
     LinkedList

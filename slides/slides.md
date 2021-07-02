@@ -159,15 +159,13 @@ folder name =>
 
 ## Estructura
 
-- Load factor: lf = 22
-- Cantidad máxima de colisiones: max_col = 38
-- Mediana: 23
+- Load factor: 21
+- Cantidad máxima de colisiones: 38
+- Mediana: 21
 
 ## Conclusión
 
-- Idealmente
-
-$$ \text{max\_col} <= lf \text{????} $$ 
+- Idealmente todos los slots deberian tener 21 colisiones
 
 - La mediana nos da un resultado realista y aceptable
 

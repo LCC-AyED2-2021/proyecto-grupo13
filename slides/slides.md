@@ -169,7 +169,7 @@ folder name =>
 
 # Tabla Hash
 
-## Grafico colisiones y celdas
+## Gráfico colisiones y celdas
 
 ![Colisiones](load.png)
 
@@ -183,7 +183,7 @@ folder name =>
 
 ## Conclusión
 
-- Idealmente todos los slots deberian tener 21 colisiones
+- Idealmente todos las celdas  deberían tener 21 colisiones
 
 - La mediana nos da un resultado realista y aceptable
 
@@ -271,7 +271,6 @@ Complejidad -> \textit{O(lines * max\_length(line))}
 
 ## Pickle
 
-
 > **Warning**
 > 
 > The pickle module is not secure. Only unpickle data you trust.
@@ -315,11 +314,11 @@ Complejidad -> \textit{O(lines * max\_length(line))}
 ## Funcionamiento
 
 - Carga las estructuras desde disco
-- Realiza la busqueda habitual en la matriz
-- Captura la busqueda en una fila, e imprime resultados
+- Realiza la búsqueda habitual en la matriz
+- Captura la búsqueda en una fila, e imprime resultados
 - Complejidad -> \textit{O(n)}
 
-# Conclusion
+# Conclusión
 
 - Hash tables y load factor
 - Serialization
